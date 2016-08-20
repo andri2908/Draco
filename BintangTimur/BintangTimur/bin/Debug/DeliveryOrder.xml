@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="SALES_STATUS" type="xs:string" minOccurs="0" />
+                <xs:element name="TGL" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="INVOICE" type="xs:string" minOccurs="0" />
+                <xs:element name="CUSTOMER_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="PRODUK" type="xs:string" minOccurs="0" />
+                <xs:element name="QTY" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <SALES_STATUS>0</SALES_STATUS>
+    <TGL>2016-06-30T11:08:00+07:00</TGL>
+    <INVOICE>SLO001-8</INVOICE>
+    <CUSTOMER_NAME>KMS PET RIO</CUSTOMER_NAME>
+    <PRODUK>ALPO PUPPY 1 KG</PRODUK>
+    <QTY>3</QTY>
+  </Table>
+</NewDataSet>
