@@ -163,6 +163,8 @@ namespace Draco
         private void dataPelangganForm_Load(object sender, EventArgs e)
         {
             gutil.reArrangeTabOrder(this);
+
+            namaPelangganTextbox.Select();
         }
 
         private void pelanggangnonactiveoption_CheckedChanged(object sender, EventArgs e)

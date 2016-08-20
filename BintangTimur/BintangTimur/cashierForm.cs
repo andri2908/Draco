@@ -18,7 +18,7 @@ namespace Draco
 {
     public partial class cashierForm : Form
     {
-        private const string posTitle = "BINTANG TIMUR";
+        private const string posTitle = "DRACO";
         private string selectedsalesinvoice = "";
         private string selectedsalesinvoiceTax = "";
         private string selectedsalesinvoiceRevNo = "";

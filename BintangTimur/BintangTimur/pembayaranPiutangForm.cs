@@ -390,14 +390,14 @@ namespace Draco
 
             sqlCommandx = "SELECT PC.PAYMENT_ID, SH.SALES_INVOICE, SH.SALES_TOTAL, SH.SALES_DISCOUNT_FINAL, SH.SALES_TOP, SH.SALES_TOP_DATE, PC.PAYMENT_DATE, PC.PAYMENT_CONFIRMED, PC.PAYMENT_CONFIRMED_DATE, PC.PAYMENT_NOMINAL, TAB2.PAID_AMT AS ACTUAL_PAYMENT " +
                                      "FROM SALES_HEADER SH, CREDIT C, PAYMENT_CREDIT PC, " +
-                                     "(SELECT MAX(PAYMENT_ID) AS PAY_ID " +
+                                     "(SELECT CREDIT_ID, MAX(PAYMENT_ID) AS PAY_ID " +
                                      "FROM PAYMENT_CREDIT " +
                                      "GROUP BY CREDIT_ID) TAB1, " +
                                      "(SELECT CREDIT_ID, SUM(PAYMENT_NOMINAL) AS PAID_AMT " +
                                      "FROM PAYMENT_CREDIT " +
                                      "WHERE PAYMENT_CONFIRMED = 1 " +
                                      "GROUP BY CREDIT_ID) TAB2 " +
-                                     "WHERE C.SALES_INVOICE = SH.SALES_INVOICE AND PC.CREDIT_ID = C.CREDIT_ID AND PC.PAYMENT_ID = TAB1.PAY_ID AND SH.SALES_INVOICE = '" + invoiceNoTextBox.Text + "'";
+                                     "WHERE C.SALES_INVOICE = SH.SALES_INVOICE AND PC.CREDIT_ID = C.CREDIT_ID AND PC.PAYMENT_ID = TAB1.PAY_ID AND SH.SALES_INVOICE = '" + invoiceNoTextBox.Text + "' AND TAB1.CREDIT_ID = C.CREDIT_ID AND TAB2.CREDIT_ID = C.CREDIT_ID";
 
             DS.writeXML(sqlCommandx, globalConstants.creditPaymentXML);
             paymentCreditPrintOutForm displayForm = new paymentCreditPrintOutForm();

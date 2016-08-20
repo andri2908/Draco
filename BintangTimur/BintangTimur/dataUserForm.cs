@@ -199,6 +199,8 @@ namespace Draco
                 newButton.Visible = true;
             else
                 newButton.Visible = false;
+
+            namaUserTextbox.Select();
         }
 
         private void CetakButton_Click(object sender, EventArgs e)

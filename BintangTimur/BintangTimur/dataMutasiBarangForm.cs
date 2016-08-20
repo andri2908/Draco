@@ -200,6 +200,8 @@ namespace Draco
             gutil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
 
             gutil.reArrangeTabOrder(this);
+
+            noMutasiTextBox.Select();
         }
 
         private void dataMutasiBarangForm_Deactivate(object sender, EventArgs e)

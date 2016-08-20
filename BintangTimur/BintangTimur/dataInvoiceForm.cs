@@ -155,6 +155,8 @@ namespace Draco
         {
             gutil.reArrangeTabOrder(this);
             fillInPelangganCombo();
+
+            noInvoiceTextBox.Select();
         }
 
         private void dataInvoiceDataGridView_KeyDown(object sender, KeyEventArgs e)

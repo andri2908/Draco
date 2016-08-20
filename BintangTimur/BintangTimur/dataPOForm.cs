@@ -190,6 +190,8 @@ namespace Draco
             gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
 
             gUtil.reArrangeTabOrder(this);
+
+            noPOInvoiceTextBox.Select();
         }
 
         private void printOutPurchaseOrder(string PONo)

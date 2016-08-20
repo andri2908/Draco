@@ -105,6 +105,8 @@ namespace Draco
                 newButton.Visible = true;
             else
                 newButton.Visible = false;
+
+            namaAccountTextbox.Select();
         }
 
         private void newButton_Click(object sender, EventArgs e)

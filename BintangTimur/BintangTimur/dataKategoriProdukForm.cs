@@ -146,6 +146,8 @@ namespace Draco
                 newButton.Visible = true;
             else
                 newButton.Visible = false;
+
+            categoryNameTextBox.Select();
         }
 
         private void groupnonactiveoption_CheckedChanged(object sender, EventArgs e)
