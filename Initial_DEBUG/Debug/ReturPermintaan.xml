@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="MODULE_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="RP_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="IFNULL_x0028_MS.SUPPLIER_FULL_NAME_x002C__x0020__x0027_HQ_x0020_PUSAT_x0027__x0029_" type="xs:string" minOccurs="0" />
+                <xs:element name="RP_DATE" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="RP_TOTAL" type="xs:double" minOccurs="0" />
+                <xs:element name="PRODUCT_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="PRODUCT_BASEPRICE" type="xs:double" minOccurs="0" />
+                <xs:element name="PRODUCT_QTY" type="xs:double" minOccurs="0" />
+                <xs:element name="RP_DESCRIPTION" type="xs:string" minOccurs="0" />
+                <xs:element name="RP_SUBTOTAL" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <MODULE_TYPE>RETUR PEMBELIAN</MODULE_TYPE>
+    <RP_ID>RR1</RP_ID>
+    <IFNULL_x0028_MS.SUPPLIER_FULL_NAME_x002C__x0020__x0027_HQ_x0020_PUSAT_x0027__x0029_>BESI TUA</IFNULL_x0028_MS.SUPPLIER_FULL_NAME_x002C__x0020__x0027_HQ_x0020_PUSAT_x0027__x0029_>
+    <RP_DATE>2016-07-21T00:00:00+07:00</RP_DATE>
+    <RP_TOTAL>49500</RP_TOTAL>
+    <PRODUCT_NAME>ALUMUNIUM 1.4 KG</PRODUCT_NAME>
+    <PRODUCT_BASEPRICE>49500</PRODUCT_BASEPRICE>
+    <PRODUCT_QTY>1</PRODUCT_QTY>
+    <RP_DESCRIPTION xml:space="preserve"> </RP_DESCRIPTION>
+    <RP_SUBTOTAL>49500</RP_SUBTOTAL>
+  </Table>
+</NewDataSet>
