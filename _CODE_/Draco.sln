@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draco", "BintangTimur\Draco.csproj", "{B7CCBEB5-CB55-4300-A4A6-B5B8D945B242}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draco", "Draco\Draco.csproj", "{B7CCBEB5-CB55-4300-A4A6-B5B8D945B242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
