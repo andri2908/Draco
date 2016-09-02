@@ -156,3 +156,4 @@ D:\Project\Draco\BintangTimur\BintangTimur\obj\Debug\Draco.XMLGeneratorForm.reso
 D:\Project\Draco\BintangTimur\BintangTimur\obj\Debug\Draco.csproj.GenerateResource.Cache
 D:\Project\Draco\BintangTimur\BintangTimur\obj\Debug\Draco.exe
 D:\Project\Draco\BintangTimur\BintangTimur\obj\Debug\Draco.pdb
+D:\Project\Draco\_CODE_\Draco\bin\Debug\Draco.exe.config
