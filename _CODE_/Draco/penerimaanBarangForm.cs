@@ -602,11 +602,11 @@ namespace Draco
             fillInSupplierCombo();
 
 
-            userAccessOption = DS.getUserAccessRight(globalConstants.MENU_PENERIMAAN_BARANG_DARI_MUTASI, gUtil.getUserGroupID());
-            if (userAccessOption == 1)
-                searchMutasiButton.Visible = true;
-            else
-                searchMutasiButton.Visible = false;
+            //userAccessOption = DS.getUserAccessRight(globalConstants.MENU_PENERIMAAN_BARANG_DARI_MUTASI, gUtil.getUserGroupID());
+            //if (userAccessOption == 1)
+            //    searchMutasiButton.Visible = true;
+            //else
+            //    searchMutasiButton.Visible = false;
 
             userAccessOption = DS.getUserAccessRight(globalConstants.MENU_PENERIMAAN_BARANG_DARI_PO, gUtil.getUserGroupID());
             if (userAccessOption == 1)
