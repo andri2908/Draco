@@ -1,0 +1,7 @@
+Membership Point Draco
+Nominal penjualan 1 point tiap 100.000 
+Maximal penukaran cashback 1.000.000
+1 point = cashback 2.500
+penukaran cashback maximal 50% dari nilai penjualan
+Minimal jadi point akumulasi penjualan senilai 500.000
+Setiap akhir bulan direset
