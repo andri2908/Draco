@@ -15,7 +15,7 @@ namespace AlphaSoft
     {
         private string userName = "SYS_POS_ADMIN";
         private string password = "pass123";
-        private string databaseName = "SYS_POS_AlphaSoft";
+        private string databaseName = "SYS_POS_Draco";
         public const int LOCAL_SERVER = 0;
         public const int HQ_SERVER = 1;
         public const int BRANCH_SERVER = 2;
