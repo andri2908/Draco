@@ -1,0 +1,226 @@
+D:\Project\BintangTimur\BintangTimur\RoyalPetz_ADMIN\bin\Debug\BintangTimur.exe.config
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\bin\Debug\BintangTimur.exe.config
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\bin\Debug\BintangTimur.exe
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\bin\Debug\BintangTimur.pdb
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\bin\Debug\MySql.Data.dll
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.csprojResolveAssemblyReference.cache
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.AboutUsForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.cashierForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.changePasswordForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataNomorAkun.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataNomorAkunDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataPermintaanForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataPOForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataReturPenjualanForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataInvoiceForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataMutasiBarangDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.adminForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.backupRestoreDatabaseForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataCabangDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataCabangForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataGroupDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataGroupForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataMutasiBarangForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataPelangganDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataPelangganForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataReturPermintaanForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataReturPenjualanStokAdjustmentForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataSalesDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataSalesForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataSatuanDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataSatuanForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataSupplierDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataSupplierForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataTransaksiJurnalHarianDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataUserDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataUserForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.exportStockOpnameForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.groupAccessModuleForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.importDataMutasiForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.IPPusatForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.konversiSatuanForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.loginForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.logoutForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.pembayaranHutangForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.pembayaranPiutangForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.pembayaranPiutangLumpSumForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.penerimaanBarangForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.pengaturanKategoriProdukForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.pengaturanLimitPajakForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.pengaturanPotonganHargaForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.pengaturanProdukForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.penyesuaianStokForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.permintaanProdukForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.Properties.Resources.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataProdukDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.purchaseOrderDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.setDatabaseLocationForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.setNoFakturForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.sinkronisasiInformasiForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.stokPecahBarangForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataKategoriProdukDetailForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataProdukForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\RoyalPetz_ADMIN.dataKategoriProdukForm.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.TabSchemeProvider.resources
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.csproj.GenerateResource.Cache
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.exe
+C:\Users\alpha\Documents\GitHub\BintangTimur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pdb
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\BintangTimur.exe.config
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\BintangTimur.exe
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\BintangTimur.pdb
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportSource.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.Shared.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.Windows.Forms.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\FlashControlV71.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\MySql.Data.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\ShockwaveFlashObjects.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\bin\Debug\stdole.dll
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.csprojResolveAssemblyReference.cache
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.AboutUsForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.adminHelpForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.allSalesCommissionPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.barcodeForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.cashierForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.cashierHelpForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.cashierLoginForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.changePasswordForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.createConfigFileForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.crReportContainer.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataRegion.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataRegionDetail.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataReturPenjualanPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataNomorAkun.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataNomorAkunDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataPenerimaanBarangForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataPermintaanForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataPOForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataReturForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataReturPenjualanForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataInvoiceForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataMutasiBarangDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.adminForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.backupRestoreDatabaseForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataCabangDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataCabangForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataGroupDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataGroupForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataMutasiBarangForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataPelangganDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataPelangganForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataReturPermintaanForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataReturPermintaanPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataSalesInvoice.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataSatuanDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataSatuanForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataSupplierDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataSupplierForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataTransaksiJurnalHarianDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataUserDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataUserForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.deliveryOrderPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.exportStockOpnameForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.membershipPointForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.salesCommissionPrintOut.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.messagingForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.groupAccessModuleForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.importDataCSVForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.konversiSatuanForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.loginForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.logoutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.newMessageForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.paymentCreditPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pembayaranHutangForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pembayaranPiutangForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pembayaranLumpSumForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.penerimaanBarangForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.penerimaanBarangHelpForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.penerimaanBarangPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pengaturanKategoriProdukForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pengaturanLimitPajakForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pengaturanProdukForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.penyesuaianStokForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.permintaanProdukForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pleaseWaitForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.POSSearchProductForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.PrintBarcodeForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.Properties.Resources.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataProdukDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.purchaseOrderDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.purchaseOrderPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportAccountForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportBranchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportCashierLogForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportCashierLogSearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportCategoryForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportCreditDueForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportCreditPaidForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportCreditUnpaidForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportCustomerForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportDebtDueForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportDebtPaidForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportDebtUnpaidForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportFinanceOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportFinanceSearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportGroupUserForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportMarginForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportPaymentSearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportProductCategoryForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportProductForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportProductMutationForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportProductStockLimitForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportPurchasebyProductForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportPurchaseDetailedForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportPurchaseReturnForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportPurchaseSearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportPurchaseSummaryForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportRequestReturnForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesDetailedForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesOmzetForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesProductForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesReturnForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesSummaryForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesSummaryRegionForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesSummaryRegionSearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSalesSummarySearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportStockDeviationForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportStockInOutSearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportSupplierForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportTopSalesbyMarginForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportTopSalesbyTagsForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportTopSalesFormSearchForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportTopSalesGlobalForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportUnitForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.ReportUserForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.salesCommissionAllPrintOutForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.SalesReceiptForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.SalesReceiptKuartoForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.SetApplicationForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.setNoFakturForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.SetPrinterForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.sinkronisasiInformasiForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.smallPleaseWait.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.stokPecahBarangForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataKategoriProdukDetailForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataProdukForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.dataKategoriProdukForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.stokTransferForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.TabSchemeProvider.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.XMLGeneratorForm.resources
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.csproj.GenerateResource.Cache
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.exe
+E:\My Works\Project Bintang Timur\BintangTimur\BintangTimur\obj\Debug\BintangTimur.pdb
+D:\Project\BintangTimur\_CODE_\BintangTimur\BintangTimur\bin\Debug\BintangTimur.exe.config
+D:\Project\BintangTimur\_CODE_\BintangTimur\BintangTimur\bin\Debug\AlphaSoft.exe.config

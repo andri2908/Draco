@@ -394,6 +394,7 @@ CREATE TABLE `master_customer` (
   `CUSTOMER_GROUP` tinyint(3) unsigned DEFAULT NULL,
   `MAX_CREDIT` double DEFAULT '0',
   `CUSTOMER_BLOCKED` tinyint(3) DEFAULT '0',
+  `REGION_ID` tinyint(3) DEFAULT '0',
   PRIMARY KEY (`CUSTOMER_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -445,6 +446,8 @@ CREATE TABLE `master_location` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `LOCATION_NAME` varchar(45) DEFAULT NULL,
   `LOCATION_TOTAL_QTY` double DEFAULT '0',
+  `LOCATION_DESCRIPTION` varchar(100) DEFAULT NULL,
+  `LOCATION_ACTIVE` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -552,6 +555,31 @@ CREATE TABLE `master_product` (
 LOCK TABLES `master_product` WRITE;
 /*!40000 ALTER TABLE `master_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `master_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `master_region`
+--
+
+DROP TABLE IF EXISTS `master_region`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `master_region` (
+  `ID` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `REGION_NAME` varchar(50) DEFAULT NULL,
+  `REGION_DESCRIPTION` varchar(100) DEFAULT NULL,
+  `REGION_ACTIVE` tinyint(3) DEFAULT '1',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `master_region`
+--
+
+LOCK TABLES `master_region` WRITE;
+/*!40000 ALTER TABLE `master_region` DISABLE KEYS */;
+/*!40000 ALTER TABLE `master_region` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
