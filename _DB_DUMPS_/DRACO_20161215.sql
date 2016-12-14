@@ -143,7 +143,7 @@ CREATE TABLE `credit` (
   `CREDIT_NOMINAL` double DEFAULT '0',
   `CREDIT_PAID` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`CREDIT_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,6 +152,7 @@ CREATE TABLE `credit` (
 
 LOCK TABLES `credit` WRITE;
 /*!40000 ALTER TABLE `credit` DISABLE KEYS */;
+INSERT INTO `credit` VALUES (1,'SLO001-1',NULL,'2016-12-14',2000000,1),(2,'SLO001-2',NULL,'2016-12-15',2000000,1);
 /*!40000 ALTER TABLE `credit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,7 +171,7 @@ CREATE TABLE `customer_product_disc` (
   `DISC_2` double unsigned DEFAULT '0',
   `DISC_RP` double unsigned DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -179,6 +180,7 @@ CREATE TABLE `customer_product_disc` (
 
 LOCK TABLES `customer_product_disc` WRITE;
 /*!40000 ALTER TABLE `customer_product_disc` DISABLE KEYS */;
+INSERT INTO `customer_product_disc` VALUES (1,1,'1',0,0,0);
 /*!40000 ALTER TABLE `customer_product_disc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +201,7 @@ CREATE TABLE `daily_journal` (
   `user_id` tinyint(3) unsigned NOT NULL,
   `pm_id` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`journal_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,6 +210,7 @@ CREATE TABLE `daily_journal` (
 
 LOCK TABLES `daily_journal` WRITE;
 /*!40000 ALTER TABLE `daily_journal` DISABLE KEYS */;
+INSERT INTO `daily_journal` VALUES (1,1,'2016-12-14 23:17:00',2000000,NULL,'PEMBAYARAN SLO001-1',1,1),(2,1,'2016-12-15 00:06:00',2000000,NULL,'PEMBAYARAN SLO001-2',1,1);
 /*!40000 ALTER TABLE `daily_journal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,7 +339,7 @@ CREATE TABLE `master_category` (
   `CATEGORY_DESCRIPTION` varchar(100) DEFAULT NULL,
   `CATEGORY_ACTIVE` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`CATEGORY_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -345,6 +348,7 @@ CREATE TABLE `master_category` (
 
 LOCK TABLES `master_category` WRITE;
 /*!40000 ALTER TABLE `master_category` DISABLE KEYS */;
+INSERT INTO `master_category` VALUES (1,'BARU','AA',1);
 /*!40000 ALTER TABLE `master_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -396,7 +400,7 @@ CREATE TABLE `master_customer` (
   `CUSTOMER_BLOCKED` tinyint(3) DEFAULT '0',
   `REGION_ID` tinyint(3) DEFAULT '0',
   PRIMARY KEY (`CUSTOMER_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,6 +409,7 @@ CREATE TABLE `master_customer` (
 
 LOCK TABLES `master_customer` WRITE;
 /*!40000 ALTER TABLE `master_customer` DISABLE KEYS */;
+INSERT INTO `master_customer` VALUES (1,'ANDRI',' ',' ',' ',' ',' ',' ',1,'2016-12-14',0,1,0,0,0);
 /*!40000 ALTER TABLE `master_customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -458,7 +463,7 @@ CREATE TABLE `master_location` (
 
 LOCK TABLES `master_location` WRITE;
 /*!40000 ALTER TABLE `master_location` DISABLE KEYS */;
-INSERT INTO `master_location` VALUES (1,'TOKO',0, '', 1),(2,'GUDANG',0, '', 1);
+INSERT INTO `master_location` VALUES (1,'TOKO',0,'',1),(2,'GUDANG',0,'',1);
 /*!40000 ALTER TABLE `master_location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -545,7 +550,7 @@ CREATE TABLE `master_product` (
   `PRODUCT_IS_SERVICE` tinyint(3) unsigned DEFAULT '0',
   PRIMARY KEY (`ID`),
   UNIQUE KEY `PRODUCT_ID_UNIQUE` (`PRODUCT_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -554,6 +559,7 @@ CREATE TABLE `master_product` (
 
 LOCK TABLES `master_product` WRITE;
 /*!40000 ALTER TABLE `master_product` DISABLE KEYS */;
+INSERT INTO `master_product` VALUES (1,'1','0','TRIPLEK SUPER','TRIPLEK PLEK',1000000,1000000,1000000,1000000,' ',1,4000,2,'--00',1,' ',0);
 /*!40000 ALTER TABLE `master_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -651,7 +657,7 @@ CREATE TABLE `master_unit` (
   `UNIT_DESCRIPTION` varchar(100) DEFAULT NULL,
   `UNIT_ACTIVE` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`UNIT_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -660,6 +666,7 @@ CREATE TABLE `master_unit` (
 
 LOCK TABLES `master_unit` WRITE;
 /*!40000 ALTER TABLE `master_unit` DISABLE KEYS */;
+INSERT INTO `master_unit` VALUES (1,'PCS','PIECES',1);
 /*!40000 ALTER TABLE `master_unit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -707,8 +714,9 @@ CREATE TABLE `membership_point` (
   `CUSTOMER_ID` varchar(45) DEFAULT NULL,
   `POINTS_PARAMETER` double DEFAULT NULL,
   `POINTS_AMOUNT` double DEFAULT NULL,
+  `LAST_UPDATE_DATE` date DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -717,6 +725,7 @@ CREATE TABLE `membership_point` (
 
 LOCK TABLES `membership_point` WRITE;
 /*!40000 ALTER TABLE `membership_point` DISABLE KEYS */;
+INSERT INTO `membership_point` VALUES (1,NULL,NULL,'1',NULL,10,'2016-12-15');
 /*!40000 ALTER TABLE `membership_point` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -854,7 +863,7 @@ CREATE TABLE `product_category` (
 
 LOCK TABLES `product_category` WRITE;
 /*!40000 ALTER TABLE `product_category` DISABLE KEYS */;
-
+INSERT INTO `product_category` VALUES ('1',1);
 /*!40000 ALTER TABLE `product_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -871,7 +880,7 @@ CREATE TABLE `product_location` (
   `PRODUCT_ID` varchar(50) DEFAULT NULL,
   `PRODUCT_LOCATION_QTY` double unsigned DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11187 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -880,6 +889,7 @@ CREATE TABLE `product_location` (
 
 LOCK TABLES `product_location` WRITE;
 /*!40000 ALTER TABLE `product_location` DISABLE KEYS */;
+INSERT INTO `product_location` VALUES (1,1,'',0),(2,2,'',0),(3,1,'1',2000),(4,2,'1',2000);
 /*!40000 ALTER TABLE `product_location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1365,7 +1375,7 @@ CREATE TABLE `sales_detail` (
   `PRODUCT_DISC_RP` double DEFAULT '0',
   `SALES_SUBTOTAL` double DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1374,6 +1384,7 @@ CREATE TABLE `sales_detail` (
 
 LOCK TABLES `sales_detail` WRITE;
 /*!40000 ALTER TABLE `sales_detail` DISABLE KEYS */;
+INSERT INTO `sales_detail` VALUES (1,'SLO001-1',0,'1',1000000,1000000,2,0,0,0,2000000),(2,'SLO001-2',0,'1',1000000,1000000,2,0,0,0,2000000);
 /*!40000 ALTER TABLE `sales_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1432,8 +1443,9 @@ CREATE TABLE `sales_header` (
   `SQ_INVOICE` varchar(30) DEFAULT NULL,
   `SALES_VOID` tinyint(3) DEFAULT '0',
   `SALES_ACTIVE` tinyint(3) DEFAULT '1',
+  `CASHBACK_VALUE` double DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1442,6 +1454,7 @@ CREATE TABLE `sales_header` (
 
 LOCK TABLES `sales_header` WRITE;
 /*!40000 ALTER TABLE `sales_header` DISABLE KEYS */;
+INSERT INTO `sales_header` VALUES (1,'SLO001-1',0,1,'2016-12-14 23:17:00',2000000,0,1,'2016-12-14',1,2000000,0,0,NULL,0,1,0),(3,'SLO001-2',0,1,'2016-12-15 00:06:00',2000000,0,1,'2016-12-15',1,1975000,0,0,NULL,0,1,25000);
 /*!40000 ALTER TABLE `sales_header` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1729,7 +1742,6 @@ CREATE TABLE `user_change_log` (
 
 LOCK TABLES `user_change_log` WRITE;
 /*!40000 ALTER TABLE `user_change_log` DISABLE KEYS */;
-
 /*!40000 ALTER TABLE `user_change_log` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1742,4 +1754,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-21  1:24:32
+-- Dump completed on 2016-12-15  0:12:30

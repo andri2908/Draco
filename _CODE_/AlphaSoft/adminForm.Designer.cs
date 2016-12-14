@@ -51,6 +51,7 @@
             this.toolStripMenuItem35 = new System.Windows.Forms.ToolStripSeparator();
             this.MENU_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.MAINMENU_gudang = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
             this.MENU_produk = new System.Windows.Forms.ToolStripMenuItem();
             this.MENU_tambahProduk = new System.Windows.Forms.ToolStripMenuItem();
             this.MENU_pengaturanHarga = new System.Windows.Forms.ToolStripMenuItem();
@@ -187,7 +188,6 @@
             this.SHORTCUT_returBeli = new System.Windows.Forms.ToolStripButton();
             this.SHORTCUT_returJual = new System.Windows.Forms.ToolStripButton();
             this.timerMessage = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -414,6 +414,16 @@
             this.MAINMENU_gudang.Text = "Gudang";
             this.MAINMENU_gudang.DropDownClosed += new System.EventHandler(this.toolStripMenuItem1_DropDownClosed);
             this.MAINMENU_gudang.DropDownOpened += new System.EventHandler(this.toolStripMenuItem1_DropDownOpened);
+            // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.BackColor = System.Drawing.Color.SteelBlue;
+            this.toolStripMenuItem13.ForeColor = System.Drawing.Color.FloralWhite;
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.ShowShortcutKeys = false;
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(254, 22);
+            this.toolStripMenuItem13.Text = "Pengaturan Lokasi";
+            this.toolStripMenuItem13.Click += new System.EventHandler(this.toolStripMenuItem13_Click_1);
             // 
             // MENU_produk
             // 
@@ -885,6 +895,7 @@
             this.MENU_membership.Name = "MENU_membership";
             this.MENU_membership.Size = new System.Drawing.Size(221, 22);
             this.MENU_membership.Text = "Membership Point";
+            this.MENU_membership.Visible = false;
             this.MENU_membership.Click += new System.EventHandler(this.MENU_membership_Click);
             // 
             // MAINMENU_KEUANGAN
@@ -1784,16 +1795,6 @@
             this.timerMessage.Enabled = true;
             this.timerMessage.Interval = 3600000;
             this.timerMessage.Tick += new System.EventHandler(this.timerMessage_Tick);
-            // 
-            // toolStripMenuItem13
-            // 
-            this.toolStripMenuItem13.BackColor = System.Drawing.Color.SteelBlue;
-            this.toolStripMenuItem13.ForeColor = System.Drawing.Color.FloralWhite;
-            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.ShowShortcutKeys = false;
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(254, 22);
-            this.toolStripMenuItem13.Text = "Pengaturan Lokasi";
-            this.toolStripMenuItem13.Click += new System.EventHandler(this.toolStripMenuItem13_Click_1);
             // 
             // adminForm
             // 

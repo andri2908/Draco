@@ -380,6 +380,7 @@
     <Compile Include="membershipPointPrintOut.Designer.cs">
       <DependentUpon>membershipPointPrintOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="membershipPointUtil.cs" />
     <Compile Include="messagingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -516,6 +517,12 @@
     </Compile>
     <Compile Include="pleaseWaitForm.Designer.cs">
       <DependentUpon>pleaseWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pointCashbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pointCashbackForm.Designer.cs">
+      <DependentUpon>pointCashbackForm.cs</DependentUpon>
     </Compile>
     <Compile Include="POSSearchProductForm.cs">
       <SubType>Form</SubType>
@@ -1361,6 +1368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pleaseWaitForm.resx">
       <DependentUpon>pleaseWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pointCashbackForm.resx">
+      <DependentUpon>pointCashbackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POSSearchProductForm.resx">
       <DependentUpon>POSSearchProductForm.cs</DependentUpon>

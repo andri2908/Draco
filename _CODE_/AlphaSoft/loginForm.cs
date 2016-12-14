@@ -232,6 +232,8 @@ namespace AlphaSoft
                 createConfigFileForm displayedForm = new createConfigFileForm();
                 displayedForm.ShowDialog();
             }
+
+            userNameTextBox.Select();
         }
         
         private void userNameTextBox_KeyPress(object sender, KeyPressEventArgs e)

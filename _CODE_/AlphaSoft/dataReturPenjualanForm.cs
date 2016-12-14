@@ -49,6 +49,7 @@ namespace AlphaSoft
         private Data_Access DS = new Data_Access();
         private globalUtilities gutil = new globalUtilities();
         private CultureInfo culture = new CultureInfo("id-ID");
+        private membershipPointUtil memberUtil = new membershipPointUtil();
 
         public dataReturPenjualanForm()
         {
@@ -994,7 +995,12 @@ namespace AlphaSoft
             string currentSalesInvoice;
             bool fullyPaid = false;
 
-            
+            double currentPoints = 0;
+            double newPoints = 0;
+            double totalNettSales = 0;
+            double totalReturnSales = 0;
+            string pointUpdateDate = String.Format(culture, "{0:dd-MM-yyyy}", DateTime.Now);
+
             int selectedCreditID;
 
             returID = MySqlHelper.EscapeString(noReturTextBox.Text);
@@ -1127,6 +1133,42 @@ namespace AlphaSoft
                             gutil.saveSystemDebugLog(globalConstants.MENU_RETUR_PENJUALAN, "UPDATE CREDIT [" + selectedCreditID + "]");
                             if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                 throw internalEX;
+
+                            // UPDATE MEMBERSHIP POINT IF INVOICE HAS BEEN FULLY PAID
+                            // get total nett sales
+                            sqlCommand = "SELECT SALES_TOTAL - SALES_DISCOUNT_FINAL FROM SALES_HEADER WHERE SALES_INVOICE = '" + selectedSalesInvoice + "'";
+                            totalNettSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
+
+                            // get total return sales
+                            sqlCommand = "SELECT SUM(RS_TOTAL) FROM RETURN_SALES_HEADER WHERE SALES_INVOICE = '" + selectedSalesInvoice + "'";
+                            totalReturnSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
+
+                            // get total nett sales - total return sales
+                            totalNettSales = totalNettSales - totalReturnSales;
+
+                            // calculate points
+                            if (memberUtil.isCustomerExist(selectedCustomerID))
+                            {
+                                currentPoints = memberUtil.getCurrentPoints(selectedCustomerID);
+                                newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
+
+                                // UPDATE POINTS
+                                sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + " WHERE CUSTOMER_ID = " + selectedCustomerID + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y')";
+
+                                if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                    throw internalEX;
+                            }
+                            else
+                            {
+                                newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
+
+                                // INSERT POINTS
+                                sqlCommand = "INSERT INTO MEMBERSHIP_POINT (CUSTOMER_ID, POINTS_AMOUNT, LAST_UPDATE_DATE) VALUES (" + selectedCustomerID + ", " + newPoints + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'))";
+
+                                if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                    throw internalEX;
+                            }
+
                         }
                     }
                     else
@@ -1203,6 +1245,41 @@ namespace AlphaSoft
                                     gutil.saveSystemDebugLog(globalConstants.MENU_RETUR_PENJUALAN, "UPDATE SALES_HEADER_TAX [" + currentSalesInvoice + "] TO FULLY PAID");
                                     if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                         throw internalEX;
+
+                                    // UPDATE MEMBERSHIP POINT IF INVOICE HAS BEEN FULLY PAID
+                                    // get total nett sales
+                                    sqlCommand = "SELECT SALES_TOTAL - SALES_DISCOUNT_FINAL FROM SALES_HEADER WHERE SALES_INVOICE = '" + selectedSalesInvoice + "'";
+                                    totalNettSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
+
+                                    // get total return sales
+                                    sqlCommand = "SELECT SUM(RS_TOTAL) FROM RETURN_SALES_HEADER WHERE SALES_INVOICE = '" + selectedSalesInvoice + "'";
+                                    totalReturnSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
+
+                                    // get total nett sales - total return sales
+                                    totalNettSales = totalNettSales - totalReturnSales;
+
+                                    // calculate points
+                                    if (memberUtil.isCustomerExist(selectedCustomerID))
+                                    {
+                                        currentPoints = memberUtil.getCurrentPoints(selectedCustomerID);
+                                        newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
+
+                                        // UPDATE POINTS
+                                        sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + " WHERE CUSTOMER_ID = " + selectedCustomerID + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y')";
+
+                                        if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                            throw internalEX;
+                                    }
+                                    else
+                                    {
+                                        newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
+
+                                        // INSERT POINTS
+                                        sqlCommand = "INSERT INTO MEMBERSHIP_POINT (CUSTOMER_ID, POINTS_AMOUNT, LAST_UPDATE_DATE) VALUES (" + selectedCustomerID + ", " + newPoints + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'))";
+
+                                        if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                            throw internalEX;
+                                    }
 
                                 }
 

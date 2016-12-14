@@ -37,9 +37,13 @@ namespace AlphaSoft
         private int originModuleID = 0;
         private int custIsBlocked = 0;
         private double totalAfterDisc = 0;
+        double cashBackValueAmount = 0;
+
+        private double pointsToExchange = 0;
 
         private Data_Access DS = new Data_Access();
 
+        private membershipPointUtil memberUtil = new membershipPointUtil();
         private globalUtilities gutil = new globalUtilities();
         private CultureInfo culture = new CultureInfo("id-ID");
         private List<string> salesQty = new List<string>();
@@ -148,6 +152,9 @@ namespace AlphaSoft
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : DISPLAY PELANGGAN FORM");
                     dataPelangganForm pelangganForm = new dataPelangganForm(globalConstants.CASHIER_MODULE, this);
                     pelangganForm.ShowDialog(this);
+
+                    // CHECK MEMBERSHIP EXPIRY POINT
+                    memberUtil.checkMembershipPointExpiryDate(selectedPelangganID);
                     break;
 
                 case Keys.F5:
@@ -168,7 +175,6 @@ namespace AlphaSoft
                     break;
 
                 case Keys.F9:
-
                     if (custIsBlocked == 0)
                     { 
                         gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : HOTKEY TO SAVE AND PRINT OUT INVOICE PRESSED");
@@ -178,6 +184,14 @@ namespace AlphaSoft
                     else
                     {
                         MessageBox.Show("CUSTOMER DIBLOK");
+                    }
+                    break;
+
+                case Keys.F10:
+                    if ((originModuleID == 0) && (globalTotalValue > 0))
+                    {
+                        pointCashbackForm displayedForm = new pointCashbackForm(selectedPelangganID, globalTotalValue, this);
+                        displayedForm.ShowDialog(this);
                     }
                     break;
 
@@ -197,9 +211,6 @@ namespace AlphaSoft
                     discJualMaskedTextBox.Focus();
                     break;
 
-                case Keys.F10:
-                    MessageBox.Show("F10");
-                    break;
                 case Keys.F12:
                     MessageBox.Show("F12");
                     break;
@@ -318,10 +329,8 @@ namespace AlphaSoft
             ghk_CTRL_Enter = new Hotkeys.GlobalHotkey(Constants.CTRL, Keys.Enter, this);
             ghk_CTRL_Enter.Register();
             
-
-
-            //ghk_F10 = new Hotkeys.GlobalHotkey(Constants.NOMOD, Keys.F10, this);
-            //ghk_F10.Register();
+            ghk_F10 = new Hotkeys.GlobalHotkey(Constants.NOMOD, Keys.F10, this);
+            ghk_F10.Register();
 
             //ghk_F11 = new Hotkeys.GlobalHotkey(Constants.NOMOD, Keys.F11, this);
             //ghk_F11.Register();
@@ -486,6 +495,15 @@ namespace AlphaSoft
                 }
             }
             rdr.Close();
+        }
+
+        public void setPointsToExchangeValue(double pointsValue)
+        {
+            pointsToExchange = pointsValue;
+            cashBackValueAmount = Math.Round(pointsToExchange * membershipPointUtil.cashBackExchangeParam);
+            cashbackValue.Text = cashBackValueAmount.ToString("C2", culture);
+
+            calculateTotal();
         }
 
         private void refreshProductPrice()
@@ -756,7 +774,7 @@ namespace AlphaSoft
             maxCredit = maxCredit + creditTolerance;
             totalOutstandingCredit = totalOutstandingCredit + newCreditAmount;
 
-            if (maxCredit <= totalOutstandingCredit)
+            if ((totalOutstandingCredit>0) && (maxCredit <= totalOutstandingCredit))
                 result = true;
 
             return result;
@@ -886,7 +904,7 @@ namespace AlphaSoft
 
                     // CHECK PAYMENT AMOUNT MUST BE MORE OR EQUALS THAN THE BILL
                     paymentAmount = Convert.ToDouble(bayarTextBox.Text);
-                    if (paymentAmount < globalTotalValue)
+                    if (paymentAmount < totalAfterDisc)
                     {
                         errorLabel.Text = "JUMLAH PEMBAYARAN LEBIH KECIL DARI NOTA";
                         return false;
@@ -1042,13 +1060,66 @@ namespace AlphaSoft
                     //pass thru to receipt generator
                     selectedsalesinvoice = salesInvoice;
                     // SAVE HEADER TABLE
-                    sqlCommand = "INSERT INTO SALES_HEADER (SALES_INVOICE, CUSTOMER_ID, SALES_DATE, SALES_TOTAL, SALES_DISCOUNT_FINAL, SALES_TOP, SALES_TOP_DATE, SALES_PAID, SALES_PAYMENT, SALES_PAYMENT_CHANGE, SALES_PAYMENT_METHOD) " +
+                    sqlCommand = "INSERT INTO SALES_HEADER (SALES_INVOICE, CUSTOMER_ID, SALES_DATE, SALES_TOTAL, SALES_DISCOUNT_FINAL, SALES_TOP, SALES_TOP_DATE, SALES_PAID, SALES_PAYMENT, SALES_PAYMENT_CHANGE, SALES_PAYMENT_METHOD, CASHBACK_VALUE) " +
                                         "VALUES " +
-                                        "('" + salesInvoice + "', " + selectedPelangganID + ", STR_TO_DATE('" + SODateTime + "', '%d-%m-%Y %H:%i'), " + gutil.validateDecimalNumericInput(globalTotalValue) + ", " + gutil.validateDecimalNumericInput(Convert.ToDouble(salesDiscountFinal)) + ", " + salesTop + ", STR_TO_DATE('" + SODueDateTime + "', '%d-%m-%Y'), " + salesPaid + ", " + gutil.validateDecimalNumericInput(bayarAmount) + ", " + gutil.validateDecimalNumericInput(sisaBayar) + ", " + selectedPaymentMethod + ")";
+                                        "('" + salesInvoice + "', " + selectedPelangganID + ", STR_TO_DATE('" + SODateTime + "', '%d-%m-%Y %H:%i'), " + gutil.validateDecimalNumericInput(globalTotalValue) + ", " + gutil.validateDecimalNumericInput(Convert.ToDouble(salesDiscountFinal)) + ", " + salesTop + ", STR_TO_DATE('" + SODueDateTime + "', '%d-%m-%Y'), " + salesPaid + ", " + gutil.validateDecimalNumericInput(bayarAmount) + ", " + gutil.validateDecimalNumericInput(sisaBayar) + ", " + selectedPaymentMethod + ", " + cashBackValueAmount + ")";
 
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "INSERT INTO SALES HEADER [" + salesInvoice + "]");
                     if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                         throw internalEX;
+
+                    // SAVE TO MEMBERSHIP POINT TABLE ONLY FOR CASH TRANSACTION
+                    if (selectedPelangganID != 0 && salesTop == 1)
+                    {
+                        double currentPoints = 0;
+                        double newPoints = 0;
+                        double nettSalesValue = 0;
+                        double cashbackValueAmount = 0;
+                        string pointUpdateDate = String.Format(culture, "{0:dd-MM-yyyy}", DateTime.Now);
+
+                        if (pointsToExchange > 0)
+                        {
+                            // REDUCE THE POINTS BASED ON CASH
+                            if (memberUtil.isCustomerExist(selectedPelangganID))
+                            {
+                                currentPoints = memberUtil.getCurrentPoints(selectedPelangganID);
+                                newPoints = currentPoints - pointsToExchange;
+                                cashbackValueAmount = pointsToExchange * membershipPointUtil.cashBackExchangeParam;
+
+                                // UPDATE POINTS
+                                sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y') WHERE CUSTOMER_ID = " + selectedPelangganID;
+
+                                if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                    throw internalEX;
+                            }
+                        }
+                        else
+                        {
+                            nettSalesValue = globalTotalValue - cashbackValueAmount - Convert.ToDouble(salesDiscountFinal);
+
+                            if (memberUtil.isCustomerExist(selectedPelangganID))
+                            {
+                                currentPoints = memberUtil.getCurrentPoints(selectedPelangganID);
+                                newPoints = currentPoints + memberUtil.calculateMembershipPoint(nettSalesValue);
+
+                                // UPDATE POINTS
+                                sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y') WHERE CUSTOMER_ID = " + selectedPelangganID;
+
+                                if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                    throw internalEX;
+                            }
+                            else
+                            {
+                                newPoints = currentPoints + memberUtil.calculateMembershipPoint(nettSalesValue);
+
+                                // INSERT POINTS
+                                sqlCommand = "INSERT INTO MEMBERSHIP_POINT (CUSTOMER_ID, POINTS_AMOUNT, LAST_UPDATE_DATE) VALUES (" + selectedPelangganID + ", " + newPoints + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'))";
+
+                                if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                    throw internalEX;
+                            }
+                        }
+                    }
                 }
                 else if (originModuleID == globalConstants.SALES_ORDER_REVISION)   // SALES ORDER REVISION
                 {
@@ -1516,11 +1587,20 @@ namespace AlphaSoft
 
             totalPenjualanTextBox.Text = total.ToString("c2", culture);
 
+            // CALCULATE CASHBACK START
+            if (cashbackValue.Text != "0")
+            {
+                discJual = cashBackValueAmount;
+                totalAfterDisc = Math.Round(totalAfterDisc - discJual, 2);
+            }
+            // CALCULATE CASHBACK END
+
             if (discJualMaskedTextBox.Text.Length > 0)
             {
                 discJual = Convert.ToDouble(discJualMaskedTextBox.Text);
                 totalAfterDisc = Math.Round(totalAfterDisc - discJual, 2);
             }
+
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : calculateTotal, totalAfterDisc [" + totalAfterDisc + "]");
 
             totalAfterDiscTextBox.Text = totalAfterDisc.ToString("c2", culture);
@@ -1535,7 +1615,8 @@ namespace AlphaSoft
             {
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : calculateChangeValue, bayarTextBox.Text [" + bayarTextBox.Text + "]");
                 bayarAmount = Convert.ToDouble(bayarTextBox.Text);
-                totalAfterDisc = globalTotalValue - discValue;
+                //totalAfterDisc = globalTotalValue - discValue;
+
                 if (bayarAmount > totalAfterDisc)
                     sisaBayar = bayarAmount - totalAfterDisc;
                 else
@@ -2976,24 +3057,24 @@ namespace AlphaSoft
 
         private void cashierDataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            //var cell = cashierDataGridView[e.ColumnIndex, e.RowIndex];
-            //DataGridViewRow selectedRow = cashierDataGridView.Rows[e.RowIndex];
+            var cell = cashierDataGridView[e.ColumnIndex, e.RowIndex];
+            DataGridViewRow selectedRow = cashierDataGridView.Rows[e.RowIndex];
 
-            //if (cell.OwningColumn.Name == "productName")
-            //{
-            //    if (null != cell.Value)
-            //    {
-            //        if (cell.Value.ToString().Length > 0)
-            //        {
-            //            updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
-            //            //cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
-            //        }
-            //        else
-            //        {
-            //            clearUpSomeRowContents(selectedRow, e.RowIndex);
-            //        }
-            //    }
-            //}
+            if (cell.OwningColumn.Name == "productName")
+            {
+                if (null != cell.Value)
+                {
+                    if (cell.Value.ToString().Length > 0)
+                    {
+                        updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
+                        //cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
+                    }
+                    else
+                    {
+                        clearUpSomeRowContents(selectedRow, e.RowIndex);
+                    }
+                }
+            }
         }
 
         private void rejectSQ(string selectedSO)
@@ -3116,16 +3197,16 @@ namespace AlphaSoft
 
             if (columnName == "productName")
             {
-                if (cellValue.Length > 0)
-                {
-                    updateSomeRowContents(selectedRow, rowSelectedIndex, cellValue);
-                    //int pos = cashierDataGridView.CurrentCell.RowIndex;
+                //if (cellValue.Length > 0)
+                //{
+                //    updateSomeRowContents(selectedRow, rowSelectedIndex, cellValue);
+                //    //int pos = cashierDataGridView.CurrentCell.RowIndex;
 
-                    //if (pos > 0)
-                    //    cashierDataGridView.CurrentCell = cashierDataGridView.Rows[pos - 1].Cells["qty"];
+                //    //if (pos > 0)
+                //    //    cashierDataGridView.CurrentCell = cashierDataGridView.Rows[pos - 1].Cells["qty"];
 
-                    //forceUpOneLevel = true;
-                }
+                //    //forceUpOneLevel = true;
+                //}
             }
             else if (columnName == "productPrice" ||
                 columnName == "qty" ||
@@ -3141,7 +3222,7 @@ namespace AlphaSoft
 
                     //if (detailRequestQtyApproved.Count >= rowSelectedIndex + 1)
                     //    detailRequestQtyApproved[rowSelectedIndex] = "0";
-                    switch (cashierDataGridView.CurrentCell.OwningColumn.Name)
+                    switch (columnName)
                     {
                         case "qty":
                             salesQty[rowSelectedIndex] = "0";
@@ -3182,7 +3263,7 @@ namespace AlphaSoft
                 if (null != selectedRow.Cells["productID"].Value)
                     productID = selectedRow.Cells["productID"].Value.ToString();
 
-                switch (cashierDataGridView.CurrentCell.OwningColumn.Name)
+                switch (columnName)
                 {
                     case "qty":
                         previousInput = salesQty[rowSelectedIndex];
@@ -3215,7 +3296,7 @@ namespace AlphaSoft
                     )
                 {
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, dataGridViewTextBoxEditingControl.Text pass REGEX Checking");
-                    switch (cashierDataGridView.CurrentCell.OwningColumn.Name)
+                    switch (columnName)
                     {
                         case "qty":
                             if (stockIsEnough(productID, Convert.ToDouble(cellValue)))
