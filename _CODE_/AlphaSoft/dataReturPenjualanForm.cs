@@ -851,9 +851,9 @@ namespace AlphaSoft
                 DataGridViewRow selectedRow = detailReturDataGridView.Rows[rowSelectedIndex];
                 detailReturDataGridView.CurrentCell = selectedRow.Cells["productName"];
 
-                if (null != selectedRow && rowSelectedIndex != detailReturDataGridView.Rows.Count - 1)
+                if (null != selectedRow)// && rowSelectedIndex != detailReturDataGridView.Rows.Count - 1)
                 {
-                    for (int i = rowSelectedIndex; i < detailReturDataGridView.Rows.Count - 1; i++)
+                    for (int i = rowSelectedIndex; i < detailReturDataGridView.Rows.Count; i++)
                     {
                         returnQty[i] = returnQty[i + 1];
                         productPriceList[i] = productPriceList[i + 1];
@@ -1140,8 +1140,9 @@ namespace AlphaSoft
                             totalNettSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
 
                             // get total return sales
-                            sqlCommand = "SELECT SUM(RS_TOTAL) FROM RETURN_SALES_HEADER WHERE SALES_INVOICE = '" + selectedSalesInvoice + "'";
+                            sqlCommand = "SELECT IFNULL(SUM(RS_TOTAL), 0) FROM RETURN_SALES_HEADER WHERE SALES_INVOICE = '" + selectedSalesInvoice + "'";
                             totalReturnSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
+                            totalReturnSales = totalReturnSales + returTotal; // ADD WITH CURRENT TRANSACTION RETUR AMOUNT
 
                             // get total nett sales - total return sales
                             totalNettSales = totalNettSales - totalReturnSales;
@@ -1153,7 +1154,7 @@ namespace AlphaSoft
                                 newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
 
                                 // UPDATE POINTS
-                                sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + " WHERE CUSTOMER_ID = " + selectedCustomerID + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y')";
+                                sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y') WHERE CUSTOMER_ID = " + selectedCustomerID;
 
                                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                     throw internalEX;
@@ -2002,23 +2003,23 @@ namespace AlphaSoft
 
         private void detailReturDataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            //var cell = detailReturDataGridView[e.ColumnIndex, e.RowIndex];
-            //DataGridViewRow selectedRow = detailReturDataGridView.Rows[e.RowIndex];
+            var cell = detailReturDataGridView[e.ColumnIndex, e.RowIndex];
+            DataGridViewRow selectedRow = detailReturDataGridView.Rows[e.RowIndex];
 
-            //if (cell.OwningColumn.Name == "productName")
-            //{
-            //    if (null != cell.Value)
-            //    {
-            //        if (cell.Value.ToString().Length > 0)
-            //        {
-            //            updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
-            //        }
-            //        else
-            //        {
-            //            clearUpSomeRowContents(selectedRow, e.RowIndex);
-            //        }
-            //    }
-            //}
+            if (cell.OwningColumn.Name == "productName")
+            {
+                if (null != cell.Value)
+                {
+                    if (cell.Value.ToString().Length > 0)
+                    {
+                        updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
+                    }
+                    else
+                    {
+                        clearUpSomeRowContents(selectedRow, e.RowIndex);
+                    }
+                }
+            }
 
         }
 
@@ -2067,16 +2068,16 @@ namespace AlphaSoft
 
             if (columnName == "productName")
             {
-                if (cellValue.Length > 0)
-                {
-                    updateSomeRowContents(selectedRow, rowSelectedIndex, cellValue);
-                    //int pos = cashierDataGridView.CurrentCell.RowIndex;
+                //if (cellValue.Length > 0)
+                //{
+                //    updateSomeRowContents(selectedRow, rowSelectedIndex, cellValue);
+                //    //int pos = cashierDataGridView.CurrentCell.RowIndex;
 
-                    //if (pos > 0)
-                    //    cashierDataGridView.CurrentCell = cashierDataGridView.Rows[pos - 1].Cells["qty"];
+                //    //if (pos > 0)
+                //    //    cashierDataGridView.CurrentCell = cashierDataGridView.Rows[pos - 1].Cells["qty"];
 
-                    //forceUpOneLevel = true;
-                }
+                //    //forceUpOneLevel = true;
+                //}
             }
             else if (columnName == "qty")
             { 
@@ -2187,6 +2188,11 @@ namespace AlphaSoft
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "RETUR PENJUALAN FORM : ChangePrinterButton_Click, DISPLAY PRINTER SELECTION FORM");
             SetPrinterForm displayedForm = new SetPrinterForm();
             displayedForm.ShowDialog(this);
+        }
+
+        private void detailReturDataGridView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

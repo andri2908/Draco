@@ -877,10 +877,17 @@ namespace AlphaSoft
                 if (originModuleID != globalConstants.SALES_QUOTATION) // NORMAL TRANSACTION AND SALES ORDER REVISION
                 {
                     string currentInvoiceID = "";
+                    double discJual = 0;
+
                     if (originModuleID == globalConstants.SALES_QUOTATION)
                         currentInvoiceID = selectedsalesinvoice;
 
-                    if (isCreditExceedLimit(globalTotalValue - Convert.ToDouble(discJualMaskedTextBox.Text), currentInvoiceID))
+                    if (discJualMaskedTextBox.Text.Length <= 0)
+                        discJual = 0;
+                    else
+                        discJual = Convert.ToDouble(discJualMaskedTextBox.Text);
+
+                    if (isCreditExceedLimit(globalTotalValue - discJual, currentInvoiceID))
                     {
                         errorLabel.Text = "PEMBELIAN MELEBIHI BATAS KREDIT";
                         return false;
@@ -1091,6 +1098,14 @@ namespace AlphaSoft
 
                                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                     throw internalEX;
+
+                                // INSERT INTO POINTS EXCHANGE LOG
+                                sqlCommand = "INSERT INTO MEMBERSHIP_POINT_HISTORY (CUSTOMER_ID, POINTS_TO_EXCHANGE, POINTS_EXCHANGE_DATE, SALES_INVOICE) VALUES (" +
+                                                        selectedPelangganID + ", " + pointsToExchange + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'), '" + selectedsalesinvoice + "')";
+
+                                if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                    throw internalEX;
+
                             }
                         }
                         else
@@ -2394,15 +2409,18 @@ namespace AlphaSoft
         private void discJualMaskedTextBox_Validating(object sender, CancelEventArgs e)
         {
             //double totalAfterDisc = 0;
+            double cashBackDisc = 0;
+
+            cashBackDisc = pointsToExchange * membershipPointUtil.cashBackExchangeParam;
 
             if (discJualMaskedTextBox.Text.Length > 0)
             {
-                totalAfterDisc = globalTotalValue - Convert.ToDouble(discJualMaskedTextBox.Text);
+                totalAfterDisc = globalTotalValue - Convert.ToDouble(discJualMaskedTextBox.Text) - cashBackDisc;
                 discValue = Convert.ToDouble(discJualMaskedTextBox.Text);
             }
             else
             { 
-                totalAfterDisc = globalTotalValue;
+                totalAfterDisc = globalTotalValue - cashBackDisc;
                 discValue = 0;
             }
 

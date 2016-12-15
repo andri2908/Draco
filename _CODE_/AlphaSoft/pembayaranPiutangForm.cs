@@ -331,7 +331,7 @@ namespace AlphaSoft
                     totalNettSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
 
                     // get total return sales
-                    sqlCommand = "SELECT SUM(RS_TOTAL) FROM RETURN_SALES_HEADER WHERE SALES_INVOICE = '" + selectedSOInvoice + "'";
+                    sqlCommand = "SELECT IFNULL(SUM(RS_TOTAL), 0) FROM RETURN_SALES_HEADER WHERE SALES_INVOICE = '" + selectedSOInvoice + "'";
                     totalReturnSales = Convert.ToDouble(DS.getDataSingleValue(sqlCommand));
 
                     // get total nett sales - total return sales
@@ -344,7 +344,7 @@ namespace AlphaSoft
                         newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
 
                         // UPDATE POINTS
-                        sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + " WHERE CUSTOMER_ID = " + selectedCustomerID + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y')";
+                        sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y') WHERE CUSTOMER_ID = " + selectedCustomerID;
 
                         if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                             throw internalEX;

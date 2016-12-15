@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PAYMENT_ID" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="SALES_INVOICE" type="xs:string" minOccurs="0" />
+                <xs:element name="SALES_TOTAL" type="xs:double" minOccurs="0" />
+                <xs:element name="SALES_DISCOUNT_FINAL" type="xs:double" minOccurs="0" />
+                <xs:element name="SALES_TOP" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="SALES_TOP_DATE" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PAYMENT_DATE" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PAYMENT_CONFIRMED" type="xs:byte" minOccurs="0" />
+                <xs:element name="PAYMENT_CONFIRMED_DATE" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PAYMENT_NOMINAL" type="xs:double" minOccurs="0" />
+                <xs:element name="ACTUAL_PAYMENT" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <PAYMENT_ID>5</PAYMENT_ID>
+    <SALES_INVOICE>SLO001-3</SALES_INVOICE>
+    <SALES_TOTAL>2000000</SALES_TOTAL>
+    <SALES_DISCOUNT_FINAL>0</SALES_DISCOUNT_FINAL>
+    <SALES_TOP>0</SALES_TOP>
+    <SALES_TOP_DATE>2016-12-17T00:00:00+07:00</SALES_TOP_DATE>
+    <PAYMENT_DATE>2016-12-15T00:00:00+07:00</PAYMENT_DATE>
+    <PAYMENT_CONFIRMED>1</PAYMENT_CONFIRMED>
+    <PAYMENT_CONFIRMED_DATE>2016-12-15T00:00:00+07:00</PAYMENT_CONFIRMED_DATE>
+    <PAYMENT_NOMINAL>1999900</PAYMENT_NOMINAL>
+    <ACTUAL_PAYMENT>2000000</ACTUAL_PAYMENT>
+  </Table>
+</NewDataSet>

@@ -143,7 +143,7 @@ CREATE TABLE `credit` (
   `CREDIT_NOMINAL` double DEFAULT '0',
   `CREDIT_PAID` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`CREDIT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +152,7 @@ CREATE TABLE `credit` (
 
 LOCK TABLES `credit` WRITE;
 /*!40000 ALTER TABLE `credit` DISABLE KEYS */;
-INSERT INTO `credit` VALUES (1,'SLO001-1',NULL,'2016-12-14',2000000,1),(2,'SLO001-2',NULL,'2016-12-15',2000000,1);
+INSERT INTO `credit` VALUES (1,'SLO001-1',NULL,'2016-12-14',2000000,1),(2,'SLO001-2',NULL,'2016-12-15',2000000,1),(3,'SLO001-3',NULL,'2016-12-17',2000000,1),(4,'SLO001-4',NULL,'2016-12-20',2000000,1),(5,'SLO001-5',NULL,'2016-12-18',2000000,1),(6,'SLO001-6',NULL,'2016-12-15',2000000,1);
 /*!40000 ALTER TABLE `credit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +201,7 @@ CREATE TABLE `daily_journal` (
   `user_id` tinyint(3) unsigned NOT NULL,
   `pm_id` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`journal_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,7 +210,7 @@ CREATE TABLE `daily_journal` (
 
 LOCK TABLES `daily_journal` WRITE;
 /*!40000 ALTER TABLE `daily_journal` DISABLE KEYS */;
-INSERT INTO `daily_journal` VALUES (1,1,'2016-12-14 23:17:00',2000000,NULL,'PEMBAYARAN SLO001-1',1,1),(2,1,'2016-12-15 00:06:00',2000000,NULL,'PEMBAYARAN SLO001-2',1,1);
+INSERT INTO `daily_journal` VALUES (1,1,'2016-12-14 23:17:00',2000000,NULL,'PEMBAYARAN SLO001-1',1,1),(2,1,'2016-12-15 00:06:00',2000000,NULL,'PEMBAYARAN SLO001-2',1,1),(3,1,'2016-12-15 11:04:00',2000000,NULL,'PEMBAYARAN SLO001-3',1,1),(4,1,'2016-12-15 00:00:00',100,0,'PEMBAYARAN PIUTANG SLO001-3',1,1),(5,1,'2016-12-15 00:00:00',1999900,0,'PEMBAYARAN PIUTANG SLO001-3',1,1),(6,1,'2016-12-15 11:19:00',2000000,NULL,'PEMBAYARAN SLO001-4',1,1),(7,1,'2016-12-15 00:00:00',1000000,0,'PEMBAYARAN PIUTANG SLO001-4',1,1),(8,1,'2016-12-15 12:07:00',2000000,NULL,'PEMBAYARAN SLO001-5',1,1),(9,1,'2016-12-15 00:00:00',1000000,0,'PEMBAYARAN PIUTANG SLO001-5',1,1),(10,1,'2016-12-15 14:38:00',2000000,NULL,'PEMBAYARAN SLO001-6',1,1);
 /*!40000 ALTER TABLE `daily_journal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -409,7 +409,7 @@ CREATE TABLE `master_customer` (
 
 LOCK TABLES `master_customer` WRITE;
 /*!40000 ALTER TABLE `master_customer` DISABLE KEYS */;
-INSERT INTO `master_customer` VALUES (1,'ANDRI',' ',' ',' ',' ',' ',' ',1,'2016-12-14',0,1,0,0,0);
+INSERT INTO `master_customer` VALUES (1,'ANDRI',' ',' ',' ',' ',' ',' ',1,'2016-12-14',0,1,100000000000,0,0);
 /*!40000 ALTER TABLE `master_customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -559,7 +559,7 @@ CREATE TABLE `master_product` (
 
 LOCK TABLES `master_product` WRITE;
 /*!40000 ALTER TABLE `master_product` DISABLE KEYS */;
-INSERT INTO `master_product` VALUES (1,'1','0','TRIPLEK SUPER','TRIPLEK PLEK',1000000,1000000,1000000,1000000,' ',1,4000,2,'--00',1,' ',0);
+INSERT INTO `master_product` VALUES (1,'1','0','TRIPLEK SUPER','TRIPLEK PLEK',1000000,1000000,1000000,1000000,' ',1,4002,2,'--00',1,' ',0);
 /*!40000 ALTER TABLE `master_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -725,8 +725,35 @@ CREATE TABLE `membership_point` (
 
 LOCK TABLES `membership_point` WRITE;
 /*!40000 ALTER TABLE `membership_point` DISABLE KEYS */;
-INSERT INTO `membership_point` VALUES (1,NULL,NULL,'1',NULL,10,'2016-12-15');
+INSERT INTO `membership_point` VALUES (1,NULL,NULL,'1',NULL,50,'2016-12-15');
 /*!40000 ALTER TABLE `membership_point` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `membership_point_history`
+--
+
+DROP TABLE IF EXISTS `membership_point_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `membership_point_history` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `CUSTOMER_ID` int(11) DEFAULT NULL,
+  `POINTS_TO_EXCHANGE` double DEFAULT NULL,
+  `POINTS_EXCHANGE_DATE` date DEFAULT NULL,
+  `SALES_INVOICE` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `membership_point_history`
+--
+
+LOCK TABLES `membership_point_history` WRITE;
+/*!40000 ALTER TABLE `membership_point_history` DISABLE KEYS */;
+INSERT INTO `membership_point_history` VALUES (1,1,10,'2016-12-15','SLO001-6');
+/*!40000 ALTER TABLE `membership_point_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -748,7 +775,7 @@ CREATE TABLE `payment_credit` (
   `payment_confirmed_date` date DEFAULT NULL,
   `payment_due_date` date DEFAULT NULL,
   PRIMARY KEY (`payment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -757,6 +784,7 @@ CREATE TABLE `payment_credit` (
 
 LOCK TABLES `payment_credit` WRITE;
 /*!40000 ALTER TABLE `payment_credit` DISABLE KEYS */;
+INSERT INTO `payment_credit` VALUES (4,3,'2016-12-15',1,100,'',1,0,'2016-12-15','2016-12-15'),(5,3,'2016-12-15',1,1999900,'',1,0,'2016-12-15','2016-12-15'),(6,4,'2016-12-15',1,1000000,'',1,0,'2016-12-15','2016-12-15'),(7,4,'2016-12-15',1,1000000,'RETUR [RT1]',1,0,'2016-12-15','2016-12-15'),(8,5,'2016-12-15',1,1000000,'',1,0,'2016-12-15','2016-12-15'),(9,5,'2016-12-15',1,1000000,'RETUR [RT2]',1,0,'2016-12-15','2016-12-15');
 /*!40000 ALTER TABLE `payment_credit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -889,7 +917,7 @@ CREATE TABLE `product_location` (
 
 LOCK TABLES `product_location` WRITE;
 /*!40000 ALTER TABLE `product_location` DISABLE KEYS */;
-INSERT INTO `product_location` VALUES (1,1,'',0),(2,2,'',0),(3,1,'1',2000),(4,2,'1',2000);
+INSERT INTO `product_location` VALUES (1,1,'',0),(2,2,'',0),(3,1,'1',2002),(4,2,'1',2000);
 /*!40000 ALTER TABLE `product_location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1289,7 +1317,7 @@ CREATE TABLE `return_sales_detail` (
   `RS_DESCRIPTION` varchar(100) DEFAULT NULL,
   `RS_SUBTOTAL` double DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1298,6 +1326,7 @@ CREATE TABLE `return_sales_detail` (
 
 LOCK TABLES `return_sales_detail` WRITE;
 /*!40000 ALTER TABLE `return_sales_detail` DISABLE KEYS */;
+INSERT INTO `return_sales_detail` VALUES (1,'RT1','1',1000000,2,1,' ',1000000),(2,'RT2','1',1000000,2,1,' ',1000000);
 /*!40000 ALTER TABLE `return_sales_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1316,7 +1345,7 @@ CREATE TABLE `return_sales_header` (
   `RS_DATETIME` date DEFAULT NULL,
   `RS_TOTAL` double DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1325,6 +1354,7 @@ CREATE TABLE `return_sales_header` (
 
 LOCK TABLES `return_sales_header` WRITE;
 /*!40000 ALTER TABLE `return_sales_header` DISABLE KEYS */;
+INSERT INTO `return_sales_header` VALUES (1,'RT1','SLO001-4',1,'2016-12-15',1000000),(2,'RT2','SLO001-5',1,'2016-12-15',1000000);
 /*!40000 ALTER TABLE `return_sales_header` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1375,7 +1405,7 @@ CREATE TABLE `sales_detail` (
   `PRODUCT_DISC_RP` double DEFAULT '0',
   `SALES_SUBTOTAL` double DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1384,7 +1414,7 @@ CREATE TABLE `sales_detail` (
 
 LOCK TABLES `sales_detail` WRITE;
 /*!40000 ALTER TABLE `sales_detail` DISABLE KEYS */;
-INSERT INTO `sales_detail` VALUES (1,'SLO001-1',0,'1',1000000,1000000,2,0,0,0,2000000),(2,'SLO001-2',0,'1',1000000,1000000,2,0,0,0,2000000);
+INSERT INTO `sales_detail` VALUES (1,'SLO001-1',0,'1',1000000,1000000,2,0,0,0,2000000),(2,'SLO001-2',0,'1',1000000,1000000,2,0,0,0,2000000),(3,'SLO001-3',0,'1',1000000,1000000,2,0,0,0,2000000),(4,'SLO001-4',0,'1',1000000,1000000,2,0,0,0,2000000),(5,'SLO001-5',0,'1',1000000,1000000,2,0,0,0,2000000),(6,'SLO001-6',0,'1',1000000,1000000,2,0,0,0,2000000);
 /*!40000 ALTER TABLE `sales_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1445,7 +1475,7 @@ CREATE TABLE `sales_header` (
   `SALES_ACTIVE` tinyint(3) DEFAULT '1',
   `CASHBACK_VALUE` double DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1454,7 +1484,7 @@ CREATE TABLE `sales_header` (
 
 LOCK TABLES `sales_header` WRITE;
 /*!40000 ALTER TABLE `sales_header` DISABLE KEYS */;
-INSERT INTO `sales_header` VALUES (1,'SLO001-1',0,1,'2016-12-14 23:17:00',2000000,0,1,'2016-12-14',1,2000000,0,0,NULL,0,1,0),(3,'SLO001-2',0,1,'2016-12-15 00:06:00',2000000,0,1,'2016-12-15',1,1975000,0,0,NULL,0,1,25000);
+INSERT INTO `sales_header` VALUES (1,'SLO001-1',0,1,'2016-12-14 23:17:00',2000000,0,1,'2016-12-14',1,2000000,0,0,NULL,0,1,0),(3,'SLO001-2',0,1,'2016-12-15 00:06:00',2000000,0,1,'2016-12-15',1,1975000,0,0,NULL,0,1,25000),(4,'SLO001-3',0,1,'2016-12-15 11:04:00',2000000,0,0,'2016-12-17',1,0,0,0,NULL,0,1,0),(5,'SLO001-4',0,1,'2016-12-15 11:19:00',2000000,0,0,'2016-12-20',1,0,0,0,NULL,0,1,0),(6,'SLO001-5',0,1,'2016-12-15 12:07:00',2000000,0,0,'2016-12-18',1,0,0,0,NULL,0,1,0),(8,'SLO001-6',0,1,'2016-12-15 14:38:00',2000000,0,1,'2016-12-15',1,2000000,0,0,NULL,0,1,25000);
 /*!40000 ALTER TABLE `sales_header` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1581,7 +1611,7 @@ CREATE TABLE `sys_config` (
 
 LOCK TABLES `sys_config` WRITE;
 /*!40000 ALTER TABLE `sys_config` DISABLE KEYS */;
-INSERT INTO `sys_config` VALUES (1,'SLO001',0,0,'127.0.0.1',NULL,NULL,NULL,NULL);
+INSERT INTO `sys_config` VALUES (1,'SLO001',0,0,'127.0.0.1',NULL,NULL,NULL,NULL),(2,'',0,1,'127.0.0.1','AA','AA','111','aa');
 /*!40000 ALTER TABLE `sys_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1754,4 +1784,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-15  0:12:30
+-- Dump completed on 2016-12-15 14:43:02
