@@ -1348,8 +1348,10 @@ namespace AlphaSoft
 
         private void MENU_membership_Click(object sender, EventArgs e)
         {
-            membershipPointForm displayedForm = new membershipPointForm(globalConstants.MEMBERSHIP_POINT);
+            membershipPointViewer displayedForm = new membershipPointViewer();
             displayedForm.ShowDialog(this);
+            //membershipPointForm displayedForm = new membershipPointForm(globalConstants.MEMBERSHIP_POINT);
+            //displayedForm.ShowDialog(this);
         }
 
         private void MENU_returPenjualan_Click(object sender, EventArgs e)

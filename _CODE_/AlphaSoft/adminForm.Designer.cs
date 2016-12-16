@@ -895,7 +895,6 @@
             this.MENU_membership.Name = "MENU_membership";
             this.MENU_membership.Size = new System.Drawing.Size(221, 22);
             this.MENU_membership.Text = "Membership Point";
-            this.MENU_membership.Visible = false;
             this.MENU_membership.Click += new System.EventHandler(this.MENU_membership_Click);
             // 
             // MAINMENU_KEUANGAN

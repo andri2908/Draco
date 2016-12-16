@@ -325,6 +325,7 @@ namespace AlphaSoft
                     double totalNettSales = 0;
                     double totalReturnSales = 0;
                     string pointUpdateDate = String.Format(culture, "{0:dd-MM-yyyy}", DateTime.Now);
+                    double pointsToExchange = 0;
 
                     // get total nett sales
                     sqlCommand = "SELECT SALES_TOTAL - SALES_DISCOUNT_FINAL FROM SALES_HEADER WHERE SALES_INVOICE = '" + selectedSOInvoice + "'";
@@ -337,11 +338,12 @@ namespace AlphaSoft
                     // get total nett sales - total return sales
                     totalNettSales = totalNettSales - totalReturnSales;
 
+                    pointsToExchange = memberUtil.calculateMembershipPoint(totalNettSales);
                     // calculate points
                     if (memberUtil.isCustomerExist(selectedCustomerID))
                     {
                         currentPoints = memberUtil.getCurrentPoints(selectedCustomerID);
-                        newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
+                        newPoints = currentPoints + pointsToExchange;
 
                         // UPDATE POINTS
                         sqlCommand = "UPDATE MEMBERSHIP_POINT SET POINTS_AMOUNT = " + newPoints + ", LAST_UPDATE_DATE = STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y') WHERE CUSTOMER_ID = " + selectedCustomerID;
@@ -351,7 +353,7 @@ namespace AlphaSoft
                     }
                     else
                     {
-                        newPoints = currentPoints + memberUtil.calculateMembershipPoint(totalNettSales);
+                        newPoints = pointsToExchange;
 
                         // INSERT POINTS
                         sqlCommand = "INSERT INTO MEMBERSHIP_POINT (CUSTOMER_ID, POINTS_AMOUNT, LAST_UPDATE_DATE) VALUES (" + selectedCustomerID + ", " + newPoints + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'))";
@@ -359,6 +361,14 @@ namespace AlphaSoft
                         if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                             throw internalEX;
                     }
+
+                    // INSERT INTO POINTS EXCHANGE LOG
+                    sqlCommand = "INSERT INTO MEMBERSHIP_POINT_HISTORY (CUSTOMER_ID, POINTS_AMOUNT, POINTS_EXCHANGE_DATE, SALES_INVOICE) VALUES (" +
+                                            selectedCustomerID + ", " + pointsToExchange + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'), '" + selectedSOInvoice + "')";
+
+                    if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                        throw internalEX;
+
                 }
 
                 if (paymentMethod == 1)

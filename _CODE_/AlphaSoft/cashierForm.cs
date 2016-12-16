@@ -1098,10 +1098,10 @@ namespace AlphaSoft
 
                                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                     throw internalEX;
-
+                                
                                 // INSERT INTO POINTS EXCHANGE LOG
-                                sqlCommand = "INSERT INTO MEMBERSHIP_POINT_HISTORY (CUSTOMER_ID, POINTS_TO_EXCHANGE, POINTS_EXCHANGE_DATE, SALES_INVOICE) VALUES (" +
-                                                        selectedPelangganID + ", " + pointsToExchange + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'), '" + selectedsalesinvoice + "')";
+                                sqlCommand = "INSERT INTO MEMBERSHIP_POINT_HISTORY (CUSTOMER_ID, POINTS_AMOUNT, POINTS_EXCHANGE_DATE, SALES_INVOICE) VALUES (" +
+                                                        selectedPelangganID + ", " + (pointsToExchange*-1) + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'), '" + selectedsalesinvoice + "')";
 
                                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                     throw internalEX;
@@ -1133,6 +1133,13 @@ namespace AlphaSoft
                                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                     throw internalEX;
                             }
+
+                            // INSERT INTO POINTS EXCHANGE LOG
+                            sqlCommand = "INSERT INTO MEMBERSHIP_POINT_HISTORY (CUSTOMER_ID, POINTS_AMOUNT, POINTS_EXCHANGE_DATE, SALES_INVOICE) VALUES (" +
+                                                    selectedPelangganID + ", " + pointsToExchange + ", STR_TO_DATE('" + pointUpdateDate + "', '%d-%m-%Y'), '" + selectedsalesinvoice + "')";
+
+                            if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
+                                throw internalEX;
                         }
                     }
                 }

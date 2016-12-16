@@ -381,6 +381,12 @@
       <DependentUpon>membershipPointPrintOut.cs</DependentUpon>
     </Compile>
     <Compile Include="membershipPointUtil.cs" />
+    <Compile Include="membershipPointViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="membershipPointViewer.Designer.cs">
+      <DependentUpon>membershipPointViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="messagingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1304,6 +1310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="membershipPointPrintOut.resx">
       <DependentUpon>membershipPointPrintOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="membershipPointViewer.resx">
+      <DependentUpon>membershipPointViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="messagingForm.resx">
       <DependentUpon>messagingForm.cs</DependentUpon>
