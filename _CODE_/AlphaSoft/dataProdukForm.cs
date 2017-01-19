@@ -19,6 +19,7 @@ namespace AlphaSoft
         private int selectedProductID = 0;
         private string selectedkodeProduct = "";
         private string selectedProductName = "";
+        private int selectedRowIndex = -1;
 
         private stokPecahBarangForm parentForm;
         private cashierForm parentCashierForm;
@@ -71,6 +72,21 @@ namespace AlphaSoft
             // accessed from other form other than Master -> Data Produk
             // it means that this form is only displayed for browsing / searching purpose only
             newButton.Visible = false;
+        }
+
+        public dataProdukForm(int moduleID, cashierForm thisParentForm, string productName = "", int rowIndex = -1)
+        {
+            InitializeComponent();
+
+            originModuleID = moduleID;
+            parentCashierForm = thisParentForm;
+
+            // accessed from other form other than Master -> Data Produk
+            // it means that this form is only displayed for browsing / searching purpose only
+            newButton.Visible = false;
+
+            namaProdukTextBox.Text = productName;
+            selectedRowIndex = rowIndex;
         }
 
         public dataProdukForm(int moduleID, penerimaanBarangForm thisParentForm)
@@ -164,7 +180,7 @@ namespace AlphaSoft
                     break;
 
                 case globalConstants.CASHIER_MODULE:
-                    parentCashierForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName);
+                    parentCashierForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName, selectedRowIndex);
                     this.Close();
                     break;
 

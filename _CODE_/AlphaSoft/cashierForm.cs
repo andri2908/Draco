@@ -50,6 +50,7 @@ namespace AlphaSoft
         private List<string> disc1 = new List<string>();
         private List<string> disc2 = new List<string>();
         private List<string> discRP = new List<string>();
+        private List<string> jumlahList = new List<string>();
 
         private Hotkeys.GlobalHotkey ghk_F1;
         private Hotkeys.GlobalHotkey ghk_F2;
@@ -645,7 +646,7 @@ namespace AlphaSoft
             }
         }
 
-        public void addNewRowFromBarcode(string productID, string productName)
+        public void addNewRowFromBarcode(string productID, string productName, int rowIndex = -1)
         {
             int i = 0;
             bool found = false;
@@ -656,38 +657,45 @@ namespace AlphaSoft
 
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ADD NEW ROW FROM BARCODE [" + productName + "]");
 
-            // CHECK FOR EXISTING SELECTED ITEM
-            for (i = 0;i<cashierDataGridView.Rows.Count && !found && !foundEmptyRow;i++)
+            if (rowIndex >= 0)
             {
-                if (null!= cashierDataGridView.Rows[i].Cells["productName"].Value)
-                { 
-                    if (cashierDataGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                rowSelectedIndex = rowIndex;
+            }
+            else
+            {
+                // CHECK FOR EXISTING SELECTED ITEM
+                for (i = 0; i < cashierDataGridView.Rows.Count && !found && !foundEmptyRow; i++)
+                {
+                    if (null != cashierDataGridView.Rows[i].Cells["productName"].Value)
                     {
-                        found = true;
-                        rowSelectedIndex = i;
+                        if (cashierDataGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                        {
+                            found = true;
+                            rowSelectedIndex = i;
 
-                        gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : EXISTING ROW FOUND [" + rowSelectedIndex + "]");
+                            gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : EXISTING ROW FOUND [" + rowSelectedIndex + "]");
+                        }
+                    }
+                    else
+                    {
+                        foundEmptyRow = true;
+                        emptyRowIndex = i;
                     }
                 }
-                else
-                {
-                    foundEmptyRow = true;
-                    emptyRowIndex = i;
-                }
-            }
 
-            if (!found)
-            {
-                if (!foundEmptyRow)
-                { 
-                    addNewRow(false);
-                    rowSelectedIndex = cashierDataGridView.Rows.Count - 1;
-
-                    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : NEW ROW ADDED [" + rowSelectedIndex + "]");
-                }
-                else
+                if (!found)
                 {
-                    rowSelectedIndex = emptyRowIndex;
+                    if (!foundEmptyRow)
+                    {
+                        addNewRow(false);
+                        rowSelectedIndex = cashierDataGridView.Rows.Count - 1;
+
+                        gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : NEW ROW ADDED [" + rowSelectedIndex + "]");
+                    }
+                    else
+                    {
+                        rowSelectedIndex = emptyRowIndex;
+                    }
                 }
             }
 
@@ -727,13 +735,21 @@ namespace AlphaSoft
             }
 
             selectedRow.Cells["jumlah"].Value = calculateSubTotal(rowSelectedIndex, Convert.ToDouble(selectedRow.Cells["productPrice"].Value));
-            
+            //jumlahList[rowSelectedIndex] = selectedRow.Cells["jumlah"].Value.ToString();
             calculateTotal();
-            cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
-            //comboSelectedIndexChangeMethod(rowSelectedIndex, i, selectedRow);
-            //cashierDataGridView.CurrentCell = cashierDataGridView.Rows[rowSelectedIndex].Cells["qty"];
 
+            cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
             cashierDataGridView.Select();
+            cashierDataGridView.BeginEdit(true);
+
+            //selectedRow.Cells["jumlah"].Value = calculateSubTotal(rowSelectedIndex, Convert.ToDouble(selectedRow.Cells["productPrice"].Value));
+
+            //calculateTotal();
+            //cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
+            ////comboSelectedIndexChangeMethod(rowSelectedIndex, i, selectedRow);
+            ////cashierDataGridView.CurrentCell = cashierDataGridView.Rows[rowSelectedIndex].Cells["qty"];
+
+            //cashierDataGridView.Select();
         }
 
         private bool productIDValid(string productID)
@@ -1710,21 +1726,22 @@ namespace AlphaSoft
                 TextBox productIDTextBox = e.Control as TextBox;
                 productIDTextBox.CharacterCasing = CharacterCasing.Upper;
                 //productIDTextBox.TextChanged -= TextBox_TextChanged;
+                productIDTextBox.PreviewKeyDown -= Combobox_previewKeyDown;
                 productIDTextBox.PreviewKeyDown += Combobox_previewKeyDown;
-                productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                setTextBoxCustomSource(productIDTextBox);
+                //productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                //productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //setTextBoxCustomSource(productIDTextBox);
             }
 
-            if (
-                (cashierDataGridView.CurrentCell.OwningColumn.Name == "productPrice" || cashierDataGridView.CurrentCell.OwningColumn.Name == "qty" || cashierDataGridView.CurrentCell.OwningColumn.Name == "disc1" || cashierDataGridView.CurrentCell.OwningColumn.Name == "disc2" || cashierDataGridView.CurrentCell.OwningColumn.Name == "discRP")
-                && e.Control is TextBox)
-            {
-                TextBox textBox = e.Control as TextBox;
-                //textBox.PreviewKeyDown -= Combobox_previewKeyDown;
-                //textBox.TextChanged += TextBox_TextChanged;
-                textBox.AutoCompleteMode = AutoCompleteMode.None;
-            }
+            //if (
+            //    (cashierDataGridView.CurrentCell.OwningColumn.Name == "productPrice" || cashierDataGridView.CurrentCell.OwningColumn.Name == "qty" || cashierDataGridView.CurrentCell.OwningColumn.Name == "disc1" || cashierDataGridView.CurrentCell.OwningColumn.Name == "disc2" || cashierDataGridView.CurrentCell.OwningColumn.Name == "discRP")
+            //    && e.Control is TextBox)
+            //{
+            //    TextBox textBox = e.Control as TextBox;
+            //    //textBox.PreviewKeyDown -= Combobox_previewKeyDown;
+            //    //textBox.TextChanged += TextBox_TextChanged;
+            //    textBox.AutoCompleteMode = AutoCompleteMode.None;
+            //}
         }
 
         private void clearUpSomeRowContents(DataGridViewRow selectedRow, int rowSelectedIndex)
@@ -1883,12 +1900,15 @@ namespace AlphaSoft
 
                 if (currentValue.Length > 0)
                 {
-                    updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
-                    cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
+                    //updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
+                    //cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
+                    // CALL DATA PRODUK FORM WITH PARAMETER 
+                    POSSearchProductForm browseProduk = new POSSearchProductForm(globalConstants.CASHIER_MODULE, this, currentValue, rowSelectedIndex);
+                    browseProduk.ShowDialog(this);
                 }
                 else
                 {
-                    clearUpSomeRowContents(selectedRow, rowSelectedIndex);
+                    //clearUpSomeRowContents(selectedRow, rowSelectedIndex);
                 }
             }
         }

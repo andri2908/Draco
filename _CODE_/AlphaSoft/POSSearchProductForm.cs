@@ -19,6 +19,7 @@ namespace AlphaSoft
         private int selectedProductID = 0;
         private string selectedkodeProduct = "";
         private string selectedProductName = "";
+        private int selectedRowIndex = -1;
 
         private globalUtilities gutil = new globalUtilities();
         private Data_Access DS = new Data_Access();
@@ -36,6 +37,20 @@ namespace AlphaSoft
 
             originModuleID = moduleID;
             parentCashierForm = thisParentForm;
+        }
+
+        public POSSearchProductForm(int moduleID, cashierForm thisParentForm, string productName = "", int rowIndex = -1)
+        {
+            InitializeComponent();
+
+            originModuleID = moduleID;
+            parentCashierForm = thisParentForm;
+
+            // accessed from other form other than Master -> Data Produk
+            // it means that this form is only displayed for browsing / searching purpose only
+            
+            namaProdukTextBox.Text = productName;
+            selectedRowIndex = rowIndex;
         }
 
         private void loadProdukData()
@@ -91,7 +106,7 @@ namespace AlphaSoft
             selectedProductName = selectedRow.Cells["NAMA PRODUK"].Value.ToString();
             selectedkodeProduct = selectedRow.Cells["PRODUK ID"].Value.ToString();
 
-            parentCashierForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName);
+            parentCashierForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName, selectedRowIndex);
             this.Close();
         }
 
@@ -109,7 +124,7 @@ namespace AlphaSoft
                 selectedProductName = selectedRow.Cells["NAMA PRODUK"].Value.ToString();
                 selectedkodeProduct = selectedRow.Cells["PRODUK ID"].Value.ToString();
 
-                parentCashierForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName);
+                parentCashierForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName, selectedRowIndex);
                 this.Close();
             }
         }
@@ -140,7 +155,7 @@ namespace AlphaSoft
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
             }
             else
