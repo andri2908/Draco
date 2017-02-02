@@ -1,0 +1,3 @@
+D:\Project\BintangTimur\_CODE_\BintangTimur\BintangTimur\bin\Debug\AlphaSoft.pdb
+D:\Project\BintangTimur\_CODE_\BintangTimur\BintangTimur\obj\Debug\AlphaSoft.adminForm.resources
+D:\Project\Draco\_CODE_\AlphaSoft\bin\Debug\AlphaSoft.exe.config

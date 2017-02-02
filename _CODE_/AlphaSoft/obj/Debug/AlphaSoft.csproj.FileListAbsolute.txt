@@ -1,2 +1,0 @@
-D:\Project\BintangTimur\_CODE_\BintangTimur\BintangTimur\bin\Debug\AlphaSoft.pdb
-D:\Project\BintangTimur\_CODE_\BintangTimur\BintangTimur\obj\Debug\AlphaSoft.adminForm.resources
