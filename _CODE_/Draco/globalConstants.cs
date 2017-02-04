@@ -53,6 +53,7 @@ namespace AlphaSoft
         public const int EDIT_SALES_QUOTATION = 122;
         public const int SALES_ORDER_REVISION = 123;
         public const int DELIVERY_ORDER = 124;
+        public const int COPY_DELIVERY_ORDER = 125;
 
         public const int NEW_GROUP_USER = 201;
         public const int EDIT_GROUP_USER = 202;
@@ -154,6 +155,9 @@ namespace AlphaSoft
         public const int MENU_RETUR_PENJUALAN = 310;
         public const int MENU_RETUR_PENJUALAN_INVOICE = 311;
         public const int MENU_RETUR_PENJUALAN_STOK = 312;
+
+        public const int MENU_COPY_DELIVERY_ORDER = 313;
+
 
         // MAIN MENU KEUANGAN
         public const int MENU_KEUANGAN = 401;

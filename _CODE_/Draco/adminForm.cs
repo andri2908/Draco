@@ -979,6 +979,7 @@ namespace AlphaSoft
             setAccessibility(globalConstants.MENU_SALES_QUOTATION, MENU_SalesQuotation);
             setAccessibility(globalConstants.MENU_SALES_ORDER_REVISION, MENU_SORevision);
             setAccessibility(globalConstants.MENU_DELIVERY_ORDER, MENU_deliveryOrder);
+            setAccessibility(globalConstants.MENU_COPY_DELIVERY_ORDER, MENU_copyDO);
 
             // SUB MENU RETUR PENJUALAN
             setAccessibility(globalConstants.MENU_RETUR_PENJUALAN, MENU_returPenjualan);
@@ -1460,6 +1461,12 @@ namespace AlphaSoft
         private void MENU_preOrderSales_Click(object sender, EventArgs e)
         {
             dataSalesInvoice displayedForm = new dataSalesInvoice(globalConstants.PRE_ORDER_SALES);
+            displayedForm.ShowDialog(this);
+        }
+
+        private void toolStripMenuItem10_Click_2(object sender, EventArgs e)
+        {
+            dataSalesInvoice displayedForm = new dataSalesInvoice(globalConstants.COPY_DELIVERY_ORDER);
             displayedForm.ShowDialog(this);
         }
     }

@@ -38,6 +38,7 @@ namespace AlphaSoft
             bool firstColumn = true;
             StringBuilder builder = new StringBuilder();
             string value = "";
+            int locationID = 0;
 
             if (fileName.Length <= 0)
                 return false;
@@ -48,7 +49,12 @@ namespace AlphaSoft
 
             //localDate = String.Format(culture, "{0:dd-MMM-yyyy}", DateTime.Now);
 
-            sqlCommand = "SELECT PRODUCT_ID, IFNULL(PRODUCT_BARCODE, ''), IFNULL(PRODUCT_NAME, ''), PRODUCT_STOCK_QTY, 0 AS PRODUCT_ACTUAL_QTY, '' AS DESCRIPTION FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 ORDER BY ID";
+            locationID = gutil.loadlocationID(2);
+
+            //sqlCommand = "SELECT PRODUCT_ID, IFNULL(PRODUCT_BARCODE, ''), IFNULL(PRODUCT_NAME, ''), PRODUCT_STOCK_QTY, 0 AS PRODUCT_ACTUAL_QTY, '' AS DESCRIPTION FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 ORDER BY ID";
+
+            sqlCommand = "SELECT MP.PRODUCT_ID, IFNULL(MP.PRODUCT_BARCODE, ''), IFNULL(MP.PRODUCT_NAME, ''), PL.PRODUCT_LOCATION_QTY, 0 AS PRODUCT_ACTUAL_QTY, '' AS DESCRIPTION FROM MASTER_PRODUCT MP, PRODUCT_LOCATION PL WHERE PL.PRODUCT_ID = MP.PRODUCT_ID AND MP.PRODUCT_ACTIVE = 1 AND PL.LOCATION_ID = " + locationID + " ORDER BY ID";
+
 
             using (rdr = DS.getData(sqlCommand))
             {

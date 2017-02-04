@@ -1343,7 +1343,8 @@ namespace AlphaSoft
             {
                 gUtil.saveUserChangeLog(globalConstants.MENU_PURCHASE_ORDER, globalConstants.CHANGE_LOG_INSERT, "PRINT OUT PURCHASE ORDER [" + POinvoiceTextBox.Text + "]");
 
-                saveButton.Visible = false;
+                saveButton.Enabled = false;
+
                 POinvoiceTextBox.ReadOnly = true;
                 PODateTimePicker.Enabled = false;
                 supplierCombo.Enabled = false;

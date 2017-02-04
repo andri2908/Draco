@@ -95,10 +95,17 @@ namespace AlphaSoft
             string adjustmentDate;
             string descriptionParam;
             string selectedKodeProduct = "";
+            double qtyDiff = 0;
+            double oldStockQty = 0;
+            double totalCurrentQty = 0;
 
             MySqlException internalEX = null;
 
+            oldStockQty = Convert.ToDouble(jumlahAwalMaskedTextBox.Text);
             newStockQty = Convert.ToDouble(jumlahBaruMaskedTextBox.Text);
+
+            qtyDiff = oldStockQty - newStockQty;
+
             adjustmentDate = String.Format(culture, "{0:dd-MM-yyyy}", DateTime.Now);
 
             if (descriptionTextBox.Text.Length <= 0)
@@ -120,16 +127,24 @@ namespace AlphaSoft
                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                     throw internalEX;
 
-                // UPDATE MASTER PRODUCT WITH THE NEW QTY
-                sqlCommand = "UPDATE MASTER_PRODUCT SET PRODUCT_STOCK_QTY = " + newStockQty + " WHERE ID = " + selectedProductID;
-
+                if (qtyDiff > 0)
+                { 
+                    // UPDATE MASTER PRODUCT WITH THE NEW QTY
+                    sqlCommand = "UPDATE MASTER_PRODUCT SET PRODUCT_STOCK_QTY = PRODUCT_STOCK_QTY + " + qtyDiff + " WHERE ID = " + selectedProductID;
+                }
+                else
+                {
+                    qtyDiff = Math.Abs(qtyDiff);
+                    // UPDATE MASTER PRODUCT WITH THE NEW QTY
+                    sqlCommand = "UPDATE MASTER_PRODUCT SET PRODUCT_STOCK_QTY = PRODUCT_STOCK_QTY - " + qtyDiff + " WHERE ID = " + selectedProductID;
+                }
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENYESUAIAN_STOK, "UPDATE STOCK QTY [" + selectedProductID + "]");
                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                     throw internalEX;
 
                 // INSERT INTO PRODUCT ADJUSTMENT TABLE
                 sqlCommand = "INSERT INTO PRODUCT_ADJUSTMENT (PRODUCT_ID, PRODUCT_ADJUSTMENT_DATE, PRODUCT_OLD_STOCK_QTY, PRODUCT_NEW_STOCK_QTY, PRODUCT_ADJUSTMENT_DESCRIPTION) VALUES " +
-                                    "('" + kodeProductTextBox.Text + "', STR_TO_DATE('" + adjustmentDate + "', '%d-%m-%Y'), " + jumlahAwalMaskedTextBox.Text + ", " + jumlahBaruMaskedTextBox.Text + ", '" + descriptionParam + "')";
+                                    "('" + kodeProductTextBox.Text + "', STR_TO_DATE('" + adjustmentDate + "', '%d-%m-%Y'), " + oldStockQty + ", " + newStockQty + ", '" + descriptionParam + "')";
 
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENYESUAIAN_STOK, "INSERT INTO PRODUCT ADJUSTMENT TABLE [" + kodeProductTextBox.Text + ", " + jumlahAwalMaskedTextBox.Text + ", " + jumlahBaruMaskedTextBox.Text + "]");
                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))

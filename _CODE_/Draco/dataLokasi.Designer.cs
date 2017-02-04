@@ -100,6 +100,7 @@
             this.dataCabangGridView.Size = new System.Drawing.Size(402, 472);
             this.dataCabangGridView.TabIndex = 40;
             this.dataCabangGridView.DoubleClick += new System.EventHandler(this.dataCabangGridView_DoubleClick);
+            this.dataCabangGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataLokasi_KeyDown);
             // 
             // newButton
             // 

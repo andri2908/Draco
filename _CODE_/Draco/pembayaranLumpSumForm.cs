@@ -94,7 +94,7 @@ namespace AlphaSoft
                                     "WHERE PC.CREDIT_ID = C.CREDIT_ID AND C.PM_INVOICE = PM.PM_INVOICE AND C.CREDIT_PAID = 0 AND PC.PAYMENT_INVALID = 0 AND PM.BRANCH_ID_TO = " + selectedBranchID;
             else if (originModuleID == globalConstants.PEMBAYARAN_PIUTANG)
                 sqlCommand = "SELECT IFNULL(SUM(PAYMENT_NOMINAL), 0) FROM PAYMENT_CREDIT PC, SALES_HEADER SH, CREDIT C " +
-                                    "WHERE PC.CREDIT_ID = C.CREDIT_ID AND C.SALES_INVOICE = SH.SALES_INVOICE AND C.CREDIT_PAID = 0 AND PC.PAYMENT_INVALID = 0 AND SH.SALES_ACTIVE = 1 AND SH.CUSTOMER_ID = " + selectedCustomerID;
+                                    "WHERE PC.CREDIT_ID = C.CREDIT_ID AND C.SALES_INVOICE = SH.SALES_INVOICE AND C.CREDIT_PAID = 0 AND PC.PAYMENT_INVALID = 0 AND SH.SALES_VOID = 0 AND SH.CUSTOMER_ID = " + selectedCustomerID;
             else if (originModuleID == globalConstants.PEMBAYARAN_HUTANG)
                 sqlCommand = "SELECT IFNULL(SUM(PAYMENT_NOMINAL), 0) FROM PAYMENT_DEBT PD, PURCHASE_HEADER PH, DEBT D " +
                                     "WHERE PD.DEBT_ID = D.DEBT_ID AND D.PURCHASE_INVOICE = PH.PURCHASE_INVOICE AND D.DEBT_PAID = 0 AND PD.PAYMENT_INVALID = 0 AND PH.SUPPLIER_ID = " + selectedSupplierID;
@@ -122,7 +122,7 @@ namespace AlphaSoft
                                     "WHERE C.PM_INVOICE = PM.PM_INVOICE AND C.CREDIT_PAID = 0 AND PM.BRANCH_ID_TO = " + selectedBranchID;
             else if (originModuleID == globalConstants.PEMBAYARAN_PIUTANG)
                 sqlCommand = "SELECT IFNULL(SUM(CREDIT_NOMINAL), 0) FROM SALES_HEADER SH, CREDIT C " +
-                                    "WHERE C.SALES_INVOICE = SH.SALES_INVOICE AND SH.SALES_ACTIVE = 1 AND C.CREDIT_PAID = 0 AND SH.CUSTOMER_ID = " + selectedCustomerID;
+                                    "WHERE C.SALES_INVOICE = SH.SALES_INVOICE AND SH.SALES_VOID = 0 AND C.CREDIT_PAID = 0 AND SH.CUSTOMER_ID = " + selectedCustomerID;
             else if (originModuleID == globalConstants.PEMBAYARAN_HUTANG)
                 sqlCommand = "SELECT IFNULL(SUM(DEBT_NOMINAL), 0) FROM PURCHASE_HEADER PH, DEBT D " +
                                     "WHERE D.PURCHASE_INVOICE = PH.PURCHASE_INVOICE AND D.DEBT_PAID = 0 AND PH.SUPPLIER_ID = " + selectedSupplierID;
@@ -264,7 +264,7 @@ namespace AlphaSoft
             else if (originModuleID == globalConstants.PEMBAYARAN_PIUTANG)
                 sqlCommand = "SELECT PC.PAYMENT_INVALID, PC.PAYMENT_ID, SH.SALES_INVOICE AS 'NO INVOICE', IF(PC.PAYMENT_CONFIRMED = 1, 'Y', 'N') AS STATUS, DATE_FORMAT(PAYMENT_DUE_DATE, '%d-%M-%Y') AS 'TGL PEMBAYARAN', PAYMENT_NOMINAL AS 'JUMLAH', PAYMENT_DESCRIPTION AS DESKRIPSI " +
                                     "FROM PAYMENT_CREDIT PC, SALES_HEADER SH, CREDIT C " +
-                                    "WHERE SH.CUSTOMER_ID = " + selectedCustomerID + " AND PC.CREDIT_ID = C.CREDIT_ID AND SH.SALES_INVOICE = C.SALES_INVOICE AND SH.SALES_ACTIVE = 1 AND C.CREDIT_ID = " + creditID;
+                                    "WHERE SH.CUSTOMER_ID = " + selectedCustomerID + " AND PC.CREDIT_ID = C.CREDIT_ID AND SH.SALES_INVOICE = C.SALES_INVOICE AND SH.SALES_VOID = 0 AND C.CREDIT_ID = " + creditID;
             else if (originModuleID == globalConstants.PEMBAYARAN_HUTANG)
                 sqlCommand = "SELECT PD.PAYMENT_INVALID, PD.PAYMENT_ID, PH.PURCHASE_INVOICE AS 'NO INVOICE', IF(PD.PAYMENT_CONFIRMED = 1, 'Y', 'N') AS STATUS, DATE_FORMAT(PAYMENT_DUE_DATE, '%d-%M-%Y') AS 'TGL PEMBAYARAN', PAYMENT_NOMINAL AS 'JUMLAH', PAYMENT_DESCRIPTION AS DESKRIPSI " +
                                     "FROM PAYMENT_DEBT PD, PURCHASE_HEADER PH, DEBT D " +
@@ -431,7 +431,7 @@ namespace AlphaSoft
                     sqlCommand = "SELECT C.CREDIT_ID AS NO_ID, C.PM_INVOICE, C.SALES_INVOICE, (CREDIT_NOMINAL - IFNULL(PC.PAYMENT, 0)) AS 'SISA' " +
                                         "FROM SALES_HEADER SH, CREDIT C LEFT OUTER JOIN (SELECT CREDIT_ID, SUM(PAYMENT_NOMINAL) AS PAYMENT FROM PAYMENT_CREDIT WHERE PAYMENT_INVALID = 0 GROUP BY CREDIT_ID) PC ON PC.CREDIT_ID = C.CREDIT_ID  " +
                                         "WHERE SH.CUSTOMER_ID = " + selectedCustomerID + " AND C.CREDIT_PAID = 0 " +
-                                        "AND SH.SALES_INVOICE = C.SALES_INVOICE AND SH.SALES_ACTIVE = 1 ORDER BY C.CREDIT_ID ASC";
+                                        "AND SH.SALES_INVOICE = C.SALES_INVOICE AND SH.SALES_VOID = 0 ORDER BY C.CREDIT_ID ASC";
                     gutil.saveSystemDebugLog(globalConstants.MENU_PEMBAYARAN_PIUTANG, "PEMBAYARAN LUMPSUM : GET A LIST OF OUTSTANDING CREDIT");
                 }
                 else if (originModuleID == globalConstants.PEMBAYARAN_HUTANG)
@@ -868,7 +868,7 @@ namespace AlphaSoft
                             if (noInvoice.Length > 0)
                             {
                                 // UPDATE SALES HEADER TABLE
-                                sqlCommand = "UPDATE SALES_HEADER SET SALES_PAID = 1 WHERE SALES_INVOICE = '" + noInvoice + "' AND SALES_ACTIVE = 1";
+                                sqlCommand = "UPDATE SALES_HEADER SET SALES_PAID = 1 WHERE SALES_INVOICE = '" + noInvoice + "' AND SALES_VOID = 0";
 
                                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                     throw internalEX;

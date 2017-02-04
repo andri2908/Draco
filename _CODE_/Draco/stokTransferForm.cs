@@ -83,6 +83,7 @@ namespace AlphaSoft
 
             using (rdr = DS.getData(sqlCommand))
             {
+                displayDataGrid.DataSource = null;
                 if (rdr.HasRows)
                 {
                     dt.Load(rdr);

@@ -1646,8 +1646,8 @@ namespace AlphaSoft
 
             labelAcceptValue.Text = "Rp.0";
 
-            labelAsal.Visible = false;
-            labelAsal_1.Visible = false;
+            //labelAsal.Visible = false;
+            //labelAsal_1.Visible = false;
 
             supplierCombo.Enabled = true;
             supplierCombo.Text = "";
