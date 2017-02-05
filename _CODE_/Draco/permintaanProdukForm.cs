@@ -213,7 +213,7 @@ namespace AlphaSoft
             detailRequestOrderDataGridView.CurrentCell = detailRequestOrderDataGridView.Rows[newRowIndex].Cells["productName"];
         }
 
-        public void addNewRowFromBarcode(string productID, string productName)
+        public void addNewRowFromBarcode(string productID, string productName, int rowIndex = -1)
         {
             int i = 0;
             bool found = false;
@@ -229,39 +229,46 @@ namespace AlphaSoft
 
             detailRequestOrderDataGridView.Focus();
 
-            // CHECK FOR EXISTING SELECTED ITEM
-            for (i = 0; i < detailRequestOrderDataGridView.Rows.Count && !found && !foundEmptyRow; i++)
+            if (rowIndex > 0)
             {
-                if (null != detailRequestOrderDataGridView.Rows[i].Cells["productName"].Value)
+                rowSelectedIndex = rowIndex;
+            }
+            else
+            {
+                // CHECK FOR EXISTING SELECTED ITEM
+                for (i = 0; i < detailRequestOrderDataGridView.Rows.Count && !found && !foundEmptyRow; i++)
                 {
-                    if (detailRequestOrderDataGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                    if (null != detailRequestOrderDataGridView.Rows[i].Cells["productName"].Value)
                     {
-                        found = true;
-                        rowSelectedIndex = i;
+                        if (detailRequestOrderDataGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                        {
+                            found = true;
+                            rowSelectedIndex = i;
+                        }
+                    }
+                    else
+                    {
+                        foundEmptyRow = true;
+                        emptyRowIndex = i;
                     }
                 }
-                else
+
+                if (!found)
                 {
-                    foundEmptyRow = true;
-                    emptyRowIndex = i;
+                    if (foundEmptyRow)
+                    {
+                        detailRequestQty[emptyRowIndex] = "0";
+                        rowSelectedIndex = emptyRowIndex;
+                    }
+                    else
+                    {
+                        detailRequestOrderDataGridView.Rows.Add();
+                        detailRequestQty.Add("0");
+                        rowSelectedIndex = detailRequestOrderDataGridView.Rows.Count - 1;
+                    }
                 }
             }
-
-            if (!found)
-            {
-                if (foundEmptyRow)
-                {
-                    detailRequestQty[emptyRowIndex] = "0";
-                    rowSelectedIndex = emptyRowIndex;
-                }
-                else
-                {
-                    detailRequestOrderDataGridView.Rows.Add();
-                    detailRequestQty.Add("0");
-                    rowSelectedIndex = detailRequestOrderDataGridView.Rows.Count - 1;
-                }
-            }
-
+            
             DataGridViewRow selectedRow = detailRequestOrderDataGridView.Rows[rowSelectedIndex];
             updateSomeRowContents(selectedRow, rowSelectedIndex, productID);
 
@@ -397,19 +404,22 @@ namespace AlphaSoft
             if ((detailRequestOrderDataGridView.CurrentCell.OwningColumn.Name == "productName") && e.Control is TextBox)
             {
                 TextBox productIDTextBox = e.Control as TextBox;
-                productIDTextBox.TextChanged -= TextBox_TextChanged;
+                //productIDTextBox.TextChanged -= TextBox_TextChanged;
+
+                productIDTextBox.PreviewKeyDown -= TextBox_previewKeyDown;
                 productIDTextBox.PreviewKeyDown += TextBox_previewKeyDown;
                 productIDTextBox.CharacterCasing = CharacterCasing.Upper;
-                productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                setTextBoxCustomSource(productIDTextBox);
+                productIDTextBox.AutoCompleteMode = AutoCompleteMode.None;
+                //productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                //productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //setTextBoxCustomSource(productIDTextBox);
             }
 
             if (detailRequestOrderDataGridView.CurrentCell.OwningColumn.Name == "qty" && e.Control is TextBox)
             {
                 TextBox textBox = e.Control as TextBox;
                 textBox.TextChanged += TextBox_TextChanged;
-                textBox.PreviewKeyDown -= TextBox_previewKeyDown;
+                //textBox.PreviewKeyDown -= TextBox_previewKeyDown;
                 textBox.AutoCompleteMode = AutoCompleteMode.None;
             }
         }
@@ -500,12 +510,14 @@ namespace AlphaSoft
 
                 if (currentValue.Length > 0)
                 {
-                    updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
-                    detailRequestOrderDataGridView.CurrentCell = selectedRow.Cells["qty"];
+                    //updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
+                    //detailRequestOrderDataGridView.CurrentCell = selectedRow.Cells["qty"];
+                    POSSearchProductForm browseProduk = new POSSearchProductForm(globalConstants.PERMINTAAN_BARANG, this, currentValue, rowSelectedIndex);
+                    browseProduk.ShowDialog(this);
                 }
                 else
                 {
-                    clearUpSomeRowContents(selectedRow, rowSelectedIndex);
+                    //clearUpSomeRowContents(selectedRow, rowSelectedIndex);
                 }
             }
         }

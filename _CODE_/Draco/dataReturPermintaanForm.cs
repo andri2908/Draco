@@ -307,7 +307,7 @@ namespace AlphaSoft
             //detailReturDataGridView.Select();
         }
 
-        public void addNewRowFromBarcode(string productID, string productName)
+        public void addNewRowFromBarcode(string productID, string productName, int rowIndex = -1)
         {
             int i = 0;
             bool found = false;
@@ -323,36 +323,43 @@ namespace AlphaSoft
 
             detailReturDataGridView.Focus();
 
-            // CHECK FOR EXISTING SELECTED ITEM
-            for (i = 0; i < detailReturDataGridView.Rows.Count && !found && !foundEmptyRow; i++)
+            if (rowIndex >= 0)
             {
-                if (null != detailReturDataGridView.Rows[i].Cells["productName"].Value)
+                rowSelectedIndex = rowIndex;
+            }
+            else
+            {
+                // CHECK FOR EXISTING SELECTED ITEM
+                for (i = 0; i < detailReturDataGridView.Rows.Count && !found && !foundEmptyRow; i++)
                 {
-                    if (detailReturDataGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                    if (null != detailReturDataGridView.Rows[i].Cells["productName"].Value)
                     {
-                        found = true;
-                        rowSelectedIndex = i;
+                        if (detailReturDataGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                        {
+                            found = true;
+                            rowSelectedIndex = i;
+                        }
+                    }
+                    else
+                    {
+                        foundEmptyRow = true;
+                        emptyRowIndex = i;
                     }
                 }
-                else
-                {
-                    foundEmptyRow = true;
-                    emptyRowIndex = i;
-                }
-            }
 
-            if (!found)
-            {
-                if (foundEmptyRow)
+                if (!found)
                 {
-                    //detailQty[emptyRowIndex] = "0";
-                    rowSelectedIndex = emptyRowIndex;
-                }
-                else
-                {
-                    detailReturDataGridView.Rows.Add();
-                    //detailQty.Add("0");
-                    rowSelectedIndex = detailReturDataGridView.Rows.Count - 1;
+                    if (foundEmptyRow)
+                    {
+                        //detailQty[emptyRowIndex] = "0";
+                        rowSelectedIndex = emptyRowIndex;
+                    }
+                    else
+                    {
+                        detailReturDataGridView.Rows.Add();
+                        //detailQty.Add("0");
+                        rowSelectedIndex = detailReturDataGridView.Rows.Count - 1;
+                    }
                 }
             }
 
@@ -453,10 +460,10 @@ namespace AlphaSoft
 
                 productIDTextBox.CharacterCasing = CharacterCasing.Upper;
 
-                productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                setTextBoxCustomSource(productIDTextBox);
+                //productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                //productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                productIDTextBox.AutoCompleteSource = AutoCompleteSource.None;
+                //setTextBoxCustomSource(productIDTextBox);
             }
 
             if (detailReturDataGridView.CurrentCell.OwningColumn.Name == "qty" && e.Control is TextBox)
@@ -557,14 +564,16 @@ namespace AlphaSoft
 
                 if (currentValue.Length > 0)
                 {
-                    updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
-                    detailReturDataGridView.CurrentCell = selectedRow.Cells["qty"];
-                    detailReturDataGridView.BeginEdit(true);
-                    detailReturDataGridView.Select();
+                    //updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
+                    //detailReturDataGridView.CurrentCell = selectedRow.Cells["qty"];
+                    //detailReturDataGridView.BeginEdit(true);
+                    //detailReturDataGridView.Select();
+                    POSSearchProductForm browseProduk = new POSSearchProductForm(globalConstants.RETUR_PEMBELIAN, this, currentValue, rowSelectedIndex);
+                    browseProduk.ShowDialog(this);
                 }
                 else
                 {
-                    clearUpSomeRowContents(selectedRow, rowSelectedIndex);
+                    //clearUpSomeRowContents(selectedRow, rowSelectedIndex);
                 }
             }
         }

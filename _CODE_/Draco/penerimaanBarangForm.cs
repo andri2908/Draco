@@ -232,7 +232,7 @@ namespace AlphaSoft
             }
         }
 
-        public void addNewRowFromBarcode(string productID, string productName)
+        public void addNewRowFromBarcode(string productID, string productName, int rowIndex = -1)
         {
             int i = 0;
             bool found = false;
@@ -246,44 +246,50 @@ namespace AlphaSoft
             if (detailGridView.ReadOnly == true)
                 return;
 
-            // CHECK FOR EXISTING SELECTED ITEM
-            for (i = 0; i < detailGridView.Rows.Count && !found && !foundEmptyRow; i++)
+            if (rowIndex >= 0)
             {
-                if (null != detailGridView.Rows[i].Cells["productName"].Value)
-                { 
-                    if (detailGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                rowSelectedIndex = rowIndex;
+            }
+            else
+            { 
+                // CHECK FOR EXISTING SELECTED ITEM
+                for (i = 0; i < detailGridView.Rows.Count && !found && !foundEmptyRow; i++)
+                {
+                    if (null != detailGridView.Rows[i].Cells["productName"].Value)
+                    { 
+                        if (detailGridView.Rows[i].Cells["productName"].Value.ToString() == productName)
+                        {
+                            found = true;
+                            rowSelectedIndex = i;
+                        }
+                    }
+                    else
                     {
-                        found = true;
-                        rowSelectedIndex = i;
+                        foundEmptyRow = true;
+                        emptyRowIndex = i;
                     }
                 }
-                else
+
+                if (!found)
                 {
-                    foundEmptyRow = true;
-                    emptyRowIndex = i;
+                    if (foundEmptyRow)
+                    {
+                        //detailRequestQty[emptyRowIndex] = "0";
+                        //detailHpp[emptyRowIndex] = "0";
+                        //subtotalList[emptyRowIndex] = "0";
+                        rowSelectedIndex = emptyRowIndex;
+                    }
+                    else
+                    {
+                        //detailGridView.Rows.Add();
+                        //detailRequestQty.Add("0");
+                        //detailHpp.Add("0");
+                        //subtotalList.Add("0");
+                        addNewRow();
+                        rowSelectedIndex = detailGridView.Rows.Count - 1;
+                    }
                 }
             }
-
-            if (!found)
-            {
-                if (foundEmptyRow)
-                {
-                    //detailRequestQty[emptyRowIndex] = "0";
-                    //detailHpp[emptyRowIndex] = "0";
-                    //subtotalList[emptyRowIndex] = "0";
-                    rowSelectedIndex = emptyRowIndex;
-                }
-                else
-                {
-                    //detailGridView.Rows.Add();
-                    //detailRequestQty.Add("0");
-                    //detailHpp.Add("0");
-                    //subtotalList.Add("0");
-                    addNewRow();
-                    rowSelectedIndex = detailGridView.Rows.Count - 1;
-                }
-            }
-
             DataGridViewRow selectedRow = detailGridView.Rows[rowSelectedIndex];
             updateSomeRowContents(selectedRow, rowSelectedIndex, productName);
 
@@ -724,10 +730,11 @@ namespace AlphaSoft
 
                 productIDTextBox.CharacterCasing = CharacterCasing.Upper;
 
-                productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                productIDTextBox.AutoCompleteMode = AutoCompleteMode.None;
+                //productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                //productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-                setTextBoxCustomSource(productIDTextBox);
+                //setTextBoxCustomSource(productIDTextBox);
             }
         }
 
@@ -827,12 +834,14 @@ namespace AlphaSoft
 
                 if (currentValue.Length > 0)
                 {
-                    updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
-                    detailGridView.CurrentCell = selectedRow.Cells["qtyReceived"];
+                    //updateSomeRowContents(selectedRow, rowSelectedIndex, currentValue);
+                    //detailGridView.CurrentCell = selectedRow.Cells["qtyReceived"];
+                    POSSearchProductForm browseProduk = new POSSearchProductForm(globalConstants.PENERIMAAN_BARANG, this, currentValue, rowSelectedIndex);
+                    browseProduk.ShowDialog(this);
                 }
                 else
                 {
-                    clearUpSomeRowContents(selectedRow, rowSelectedIndex);
+                    //clearUpSomeRowContents(selectedRow, rowSelectedIndex);
                 }
             }
         }
