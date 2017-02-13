@@ -44,7 +44,7 @@ namespace AlphaSoft
                 loadBranchData(namaBranchTextbox.Text);
         }
 
-        private void loadBranchData(string branchNameParam)
+        private void loadBranchData(string branchNameParam = "ALL")
         {
             MySqlDataReader rdr;
             DataTable dt = new DataTable();
@@ -52,7 +52,7 @@ namespace AlphaSoft
             string branchName = MySqlHelper.EscapeString(branchNameParam);
 
             DS.mySqlConnect();
-            if (branchNameParam.Equals("All"))
+            if (branchNameParam.Equals("ALL"))
             {
                 sqlCommand = "SELECT BRANCH_ID, BRANCH_NAME AS 'NAMA CABANG', branch_ip4 AS 'ALAMAT IP CABANG' FROM MASTER_BRANCH";
             }
@@ -70,6 +70,7 @@ namespace AlphaSoft
 
             using (rdr = DS.getData(sqlCommand))
             {
+                dataCabangGridView.DataSource = null;
                 if (rdr.HasRows)
                 {
                     dt.Load(rdr);

@@ -146,33 +146,39 @@ namespace AlphaSoft
 
         private void continueButton_Click(object sender, EventArgs e)
         {
-            if (saveData())
-            { 
-                this.Hide();
+            if (DialogResult.Yes == MessageBox.Show("WARNING", "SHIFT KASIR BERAKHIR?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            {
+                if (saveData())
+                { 
+                    this.Hide();
 
-                gUtil.saveUserChangeLog(0, globalConstants.CHANGE_LOG_CASHIER_LOGIN, "CASHIER LOGIN");
+                    gUtil.saveUserChangeLog(0, globalConstants.CHANGE_LOG_CASHIER_LOGIN, "CASHIER LOGIN");
 
-                if (loginState == 0 || loginState == 2)
-                {
-                    adminForm displayAdminForm = new adminForm(gUtil.getUserID(), gUtil.getUserGroupID());
-                    displayAdminForm.ShowDialog(this);
-                }
+                    if (loginState == 0 || loginState == 2)
+                    {
+                        adminForm displayAdminForm = new adminForm(gUtil.getUserID(), gUtil.getUserGroupID());
+                        displayAdminForm.ShowDialog(this);
+                    }
 
-                if (loginState != 1)
-                {
-                    loginState = 1;
+                    if (loginState != 1)
+                    {
+                        loginState = 1;
 
-                    loadLogData();
+                        loadLogData();
 
-                    endAmountBox.Focus();
-                    this.Show();
+                        endAmountBox.Focus();
+                        this.Show();
+                    }
+                    else
+                    {
+                        gUtil.saveUserChangeLog(0, globalConstants.CHANGE_LOG_CASHIER_LOGOUT, "CASHIER LOGOUT");
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    gUtil.saveUserChangeLog(0, globalConstants.CHANGE_LOG_CASHIER_LOGOUT, "CASHIER LOGOUT");
                     this.Close();
                 }
-
             }
         }
 
