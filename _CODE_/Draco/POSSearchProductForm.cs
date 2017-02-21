@@ -197,7 +197,6 @@ namespace AlphaSoft
                     parentPurchaseOrderForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName, selectedRowIndex);
                     break;
             }
-
         }
 
         private void dataProdukGridView_DoubleClick(object sender, EventArgs e)

@@ -290,6 +290,7 @@ namespace AlphaSoft
                     }
                 }
             }
+
             DataGridViewRow selectedRow = detailGridView.Rows[rowSelectedIndex];
             updateSomeRowContents(selectedRow, rowSelectedIndex, productName);
 
