@@ -261,5 +261,10 @@ namespace AlphaSoft
             gUtil.reArrangeTabOrder(this);
 
         }
+
+        private void cashierLoginForm_Activated(object sender, EventArgs e)
+        {
+            startAmountBox.Select();
+        }
     }
 }
