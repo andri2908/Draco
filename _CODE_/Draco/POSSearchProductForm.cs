@@ -246,6 +246,8 @@ namespace AlphaSoft
             if (dataProdukGridView.Rows.Count <= 0)
                 return;
 
+            panelImage.BackgroundImage = null;
+
             int selectedrowindex = dataProdukGridView.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataProdukGridView.Rows[selectedrowindex];
 
@@ -268,7 +270,6 @@ namespace AlphaSoft
             }
             else
             {
-                panelImage.BackgroundImage = null;
             }
 
         }
