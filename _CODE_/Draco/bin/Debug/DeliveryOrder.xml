@@ -7,6 +7,7 @@
           <xs:element name="Table">
             <xs:complexType>
               <xs:sequence>
+                <xs:element name="DO_ID" type="xs:string" minOccurs="0" />
                 <xs:element name="SALES_STATUS" type="xs:string" minOccurs="0" />
                 <xs:element name="TGL" type="xs:dateTime" minOccurs="0" />
                 <xs:element name="INVOICE" type="xs:string" minOccurs="0" />
@@ -21,11 +22,12 @@
     </xs:element>
   </xs:schema>
   <Table>
+    <DO_ID>DO-5</DO_ID>
     <SALES_STATUS>0</SALES_STATUS>
-    <TGL>2017-02-03T00:00:00+07:00</TGL>
-    <INVOICE>DO-2</INVOICE>
+    <TGL>2017-02-23T00:00:00+07:00</TGL>
+    <INVOICE>DO-5</INVOICE>
     <CUSTOMER_NAME>P-UMUM</CUSTOMER_NAME>
-    <PRODUK>BARANG 1</PRODUK>
-    <QTY>10</QTY>
+    <PRODUK>AC SPLIT SPECIAL</PRODUK>
+    <QTY>1</QTY>
   </Table>
 </NewDataSet>

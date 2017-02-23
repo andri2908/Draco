@@ -71,6 +71,7 @@ namespace AlphaSoft
         private void pengaturanLimitPajakForm_Activated(object sender, EventArgs e)
         {
             //if need something
+            persentasePembelian.Select();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -253,6 +254,62 @@ namespace AlphaSoft
         {
             if ((omsetPembelian.Text.Length > 0) && (omsetPembelian.Text != "0"))
                 omsetPembelian.Text = "0";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null)
+            {
+                if (rb.Checked)
+                {
+                    // Only one radio button will be checked
+                    persentasePembelian.Select();
+                    omsetPembelian.Text = "0";
+                }
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null)
+            {
+                if (rb.Checked)
+                {
+                    // Only one radio button will be checked
+                    omsetPembelian.Select();
+                    persentasePembelian.Text = "0";
+                }
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null)
+            {
+                if (rb.Checked)
+                {
+                    // Only one radio button will be checked
+                    persentasePenjualan.Select();
+                    omsetPenjualan.Text = "0";
+                }
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null)
+            {
+                if (rb.Checked)
+                {
+                    // Only one radio button will be checked
+                    omsetPenjualan.Select();
+                    persentasePenjualan.Text = "0";
+                }
+            }
         }
     }
 }

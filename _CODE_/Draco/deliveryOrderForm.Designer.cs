@@ -258,6 +258,7 @@
             // reprintButton
             // 
             this.reprintButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.reprintButton.Enabled = false;
             this.reprintButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reprintButton.Location = new System.Drawing.Point(422, 612);
             this.reprintButton.Name = "reprintButton";
@@ -265,7 +266,6 @@
             this.reprintButton.TabIndex = 63;
             this.reprintButton.Text = "REPRINT";
             this.reprintButton.UseVisualStyleBackColor = true;
-            this.reprintButton.Visible = false;
             this.reprintButton.Click += new System.EventHandler(this.reprintButton_Click);
             // 
             // saveButton
