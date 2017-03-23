@@ -256,6 +256,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DATA SALES INVOICE";
+            this.Activated += new System.EventHandler(this.dataSalesInvoice_Activated);
             this.Load += new System.EventHandler(this.dataSalesInvoice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

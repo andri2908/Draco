@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.kodeGroupTextbox = new System.Windows.Forms.TextBox();
+            this.userNameTextbox = new System.Windows.Forms.TextBox();
             this.namaGroupTextbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -133,13 +133,13 @@
             this.label7.TabIndex = 13;
             this.label7.Text = ":";
             // 
-            // kodeGroupTextbox
+            // userNameTextbox
             // 
-            this.kodeGroupTextbox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kodeGroupTextbox.Location = new System.Drawing.Point(203, 13);
-            this.kodeGroupTextbox.Name = "kodeGroupTextbox";
-            this.kodeGroupTextbox.Size = new System.Drawing.Size(187, 27);
-            this.kodeGroupTextbox.TabIndex = 15;
+            this.userNameTextbox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextbox.Location = new System.Drawing.Point(203, 13);
+            this.userNameTextbox.Name = "userNameTextbox";
+            this.userNameTextbox.Size = new System.Drawing.Size(187, 27);
+            this.userNameTextbox.TabIndex = 15;
             // 
             // namaGroupTextbox
             // 
@@ -206,7 +206,7 @@
             // 
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.endShiftButton);
-            this.groupBox1.Controls.Add(this.kodeGroupTextbox);
+            this.groupBox1.Controls.Add(this.userNameTextbox);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.logoutButton);
             this.groupBox1.Controls.Add(this.label2);
@@ -238,6 +238,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGOUT FORM";
+            this.Activated += new System.EventHandler(this.logoutForm_Activated);
             this.Load += new System.EventHandler(this.logoutForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -254,7 +255,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox kodeGroupTextbox;
+        private System.Windows.Forms.TextBox userNameTextbox;
         private System.Windows.Forms.TextBox namaGroupTextbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;

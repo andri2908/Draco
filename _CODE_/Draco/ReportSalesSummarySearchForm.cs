@@ -113,7 +113,10 @@ namespace AlphaSoft
 
         private void ReportSalesSummarySearchForm_Load(object sender, EventArgs e)
         {
+            datefromPicker.Format = DateTimePickerFormat.Custom;
             datefromPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
+
+            datetoPicker.Format = DateTimePickerFormat.Custom;
             datetoPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
 
             switch (originModuleID)
@@ -170,24 +173,21 @@ namespace AlphaSoft
             switch (originModuleID)
             {
                     case globalConstants.REPORT_SALES_SUMMARY:
-                    //result = int.TryParse(CustNameCombobox.SelectedValue.ToString(), out cust_id);
-                    //if (result)
-                    //{
-
-                    //}
-                    //else
-                    //{
-                    //    cust_id = 0;
-                    //}
                     if (taxModule == false)
-                    { 
+                    {
                         sqlCommandx = "SELECT SALES_INVOICE AS 'INVOICE', C.CUSTOMER_FULL_NAME AS 'CUSTOMER', DATE_FORMAT(S.SALES_DATE, '%d-%M-%Y') AS 'DATE',S.SALES_TOTAL AS 'TOTAL', IF(C.CUSTOMER_GROUP=1,'RETAIL',IF(C.CUSTOMER_GROUP=2,'GROSIR','PARTAI')) AS 'GROUP' " +
-                                        "FROM SALES_HEADER S,MASTER_CUSTOMER C " +
-                                        "WHERE S.CUSTOMER_ID = C.CUSTOMER_ID AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "'" +  //AND S.CUSTOMER_ID = " + cust_id + " " +
-                                            "UNION " +
-                                            "SELECT S.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', DATE_FORMAT(S.SALES_DATE, '%d-%M-%Y') AS 'DATE', S.SALES_TOTAL AS 'TOTAL', 'RETAIL' AS 'GROUP' " +
-                                            "FROM SALES_HEADER S " +
-                                            "WHERE DATE_FORMAT(S.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND S.CUSTOMER_ID = 0";
+                                            "FROM SALES_HEADER S,MASTER_CUSTOMER C, " +
+                                        "(SELECT SALES_INVOICE, MAX(REV_NO) AS REV FROM SALES_HEADER GROUP BY SALES_INVOICE) SH2 " +
+                                            "WHERE " +
+                                            "S.SALES_INVOICE = SH2.SALES_INVOICE AND S.REV_NO = SH2.REV " +
+                                            "AND S.CUSTOMER_ID = C.CUSTOMER_ID AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "'" +  //AND S.CUSTOMER_ID = " + cust_id + " " +
+                                                "UNION " +
+                                                "SELECT S.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', DATE_FORMAT(S.SALES_DATE, '%d-%M-%Y') AS 'DATE', S.SALES_TOTAL AS 'TOTAL', 'RETAIL' AS 'GROUP' " +
+                                                "FROM SALES_HEADER S, " +
+                                                "(SELECT SALES_INVOICE, MAX(REV_NO) AS REV FROM SALES_HEADER GROUP BY SALES_INVOICE) SH2 " +
+                                                "WHERE " +
+                                                "S.SALES_INVOICE = SH2.SALES_INVOICE AND S.REV_NO = SH2.REV " +
+                                                "AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND S.CUSTOMER_ID = 0";
                     }
                     else
                     {
@@ -207,7 +207,7 @@ namespace AlphaSoft
                     // result = int.TryParse(CustNameCombobox.Items[CustNameCombobox.SelectedIndex].ToString(), out cust_id);
                     if (taxModule == false)
                     {
-                        query_tax = "SALES_HEADER SH, SALES_DETAIL SD, ";
+                        query_tax = "SALES_HEADER SH, SALES_DETAIL SD INNER JOIN (SELECT SALES_INVOICE, MAX(REV_NO) AS MAX FROM SALES_DETAIL GROUP BY SALES_INVOICE) MAX_SD ON SD.SALES_INVOICE = MAX_SD.SALES_INVOICE AND SD.REV_NO = MAX_SD.MAX, ";
                     }
                     else
                     {
@@ -224,21 +224,23 @@ namespace AlphaSoft
                             "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', SD.PRODUCT_QTY AS 'QTY', " +
                                     "SD.PRODUCT_SALES_PRICE AS 'PRICE', ROUND((SD.PRODUCT_QTY * SD.PRODUCT_SALES_PRICE) - SD.SALES_SUBTOTAL, 2) AS 'POTONGAN', SD.SALES_SUBTOTAL AS 'SUBTOTAL', SH.SALES_DISCOUNT_FINAL AS 'DISC', SH.SALES_PAYMENT AS 'PAYMENT', SH.SALES_PAYMENT_CHANGE AS 'CHANGE' " +
                                     "FROM " + query_tax + "MASTER_PRODUCT M " +
-                                    "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND SH.CUSTOMER_ID = 0";
+                                    "WHERE SD.REV_NO = SH.REV_NO AND SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND SH.CUSTOMER_ID = 0";
                     }
-                    if (cust_id > 0 )
+
+                    //if (cust_id > 0 )
                     {
                         sqlCommandx = "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', MC.CUSTOMER_FULL_NAME AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', SD.PRODUCT_QTY AS 'QTY', " +
-                        "SD.PRODUCT_SALES_PRICE AS 'PRICE', ROUND((SD.PRODUCT_QTY * SD.PRODUCT_SALES_PRICE) - SD.SALES_SUBTOTAL, 2) AS 'POTONGAN', SD.SALES_SUBTOTAL AS 'SUBTOTAL', SH.SALES_DISCOUNT_FINAL AS 'DISC', SH.SALES_PAYMENT AS 'PAYMENT', SH.SALES_PAYMENT_CHANGE AS 'CHANGE' " +
-                        "FROM " + query_tax + "MASTER_PRODUCT M, MASTER_CUSTOMER MC " +
-                        "WHERE SH.CUSTOMER_ID = MC.CUSTOMER_ID AND SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "'" + query_customer + query_union_customer;
-                    } else
-                    {
-                        sqlCommandx = "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', SD.PRODUCT_QTY AS 'QTY', " +
-                        "SD.PRODUCT_SALES_PRICE AS 'PRICE', ROUND((SD.PRODUCT_QTY * SD.PRODUCT_SALES_PRICE) - SD.SALES_SUBTOTAL, 2) AS 'POTONGAN', SD.SALES_SUBTOTAL AS 'SUBTOTAL', SH.SALES_DISCOUNT_FINAL AS 'DISC', SH.SALES_PAYMENT AS 'PAYMENT', SH.SALES_PAYMENT_CHANGE AS 'CHANGE' " +
-                        "FROM " + query_tax + "MASTER_PRODUCT M " +
-                        "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "'" + query_customer + query_union_customer;
+                    "SD.PRODUCT_SALES_PRICE AS 'PRICE', ROUND((SD.PRODUCT_QTY * SD.PRODUCT_SALES_PRICE) - SD.SALES_SUBTOTAL, 2) AS 'POTONGAN', SD.SALES_SUBTOTAL AS 'SUBTOTAL', SH.SALES_DISCOUNT_FINAL AS 'DISC', SH.SALES_PAYMENT AS 'PAYMENT', SH.SALES_PAYMENT_CHANGE AS 'CHANGE' " +
+                    "FROM " + query_tax + "MASTER_PRODUCT M, MASTER_CUSTOMER MC " +
+                    "WHERE SH.REV_NO = SD.REV_NO AND SH.CUSTOMER_ID = MC.CUSTOMER_ID AND SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "'" + query_customer + query_union_customer;
                     }
+                    //else
+                    //{
+                    //    sqlCommandx = "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', SD.PRODUCT_QTY AS 'QTY', " +
+                    //    "SD.PRODUCT_SALES_PRICE AS 'PRICE', ROUND((SD.PRODUCT_QTY * SD.PRODUCT_SALES_PRICE) - SD.SALES_SUBTOTAL, 2) AS 'POTONGAN', SD.SALES_SUBTOTAL AS 'SUBTOTAL', SH.SALES_DISCOUNT_FINAL AS 'DISC', SH.SALES_PAYMENT AS 'PAYMENT', SH.SALES_PAYMENT_CHANGE AS 'CHANGE' " +
+                    //    "FROM " + query_tax + "MASTER_PRODUCT M " +
+                    //    "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "'" + query_customer + query_union_customer;
+                    //}
                     
                         
                     //if (cust_id > 0)
@@ -293,27 +295,29 @@ namespace AlphaSoft
                     prod_id = ProductcomboBox.SelectedValue.ToString();
                     if (checkBox1.Checked == false)
                     {
-                        query_product = "' AND SD.PRODUCT_ID = '" + prod_id + "'";
+                        query_product = "AND SD.PRODUCT_ID = '" + prod_id + "'";
                     }
                     if (taxModule==false)
-                    { 
+                    {
                         sqlCommandx = "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', MC.CUSTOMER_FULL_NAME AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', PRODUCT_QTY AS 'QTY', PRODUCT_SALES_PRICE AS 'PRICE' " +
-                                            "FROM SALES_HEADER SH, SALES_DETAIL SD, MASTER_PRODUCT M, MASTER_CUSTOMER MC " +
-                                            "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = MC.CUSTOMER_ID AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + query_product + " " +
-                                            "UNION " +
-                                            "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', PRODUCT_QTY AS 'QTY', PRODUCT_SALES_PRICE AS 'PRICE' " +
-                                            "FROM SALES_HEADER SH, SALES_DETAIL SD, MASTER_PRODUCT M " +
-                                            "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = 0 AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + query_product;
+                                        "FROM SALES_HEADER SH, MASTER_PRODUCT M, MASTER_CUSTOMER MC, " +
+                                        "SALES_DETAIL SD INNER JOIN (SELECT SALES_INVOICE, MAX(REV_NO) AS MAX FROM SALES_DETAIL GROUP BY SALES_INVOICE) MAX_SD ON SD.SALES_INVOICE = MAX_SD.SALES_INVOICE AND SD.REV_NO = MAX_SD.MAX " +
+                                        "WHERE SH.REV_NO = SD.REV_NO AND SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = MC.CUSTOMER_ID AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " + query_product + " " +
+                                        "UNION " +
+                                        "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', PRODUCT_QTY AS 'QTY', PRODUCT_SALES_PRICE AS 'PRICE' " +
+                                        "FROM SALES_HEADER SH, MASTER_PRODUCT M, " +
+                                        "SALES_DETAIL SD INNER JOIN (SELECT SALES_INVOICE, MAX(REV_NO) AS MAX FROM SALES_DETAIL GROUP BY SALES_INVOICE) MAX_SD ON SD.SALES_INVOICE = MAX_SD.SALES_INVOICE AND SD.REV_NO = MAX_SD.MAX " +
+                                        "WHERE SH.REV_NO = SD.REV_NO AND SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = 0 AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " + query_product;
                     }
                     else
                     {
                         sqlCommandx = "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', MC.CUSTOMER_FULL_NAME AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', PRODUCT_QTY AS 'QTY', PRODUCT_SALES_PRICE AS 'PRICE' " +
                                         "FROM SALES_HEADER_TAX SH, SALES_DETAIL_TAX SD, MASTER_PRODUCT M, MASTER_CUSTOMER MC " +
-                                        "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = MC.CUSTOMER_ID AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + query_product + " " +
+                                        "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = MC.CUSTOMER_ID AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " + query_product + " " +
                                         "UNION " +
                                         "SELECT SD.ID, SH.SALES_DATE AS 'DATE', SD.SALES_INVOICE AS 'INVOICE', 'P-UMUM' AS 'CUSTOMER', M.PRODUCT_NAME AS 'PRODUCT', PRODUCT_QTY AS 'QTY', PRODUCT_SALES_PRICE AS 'PRICE' " +
                                         "FROM SALES_HEADER_TAX SH, SALES_DETAIL_TAX SD, MASTER_PRODUCT M " +
-                                        "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = 0 AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + query_product;
+                                        "WHERE SD.PRODUCT_ID = M.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = 0 AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " + query_product;
                     }
                     DS.writeXML(sqlCommandx, globalConstants.SalesbyProductXML);
                     ReportSalesProductForm displayedForm3 = new ReportSalesProductForm();
@@ -321,10 +325,13 @@ namespace AlphaSoft
                     break;
                 case globalConstants.REPORT_SALES_OMZET:
                     sqlCommandx = "SELECT SH.SALES_INVOICE AS 'INVOICE', SH.SALES_DATE AS 'DATE', EXTRACT(YEAR_MONTH FROM SH.SALES_DATE) AS 'BULAN', SUM(SH.SALES_TOTAL) AS 'TOTAL', IF(SH.SALES_PAID>0,'LUNAS','BELUM LUNAS') AS 'PAID' " +
-                                        "FROM SALES_HEADER AS SH " +
-                                        "WHERE DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " +
-                                        "GROUP BY INVOICE " +
-                                        "ORDER BY PAID,BULAN,DATE ASC";
+                                    "FROM SALES_HEADER AS SH, " +
+                                    "(SELECT SALES_INVOICE, MAX(REV_NO) AS REV FROM SALES_HEADER GROUP BY SALES_INVOICE) SH2 " +
+                                    "WHERE " +
+                                    "SH.SALES_INVOICE = SH2.SALES_INVOICE AND SH.REV_NO = SH2.REV " +
+                                    "AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " +
+                                    "GROUP BY INVOICE " +
+                                    "ORDER BY PAID,BULAN,DATE ASC";
                     DS.writeXML(sqlCommandx, globalConstants.SalesOmzetXML);
                     ReportSalesOmzetForm displayedForm4 = new ReportSalesOmzetForm();
                     displayedForm4.ShowDialog(this);

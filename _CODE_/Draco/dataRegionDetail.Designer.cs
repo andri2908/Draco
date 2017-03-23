@@ -195,7 +195,8 @@
             this.Name = "dataRegionDetail";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "dataRegionDetail";
+            this.Text = "DATA REGION DETAIL";
+            this.Activated += new System.EventHandler(this.dataRegionDetail_Activated);
             this.Load += new System.EventHandler(this.dataRegionDetail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

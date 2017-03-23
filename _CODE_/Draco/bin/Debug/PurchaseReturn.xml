@@ -24,4 +24,16 @@
       </xs:complexType>
     </xs:element>
   </xs:schema>
+  <Table>
+    <ID>11</ID>
+    <SUPPLIER>SUPPLIER HPL</SUPPLIER>
+    <TANGGAL>2017-03-23T00:00:00+07:00</TANGGAL>
+    <TOTAL>3410000</TOTAL>
+    <STATUS>SUDAH DIPROSES</STATUS>
+    <PRODUK>HPL VIOLAM VS 0101 S</PRODUK>
+    <HARGA>155000</HARGA>
+    <QTY>22</QTY>
+    <DESKRIPSI xml:space="preserve"> </DESKRIPSI>
+    <SUBTOTAL>3410000</SUBTOTAL>
+  </Table>
 </NewDataSet>

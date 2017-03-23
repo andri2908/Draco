@@ -152,6 +152,12 @@ namespace AlphaSoft
 
         private void ReportPaymentSearchForm_Load(object sender, EventArgs e)
         {
+            datefromPicker.Format = DateTimePickerFormat.Custom;
+            datefromPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
+
+            datetoPicker.Format = DateTimePickerFormat.Custom;
+            datetoPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
+
             ErrorLabel.Visible = false;
             switch (originModuleID)
             {
@@ -191,7 +197,8 @@ namespace AlphaSoft
             string supplier = "";
             string customer = "";
             string branch = "";
-            if (ErrorLabel.Visible != true && checkBox1.Checked == true)
+
+            if (ErrorLabel.Visible != true && checkBox1.Checked == false)
             {
                 supplier = "AND PH.SUPPLIER_ID = " + SupplierNameCombobox.SelectedValue + " ";
                 customer = "AND SH.CUSTOMER_ID = " + CustomercomboBox.SelectedValue + " ";
@@ -200,31 +207,42 @@ namespace AlphaSoft
             switch (originModuleID)
             {
                 case globalConstants.REPORT_DEBT_PAYMENT:
-                    sqlCommandx = "SELECT D.DEBT_ID AS' ID', D.DEBT_DUE_DATE AS 'JT', D.DEBT_NOMINAL AS 'TOTAL', D.PURCHASE_INVOICE AS 'INVOICE', MS.SUPPLIER_FULL_NAME AS 'SUPPLIER', " +
-                                    "MAX(PD.PAYMENT_CONFIRMED_DATE) AS 'TANGGALLUNAS' " +
-                                    "FROM DEBT D, PURCHASE_HEADER PH, MASTER_SUPPLIER MS, PAYMENT_DEBT PD " +
-                                    "WHERE D.DEBT_PAID = 1 AND D.PURCHASE_INVOICE = PH.PURCHASE_INVOICE AND PH.SUPPLIER_ID = MS.SUPPLIER_ID AND D.DEBT_ID = PD.DEBT_ID " + supplier + 
-                                    "AND DATE_FORMAT(PD.PAYMENT_CONFIRMED_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PD.PAYMENT_CONFIRMED_DATE, '%Y%m%d') <= '" + dateTo + "'";
+                    sqlCommandx = "SELECT D.DEBT_ID AS' ID', D.PURCHASE_INVOICE AS 'INVOICE', D.DEBT_NOMINAL AS 'TOTAL', D.DEBT_DUE_DATE AS 'JT', PD.PAY_CONFIRM AS 'TANGGALLUNAS', MS.SUPPLIER_FULL_NAME AS 'SUPPLIER' " +
+                                             "FROM DEBT D, PURCHASE_HEADER PH, MASTER_SUPPLIER MS, " +
+                                             "(SELECT DEBT_ID, MAX(PAYMENT_ID) AS PAY_ID, MAX(PAYMENT_CONFIRMED_DATE) AS PAY_CONFIRM FROM PAYMENT_DEBT GROUP BY DEBT_ID) PD " +
+                                             "WHERE PD.DEBT_ID = D.DEBT_ID AND D.DEBT_PAID = 1 " +
+                                             "AND D.PURCHASE_INVOICE = PH.PURCHASE_INVOICE AND PH.SUPPLIER_ID = MS.SUPPLIER_ID " +
+                                             "AND DATE_FORMAT(PD.PAY_CONFIRM, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PD.PAY_CONFIRM, '%Y%m%d') <= '" + dateTo + "' " + supplier;
+
                     DS.writeXML(sqlCommandx, globalConstants.DebtPaidXML);
                     ReportDebtPaidForm displayedForm1 = new ReportDebtPaidForm();
                     displayedForm1.ShowDialog(this);
                     break;
+
                 case globalConstants.REPORT_CREDIT_PAYMENT:
-                    sqlCommandx = "SELECT C.SALES_INVOICE AS 'INVOICE', C.CREDIT_NOMINAL AS 'TOTAL', C.CREDIT_DUE_DATE AS 'JT', " +
-                                    "MAX(PC.PAYMENT_CONFIRMED_DATE) AS 'LUNAS', MC.CUSTOMER_FULL_NAME " +
-                                    "FROM CREDIT C, PAYMENT_CREDIT PC, SALES_HEADER SH, MASTER_CUSTOMER MC " +
-                                    "WHERE C.SALES_INVOICE IS NOT NULL AND C.CREDIT_PAID = 1 AND C.CREDIT_ID = PC.CREDIT_ID AND C.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = MC.CUSTOMER_ID " + customer +
-                                    "AND DATE_FORMAT(PC.PAYMENT_CONFIRMED_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PC.PAYMENT_CONFIRMED_DATE, '%Y%m%d') <= '" + dateTo + "'";
+                    sqlCommandx = "SELECT C.SALES_INVOICE AS 'INVOICE', C.CREDIT_NOMINAL AS 'TOTAL', C.CREDIT_DUE_DATE AS 'JT', PC.PAY_CONFIRM AS 'LUNAS', MC.CUSTOMER_FULL_NAME " +
+                                             "FROM CREDIT C, SALES_HEADER SH, MASTER_CUSTOMER MC, " +
+                                             "(SELECT CREDIT_ID, MAX(PAYMENT_ID) AS PAY_ID, MAX(PAYMENT_CONFIRMED_DATE) AS PAY_CONFIRM FROM PAYMENT_CREDIT GROUP BY CREDIT_ID) PC, " +
+                                             "(SELECT SALES_INVOICE, MAX(REV_NO)AS REV FROM SALES_HEADER GROUP BY SALES_INVOICE) SH2 " +
+                                             "WHERE C.SALES_INVOICE IS NOT NULL AND PC.CREDIT_ID = C.CREDIT_ID AND C.CREDIT_PAID = 1 " +
+                                             "AND SH.REV_NO = SH2.REV AND SH.SALES_INVOICE = SH2.SALES_INVOICE AND C.SALES_INVOICE = SH.SALES_INVOICE AND SH.CUSTOMER_ID = MC.CUSTOMER_ID " +
+                                             "AND C.SALES_INVOICE = SH2.SALES_INVOICE " +
+                                             "AND DATE_FORMAT(PC.PAY_CONFIRM, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PC.PAY_CONFIRM, '%Y%m%d') <= '" + dateTo + "' " + customer;
+
                     DS.writeXML(sqlCommandx, globalConstants.CreditPaidXML);
                     ReportCreditPaidForm displayedForm2 = new ReportCreditPaidForm();
                     displayedForm2.ShowDialog(this);
                     break;
+
                 case globalConstants.REPORT_MUTATION_PAYMENT:
-                    sqlCommandx = "SELECT C.PM_INVOICE AS 'INVOICE', C.CREDIT_NOMINAL AS 'TOTAL', C.CREDIT_DUE_DATE AS 'JT', " +
-                                    "MAX(PC.PAYMENT_CONFIRMED_DATE) AS 'LUNAS', MB.BRANCH_NAME " +
-                                    "FROM CREDIT C, PAYMENT_CREDIT PC, PRODUCTS_MUTATION_HEADER PH, MASTER_BRANCH MB " +
-                                    "WHERE C.PM_INVOICE IS NOT NULL AND C.CREDIT_PAID = 1 AND C.CREDIT_ID = PC.CREDIT_ID AND C.PM_INVOICE = PH.PM_INVOICE AND PH.BRANCH_ID_TO = MB.BRANCH_ID " + branch +
-                                    "AND DATE_FORMAT(PC.PAYMENT_CONFIRMED_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PC.PAYMENT_CONFIRMED_DATE, '%Y%m%d') <= '" + dateTo + "'";
+                    sqlCommandx = "SELECT C.PM_INVOICE AS 'INVOICE', C.CREDIT_NOMINAL AS 'TOTAL', C.CREDIT_DUE_DATE AS 'JT', PC.PAY_CONFIRM AS 'LUNAS', MB.BRANCH_NAME, '' AS CUSTOMER_FULL_NAME " +
+                                             "FROM CREDIT C, MASTER_BRANCH MB, " +
+                                             "(SELECT CREDIT_ID, MAX(PAYMENT_ID) AS PAY_ID, MAX(PAYMENT_CONFIRMED_DATE) AS PAY_CONFIRM FROM PAYMENT_CREDIT GROUP BY CREDIT_ID) PC, " +
+                                             "PRODUCTS_MUTATION_HEADER PH LEFT OUTER JOIN MASTER_BRANCH MB2 ON (PH.BRANCH_ID_TO = MB2.BRANCH_ID) " +
+                                             "WHERE C.PM_INVOICE IS NOT NULL AND PC.CREDIT_ID = C.CREDIT_ID AND C.CREDIT_PAID = 1 " +
+                                             "AND C.PM_INVOICE = PH.PM_INVOICE AND PH.BRANCH_ID_TO = MB.BRANCH_ID " +
+                                             "AND DATE_FORMAT(PC.PAY_CONFIRM, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PC.PAY_CONFIRM, '%Y%m%d') <= '" + dateTo + "' " + branch;
+
                     DS.writeXML(sqlCommandx, globalConstants.MutationPaidXML);
                     ReportCreditPaidForm displayedForm3 = new ReportCreditPaidForm();
                     displayedForm3.ShowDialog(this);

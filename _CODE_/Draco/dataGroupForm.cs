@@ -151,7 +151,8 @@ namespace AlphaSoft
             else if (dataUserGroupGridView.Rows.Count>0)
             {
                 loadUserGroupData(1);
-            }                           
+            }
+            namaGroupTextbox.Select();
         }
 
         private void namaGroupTextbox_TextChanged(object sender, EventArgs e)

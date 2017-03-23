@@ -317,6 +317,12 @@ namespace AlphaSoft
                     Button button = (Button)control;
                     button.Enabled = false;
                 }
+
+                if (control is DateTimePicker)
+                {
+                    DateTimePicker DTPicker = (DateTimePicker)control;
+                    DTPicker.Enabled = false;
+                }
             }
         }
 

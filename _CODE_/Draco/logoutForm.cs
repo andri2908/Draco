@@ -34,5 +34,10 @@ namespace AlphaSoft
         {
             gutil.reArrangeTabOrder(this);
         }
+
+        private void logoutForm_Activated(object sender, EventArgs e)
+        {
+            userNameTextbox.Select();
+        }
     }
 }

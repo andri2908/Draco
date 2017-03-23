@@ -51,7 +51,7 @@ namespace AlphaSoft
 
                     dataCabangGridView.Columns["ID"].Visible = false;
                     dataCabangGridView.Columns["NAMA LOKASI"].Width = 200;
-                    dataCabangGridView.Columns["DESKRIPSI"].Width = 200;
+                    dataCabangGridView.Columns["DESKRIPSI"].Visible = false;
                 }
             }
         }
@@ -98,6 +98,7 @@ namespace AlphaSoft
         {
             if (namaBranchTextbox.Text.Length > 0)
                 loadLocationData(namaBranchTextbox.Text);
+            namaBranchTextbox.Select();
         }
 
         private void dataLokasi_KeyDown(object sender, KeyEventArgs e)
@@ -109,6 +110,7 @@ namespace AlphaSoft
                 DataGridViewRow selectedRow = dataCabangGridView.Rows[selectedrowindex];
                 selectedLocationID = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
+                gutil.saveSystemDebugLog(0, "CREATE DATA LOKASI DETAIL, LOKASI ID [" + selectedLocationID + "]");
                 dataLokasiDetail displayedForm = new dataLokasiDetail(globalConstants.EDIT_LOCATION, selectedLocationID);
                 displayedForm.ShowDialog(this);
 

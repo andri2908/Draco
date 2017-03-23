@@ -54,7 +54,7 @@ namespace AlphaSoft
             MySqlDataReader rdr;
             string sqlCommand;
 
-            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1";
+            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1 ORDER BY SUPPLIER_FULL_NAME ASC";
 
             supplierCombo.Items.Clear();
             supplierHiddenCombo.Items.Clear();
@@ -191,7 +191,7 @@ namespace AlphaSoft
 
             gUtil.reArrangeTabOrder(this);
 
-            noPOInvoiceTextBox.Select();
+            //noPOInvoiceTextBox.Select();
         }
 
         private void printOutPurchaseOrder(string PONo)
@@ -302,6 +302,7 @@ namespace AlphaSoft
         {
             if (noPOInvoiceTextBox.Text.Length > 0)
                 displayButton.PerformClick();
+            noPOInvoiceTextBox.Select();
         }
 
         private void dataPurchaseOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)

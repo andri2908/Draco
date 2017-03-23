@@ -27,6 +27,7 @@ namespace AlphaSoft
         {
             InitializeComponent();
         }
+
         public ReportTopSalesFormSearchForm(int moduleID)
         {
             InitializeComponent();
@@ -35,7 +36,10 @@ namespace AlphaSoft
 
         private void ReportTopSalesFormSearchForm_Load(object sender, EventArgs e)
         {
+            datefromPicker.Format = DateTimePickerFormat.Custom;
             datefromPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
+
+            datetoPicker.Format = DateTimePickerFormat.Custom;
             datetoPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
 
             gutil.reArrangeTabOrder(this);
@@ -114,49 +118,67 @@ namespace AlphaSoft
             dateTo = String.Format(culture, "{0:yyyyMMdd}", Convert.ToDateTime(datetoPicker.Value));
             DS.mySqlConnect();
             string sqlCommandx = "";
+            string tagsClause = "";
+            int limitRow = 10;
+
+            if (LimitTextBox.Text.Length > 0)
+            {
+                limitRow = Convert.ToInt32(gutil.allTrim(LimitTextBox.Text));
+            }
+
             switch (originModuleID)
             {
                 case globalConstants.REPORT_TOPSALES_GLOBAL:
-                    sqlCommandx = "SELECT MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY' " +
-                                    "FROM SALES_DETAIL SD, MASTER_PRODUCT MP " +
+                    sqlCommandx = "SELECT MB.BRANCH_NAME, MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY' " +
+                                    "FROM SALES_DETAIL SD INNER JOIN (SELECT SALES_INVOICE, MAX(REV_NO) AS MAX FROM SALES_DETAIL GROUP BY SALES_INVOICE) MAX_SD ON SD.SALES_INVOICE = MAX_SD.SALES_INVOICE AND SD.REV_NO = MAX_SD.MAX, " +
+                                    "MASTER_PRODUCT MP, MASTER_BRANCH MB " +
                                     "WHERE SD.PRODUCT_ID = MP.PRODUCT_ID " +
-                                    "GROUP BY SD.PRODUCT_ID " +
+                                    "GROUP BY BRANCH_NAME, SD.PRODUCT_ID " +
                                     "ORDER BY QTY DESC " +
-                                    "LIMIT " + LimitTextBox.Text;
+                                    "LIMIT " + limitRow;
+
                     DS.writeXML(sqlCommandx, globalConstants.TopSalesGlobalXML);
                     ReportTopSalesGlobalForm displayedForm1 = new ReportTopSalesGlobalForm(globalConstants.REPORT_TOPSALES_GLOBAL);
                     displayedForm1.ShowDialog(this);
                     break;
                 case globalConstants.REPORT_TOPSALES_byDATE:
-                    sqlCommandx = "SELECT MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY' " +
-                                    "FROM SALES_HEADER SH, SALES_DETAIL SD, MASTER_PRODUCT MP " +
-                                    "WHERE SD.PRODUCT_ID = MP.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') <= '" + dateTo + "' " +
-                                    "GROUP BY SD.PRODUCT_ID " +
+                    sqlCommandx = "SELECT '' AS BRANCH_NAME, MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY' " +
+                                    "FROM SALES_HEADER SH, MASTER_PRODUCT MP, " +
+                                    "SALES_DETAIL SD INNER JOIN (SELECT SALES_INVOICE, MAX(REV_NO) AS MAX FROM SALES_DETAIL GROUP BY SALES_INVOICE) MAX_SD ON SD.SALES_INVOICE = MAX_SD.SALES_INVOICE AND SD.REV_NO = MAX_SD.MAX " +
+                                    "WHERE SH.REV_NO = SD.REV_NO AND SD.PRODUCT_ID = MP.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') <= '" + dateTo + "' " +
+                                    "GROUP BY BRANCH_NAME, SD.PRODUCT_ID " +
                                     "ORDER BY QTY DESC " +
-                                    "LIMIT " + LimitTextBox.Text;
+                                    "LIMIT " + limitRow;
                     DS.writeXML(sqlCommandx, globalConstants.TopSalesbyDateXML);
                     ReportTopSalesGlobalForm displayedForm2 = new ReportTopSalesGlobalForm(globalConstants.REPORT_TOPSALES_byDATE);
                     displayedForm2.setDateReport(dateTo, dateFrom);
                     displayedForm2.ShowDialog(this);
                     break;
                 case globalConstants.REPORT_TOPSALES_byTAGS:
-                    sqlCommandx = "SELECT MC.CATEGORY_ID AS 'ID', MC.CATEGORY_NAME AS 'NAME', MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY' " +
-                                        "FROM SALES_DETAIL SD, MASTER_PRODUCT MP, PRODUCT_CATEGORY PC, MASTER_CATEGORY MC " +
-                                        "WHERE MC.CATEGORY_ID = PC.CATEGORY_ID AND MP.PRODUCT_ID = PC.PRODUCT_ID AND PC.PRODUCT_ID = SD.PRODUCT_ID AND MC.CATEGORY_ID = " + TagscomboBox.SelectedValue.ToString()  + " " +
-                                        "GROUP BY PRODUCT,ID " +
-                                        "ORDER BY PRODUCT " + "LIMIT " + LimitTextBox.Text;
+                    if (TagscomboBox.Visible == true && TagscomboBox.SelectedValue.ToString() != "0")
+                    {
+                        tagsClause = "AND MC.CATEGORY_ID = " + TagscomboBox.SelectedValue.ToString();
+                    }
+
+                    sqlCommandx = "SELECT '' AS BRANCH_NAME, MC.CATEGORY_ID AS 'ID', MC.CATEGORY_NAME AS 'NAME', MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY' " +
+                                        "FROM SALES_DETAIL SD INNER JOIN (SELECT SALES_INVOICE, MAX(REV_NO) AS MAX FROM SALES_DETAIL GROUP BY SALES_INVOICE) MAX_SD ON SD.SALES_INVOICE = MAX_SD.SALES_INVOICE AND SD.REV_NO = MAX_SD.MAX " +
+                                        ", MASTER_PRODUCT MP, PRODUCT_CATEGORY PC, MASTER_CATEGORY MC " +
+                                        "WHERE MC.CATEGORY_ID = PC.CATEGORY_ID AND MP.PRODUCT_ID = PC.PRODUCT_ID AND PC.PRODUCT_ID = SD.PRODUCT_ID " + tagsClause + " " +
+                                        "GROUP BY BRANCH_NAME, PRODUCT, ID " +
+                                        "ORDER BY PRODUCT " + "LIMIT " + limitRow;
                     DS.writeXML(sqlCommandx, globalConstants.TopSalesbyTagsXML);
                     ReportTopSalesbyTagsForm displayedForm3 = new ReportTopSalesbyTagsForm();
                     //displayedForm3.setTags(TagscomboBox.GetItemText(TagscomboBox.SelectedItem));
                     displayedForm3.ShowDialog(this);
                     break;
                 case globalConstants.REPORT_TOPSALES_ByMARGIN:
-                    sqlCommandx = "SELECT MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY', SUM(SD.SALES_SUBTOTAL-(SD.PRODUCT_QTY*MP.PRODUCT_BASE_PRICE)) AS 'LABA' " +
-                                        "FROM SALES_HEADER SH, SALES_DETAIL SD, MASTER_PRODUCT MP " +
-                                        "WHERE SD.PRODUCT_ID = MP.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " +
-                                        "GROUP BY SD.PRODUCT_ID " +
+                    sqlCommandx = "SELECT '' AS BRANCH_NAME, MP.PRODUCT_NAME AS 'PRODUCT', SUM(SD.PRODUCT_QTY) AS 'QTY', SUM(SD.SALES_SUBTOTAL-(SD.PRODUCT_QTY*MP.PRODUCT_BASE_PRICE)) AS 'LABA' " +
+                                        "FROM SALES_HEADER SH, MASTER_PRODUCT MP, " +
+                                        "SALES_DETAIL SD INNER JOIN (SELECT SALES_INVOICE, MAX(REV_NO) AS MAX FROM SALES_DETAIL GROUP BY SALES_INVOICE) MAX_SD ON SD.SALES_INVOICE = MAX_SD.SALES_INVOICE AND SD.REV_NO = MAX_SD.MAX " +
+                                        "WHERE SH.REV_NO = SD.REV_NO AND SD.PRODUCT_ID = MP.PRODUCT_ID AND SD.SALES_INVOICE = SH.SALES_INVOICE AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(SH.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' " +
+                                        "GROUP BY BRANCH_NAME, SD.PRODUCT_ID " +
                                         "ORDER BY LABA DESC " +
-                                        "LIMIT " + LimitTextBox.Text;
+                                        "LIMIT " + limitRow;
                     DS.writeXML(sqlCommandx, globalConstants.TopSalesbyMarginXML);
                     ReportTopSalesbyMarginForm displayedForm4 = new ReportTopSalesbyMarginForm();
                     displayedForm4.ShowDialog(this);

@@ -295,6 +295,22 @@ namespace AlphaSoft
             }
         }
         
+        public void setWelcomeLabel()
+        {
+            int locationID = 0;
+            string namaLocation = "PUSAT";
+
+            locationID = gutil.loadlocationID(2);
+
+            if (locationID > 0)
+            {
+                namaLocation = DS.getDataSingleValue("SELECT IFNULL(LOCATION_NAME, '') FROM MASTER_LOCATION WHERE ID = " + locationID).ToString();
+            }
+
+            welcomeLabel.Text = "WELCOME " + DS.getDataSingleValue("SELECT IFNULL(USER_FULL_NAME, 0) FROM MASTER_USER WHERE ID = " + selectedUserID).ToString() + " | LOC [" + namaLocation + "]";
+
+        }
+
         private void adminForm_Load(object sender, EventArgs e)
         {
             gutil.saveSystemDebugLog(0, "adminForm Load");
@@ -308,7 +324,7 @@ namespace AlphaSoft
             //updateLabel();
             //timer1.Start();
 
-            welcomeLabel.Text = "WELCOME " + DS.getDataSingleValue("SELECT IFNULL(USER_FULL_NAME, 0) FROM MASTER_USER WHERE ID = " + selectedUserID).ToString();
+            setWelcomeLabel();
             menuStrip1.Renderer = new MyRenderer();
             gutil.reArrangeTabOrder(this);
 
@@ -979,7 +995,7 @@ namespace AlphaSoft
             setAccessibility(globalConstants.MENU_SALES_QUOTATION, MENU_SalesQuotation);
             setAccessibility(globalConstants.MENU_SALES_ORDER_REVISION, MENU_SORevision);
             setAccessibility(globalConstants.MENU_DELIVERY_ORDER, MENU_deliveryOrder);
-            setAccessibility(globalConstants.MENU_COPY_DELIVERY_ORDER, MENU_copyDO);
+            //setAccessibility(globalConstants.MENU_COPY_DELIVERY_ORDER, MENU_copyDO);
 
             // SUB MENU RETUR PENJUALAN
             setAccessibility(globalConstants.MENU_RETUR_PENJUALAN, MENU_returPenjualan);
@@ -1121,6 +1137,8 @@ namespace AlphaSoft
         {
             SetApplicationForm displayedForm = new SetApplicationForm();
             displayedForm.ShowDialog(this);
+
+            setWelcomeLabel();
         }
 
         private void backUpRestoreDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1348,7 +1366,7 @@ namespace AlphaSoft
 
         private void pemasukanKasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportFinanceSearchForm displayedForm = new ReportFinanceSearchForm(globalConstants.REPORT_FINANCE_OUT);
+            ReportFinanceSearchForm displayedForm = new ReportFinanceSearchForm(globalConstants.REPORT_FINANCE_IN);
             displayedForm.ShowDialog(this);
         }
 
@@ -1468,6 +1486,17 @@ namespace AlphaSoft
         {
             dataSalesInvoice displayedForm = new dataSalesInvoice(globalConstants.COPY_DELIVERY_ORDER);
             displayedForm.ShowDialog(this);
+        }
+
+        private void toolStripMenuItem10_Click_3(object sender, EventArgs e)
+        {
+            ReportFinanceSearchForm displayForm = new ReportFinanceSearchForm(globalConstants.REPORT_MONTHLY_BALANCE);
+            displayForm.ShowDialog(this);
+        }
+
+        private void MENU_copyDO_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

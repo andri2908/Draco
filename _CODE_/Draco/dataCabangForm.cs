@@ -87,6 +87,7 @@ namespace AlphaSoft
         {
             if (!namaBranchTextbox.Text.Equals(""))  //for showing all???
                 loadBranchData(namaBranchTextbox.Text);
+            namaBranchTextbox.Select();
         }
 
         private void namaBranchTextbox_TextChanged(object sender, EventArgs e)

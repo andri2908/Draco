@@ -268,9 +268,10 @@ namespace AlphaSoft
             arrButton[0] = saveButton;
             arrButton[1] = ResetButton;
             gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
-
             gUtil.reArrangeTabOrder(this);
-            branchNameTextBox.Select();
+
+            errorLabel.Text = "";
+            //branchNameTextBox.Select();
         }
 
         private void dataCabangDetailForm_Activated(object sender, EventArgs e)
@@ -287,7 +288,7 @@ namespace AlphaSoft
                     loadBranchDataInformation();
                     break;
             }
-            errorLabel.Text = "";
+            branchNameTextBox.Select();
         }
 
         private void ip1Textbox_KeyPress(object sender, KeyPressEventArgs e)

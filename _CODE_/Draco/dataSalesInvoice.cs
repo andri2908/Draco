@@ -39,7 +39,7 @@ namespace AlphaSoft
             MySqlDataReader rdr;
             string sqlCommand;
 
-            sqlCommand = "SELECT CUSTOMER_ID, CUSTOMER_FULL_NAME FROM MASTER_CUSTOMER WHERE CUSTOMER_ACTIVE = 1";
+            sqlCommand = "SELECT CUSTOMER_ID, CUSTOMER_FULL_NAME FROM MASTER_CUSTOMER WHERE CUSTOMER_ACTIVE = 1 ORDER BY CUSTOMER_FULL_NAME ASC";
 
             customerCombo.Items.Clear();
             customerHiddenCombo.Items.Clear();
@@ -224,8 +224,6 @@ namespace AlphaSoft
             gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
 
             gUtil.reArrangeTabOrder(this);
-
-            noInvoiceTextBox.Select();
         }
 
         private void displayButton_Click(object sender, EventArgs e)
@@ -461,6 +459,12 @@ namespace AlphaSoft
                 cashierForm cashierDisplayForm = new cashierForm(1);
                 cashierDisplayForm.ShowDialog(this);
             }
+        }
+
+        private void dataSalesInvoice_Activated(object sender, EventArgs e)
+        {
+            noInvoiceTextBox.Select();
+
         }
     }
 }

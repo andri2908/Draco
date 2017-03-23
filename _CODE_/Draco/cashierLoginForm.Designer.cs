@@ -269,7 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(493, 334);
+            this.ClientSize = new System.Drawing.Size(489, 330);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -280,6 +280,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CASHIER SHIFT FORM";
+            this.Activated += new System.EventHandler(this.cashierLoginForm_Activated);
             this.Load += new System.EventHandler(this.cashierLoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

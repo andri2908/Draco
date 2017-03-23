@@ -137,6 +137,7 @@ namespace AlphaSoft
                     loadAccountData();
                     break;
             }
+            kodeTextbox.Select();
         }
 
         private void ResetButton_Click(object sender, EventArgs e)

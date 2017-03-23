@@ -216,6 +216,7 @@ namespace AlphaSoft
         private void dataMutasiBarangForm_Activated(object sender, EventArgs e)
         {
             loadROdata();
+            noMutasiTextBox.Select();
             //fillInBranchCombo(branchFromCombo, branchFromComboHidden);
             //fillInBranchCombo(branchToCombo, branchToComboHidden);
         }

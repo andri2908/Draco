@@ -40,6 +40,7 @@ namespace AlphaSoft
         {
             //if need something
             loadNoFaktur();
+            noFakturTextBox.Select();
         }
 
         private void resetbutton_Click(object sender, EventArgs e)

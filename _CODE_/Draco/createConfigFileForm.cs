@@ -74,13 +74,11 @@ namespace AlphaSoft
         private void createConfigFileForm_Load(object sender, EventArgs e)
         {
             Button[] arrButton = new Button[2];
-            errorLabel.Text = "";
-
             arrButton[0] = button1;
             arrButton[1] = saveButton;
             gUtil.reArrangeButtonPosition(arrButton, 193, this.Width);
-
             gUtil.reArrangeTabOrder(this);
+            errorLabel.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -171,6 +169,11 @@ namespace AlphaSoft
             {
                 ip4Textbox.SelectAll();
             });
+        }
+
+        private void createConfigFileForm_Activated(object sender, EventArgs e)
+        {
+
         }
     }
 }

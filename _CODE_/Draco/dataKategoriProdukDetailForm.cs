@@ -244,6 +244,7 @@ namespace AlphaSoft
                     loadDataKategori();
                     break;
             }
+            categoryNameTextBox.Select();
         }
     }
 }

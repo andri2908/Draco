@@ -69,8 +69,6 @@ namespace AlphaSoft
                 newButton.Visible = true;
             else
                 newButton.Visible = false;
-
-            namaBranchTextbox.Select();
         }
 
         private void namaBranchTextbox_TextChanged(object sender, EventArgs e)
@@ -104,6 +102,7 @@ namespace AlphaSoft
         {
             if (!namaBranchTextbox.Text.Equals(""))
                 loadRegionData(namaBranchTextbox.Text);
+            namaBranchTextbox.Select();
         }
 
         private void dataCabangGridView_KeyDown(object sender, KeyEventArgs e)

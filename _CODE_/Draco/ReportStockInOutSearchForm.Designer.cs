@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TagsComboBox = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ErrorLabel2 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.datefromPicker = new System.Windows.Forms.DateTimePicker();
             this.CustomercomboBox = new System.Windows.Forms.ComboBox();
             this.SupplierNameCombobox = new System.Windows.Forms.ComboBox();
-            this.TagsComboBox = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,12 +70,23 @@
             this.groupBox1.Controls.Add(this.CustomercomboBox);
             this.groupBox1.Controls.Add(this.SupplierNameCombobox);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 43);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(663, 181);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kriteria Pencarian Data Mutasi dan Retur";
+            // 
+            // TagsComboBox
+            // 
+            this.TagsComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.TagsComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TagsComboBox.FormattingEnabled = true;
+            this.TagsComboBox.Location = new System.Drawing.Point(204, 60);
+            this.TagsComboBox.Name = "TagsComboBox";
+            this.TagsComboBox.Size = new System.Drawing.Size(200, 26);
+            this.TagsComboBox.TabIndex = 14;
+            this.TagsComboBox.Visible = false;
             // 
             // checkBox2
             // 
@@ -239,24 +251,24 @@
             this.SupplierNameCombobox.Text = "Supplier";
             this.SupplierNameCombobox.Visible = false;
             // 
-            // TagsComboBox
+            // panel1
             // 
-            this.TagsComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.TagsComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TagsComboBox.FormattingEnabled = true;
-            this.TagsComboBox.Location = new System.Drawing.Point(204, 60);
-            this.TagsComboBox.Name = "TagsComboBox";
-            this.TagsComboBox.Size = new System.Drawing.Size(200, 26);
-            this.TagsComboBox.TabIndex = 14;
-            this.TagsComboBox.Visible = false;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Location = new System.Drawing.Point(1, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(685, 29);
+            this.panel1.TabIndex = 48;
             // 
             // ReportStockInOutSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 201);
+            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.ClientSize = new System.Drawing.Size(687, 236);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ReportStockInOutSearchForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laporan Mutasi dan Retur";
             this.Load += new System.EventHandler(this.ReportStockInOutSearchForm_Load);
             this.groupBox1.ResumeLayout(false);
@@ -285,5 +297,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox CustomercomboBox;
         private System.Windows.Forms.ComboBox TagsComboBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }

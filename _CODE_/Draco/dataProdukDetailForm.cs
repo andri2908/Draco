@@ -30,6 +30,7 @@ namespace AlphaSoft
         private List<string> detailQty = new List<string>();
         private bool isLoading = false;
         private string previousInput = "";
+        private bool allowedViewHPP = false;
         
         private string stokAwalText = "";
         private string limitStokText = "";
@@ -637,7 +638,7 @@ namespace AlphaSoft
                 return false;
             }
 
-            if (hppTextBox.Text.Length <= 0 || Convert.ToInt32(hppTextBox.Text) == 0)
+            if (hppTextBox.Text.Length <= 0 || Convert.ToInt32(hppTextBox.Text) == 0 && allowedViewHPP)
             {
                 errorLabel.Text = "HARGA POKOK TIDAK BOLEH 0 / KOSONG";
                 return false;
@@ -1105,6 +1106,16 @@ namespace AlphaSoft
                 }
             }
 
+            userAccessOption = DS.getUserAccessRight(globalConstants.MENU_VIEW_HPP_PRODUCT, gUtil.getUserGroupID());
+            if (userAccessOption != 1)
+            {
+                label10.Visible = false;
+                hppTextBox.Visible = false;
+                allowedViewHPP = false;
+            }
+            else
+                allowedViewHPP = true;
+
             arrButton[0] = saveButton;
             arrButton[1] = resetbutton;
             //gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
@@ -1122,6 +1133,7 @@ namespace AlphaSoft
 
         private void dataProdukDetailForm_Activated(object sender, EventArgs e)
         {
+            namaProdukTextBox.Select();
         }
 
         private void namaProdukTextBox_TextChanged(object sender, EventArgs e)
@@ -1140,6 +1152,14 @@ namespace AlphaSoft
         {
             currentSelectedKategoriID.Clear();
             produkKategoriTextBox.Clear();
+        }
+
+        private void produkKategoriTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchKategoriButton.PerformClick();
+            }
         }
     }
 }

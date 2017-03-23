@@ -140,6 +140,7 @@ namespace AlphaSoft
             {
                 loadKategoriData();
             }
+            categoryNameTextBox.Select();
         }
 
         private void dataKategoriProdukForm_Load(object sender, EventArgs e)

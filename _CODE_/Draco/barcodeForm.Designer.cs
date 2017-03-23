@@ -89,6 +89,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "BARCODE";
             this.TopMost = true;
+            this.Activated += new System.EventHandler(this.barcodeForm_Activated);
             this.Load += new System.EventHandler(this.barcodeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

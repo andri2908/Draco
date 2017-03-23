@@ -314,21 +314,21 @@ namespace AlphaSoft
 
         private void dataSupplierDetailForm_Activated(object sender, EventArgs e)
         {
-            /*if (selectedSupplierID != 0)  //old code
-                loadSupplierData(); */
-            errorLabel.Text = "";
-            switch (originModuleID)
-            {
-                case globalConstants.NEW_SUPPLIER:
-                    options = gUtil.INS;
-                    nonAktifCheckbox.Enabled = false;
-                    break;
-                case globalConstants.EDIT_SUPPLIER:
-                    options = gUtil.UPD;
-                    nonAktifCheckbox.Enabled = true;
-                    loadSupplierData();
-                    break;
-            }
+            ///*if (selectedSupplierID != 0)  //old code
+            //    loadSupplierData(); */
+            //switch (originModuleID)
+            //{
+            //    case globalConstants.NEW_SUPPLIER:
+            //        options = gUtil.INS;
+            //        nonAktifCheckbox.Enabled = false;
+            //        break;
+            //    case globalConstants.EDIT_SUPPLIER:
+            //        options = gUtil.UPD;
+            //        nonAktifCheckbox.Enabled = true;
+            //        loadSupplierData();
+            //        break;
+            //}
+            //supplierNameTextBox.Select();
         }
     }
 }

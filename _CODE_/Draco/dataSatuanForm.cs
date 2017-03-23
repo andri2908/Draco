@@ -52,7 +52,14 @@ namespace AlphaSoft
             DS.mySqlConnect();
             if (options == 1)
             {
-                sqlCommand = "SELECT UNIT_ID, UNIT_NAME AS 'NAMA UNIT', UNIT_DESCRIPTION AS 'DESKRIPSI UNIT' FROM MASTER_UNIT";
+                if (satuannonactiveoption.Checked == true)
+                {
+                    sqlCommand = "SELECT UNIT_ID, UNIT_NAME AS 'NAMA UNIT', UNIT_DESCRIPTION AS 'DESKRIPSI UNIT' FROM MASTER_UNIT";
+                }
+                else
+                {
+                    sqlCommand = "SELECT UNIT_ID, UNIT_NAME AS 'NAMA UNIT', UNIT_DESCRIPTION AS 'DESKRIPSI UNIT' FROM MASTER_UNIT WHERE UNIT_ACTIVE = 1";
+                }
             }
             else
             {
@@ -91,6 +98,7 @@ namespace AlphaSoft
             {
                 loadUnitData();
             }
+            unitNameTextBox.Select();
         }
         
         private void unitNameTextBox_TextChanged(object sender, EventArgs e)
@@ -140,7 +148,6 @@ namespace AlphaSoft
         private void dataSatuanForm_Load(object sender, EventArgs e)
         {
             gutil.reArrangeTabOrder(this);
-            unitNameTextBox.Select();
         }
 
         private void dataUnitGridView_KeyDown(object sender, KeyEventArgs e)

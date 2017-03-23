@@ -94,7 +94,7 @@ namespace AlphaSoft
         public const int MEMBERSHIP_POINT = 506;
         public const int PRE_ORDER_SALES = 506;
         public const int PRE_ORDER_SALES_REVISION = 507;
-
+        public const int DELETE_DJ = 508;
 
         // THESE CONSTANTS ARE USED TO CHECK GROUP ACCESS MODULE
         // THE VALUES MUST BE TIED TO THE VALUES INSIDE THE DATABASE TABLE
@@ -130,6 +130,7 @@ namespace AlphaSoft
         public const int MENU_PENERIMAAN_BARANG_DARI_MUTASI = 119;
         public const int MENU_PENERIMAAN_BARANG_DARI_PO = 120;
         public const int MENU_STOK_TRANSFER = 121;
+        public const int MENU_VIEW_HPP_PRODUCT = 122;
 
         // MAIN MENU PEMBELIAN
         public const int MENU_PEMBELIAN = 201;

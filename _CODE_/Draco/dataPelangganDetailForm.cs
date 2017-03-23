@@ -410,8 +410,6 @@ namespace AlphaSoft
 
         private void dataPelangganDetailForm_Activated(object sender, EventArgs e)
         {
-            errorLabel.Text = "";
-
             switch (originModuleID)
             {
                 case globalConstants.NEW_CUSTOMER:
@@ -426,6 +424,9 @@ namespace AlphaSoft
                     options = gUtil.UPD;
                     break;
             }
+
+            errorLabel.Text = "";
+            custNameTextBox.Select();
         }
 
         private void maxCredit_TextChanged(object sender, EventArgs e)

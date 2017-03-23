@@ -248,6 +248,7 @@
             this.Name = "dataPenerimaanBarangForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DATA PENERIMAAN BARANG";
+            this.Activated += new System.EventHandler(this.dataPenerimaanBarangForm_Activated);
             this.Load += new System.EventHandler(this.dataPenerimaanBarangForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPenerimaanBarang)).EndInit();
             this.groupBox1.ResumeLayout(false);

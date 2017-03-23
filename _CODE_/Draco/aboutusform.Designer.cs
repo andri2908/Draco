@@ -41,6 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.titlelabel1 = new System.Windows.Forms.Label();
             this.OKbutton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(9, 58);
+            this.panel1.Location = new System.Drawing.Point(9, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(304, 72);
             this.panel1.TabIndex = 0;
@@ -98,7 +99,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 20);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Alpha 1.0";
+            this.label8.Text = "Alpha 2.0";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
@@ -182,7 +183,7 @@
             // 
             this.titlelabel1.AutoSize = true;
             this.titlelabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titlelabel1.Location = new System.Drawing.Point(39, 21);
+            this.titlelabel1.Location = new System.Drawing.Point(39, 37);
             this.titlelabel1.Name = "titlelabel1";
             this.titlelabel1.Size = new System.Drawing.Size(221, 24);
             this.titlelabel1.TabIndex = 1;
@@ -192,7 +193,7 @@
             // 
             this.OKbutton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.OKbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OKbutton.Location = new System.Drawing.Point(116, 144);
+            this.OKbutton.Location = new System.Drawing.Point(116, 160);
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 36);
             this.OKbutton.TabIndex = 2;
@@ -200,16 +201,27 @@
             this.OKbutton.UseVisualStyleBackColor = true;
             this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Location = new System.Drawing.Point(-1, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(330, 29);
+            this.panel2.TabIndex = 51;
+            // 
             // AboutUsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 191);
+            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.ClientSize = new System.Drawing.Size(322, 211);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.OKbutton);
             this.Controls.Add(this.titlelabel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AboutUsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About Us";
             this.Activated += new System.EventHandler(this.AboutUsForm_Activated);
             this.Load += new System.EventHandler(this.AboutUsForm_Load);
@@ -237,5 +249,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button OKbutton;
+        private System.Windows.Forms.Panel panel2;
     }
 }

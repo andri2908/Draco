@@ -43,6 +43,7 @@ namespace AlphaSoft
         private int selectedSupplierID = 0;
         private int selectedPOID = 0;
         private string selectedPOInvoice = "";
+        private bool PO_Sent = false;
         Button[] arrButton = new Button[2];
 
         public purchaseOrderDetailForm()
@@ -323,7 +324,7 @@ namespace AlphaSoft
             MySqlDataReader rdr;
             string sqlCommand = "";
 
-            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1";
+            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1 ORDER BY SUPPLIER_FULL_NAME ASC";
 
             using (rdr = DS.getData(sqlCommand))
             {
@@ -818,17 +819,20 @@ namespace AlphaSoft
                 return false;
             }
 
-            for (i = 0; i < detailPODataGridView.Rows.Count && dataExist; i++)
+            for (i = 0; i < detailPODataGridView.Rows.Count && dataExist && validInput; i++)
             {
                 if (null != detailPODataGridView.Rows[i].Cells["HPP"].Value)
                     validInput = gUtil.matchRegEx(detailPODataGridView.Rows[i].Cells["HPP"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
                 else
                     validInput = false;
 
-                if (null != detailPODataGridView.Rows[i].Cells["qty"].Value)
-                    validInput = gUtil.matchRegEx(detailPODataGridView.Rows[i].Cells["qty"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
-                else
-                    validInput = false;
+                if (validInput)
+                { 
+                    if (null != detailPODataGridView.Rows[i].Cells["qty"].Value)
+                        validInput = gUtil.matchRegEx(detailPODataGridView.Rows[i].Cells["qty"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
+                    else
+                        validInput = false;
+                }
 
                 if (null != detailPODataGridView.Rows[i].Cells["productName"].Value)
                     dataExist = gUtil.isProductNameExist(detailPODataGridView.Rows[i].Cells["productName"].Value.ToString());
@@ -846,6 +850,15 @@ namespace AlphaSoft
             {
                 errorLabel.Text = "NAMA PRODUK PADA BARIS [" + i + "] INVALID";
                 return false;
+            }
+
+            if (termOfPaymentCombo.SelectedIndex == 1) // KREDIT
+            {
+                if (durationTextBox.Text.Length <= 0)
+                {
+                    errorLabel.Text = "LAMA TEMPO TIDAK BOLEH KOSONG";
+                    return false;
+                }
             }
 
             return true;
@@ -876,7 +889,8 @@ namespace AlphaSoft
             int taxLimitType = 0; // 0 - percentage, 1 - amount
             string purchaseDateValue = "";
             bool addToTaxTable = false;
-
+            DateTime PODueDate;
+            string PODueDateTime = "";
             roInvoice = selectedROInvoice; //ROInvoiceTextBox.Text;
             POInvoice = POinvoiceTextBox.Text;
             supplierID = selectedSupplierID;
@@ -885,7 +899,15 @@ namespace AlphaSoft
             PODateTime = String.Format(culture, "{0:dd-MM-yyyy}", selectedPODate);
 
             termOfPayment = termOfPaymentCombo.SelectedIndex;
-            termOfPaymentDuration = Convert.ToInt32(durationTextBox.Text);
+
+            if (durationTextBox.Text.Length > 0)
+                termOfPaymentDuration = Convert.ToInt32(durationTextBox.Text);
+            else
+                termOfPaymentDuration = 0;
+
+            PODueDate = PODateTimePicker.Value.AddDays(termOfPaymentDuration);
+            PODueDateTime = String.Format(culture, "{0:dd-MM-yyyy}", PODueDate);
+
             //PODueDate = selectedPODate.AddDays(termOfPaymentDuration);
             //PODueDateTime = String.Format(culture, "{0:dd-MM-yyyy}", PODueDate);
 
@@ -954,8 +976,8 @@ namespace AlphaSoft
                     case globalConstants.PURCHASE_ORDER_DARI_RO:
                         gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "PURCHASE HEADER FROM REQUEST ORDER");
                         // SAVE HEADER TABLE
-                        sqlCommand = "INSERT INTO PURCHASE_HEADER (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID) VALUES " +
-                                            "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ")";
+                        sqlCommand = "INSERT INTO PURCHASE_HEADER (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID, PURCHASE_TERM_OF_PAYMENT_DATE) VALUES " +
+                                            "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ", STR_TO_DATE('" + PODueDateTime + "', '%d-%m-%Y'))";
 
                         gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "INSERT PURCHASE HEADER DATA ["+ POInvoice + "]");
                         if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
@@ -963,8 +985,8 @@ namespace AlphaSoft
 
                         if (addToTaxTable)
                         {
-                            sqlCommand = "INSERT INTO PURCHASE_HEADER_TAX (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID) VALUES " +
-                                                "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ")";
+                            sqlCommand = "INSERT INTO PURCHASE_HEADER_TAX (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID, PURCHASE_TERM_OF_PAYMENT_DATE) VALUES " +
+                                                "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ", STR_TO_DATE('" + PODueDateTime + "', '%d-%m-%Y'))";
 
                             gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "INSERT PURCHASE HEADER TAX DATA [" + POInvoice + "]");
                             if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
@@ -1007,8 +1029,8 @@ namespace AlphaSoft
                     case globalConstants.NEW_PURCHASE_ORDER:
                         gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "NEW PURCHASE HEADER");
                         // SAVE HEADER TABLE
-                        sqlCommand = "INSERT INTO PURCHASE_HEADER (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID) VALUES " +
-                                            "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ")";
+                        sqlCommand = "INSERT INTO PURCHASE_HEADER (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID, PURCHASE_TERM_OF_PAYMENT_DATE) VALUES " +
+                                            "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ", STR_TO_DATE('" + PODueDateTime + "', '%d-%m-%Y'))";
 
                         gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "INSERT PURCHASE HEADER DATA ["+ POInvoice + "]");
                         if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
@@ -1016,8 +1038,8 @@ namespace AlphaSoft
 
                         if (addToTaxTable)
                         {
-                            sqlCommand = "INSERT INTO PURCHASE_HEADER_TAX (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID) VALUES " +
-                                                "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ")";
+                            sqlCommand = "INSERT INTO PURCHASE_HEADER_TAX (PURCHASE_INVOICE, SUPPLIER_ID, PURCHASE_DATETIME, PURCHASE_TOTAL, PURCHASE_TERM_OF_PAYMENT, PURCHASE_TERM_OF_PAYMENT_DURATION, PURCHASE_PAID, PURCHASE_TERM_OF_PAYMENT_DATE) VALUES " +
+                                                "('" + POInvoice + "', " + supplierID + ", STR_TO_DATE('" + PODateTime + "', '%d-%m-%Y'), " + gUtil.validateDecimalNumericInput(POTotal) + ", " + termOfPayment + ", " + termOfPaymentDuration + ", " + purchasePaid + ", STR_TO_DATE('" + PODueDateTime + "', '%d-%m-%Y'))";
                             gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "INSERT PURCHASE HEADER TAX DATA [" + POInvoice + "]");
                             if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                                 throw internalEX;
@@ -1057,6 +1079,7 @@ namespace AlphaSoft
                                             "PURCHASE_TOTAL = " + gUtil.validateDecimalNumericInput(POTotal) + ", " +
                                             "PURCHASE_TERM_OF_PAYMENT = " + termOfPayment + ", " + 
                                             "PURCHASE_TERM_OF_PAYMENT_DURATION = " + termOfPaymentDuration + ", " +
+                                            "PURCHASE_TERM_OF_PAYMENT_DATE = STR_TO_DATE('" + PODueDateTime + "', '%d-%m-%Y'), " +
                                             "PURCHASE_PAID = " + purchasePaid +" " +
                                             "WHERE PURCHASE_INVOICE = '" +POInvoice+ "'";
                         gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "UPDATE PURCHASE HEADER DATA [" + POInvoice + "]");
@@ -1153,33 +1176,36 @@ namespace AlphaSoft
         private void saveButton_Click(object sender, EventArgs e)
         {
             gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "ATTEMPT TO SAVE DATA");
-            if (saveData())
+
+            if (DialogResult.Yes == MessageBox.Show("SAVE DATA? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
-                gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "PURCHASE ORDER SAVED");
-                switch (originModuleID)
+                if (saveData())
                 {
-                    case globalConstants.NEW_PURCHASE_ORDER:
-                        gUtil.saveUserChangeLog(globalConstants.MENU_PURCHASE_ORDER, globalConstants.CHANGE_LOG_INSERT, "CREATE NEW PURCHASE ORDER [" + POinvoiceTextBox.Text + "]");
-                        break;
-                    case globalConstants.EDIT_PURCHASE_ORDER:
-                        gUtil.saveUserChangeLog(globalConstants.MENU_PURCHASE_ORDER, globalConstants.CHANGE_LOG_UPDATE, "UPDATE PURCHASE ORDER [" + POinvoiceTextBox.Text + "]");
-                        break;
+                    gUtil.saveSystemDebugLog(globalConstants.MENU_PURCHASE_ORDER, "PURCHASE ORDER SAVED");
+                    switch (originModuleID)
+                    {
+                        case globalConstants.NEW_PURCHASE_ORDER:
+                            gUtil.saveUserChangeLog(globalConstants.MENU_PURCHASE_ORDER, globalConstants.CHANGE_LOG_INSERT, "CREATE NEW PURCHASE ORDER [" + POinvoiceTextBox.Text + "]");
+                            break;
+                        case globalConstants.EDIT_PURCHASE_ORDER:
+                            gUtil.saveUserChangeLog(globalConstants.MENU_PURCHASE_ORDER, globalConstants.CHANGE_LOG_UPDATE, "UPDATE PURCHASE ORDER [" + POinvoiceTextBox.Text + "]");
+                            break;
+                    }
+
+                    errorLabel.Text = "";
+                    generateButton.Visible = true;
+
+                    saveButton.Enabled = false;
+                    PODateTimePicker.Enabled = false;
+                    supplierCombo.Enabled = false;
+                    termOfPaymentCombo.Enabled = false;
+                    durationTextBox.ReadOnly = true;
+                    detailPODataGridView.ReadOnly = true;
+                    detailPODataGridView.AllowUserToAddRows = false;
+
+                    gUtil.showSuccess(gUtil.INS);
+                    gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
                 }
-
-                errorLabel.Text = "";
-                generateButton.Visible = true;
-
-                saveButton.Enabled = false;
-
-                PODateTimePicker.Enabled = false;
-                supplierCombo.Enabled = false;
-                termOfPaymentCombo.Enabled = false;
-                durationTextBox.ReadOnly = true;
-                detailPODataGridView.ReadOnly = true;
-                detailPODataGridView.AllowUserToAddRows = false;
-
-                gUtil.showSuccess(gUtil.INS);
-                gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
             }
         }
 
@@ -1191,6 +1217,7 @@ namespace AlphaSoft
             
             sqlCommand = "SELECT ID, PURCHASE_INVOICE, PURCHASE_DATETIME, " +
                                 "PURCHASE_TERM_OF_PAYMENT, " +
+                                "PURCHASE_SENT, " +
                                 "PURCHASE_TERM_OF_PAYMENT_DURATION, " +
                                 "M.SUPPLIER_FULL_NAME, PURCHASE_TOTAL " + //IFNULL(RO_INVOICE,'') AS RO_INVOICE " +
                                 "FROM PURCHASE_HEADER P, MASTER_SUPPLIER M " +
@@ -1215,6 +1242,20 @@ namespace AlphaSoft
 
                         if (rdr.GetInt32("PURCHASE_TERM_OF_PAYMENT") == 1)
                             durationTextBox.Enabled = true;
+
+                        if (rdr.GetInt32("PURCHASE_SENT") == 1)
+                        {
+                            PO_Sent = true;
+
+                            saveButton.Enabled = false;
+                            POinvoiceTextBox.ReadOnly = true;
+                            PODateTimePicker.Enabled = false;
+                            supplierCombo.Enabled = false;
+                            termOfPaymentCombo.Enabled = false;
+                            durationTextBox.ReadOnly = true;
+                            detailPODataGridView.ReadOnly = true;
+                            detailPODataGridView.AllowUserToAddRows = false;
+                        }
                     }
                 }
             }
@@ -1350,23 +1391,29 @@ namespace AlphaSoft
         {
             originModuleID = globalConstants.PRINTOUT_PURCHASE_ORDER;
 
-            if (saveData())
+            if (PO_Sent)
             {
-                gUtil.saveUserChangeLog(globalConstants.MENU_PURCHASE_ORDER, globalConstants.CHANGE_LOG_INSERT, "PRINT OUT PURCHASE ORDER [" + POinvoiceTextBox.Text + "]");
-
-                saveButton.Enabled = false;
-
-                POinvoiceTextBox.ReadOnly = true;
-                PODateTimePicker.Enabled = false;
-                supplierCombo.Enabled = false;
-                termOfPaymentCombo.Enabled = false;
-                durationTextBox.ReadOnly = true;
-                detailPODataGridView.ReadOnly = true;
-                detailPODataGridView.AllowUserToAddRows = false;
-
                 printOutPurchaseOrder();
+            }
+            else if (DialogResult.Yes == MessageBox.Show("SAVE DATA", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            {
+                if (saveData())
+                {
+                    gUtil.saveUserChangeLog(globalConstants.MENU_PURCHASE_ORDER, globalConstants.CHANGE_LOG_INSERT, "PRINT OUT PURCHASE ORDER [" + POinvoiceTextBox.Text + "]");
 
-                gUtil.showSuccess(gUtil.INS);
+                    saveButton.Enabled = false;
+                    POinvoiceTextBox.ReadOnly = true;
+                    PODateTimePicker.Enabled = false;
+                    supplierCombo.Enabled = false;
+                    termOfPaymentCombo.Enabled = false;
+                    durationTextBox.ReadOnly = true;
+                    detailPODataGridView.ReadOnly = true;
+                    detailPODataGridView.AllowUserToAddRows = false;
+
+                    printOutPurchaseOrder();
+
+                    gUtil.showSuccess(gUtil.INS);
+                }
             }
         }
 
@@ -1416,26 +1463,26 @@ namespace AlphaSoft
 
         private void detailPODataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            var cell = detailPODataGridView[e.ColumnIndex, e.RowIndex];
-            DataGridViewRow selectedRow = detailPODataGridView.Rows[e.RowIndex];
+            //var cell = detailPODataGridView[e.ColumnIndex, e.RowIndex];
+            //DataGridViewRow selectedRow = detailPODataGridView.Rows[e.RowIndex];
 
-            if (isLoading == true)
-                return;
+            //if (isLoading == true)
+            //    return;
 
-            if (cell.OwningColumn.Name == "productName")
-            {
-                if (null != cell.Value)
-                {
-                    if (cell.Value.ToString().Length > 0)
-                    {
-                        updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
-                    }
-                    else
-                    {
-                        clearUpSomeRowContents(selectedRow, e.RowIndex);
-                    }
-                }
-            }
+            //if (cell.OwningColumn.Name == "productName")
+            //{
+            //    if (null != cell.Value)
+            //    {
+            //        if (cell.Value.ToString().Length > 0)
+            //        {
+            //            updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
+            //        }
+            //        else
+            //        {
+            //            clearUpSomeRowContents(selectedRow, e.RowIndex);
+            //        }
+            //    }
+            //}
         }
 
         private void detailPODataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)

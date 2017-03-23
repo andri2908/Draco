@@ -39,7 +39,7 @@
             this.newPassword2TextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorLabel = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
@@ -66,6 +66,7 @@
             this.newPasswordTextBox.PasswordChar = '*';
             this.newPasswordTextBox.Size = new System.Drawing.Size(197, 27);
             this.newPasswordTextBox.TabIndex = 65;
+            this.newPasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.newPasswordTextBox_KeyPress);
             // 
             // label3
             // 
@@ -120,6 +121,7 @@
             this.oldPasswordTextBox.PasswordChar = '*';
             this.oldPasswordTextBox.Size = new System.Drawing.Size(197, 27);
             this.oldPasswordTextBox.TabIndex = 16;
+            this.oldPasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oldPasswordTextBox_KeyPress);
             // 
             // label5
             // 
@@ -141,6 +143,7 @@
             this.newPassword2TextBox.PasswordChar = '*';
             this.newPassword2TextBox.Size = new System.Drawing.Size(197, 27);
             this.newPassword2TextBox.TabIndex = 66;
+            this.newPassword2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.newPassword2TextBox_KeyPress);
             // 
             // panel1
             // 
@@ -164,17 +167,17 @@
             this.errorLabel.TabIndex = 9;
             this.errorLabel.Text = "   ";
             // 
-            // loginButton
+            // saveButton
             // 
-            this.loginButton.BackColor = System.Drawing.SystemColors.Control;
-            this.loginButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(126, 123);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(95, 37);
-            this.loginButton.TabIndex = 64;
-            this.loginButton.Text = "SAVE";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.saveButton.BackColor = System.Drawing.SystemColors.Control;
+            this.saveButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.Location = new System.Drawing.Point(126, 123);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(95, 37);
+            this.saveButton.TabIndex = 64;
+            this.saveButton.Text = "SAVE";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // button1
             // 
@@ -193,7 +196,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.loginButton);
+            this.groupBox1.Controls.Add(this.saveButton);
             this.groupBox1.Controls.Add(this.newPasswordTextBox);
             this.groupBox1.Controls.Add(this.newPassword2TextBox);
             this.groupBox1.Controls.Add(this.label5);
@@ -238,7 +241,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox oldPasswordTextBox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox newPasswordTextBox;
         private System.Windows.Forms.Label label5;

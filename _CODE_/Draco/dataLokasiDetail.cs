@@ -193,5 +193,10 @@ namespace AlphaSoft
         {
             gutil.ResetAllControls(this);
         }
+
+        private void dataLokasiDetail_Activated(object sender, EventArgs e)
+        {
+            namaGroupTextBox.Select();
+        }
     }
 }

@@ -282,6 +282,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "STOK TRANSFER";
+            this.Activated += new System.EventHandler(this.stokTransferForm_Activated);
             this.Load += new System.EventHandler(this.stokTransferForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

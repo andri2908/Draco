@@ -299,7 +299,7 @@ namespace AlphaSoft
                 clearUpSomeRowContents(selectedRow, newRowIndex);
             }
 
-            detailReturDataGridView.Focus();
+            //detailReturDataGridView.Focus();
             detailReturDataGridView.CurrentCell = detailReturDataGridView.Rows[newRowIndex].Cells["productName"];
             detailReturDataGridView.Select();
             detailReturDataGridView.BeginEdit(true);
@@ -307,7 +307,7 @@ namespace AlphaSoft
             //detailReturDataGridView.Select();
         }
 
-        public void addNewRowFromBarcode(string productID, string productName, int rowIndex = -1)
+        public void addNewRowFromBarcode(string productID, string productName, int rowIndex = -1, int lotID = 0)
         {
             int i = 0;
             bool found = false;
@@ -389,9 +389,8 @@ namespace AlphaSoft
             calculateTotal();
 
             detailReturDataGridView.CurrentCell = selectedRow.Cells["qty"];
-            detailReturDataGridView.BeginEdit(true);
-
             detailReturDataGridView.Select();
+            detailReturDataGridView.BeginEdit(true);
         }
 
         private double getHPPValue(string productID)
@@ -419,37 +418,7 @@ namespace AlphaSoft
             totalLabel.Text = total.ToString(currencyFormat, culture);//"Rp. " + total.ToString();
         }
 
-        private void setTextBoxCustomSource(TextBox textBox)
-        {
-            MySqlDataReader rdr;
-            string sqlCommand = "";
-            string[] arr = null;
-            List<string> arrList = new List<string>();
-            int locationID = 0;
-
-            locationID = GUTIL.loadlocationID(2);
-
-            sqlCommand = "SELECT PRODUCT_NAME FROM MASTER_PRODUCT M, PRODUCT_LOCATION P WHERE M.PRODUCT_ID = P.PRODUCT_ID AND P.LOCATION_ID = " + locationID + " AND M.PRODUCT_ACTIVE = 1 AND (P.PRODUCT_LOCATION_QTY - M.PRODUCT_LIMIT_STOCK > 0) ORDER BY M.PRODUCT_NAME ASC";
-
-            rdr = DS.getData(sqlCommand);
-
-            if (rdr.HasRows)
-            {
-                while (rdr.Read())
-                {
-                    arrList.Add(rdr.GetString("PRODUCT_NAME"));
-                }
-                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-                arr = arrList.ToArray();
-                collection.AddRange(arr);
-
-                textBox.AutoCompleteCustomSource = collection;
-            }
-
-            rdr.Close();
-        }
-
-        private void detailReturDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+       private void detailReturDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if ((detailReturDataGridView.CurrentCell.OwningColumn.Name == "productName") && e.Control is TextBox)
             {
@@ -459,18 +428,7 @@ namespace AlphaSoft
                 productIDTextBox.PreviewKeyDown += TextBox_previewKeyDown;
 
                 productIDTextBox.CharacterCasing = CharacterCasing.Upper;
-
-                //productIDTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                //productIDTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 productIDTextBox.AutoCompleteSource = AutoCompleteSource.None;
-                //setTextBoxCustomSource(productIDTextBox);
-            }
-
-            if (detailReturDataGridView.CurrentCell.OwningColumn.Name == "qty" && e.Control is TextBox)
-            {
-                TextBox textBox = e.Control as TextBox;
-                //textBox.TextChanged += TextBox_TextChanged;
-                textBox.AutoCompleteMode = AutoCompleteMode.None;
             }
         }
 
@@ -479,11 +437,8 @@ namespace AlphaSoft
             isLoading = true;
             selectedRow.Cells["productName"].Value = "";
             selectedRow.Cells["hpp"].Value = "0";
-            //productPriceList[rowSelectedIndex] = "0";
             selectedRow.Cells["subTotal"].Value = "0";
-            //subtotalList[rowSelectedIndex] = "0";
             selectedRow.Cells["qty"].Value = "0";
-            //detailQty[rowSelectedIndex] = "0";
 
             calculateTotal();
             isLoading = false;
@@ -500,11 +455,11 @@ namespace AlphaSoft
             string currentProductName = "";
             bool changed = false;
 
-            numRow = Convert.ToInt32(DS.getDataSingleValue("SELECT COUNT(1) FROM MASTER_PRODUCT WHERE PRODUCT_NAME = '" + currentValue + "'"));
+            numRow = Convert.ToInt32(DS.getDataSingleValue("SELECT COUNT(1) FROM MASTER_PRODUCT WHERE PRODUCT_ID = '" + currentValue + "'"));
 
             if (numRow > 0)
             {
-                selectedProductName = currentValue;
+                selectedProductID = currentValue;
 
                 if (null != selectedRow.Cells["productID"].Value)
                     currentProductID = selectedRow.Cells["productID"].Value.ToString();
@@ -512,7 +467,7 @@ namespace AlphaSoft
                 if (null != selectedRow.Cells["productName"].Value)
                     currentProductName = selectedRow.Cells["productName"].Value.ToString();
 
-                selectedProductID= DS.getDataSingleValue("SELECT IFNULL(PRODUCT_ID,'') FROM MASTER_PRODUCT WHERE PRODUCT_NAME = '" + currentValue + "'").ToString();
+                selectedProductName = DS.getDataSingleValue("SELECT IFNULL(PRODUCT_NAME,'') FROM MASTER_PRODUCT WHERE PRODUCT_ID = '" + currentValue + "'").ToString();
 
                 selectedRow.Cells["productId"].Value = selectedProductID;
                 selectedRow.Cells["productName"].Value = selectedProductName;
@@ -528,14 +483,10 @@ namespace AlphaSoft
 
                 hpp = getHPPValue(selectedProductID);
                 GUTIL.saveSystemDebugLog(globalConstants.MENU_RETUR_PERMINTAAN, "updateSomeRowsContent, PRODUCT_BASE_PRICE [" + hpp + "]");
+
                 selectedRow.Cells["hpp"].Value = hpp.ToString();
-                //productPriceList[rowSelectedIndex] = hpp.ToString();
-
                 selectedRow.Cells["qty"].Value = 0;
-                //detailQty[rowSelectedIndex] = "0";
-
                 selectedRow.Cells["subTotal"].Value = 0;
-                //subtotalList[rowSelectedIndex] = "0";
 
                 GUTIL.saveSystemDebugLog(globalConstants.MENU_RETUR_PERMINTAAN, "updateSomeRowsContent, attempt to calculate total");
 
@@ -578,114 +529,6 @@ namespace AlphaSoft
             }
         }
 
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            //int rowSelectedIndex = 0;
-            //double productQty = 0;
-            //double hppValue = 0;
-            //double subTotal = 0;
-            //string tempString = "";
-
-            //if (detailReturDataGridView.CurrentCell.OwningColumn.Name != "qty")
-            //    return;
-
-            //DataGridViewTextBoxEditingControl dataGridViewTextBoxEditingControl = sender as DataGridViewTextBoxEditingControl;
-
-            //rowSelectedIndex = detailReturDataGridView.SelectedCells[0].RowIndex;
-            //DataGridViewRow selectedRow = detailReturDataGridView.Rows[rowSelectedIndex];
-
-            //if (isLoading)
-            //    return;
-
-            //if (dataGridViewTextBoxEditingControl.Text.Length <= 0)
-            //{
-            //    // IF TEXTBOX IS EMPTY, DEFAULT THE VALUE TO 0 AND EXIT THE CHECKING
-            //    isLoading = true;
-            //    // reset subTotal Value and recalculate total
-            //    selectedRow.Cells["subTotal"].Value = 0;
-            //    subtotalList[rowSelectedIndex] = "0";
-
-            //    if (detailQty.Count > rowSelectedIndex)
-            //        detailQty[rowSelectedIndex] = "0";
-            //    dataGridViewTextBoxEditingControl.Text = "0";
-
-            //    calculateTotal();
-
-            //    dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-            //    isLoading = false;
-
-            //    return;
-            //}
-
-            //isLoading = true;
-            //if (detailQty.Count > rowSelectedIndex)
-            //    previousInput = detailQty[rowSelectedIndex];
-            //else
-            //    previousInput = "0";
-
-            //if (previousInput == "0")
-            //{
-            //    tempString = dataGridViewTextBoxEditingControl.Text;
-            //    if (tempString.IndexOf('0') == 0 && tempString.Length > 1 && tempString.IndexOf("0.") < 0)
-            //        dataGridViewTextBoxEditingControl.Text = tempString.Remove(tempString.IndexOf('0'), 1);
-            //}
-
-            //if (detailQty.Count < rowSelectedIndex + 1)
-            //{
-            //    if (GUTIL.matchRegEx(dataGridViewTextBoxEditingControl.Text, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-            //        && (dataGridViewTextBoxEditingControl.Text.Length > 0))
-            //    {
-            //        detailQty.Add(dataGridViewTextBoxEditingControl.Text);
-            //        //if (detailReturDataGridView.CurrentCell.ColumnIndex == 2)
-            //        //{
-            //        //    detailQty.Add(dataGridViewTextBoxEditingControl.Text);
-            //        //}
-            //        //else
-            //        //{
-            //        //    detailQty.Add(selectedRow.Cells["qty"].Value.ToString());
-            //        //}
-            //    }
-            //    else
-            //    {
-            //        dataGridViewTextBoxEditingControl.Text = previousInput;
-            //    }
-            //}
-            //else
-            //{
-            //    if (GUTIL.matchRegEx(dataGridViewTextBoxEditingControl.Text, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-            //        && (dataGridViewTextBoxEditingControl.Text.Length > 0))
-            //    {
-            //            detailQty[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //    }
-            //    else
-            //    {
-            //            dataGridViewTextBoxEditingControl.Text = detailQty[rowSelectedIndex];
-            //    }
-            //}
-
-            //try
-            //{
-            //    //changes on qty
-            //    productQty = Convert.ToDouble(dataGridViewTextBoxEditingControl.Text);
-            //    if (null != selectedRow.Cells["hpp"].Value)
-            //        hppValue = Convert.ToDouble(productPriceList[rowSelectedIndex]);
-
-            //    subTotal = Math.Round((hppValue * productQty), 2);
-
-            //    selectedRow.Cells["subTotal"].Value = subTotal.ToString();
-            //    subtotalList[rowSelectedIndex] = subTotal.ToString();
-
-            //    calculateTotal();
-            //}
-            //catch (Exception ex)
-            //{
-            //    //dataGridViewTextBoxEditingControl.Text = previousInput;
-            //}
-
-            //dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-            //isLoading = false;
-        }
-
         private void dataReturPermintaanForm_Load(object sender, EventArgs e)
         {
             locationID = GUTIL.loadlocationID(2);
@@ -715,10 +558,8 @@ namespace AlphaSoft
             addColumnToDataGrid();
 
             GUTIL.reArrangeTabOrder(this);
+            noReturTextBox.Select();
 
-            //detailQty.Add("0");
-            //productPriceList.Add("0");
-            //subtotalList.Add("0");
         }
 
         private void supplierCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -786,14 +627,22 @@ namespace AlphaSoft
                 //else
                 //    validInput = false;
 
-                if (null != detailReturDataGridView.Rows[i].Cells["qty"].Value)
-                    validInput = GUTIL.matchRegEx(detailReturDataGridView.Rows[i].Cells["qty"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
-                else
-                    validInput = false;
                 if (null != detailReturDataGridView.Rows[i].Cells["productName"].Value)
                     dataExist = GUTIL.isProductNameExist(detailReturDataGridView.Rows[i].Cells["productName"].Value.ToString());
                 else
                     dataExist = false;
+
+                if (null != detailReturDataGridView.Rows[i].Cells["qty"].Value)
+                {
+                    validInput = GUTIL.matchRegEx(detailReturDataGridView.Rows[i].Cells["qty"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
+
+                    if (validInput) // CHECK STOCK IS ENOUGH
+                    {
+                        validInput = GUTIL.stockIsEnough(detailReturDataGridView.Rows[i].Cells["productID"].Value.ToString(), Convert.ToDouble(detailReturDataGridView.Rows[i].Cells["qty"].Value), true);
+                    }
+                }
+                else
+                    validInput = false;
             }
 
             if (!validInput)
@@ -1014,20 +863,20 @@ namespace AlphaSoft
 
         private void detailReturDataGridView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
-            { 
-                if (DialogResult.Yes == MessageBox.Show("HAPUS BARIS ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-                { 
-                    deleteCurrentRow();
-                    calculateTotal();
-                }
-            }
+            //if (e.KeyCode == Keys.Delete)
+            //{ 
+            //    if (DialogResult.Yes == MessageBox.Show("HAPUS BARIS ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            //    { 
+            //        deleteCurrentRow();
+            //        calculateTotal();
+            //    }
+            //}
         }
 
         private void dataReturPermintaanForm_Activated(object sender, EventArgs e)
         {
             registerGlobalHotkey();
-            noReturTextBox.Select();
+            //noReturTextBox.Select();
         }
 
         private void dataReturPermintaanForm_Deactivate(object sender, EventArgs e)
@@ -1037,29 +886,30 @@ namespace AlphaSoft
 
         private void detailReturDataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            var cell = detailReturDataGridView[e.ColumnIndex, e.RowIndex];
-            DataGridViewRow selectedRow = detailReturDataGridView.Rows[e.RowIndex];
+            //var cell = detailReturDataGridView[e.ColumnIndex, e.RowIndex];
+            //DataGridViewRow selectedRow = detailReturDataGridView.Rows[e.RowIndex];
 
-            if (cell.OwningColumn.Name == "productName")
-            {
-                if (null != cell.Value)
-                {
-                    if (cell.Value.ToString().Length > 0)
-                    {
-                        updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
-                    }
-                    else
-                    {
-                        clearUpSomeRowContents(selectedRow, e.RowIndex);
-                    }
-                }
-            }
+            //if (cell.OwningColumn.Name == "productName")
+            //{
+            //    if (null != cell.Value)
+            //    {
+            //        if (cell.Value.ToString().Length > 0)
+            //        {
+            //            updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
+            //        }
+            //        else
+            //        {
+            //            clearUpSomeRowContents(selectedRow, e.RowIndex);
+            //        }
+            //    }
+            //}
         }
 
         private void detailReturDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             int rowSelectedIndex = 0;
             double productQty = 0;
+            string qtyString = "";
             double hppValue = 0;
             double subTotal = 0;
             bool validInput = true;
@@ -1085,112 +935,58 @@ namespace AlphaSoft
             else
                 cellValue = "";
 
-            if (cellValue.Length <= 0)
+            if (columnName == "qty")
             {
-                // IF TEXTBOX IS EMPTY, DEFAULT THE VALUE TO 0 AND EXIT THE CHECKING
-                isLoading = true;
-                // reset subTotal Value and recalculate total
-                selectedRow.Cells["subTotal"].Value = 0;
-                //subtotalList[rowSelectedIndex] = "0";
+                if (cellValue.Length <= 0)
+                {
+                    // IF TEXTBOX IS EMPTY, DEFAULT THE VALUE TO 0 AND EXIT THE CHECKING
+                    isLoading = true;
+                    selectedRow.Cells["subTotal"].Value = 0;
+                    selectedRow.Cells[columnName].Value = "0";
 
-                //if (detailQty.Count > rowSelectedIndex)
-                //    detailQty[rowSelectedIndex] = "0";
-                //dataGridViewTextBoxEditingControl.Text = "0";
+                    calculateTotal();
+                    isLoading = false;
 
-                calculateTotal();
+                    return;
+                }
 
-                //dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-                isLoading = false;
+                if (null != selectedRow.Cells["qty"].Value)
+                    qtyString = selectedRow.Cells["qty"].Value.ToString();
 
-                return;
+                if (!GUTIL.matchRegEx(qtyString, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL))
+                {
+                    validInput = false;
+                    int rowIndex = rowSelectedIndex + 1;
+                    errorLabel.Text = "INPUT PADA BARIS [" + rowIndex + "] TIDAK VALID";
+                }
+                else
+                {
+                    if (!GUTIL.stockIsEnough(selectedRow.Cells["productID"].Value.ToString(), Convert.ToDouble(qtyString), true))
+                    {
+                        validInput = false;
+                        int rowIndex = rowSelectedIndex + 1;
+                        errorLabel.Text = "STOK PADA BARIS [" + rowIndex + "] TIDAK CUKUP";
+                    }
+                    else
+                        errorLabel.Text = "";
+                }
+
+                if (validInput)
+                    try
+                    {
+                        isLoading = true;
+                        hppValue = Convert.ToDouble(selectedRow.Cells["hpp"].Value);
+                        productQty = Convert.ToDouble(selectedRow.Cells["qty"].Value);
+                        subTotal = Math.Round((hppValue * productQty), 2);
+                        selectedRow.Cells["subtotal"].Value = subTotal;
+
+                        calculateTotal();
+                        isLoading = false;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
             }
-
-            isLoading = true;
-            //if (detailQty.Count > rowSelectedIndex)
-            //    previousInput = detailQty[rowSelectedIndex];
-            //else
-            //    previousInput = "0";
-
-            //if (previousInput == "0")
-            //{
-            //    tempString = dataGridViewTextBoxEditingControl.Text;
-            //    if (tempString.IndexOf('0') == 0 && tempString.Length > 1 && tempString.IndexOf("0.") < 0)
-            //        dataGridViewTextBoxEditingControl.Text = tempString.Remove(tempString.IndexOf('0'), 1);
-            //}
-
-            //if (detailQty.Count < rowSelectedIndex + 1)
-            //{
-            //    if (GUTIL.matchRegEx(dataGridViewTextBoxEditingControl.Text, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-            //        && (dataGridViewTextBoxEditingControl.Text.Length > 0))
-            //    {
-            //        detailQty.Add(dataGridViewTextBoxEditingControl.Text);
-            //        //if (detailReturDataGridView.CurrentCell.ColumnIndex == 2)
-            //        //{
-            //        //    detailQty.Add(dataGridViewTextBoxEditingControl.Text);
-            //        //}
-            //        //else
-            //        //{
-            //        //    detailQty.Add(selectedRow.Cells["qty"].Value.ToString());
-            //        //}
-            //    }
-            //    else
-            //    {
-            //        dataGridViewTextBoxEditingControl.Text = previousInput;
-            //    }
-            //}
-            //else
-            //{
-            //    if (GUTIL.matchRegEx(dataGridViewTextBoxEditingControl.Text, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-            //        && (dataGridViewTextBoxEditingControl.Text.Length > 0))
-            //    {
-            //        detailQty[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //    }
-            //    else
-            //    {
-            //        dataGridViewTextBoxEditingControl.Text = detailQty[rowSelectedIndex];
-            //    }
-            //}
-
-            if (
-                GUTIL.matchRegEx(selectedRow.Cells["qty"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-                )
-            {
-                errorLabel.Text = "";
-                //if (detailPODataGridView.CurrentCell.OwningColumn.Name == "qty")
-                //{
-                //    detailQty[rowSelectedIndex] = cellValue;
-                //}
-                //else
-                //{
-                //    detailHpp[rowSelectedIndex] = cellValue;
-                //}
-            }
-            else
-            {
-                int rowIndex = rowSelectedIndex + 1;
-                validInput = false;
-                errorLabel.Text = "INPUT QTY PADA BARIS [" + rowIndex + "] INVALID";
-                //selectedRow.Cells[columnName].Value = previousInput;
-            }
-
-            if (validInput)
-            {
-                //changes on qty
-                productQty = Convert.ToDouble(cellValue);
-
-                if (null != selectedRow.Cells["hpp"].Value)
-                    hppValue = Convert.ToDouble(selectedRow.Cells["hpp"].Value);
-
-                subTotal = Math.Round((hppValue * productQty), 2);
-
-                selectedRow.Cells["subTotal"].Value = subTotal.ToString();
-                //subtotalList[rowSelectedIndex] = subTotal.ToString();
-
-                calculateTotal();
-            }
-
-            //dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-            isLoading = false;
         }
 
         private void detailReturDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

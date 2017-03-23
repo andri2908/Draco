@@ -76,6 +76,7 @@ namespace AlphaSoft
             gutil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
 
             gutil.reArrangeTabOrder(this);
+            errorLabel.Text = "";
         }
 
         private bool dataValidated()
@@ -197,7 +198,6 @@ namespace AlphaSoft
 
         private void dataSatuanDetailForm_Activated(object sender, EventArgs e)
         {
-            errorLabel.Text = "";
             switch (originModuleID)
             {
                 case globalConstants.NEW_UNIT:
@@ -210,6 +210,7 @@ namespace AlphaSoft
                     loadUnitData(); 
                     break;
             }
+            unitNameTextBox.Select();
         }
     }
 }

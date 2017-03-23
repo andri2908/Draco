@@ -150,34 +150,79 @@ namespace AlphaSoft
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (saveData())
+            if (MessageBox.Show("Yakin merubah password?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                gutil.saveUserChangeLog(0, globalConstants.CHANGE_LOG_UPDATE, "USER CHANGE PASSWORD");
-                gutil.showSuccess(gutil.UPD);
-                gutil.ResetAllControls(this);                
+                if (saveData())
+                {
+                    gutil.saveUserChangeLog(0, globalConstants.CHANGE_LOG_UPDATE, "USER CHANGE PASSWORD");
+                    gutil.showSuccess(gutil.UPD);
+                    gutil.ResetAllControls(this);
+                }
+            } else
+            {
+                oldPasswordTextBox.Select();
             }
         }
 
         private void changePasswordForm_Load(object sender, EventArgs e)
         {
             Button[] arrButton = new Button[2];
-
-            arrButton[0] = loginButton;
+            arrButton[0] = saveButton;
             arrButton[1] = button1;
             gutil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
-
             gutil.reArrangeTabOrder(this);
+            errorLabel.Text = "";
             oldPasswordTextBox.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             gutil.ResetAllControls(this);
+            errorLabel.Text = "";
         }
 
         private void changePasswordForm_Activated(object sender, EventArgs e)
         {
+            oldPasswordTextBox.Select();
+        }
+
+        private void oldPasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
             errorLabel.Text = "";
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                if (oldPasswordTextBox.Text.Trim().Equals(""))
+                {
+                    errorLabel.Text = "OLD PASSWORD TIDAK BOLEH KOSONG";                    
+                } else
+                {
+                    newPasswordTextBox.Select();
+                }
+            }
+        }
+
+        private void newPasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorLabel.Text = "";
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                if (newPasswordTextBox.Text.Trim().Equals(""))
+                {
+                    errorLabel.Text = "NEW PASSWORD TIDAK BOLEH KOSONG";
+                }
+                else
+                {
+                    newPassword2TextBox.Select();
+                }
+            }
+        }
+
+        private void newPassword2TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                saveButton.PerformClick();
+            }
         }
     }
 }

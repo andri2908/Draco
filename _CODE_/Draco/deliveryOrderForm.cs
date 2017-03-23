@@ -38,7 +38,6 @@ namespace AlphaSoft
             salesRevNo = revNo;
         }
 
-
         private void loadInvoiceData()
         {
             string sqlCommand;
@@ -85,6 +84,7 @@ namespace AlphaSoft
                     detailGridView.Columns["IS_COMPLETED"].Visible = false;
 
                     detailGridView.Columns["STATUS"].ReadOnly = true;
+
                     detailGridView.Columns["NAMA PRODUK"].Width = 200;
                     detailGridView.Columns["NAMA PRODUK"].ReadOnly = true;
 
@@ -224,17 +224,18 @@ namespace AlphaSoft
 
         private bool dataValidated()
         {
+            bool validInput = true;
+            double orderQty = 0, deliveredQty = 0, qty = 0;
+            int i = 0;
+            string productID = "";
+            string reason = "";
+
             if (noInvoiceTextBox.Text.Length <= 0)
             {
                 errorLabel.Text = "NO DO TIDAK BOLEH KOSONG";
                 return false;
             }
 
-            bool validInput = true;
-            double orderQty = 0, deliveredQty = 0, qty = 0;
-            int i = 0;
-            string productID = "";
-            string reason = "";
             for (i = 0; i < detailGridView.Rows.Count && validInput; i++)
             {
                 // CHECK REGEX
@@ -524,18 +525,23 @@ namespace AlphaSoft
 
         private void reprintButton_Click(object sender, EventArgs e)
         {
-            printOutDeliveryOrder(selectedSalesInvoice, salesRevNo);
+            printOutDeliveryOrder(selectedSalesInvoice, salesRevNo, "0");
         }
 
-        private void printOutDeliveryOrder(string SONo, string revNo)
+        private void printOutDeliveryOrder(string SONo, string revNo, string salesStatus = "1")
         {
-            string sqlCommandx = "SELECT DH.DO_ID, '1' AS 'SALES_STATUS', DH.DO_DATE AS 'TGL', DH.SALES_INVOICE AS 'INVOICE', IFNULL(MC.CUSTOMER_FULL_NAME, '') AS 'CUSTOMER_NAME', MP.PRODUCT_NAME AS 'PRODUK', DD.PRODUCT_QTY AS 'QTY' " +
+            string sqlCommandx = "SELECT DH.DO_ID, '"+ salesStatus + "' AS 'SALES_STATUS', DH.DO_DATE AS 'TGL', DH.SALES_INVOICE AS 'INVOICE', IFNULL(MC.CUSTOMER_FULL_NAME, '') AS 'CUSTOMER_NAME', MP.PRODUCT_NAME AS 'PRODUK', DD.PRODUCT_QTY AS 'QTY' " +
                                         "FROM DELIVERY_ORDER_HEADER DH, DELIVERY_ORDER_DETAIL DD, SALES_HEADER SH LEFT OUTER JOIN MASTER_CUSTOMER MC ON (SH.CUSTOMER_ID = MC.CUSTOMER_ID) , MASTER_PRODUCT MP " +
                                         "WHERE DH.DO_ID = '" + doInvoiceTextBox.Text + "' AND DH.SALES_INVOICE = '" + SONo + "' AND DD.DO_ID = DH.DO_ID AND DD.PRODUCT_ID = MP.PRODUCT_ID AND DH.REV_NO = '" + revNo + "' AND SH.SALES_INVOICE = '" + SONo + "' AND SH.REV_NO = '" + revNo + "'";
 
             DS.writeXML(sqlCommandx, globalConstants.deliveryOrderXML);
             deliveryOrderPrintOutForm displayForm = new deliveryOrderPrintOutForm();
             displayForm.ShowDialog(this);
+        }
+
+        private void deliveryOrderForm_Activated(object sender, EventArgs e)
+        {
+            doInvoiceTextBox.Select();
         }
     }
 }

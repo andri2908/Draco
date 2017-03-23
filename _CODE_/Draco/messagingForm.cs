@@ -69,14 +69,14 @@ namespace AlphaSoft
                                     jumlahPembayaran = rdr.GetDouble("JUMLAH");
                                     deskripsiPembayaran = rdr.GetString("DESCRIPTION");
 
-                                    messageContent = "PEMBAYARAN SALES INVOICE [" + param1 + "] [" + deskripsiPembayaran + "] SEBESAR " + jumlahPembayaran.ToString("C2", culture) + " JATUH TEMPO";
+                                    messageContent = "PEMBAYARAN SALES INVOICE [" + param1 + "] [" + deskripsiPembayaran + "] SEBESAR " + jumlahPembayaran.ToString("C2", culture) + " JATUH TEMPO " + param2;
                                     break;
 
                                 case globalConstants.MENU_PEMBAYARAN_HUTANG_SUPPLIER:
                                     jumlahPembayaran = rdr.GetDouble("JUMLAH");
                                     deskripsiPembayaran = rdr.GetString("DESCRIPTION");
 
-                                    messageContent = "PEMBAYARAN PURCASE ORDER [" + param1 + "] [" + deskripsiPembayaran + "] SEBESAR " + jumlahPembayaran.ToString("C2", culture) + " JATUH TEMPO";
+                                    messageContent = "PEMBAYARAN PURCASE ORDER [" + param1 + "] [" + deskripsiPembayaran + "] SEBESAR " + jumlahPembayaran.ToString("C2", culture) + " JATUH TEMPO" + param2;
                                     break;
 
                                 case globalConstants.MENU_REQUEST_ORDER:
@@ -84,10 +84,9 @@ namespace AlphaSoft
                                     break;
 
                                 case globalConstants.MENU_PRODUK:
-                                    messageContent = "[" + param1 + "] SUDAH MENDEKATI LIMIT";
+                                    messageContent = "[" + param1 + "] SUDAH MENDEKATI LIMIT, STOK [" + param2 + "]";
                                     productID = rdr.GetString("PRODUCT_ID");
                                     param1 = productID;
-                                    break;
                                     break;
                             }
 
@@ -160,7 +159,7 @@ namespace AlphaSoft
 
             // PULL PRODUCT_NAME THAT ALREADY HIT LIMIT STOCK
             moduleID = globalConstants.MENU_PRODUK;
-            sqlCommand = "SELECT PRODUCT_ID, PRODUCT_NAME AS 'PARAM_1', PRODUCT_LIMIT_STOCK AS 'PARAM_2' FROM  MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 AND PRODUCT_IS_SERVICE = 0 AND PRODUCT_STOCK_QTY <= PRODUCT_LIMIT_STOCK AND PRODUCT_ID NOT IN (SELECT IDENTIFIER_NO FROM MASTER_MESSAGE WHERE MODULE_ID = " + moduleID + " AND STATUS = 0)";
+            sqlCommand = "SELECT PRODUCT_ID, PRODUCT_NAME AS 'PARAM_1', PRODUCT_STOCK_QTY AS 'PARAM_2' FROM  MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 AND PRODUCT_IS_SERVICE = 0 AND PRODUCT_STOCK_QTY <= PRODUCT_LIMIT_STOCK AND PRODUCT_ID NOT IN (SELECT IDENTIFIER_NO FROM MASTER_MESSAGE WHERE MODULE_ID = " + moduleID + " AND STATUS = 0)";
             newData |= pullDetailMessageAndSaveToTable(moduleID, sqlCommand);
 
             return newData;                
@@ -188,6 +187,7 @@ namespace AlphaSoft
                     messageDataGridView.DataSource = dt;
                     messageDataGridView.Columns["MODULE_ID"].Visible = false;
                     messageDataGridView.Columns["ID"].Visible = false;
+                    messageDataGridView.Columns["IDENTIFIER_NO"].Visible = false;
                     messageDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
             }

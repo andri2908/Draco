@@ -25,6 +25,7 @@ namespace AlphaSoft
         double globalTotalValue = 0;
         bool isLoading = false;
         double POduration = 0;
+        bool allowViewHPP = false;
 
         private Hotkeys.GlobalHotkey ghk_F1;
         private Hotkeys.GlobalHotkey ghk_F2;
@@ -501,6 +502,7 @@ namespace AlphaSoft
                                 //detailHpp[detailGridView.Rows.Count - 1] = rdr.GetString("PRODUCT_BASE_PRICE");
                                 //subtotalList[detailGridView.Rows.Count - 1] = rdr.GetString("PM_SUBTOTAL");
                             }
+
                         }
                     }
                     break;
@@ -551,7 +553,7 @@ namespace AlphaSoft
             MySqlDataReader rdr;
             string sqlCommand;
 
-            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1";
+            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1 ORDER BY SUPPLIER_FULL_NAME ASC";
 
             supplierCombo.Items.Clear();
             supplierHiddenCombo.Items.Clear();
@@ -609,11 +611,15 @@ namespace AlphaSoft
                 //subtotalList.Add("0");
             }
 
+            if (!allowViewHPP)
+                hpp_textBox.Visible = false;
             hpp_textBox.Name = "hpp";
             hpp_textBox.HeaderText = "HARGA POKOK";
             hpp_textBox.Width = 200;
             hpp_textBox.DefaultCellStyle.BackColor = Color.LightBlue;
             detailGridView.Columns.Add(hpp_textBox);
+
+
 
             qty_textBox.Name = "qtyReceived";
             qty_textBox.HeaderText = "QTY DITERIMA";
@@ -621,6 +627,8 @@ namespace AlphaSoft
             qty_textBox.DefaultCellStyle.BackColor = Color.LightBlue;
             detailGridView.Columns.Add(qty_textBox);
 
+            if (!allowViewHPP)
+                subtotal_textBox.Visible = false;
             subtotal_textBox.Name = "subtotal";
             subtotal_textBox.HeaderText = "SUBTOTAL";
             subtotal_textBox.ReadOnly = true;
@@ -633,6 +641,12 @@ namespace AlphaSoft
             errorLabel.Text = "";
             PRDtPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
             int userAccessOption = 0;
+
+            userAccessOption = DS.getUserAccessRight(globalConstants.MENU_VIEW_HPP_PRODUCT, gUtil.getUserGroupID());
+            if (userAccessOption == 1)
+                allowViewHPP = true;
+            else
+                allowViewHPP = false;
 
             locationID = gUtil.loadlocationID(2);
             if (locationID <= 0)
@@ -663,6 +677,11 @@ namespace AlphaSoft
                 searchPOButton.Visible = true;
             else
                 searchPOButton.Visible = false;
+
+            if (allowViewHPP)
+                reprintButton.Visible = true;
+            else
+                reprintButton.Visible = false;
 
             arrButton[0] = saveButton;
             arrButton[1] = reprintButton;
@@ -847,131 +866,6 @@ namespace AlphaSoft
             }
         }
 
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            //int rowSelectedIndex = 0;
-            //double productQty = 0;
-            //double hppValue = 0;
-            //double subTotal = 0;
-            //string tempString = "";
-
-            //if (isLoading)
-            //    return;
-
-            //if (detailGridView.CurrentCell.OwningColumn.Name != "hpp" &&
-            //    detailGridView.CurrentCell.OwningColumn.Name != "qtyReceived")
-            //    return;
-
-            //DataGridViewTextBoxEditingControl dataGridViewTextBoxEditingControl = sender as DataGridViewTextBoxEditingControl;
-
-            //rowSelectedIndex = detailGridView.SelectedCells[0].RowIndex;
-            //DataGridViewRow selectedRow = detailGridView.Rows[rowSelectedIndex];
-
-            //if (dataGridViewTextBoxEditingControl.Text.Length <= 0)
-            //{
-            //    // IF TEXTBOX IS EMPTY, DEFAULT THE VALUE TO 0 AND EXIT THE CHECKING
-            //    isLoading = true;
-            //    // reset subTotal Value and recalculate total
-            //    selectedRow.Cells["subTotal"].Value = 0;
-            //    subtotalList[rowSelectedIndex] = "0";
-
-            //    if (detailRequestQty.Count >= rowSelectedIndex + 1)
-            //        if (detailGridView.CurrentCell.OwningColumn.Name == "hpp")
-            //            detailHpp[rowSelectedIndex] = "0";
-            //        else
-            //            detailRequestQty[rowSelectedIndex] = "0";
-                
-            //    dataGridViewTextBoxEditingControl.Text = "0";
-
-            //    calculateTotal();
-
-            //    dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-
-            //    isLoading = false;
-            //    return;
-            //}
-
-            //if (detailRequestQty.Count >= rowSelectedIndex + 1)
-            //    if (detailGridView.CurrentCell.OwningColumn.Name == "hpp")
-            //        previousInput = detailHpp[rowSelectedIndex];
-            //    else
-            //        previousInput = detailRequestQty[rowSelectedIndex];
-            //else
-            //    previousInput = "0";
-
-            //isLoading = true;
-            //if (previousInput == "0")
-            //{
-            //    tempString = dataGridViewTextBoxEditingControl.Text;
-            //    if (tempString.IndexOf('0') == 0 && tempString.Length > 1 && tempString.IndexOf("0.") < 0)
-            //        dataGridViewTextBoxEditingControl.Text = tempString.Remove(tempString.IndexOf('0'), 1);
-            //}
-
-            //if (detailRequestQty.Count < rowSelectedIndex + 1)
-            //{
-            //    if (gUtil.matchRegEx(dataGridViewTextBoxEditingControl.Text, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-            //        && (dataGridViewTextBoxEditingControl.Text.Length > 0))
-            //    {
-            //        if (detailGridView.CurrentCell.OwningColumn.Name == "hpp")
-            //            detailHpp.Add(dataGridViewTextBoxEditingControl.Text);
-            //        else
-            //            detailRequestQty.Add(dataGridViewTextBoxEditingControl.Text);
-            //    }
-            //    else
-            //    {
-            //        dataGridViewTextBoxEditingControl.Text = previousInput;
-            //    }
-            //}
-            //else
-            //{
-            //    if (gUtil.matchRegEx(dataGridViewTextBoxEditingControl.Text, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-            //        && (dataGridViewTextBoxEditingControl.Text.Length > 0))
-            //    {
-            //        if (detailGridView.CurrentCell.OwningColumn.Name == "hpp")
-            //            detailHpp[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //        else
-            //            detailRequestQty[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //    }
-            //    else
-            //    {
-            //        if (detailGridView.CurrentCell.OwningColumn.Name == "hpp")
-            //            dataGridViewTextBoxEditingControl.Text = detailHpp[rowSelectedIndex];
-            //        else
-            //            dataGridViewTextBoxEditingControl.Text = detailRequestQty[rowSelectedIndex];
-            //    }
-            //}
-
-            //try
-            //{
-            //    if (detailGridView.CurrentCell.OwningColumn.Name == "hpp")
-            //    {
-            //        //changes on hpp
-            //        hppValue = Convert.ToDouble(dataGridViewTextBoxEditingControl.Text);
-            //        productQty = Convert.ToDouble(detailRequestQty[rowSelectedIndex]);
-            //    }
-            //    else
-            //    {
-            //        //changes on qty
-            //        productQty = Convert.ToDouble(dataGridViewTextBoxEditingControl.Text);
-            //        hppValue = Convert.ToDouble(detailHpp[rowSelectedIndex]);
-            //    }
-
-            //    subTotal = Math.Round((hppValue * productQty), 2);
-
-            //    selectedRow.Cells["subtotal"].Value = subTotal;
-            //    subtotalList[rowSelectedIndex] = subTotal.ToString();
-
-            //    calculateTotal();
-            //}
-            //catch (Exception ex)
-            //{
-            //    //dataGridViewTextBoxEditingControl.Text = previousInput;
-            //}
-
-            //dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-            //isLoading = false;
-        }
-
         private void calculateTotal()
         {
             double total = 0;
@@ -1040,10 +934,13 @@ namespace AlphaSoft
                 else
                     validInput = false;
 
-                if (null != detailGridView.Rows[i].Cells["qtyReceived"].Value)
-                    validInput = gUtil.matchRegEx(detailGridView.Rows[i].Cells["qtyReceived"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
-                else
-                    validInput = false;
+                if (validInput)
+                {
+                    if (null != detailGridView.Rows[i].Cells["qtyReceived"].Value)
+                        validInput = gUtil.matchRegEx(detailGridView.Rows[i].Cells["qtyReceived"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
+                    else
+                        validInput = false;
+                }
 
                 if (null != detailGridView.Rows[i].Cells["productName"].Value)
                     dataExist = gUtil.isProductNameExist(detailGridView.Rows[i].Cells["productName"].Value.ToString());
@@ -1113,7 +1010,11 @@ namespace AlphaSoft
             {
                 gUtil.saveSystemDebugLog(globalConstants.MENU_PENERIMAAN_BARANG, "DIRECT PENERIMAAN BARANG, THEREFORE CALCULATE TAX LIMIT");
 
-                termOfPaymentDuration = Convert.ToDouble(durationTextBox.Text);
+                if (durationTextBox.Text.Length > 0)
+                    termOfPaymentDuration = Convert.ToDouble(durationTextBox.Text);
+                else
+                    termOfPaymentDuration = 0;
+
                 PODueDate = PRDtPicker.Value.AddDays(termOfPaymentDuration);
                 PODueDateTime = String.Format(culture, "{0:dd-MM-yyyy}", PODueDate);
                 termOfPayment = 1;
@@ -1545,20 +1446,27 @@ namespace AlphaSoft
                 else
                     gUtil.saveUserChangeLog(globalConstants.MENU_MUTASI_BARANG, globalConstants.CHANGE_LOG_INSERT, "PENERIMAAN BARANG [" + prInvoiceTextBox.Text + "] NO PO [" + selectedInvoice + "]");
 
-                if (DialogResult.Yes == MessageBox.Show("PRINT RECEIPT ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                if (allowViewHPP)
                 {
-                    smallPleaseWait pleaseWait = new smallPleaseWait();
-                    pleaseWait.Show();
+                    if (DialogResult.Yes == MessageBox.Show("PRINT RECEIPT ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        smallPleaseWait pleaseWait = new smallPleaseWait();
+                        pleaseWait.Show();
 
-                    //  ALlow main UI thread to properly display please wait form.
-                    Application.DoEvents();
-                    printReport(prInvoiceTextBox.Text);
+                        //  ALlow main UI thread to properly display please wait form.
+                        Application.DoEvents();
+                        printReport(prInvoiceTextBox.Text);
 
-                    pleaseWait.Close();
+                        pleaseWait.Close();
+                    }
                 }
 
                 saveButton.Visible = false;
-                reprintButton.Visible = true;
+
+                if (allowViewHPP)
+                    reprintButton.Visible = true;
+                else
+                    reprintButton.Visible = false;
 
                 gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
 
@@ -1672,6 +1580,16 @@ namespace AlphaSoft
             PRDtPicker.Enabled = true;
 
             isLoading = false;
+
+            originModuleId = 0;
+
+            labelAsal.Visible = true;
+            labelAsal_1.Visible = true;
+            supplierCombo.Visible = true;
+
+            labelTujuan.Visible = false;
+            labelTujuan_1.Visible = false;
+            branchToTextBox.Visible = false;
         }
 
         private void supplierCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -1721,23 +1639,23 @@ namespace AlphaSoft
 
         private void detailGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            var cell = detailGridView[e.ColumnIndex, e.RowIndex];
-            DataGridViewRow selectedRow = detailGridView.Rows[e.RowIndex];
+            //var cell = detailGridView[e.ColumnIndex, e.RowIndex];
+            //DataGridViewRow selectedRow = detailGridView.Rows[e.RowIndex];
 
-            if (cell.OwningColumn.Name == "productName")
-            {
-                if (null != cell.Value)
-                {
-                    if (cell.Value.ToString().Length > 0)
-                    {
-                        updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
-                    }
-                    else
-                    {
-                        clearUpSomeRowContents(selectedRow, e.RowIndex);
-                    }
-                }
-            }
+            //if (cell.OwningColumn.Name == "productName")
+            //{
+            //    if (null != cell.Value)
+            //    {
+            //        if (cell.Value.ToString().Length > 0)
+            //        {
+            //            updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
+            //        }
+            //        else
+            //        {
+            //            clearUpSomeRowContents(selectedRow, e.RowIndex);
+            //        }
+            //    }
+            //}
         }
 
         private void detailGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -1787,6 +1705,7 @@ namespace AlphaSoft
                     selectedRow.Cells[columnName].Value = "0";
 
                     calculateTotal();
+                    isLoading = false;
 
                     return;
                 }

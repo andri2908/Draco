@@ -56,7 +56,10 @@ namespace AlphaSoft
 
         private void ReportSalesSummaryRegionForm_Load(object sender, EventArgs e)
         {
+            datefromPicker.Format = DateTimePickerFormat.Custom;
             datefromPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
+
+            datetoPicker.Format = DateTimePickerFormat.Custom;
             datetoPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
 
             loadRegionData();
@@ -73,14 +76,14 @@ namespace AlphaSoft
             if (selectedRegionID != "0")
             {
                 sqlCommandx = "SELECT R.REGION_NAME, SALES_INVOICE AS 'INVOICE', C.CUSTOMER_FULL_NAME AS 'CUSTOMER', DATE_FORMAT(S.SALES_DATE, '%d-%M-%Y') AS 'DATE',S.SALES_TOTAL AS 'TOTAL', IF(C.CUSTOMER_GROUP=1,'RETAIL',IF(C.CUSTOMER_GROUP=2,'GROSIR','PARTAI')) AS 'GROUP', IF(S.SALES_PAID = 1, 'LUNAS', 'BELUM LUNAS') AS STATUS " +
-                                         "FROM SALES_HEADER S,MASTER_CUSTOMER C, MASTER_REGION R " +
-                                         "WHERE S.CUSTOMER_ID = C.CUSTOMER_ID AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND C.REGION_ID = R.REGION_ID AND R.ID = " + selectedRegionID;
+                                         "FROM SALES_HEADER S, MASTER_CUSTOMER C, MASTER_REGION R, (SELECT SALES_INVOICE, MAX(REV_NO) AS REV FROM SALES_HEADER GROUP BY SALES_INVOICE) S2 " +
+                                         "WHERE S.SALES_INVOICE = S2.SALES_INVOICE AND S.REV_NO = S2.REV AND S.CUSTOMER_ID = C.CUSTOMER_ID AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND C.REGION_ID = R.REGION_ID AND R.ID = " + selectedRegionID;
             }
             else
             {
                 sqlCommandx = "SELECT R.REGION_NAME, SALES_INVOICE AS 'INVOICE', C.CUSTOMER_FULL_NAME AS 'CUSTOMER', DATE_FORMAT(S.SALES_DATE, '%d-%M-%Y') AS 'DATE',S.SALES_TOTAL AS 'TOTAL', IF(C.CUSTOMER_GROUP=1,'RETAIL',IF(C.CUSTOMER_GROUP=2,'GROSIR','PARTAI')) AS 'GROUP', IF(S.SALES_PAID = 1, 'LUNAS', 'BELUM LUNAS') AS STATUS " +
-                                         "FROM SALES_HEADER S,MASTER_CUSTOMER C, MASTER_REGION R " +
-                                         "WHERE S.CUSTOMER_ID = C.CUSTOMER_ID AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND C.REGION_ID = R.ID";
+                                         "FROM SALES_HEADER S,MASTER_CUSTOMER C, MASTER_REGION R, (SELECT SALES_INVOICE, MAX(REV_NO) AS REV FROM SALES_HEADER GROUP BY SALES_INVOICE) S2 " +
+                                         "WHERE S.SALES_INVOICE = S2.SALES_INVOICE AND S.REV_NO = S2.REV AND S.CUSTOMER_ID = C.CUSTOMER_ID AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  >= '" + dateFrom + "' AND DATE_FORMAT(S.SALES_DATE, '%Y%m%d')  <= '" + dateTo + "' AND C.REGION_ID = R.ID";
             }
 
             DS.writeXML(sqlCommandx, globalConstants.penjualanRegionXML);

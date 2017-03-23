@@ -82,8 +82,9 @@ namespace AlphaSoft
             arrButton[0] = SaveButton;
             arrButton[1] = ResetButton;
             gutil.reArrangeButtonPosition(arrButton, SaveButton.Top, this.Width);
-
             gutil.reArrangeTabOrder(this);
+
+            errorLabel.Text = "";
             namaGroupTextBox.Select();
         }
 
@@ -248,7 +249,7 @@ namespace AlphaSoft
                     loadUserGroupDataInformation();
                     break;
             }            
-            errorLabel.Text = "";
+            namaGroupTextBox.Select();
         }
     }
 }

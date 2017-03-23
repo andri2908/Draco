@@ -299,6 +299,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DATA RETUR";
+            this.Activated += new System.EventHandler(this.dataReturForm_Activated);
             this.Load += new System.EventHandler(this.dataReturForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPurchaseOrder)).EndInit();
             this.groupBox1.ResumeLayout(false);

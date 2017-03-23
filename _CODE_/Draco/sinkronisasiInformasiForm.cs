@@ -59,7 +59,7 @@ namespace AlphaSoft
             StreamWriter sw = null;
 
             // EXPORT MASTER PRODUCT DATA
-            string strCmdText = "USE `sys_pos`; " + "\n" +
+            string strCmdText = "USE `sys_pos_draco`; " + "\n" +
                                         "DROP TABLE IF EXISTS `temp_master_product`;" + "\n" +
                                         "\n" +
                                         "CREATE TABLE `temp_master_product` (" + "\n" +
@@ -264,7 +264,7 @@ namespace AlphaSoft
 
             //System.Diagnostics.Process.Start("CMD.exe", strCmdText);
             proc.StartInfo.FileName = "CMD.exe";
-            proc.StartInfo.Arguments = "/C " + "mysql -h " + ipServer + " -u SYS_POS_ADMIN -ppass123 sys_pos < \"" + fileName + "\"";
+            proc.StartInfo.Arguments = "/C " + "mysql -h " + ipServer + " -u SYS_POS_ADMIN -ppass123 sys_pos_draco < \"" + fileName + "\"";
             proc.Exited += new EventHandler(ProcessExited);
             proc.EnableRaisingEvents = true;
             gutil.saveSystemDebugLog(globalConstants.MENU_SINKRONISASI_INFORMASI, "SYNC INFORMATION PROCESS START");

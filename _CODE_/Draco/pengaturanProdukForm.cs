@@ -20,6 +20,7 @@ namespace AlphaSoft
         private globalUtilities gutil = new globalUtilities();
         private int originModuleID;
         private bool isLoading = false;
+        bool allowViewHPP = false;
 
         List<string> producthargaEcer = new List<string>();
         List<string> producthargaPartai = new List<string>();
@@ -140,6 +141,7 @@ namespace AlphaSoft
                 return;
 
             namaProductParam = MySqlHelper.EscapeString(namaProdukTextBox.Text);
+
             sqlCommand = "SELECT ID, PRODUCT_ID, PRODUCT_NAME, PRODUCT_BASE_PRICE, PRODUCT_RETAIL_PRICE, PRODUCT_BULK_PRICE, PRODUCT_WHOLESALE_PRICE FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 AND PRODUCT_NAME LIKE '%" + namaProductParam + "%'";
 
             using (rdr = DS.getData(sqlCommand))
@@ -152,6 +154,9 @@ namespace AlphaSoft
                     producthargaPartai.Add(rdr.GetString("PRODUCT_BULK_PRICE"));
                     producthargaGrosir.Add(rdr.GetString("PRODUCT_WHOLESALE_PRICE"));
                 }
+
+                if (!allowViewHPP)
+                    dataProdukDataGridView.Columns["HPP"].Visible = false;
             }
         }
 
@@ -303,11 +308,20 @@ namespace AlphaSoft
 
         private void pengaturanProdukForm_Load(object sender, EventArgs e)
         {
+            int userAccessOption = 0;
+
+            userAccessOption = DS.getUserAccessRight(globalConstants.MENU_VIEW_HPP_PRODUCT, gutil.getUserGroupID());
+            if (userAccessOption == 1)
+                allowViewHPP = true;
+            else
+                allowViewHPP = false;
+
             errorLabel.Text = "";
             inisialisasiInterface();
             dataProdukDataGridView.EditingControlShowing += dataProdukDataGridView_EditingControlShowing;
 
             gutil.reArrangeTabOrder(this);
+
         }
 
         private void loadData()

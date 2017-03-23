@@ -122,6 +122,7 @@ namespace AlphaSoft
             {
                 loadCustomerData();
             }
+            namaPelangganTextbox.Select();
         }
 
         private void namaPelangganTextbox_TextChanged(object sender, EventArgs e)

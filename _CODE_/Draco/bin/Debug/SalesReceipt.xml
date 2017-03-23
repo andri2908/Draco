@@ -7,6 +7,7 @@
           <xs:element name="Table">
             <xs:complexType>
               <xs:sequence>
+                <xs:element name="SALES_DISCOUNT_FINAL" type="xs:double" minOccurs="0" />
                 <xs:element name="ID" type="xs:unsignedInt" minOccurs="0" />
                 <xs:element name="DATE" type="xs:dateTime" minOccurs="0" />
                 <xs:element name="INVOICE" type="xs:string" minOccurs="0" />
@@ -26,16 +27,17 @@
     </xs:element>
   </xs:schema>
   <Table>
-    <ID>1</ID>
-    <DATE>2017-02-03T14:19:00+07:00</DATE>
-    <INVOICE>SLO001-1</INVOICE>
+    <SALES_DISCOUNT_FINAL>0</SALES_DISCOUNT_FINAL>
+    <ID>2</ID>
+    <DATE>2017-03-24T00:01:00+07:00</DATE>
+    <INVOICE>SLO001-2</INVOICE>
     <CUSTOMER>P-UMUM</CUSTOMER>
-    <PRODUCT>BARANG 1</PRODUCT>
+    <PRODUCT>HPL VIOLAM VS 0101 S</PRODUCT>
     <QTY>20</QTY>
-    <PRICE>10</PRICE>
+    <PRICE>165000</PRICE>
     <POTONGAN>0</POTONGAN>
-    <SUBTOTAL>200</SUBTOTAL>
-    <PAYMENT>200</PAYMENT>
-    <CHANGE>0</CHANGE>
+    <SUBTOTAL>3300000</SUBTOTAL>
+    <PAYMENT>5500000</PAYMENT>
+    <CHANGE>2200000</CHANGE>
   </Table>
 </NewDataSet>

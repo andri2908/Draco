@@ -142,7 +142,8 @@ namespace AlphaSoft
             namaProductParam = MySqlHelper.EscapeString(namaProdukTextBox.Text);
             locationID = gutil.loadlocationID(2);
 
-            sqlCommand = "SELECT PRODUCT_PHOTO_1, ID, PRODUCT_ID AS 'PRODUK ID', PRODUCT_NAME AS 'NAMA PRODUK', PRODUCT_DESCRIPTION AS 'DESKRIPSI PRODUK' FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 AND PRODUCT_IS_SERVICE = 0 AND PRODUCT_ID LIKE '%" + kodeProductParam + "%' AND PRODUCT_NAME LIKE '%" + namaProductParam + "%'";
+            //sqlCommand = "SELECT PRODUCT_PHOTO_1, ID, PRODUCT_ID AS 'PRODUK ID', PRODUCT_NAME AS 'NAMA PRODUK', PRODUCT_DESCRIPTION AS 'DESKRIPSI PRODUK' FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 AND PRODUCT_IS_SERVICE = 0 AND PRODUCT_ID LIKE '%" + kodeProductParam + "%' AND PRODUCT_NAME LIKE '%" + namaProductParam + "%'";
+            sqlCommand = "SELECT PRODUCT_PHOTO_1, MP.ID, MP.PRODUCT_ID AS 'PRODUK ID', PRODUCT_NAME AS 'NAMA PRODUK', PRODUCT_LOCATION_QTY AS QTY, PRODUCT_DESCRIPTION AS 'DESKRIPSI PRODUK' FROM MASTER_PRODUCT MP, PRODUCT_LOCATION PL WHERE PRODUCT_ACTIVE = 1 AND PRODUCT_IS_SERVICE = 0 AND MP.PRODUCT_ID LIKE '%" + kodeProductParam + "%' AND PRODUCT_NAME LIKE '%" + namaProductParam + "%' AND PL.PRODUCT_ID = MP.PRODUCT_ID AND PL.LOCATION_ID = " + locationID;
 
             using (rdr = DS.getData(sqlCommand))
             {
@@ -153,10 +154,11 @@ namespace AlphaSoft
 
                     dataProdukGridView.Columns["ID"].Visible = false;
                     dataProdukGridView.Columns["PRODUCT_PHOTO_1"].Visible = false;
-                    
+                    dataProdukGridView.Columns["DESKRIPSI PRODUK"].Visible = false;
+
                     dataProdukGridView.Columns["PRODUK ID"].Visible = false;
                     dataProdukGridView.Columns["NAMA PRODUK"].Width = 200;
-                    dataProdukGridView.Columns["DESKRIPSI PRODUK"].Width = 300;
+                    //dataProdukGridView.Columns["DESKRIPSI PRODUK"].Width = 300;
                 }
             }
         }
@@ -277,6 +279,15 @@ namespace AlphaSoft
         private void namaProdukTextBox_TextChanged(object sender, EventArgs e)
         {
             loadProdukData();
+        }
+
+        private void newButton_Click(object sender, EventArgs e)
+        {
+            dataProdukDetailForm displayForm = new dataProdukDetailForm(globalConstants.NEW_PRODUK);
+            displayForm.ShowDialog(this);
+
+            if (namaProdukTextBox.Text.Length > 0)
+                loadProdukData();
         }
     }
 }

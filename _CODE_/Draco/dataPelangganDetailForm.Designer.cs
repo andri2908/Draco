@@ -122,6 +122,7 @@
             this.custTotalSalesTextBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custTotalSalesTextBox.Location = new System.Drawing.Point(273, 250);
             this.custTotalSalesTextBox.Name = "custTotalSalesTextBox";
+            this.custTotalSalesTextBox.ReadOnly = true;
             this.custTotalSalesTextBox.Size = new System.Drawing.Size(365, 27);
             this.custTotalSalesTextBox.TabIndex = 49;
             this.custTotalSalesTextBox.TextChanged += new System.EventHandler(this.custTotalSalesTextBox_TextChanged);

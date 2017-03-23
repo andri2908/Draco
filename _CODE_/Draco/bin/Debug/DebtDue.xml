@@ -18,4 +18,16 @@
       </xs:complexType>
     </xs:element>
   </xs:schema>
+  <Table>
+    <INVOICE>1111</INVOICE>
+    <TOTAL>31000000</TOTAL>
+    <JATUHTEMPO>2017-03-25T00:00:00+07:00</JATUHTEMPO>
+    <WAKTU>-2</WAKTU>
+  </Table>
+  <Table>
+    <INVOICE>PO-1</INVOICE>
+    <TOTAL>70000000</TOTAL>
+    <JATUHTEMPO>2017-04-14T00:00:00+07:00</JATUHTEMPO>
+    <WAKTU>-22</WAKTU>
+  </Table>
 </NewDataSet>

@@ -129,6 +129,7 @@ namespace AlphaSoft
             {
                 loadAccountData(namaAccountTextbox.Text);
             }
+            namaAccountTextbox.Select();
         }
 
         private void accountnonactiveoption_CheckedChanged(object sender, EventArgs e)

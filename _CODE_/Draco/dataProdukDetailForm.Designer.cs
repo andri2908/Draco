@@ -264,6 +264,7 @@
             this.produkKategoriTextBox.ReadOnly = true;
             this.produkKategoriTextBox.Size = new System.Drawing.Size(489, 27);
             this.produkKategoriTextBox.TabIndex = 17;
+            this.produkKategoriTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.produkKategoriTextBox_KeyDown);
             // 
             // searchKategoriButton
             // 

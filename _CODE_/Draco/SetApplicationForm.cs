@@ -315,6 +315,7 @@ namespace AlphaSoft
         private void setDatabaseLocationForm_Activated(object sender, EventArgs e)
         {
             //if need something
+            HQIP1.Select();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -503,6 +504,7 @@ namespace AlphaSoft
                     //gutil.showSuccess(options);
                     success2 = true;
                     gutil.ResetAllControls(this);                    
+                    errorLabel.Text = "";                 
                 }
             } else
             {
@@ -512,6 +514,7 @@ namespace AlphaSoft
                     //gutil.showSuccess(options);
                     success2 = true;
                     gutil.ResetAllControls(this);
+                    errorLabel.Text = "";
                 }
             }
             if (success1 && success2)

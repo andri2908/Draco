@@ -202,6 +202,11 @@ namespace AlphaSoft
             //LabelOptions1.Text = "Supplier";
             //SupplierNameCombobox.Visible = true;
             //LabelOptions2.Text = "Produk";
+            datefromPicker.Format = DateTimePickerFormat.Custom;
+            datefromPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
+
+            datetoPicker.Format = DateTimePickerFormat.Custom;
+            datetoPicker.CustomFormat = globalUtilities.CUSTOM_DATE_FORMAT;
 
             switch (originModuleID)
             {
@@ -333,7 +338,7 @@ namespace AlphaSoft
                         }
                         break;
                     default :
-                        produk = "AND PA.PRODUCT_ID";
+                        produk = "AND MP.PRODUCT_ID";
                         //switch (originModuleID)
                         //{
                         //    case globalConstants.REPORT_PURCHASE_RETURN:
@@ -360,11 +365,12 @@ namespace AlphaSoft
             {
                 case globalConstants.REPORT_PURCHASE_RETURN:
                     sqlCommandx = "SELECT RH.RP_ID AS 'ID', MS.SUPPLIER_FULL_NAME AS 'SUPPLIER', RH.RP_DATE AS 'TANGGAL', RH.RP_TOTAL AS 'TOTAL', IF(RH.RP_PROCESSED=1,'SUDAH DIPROSES','BELUM DIPROSES') AS 'STATUS', " +
-                                    "MP.PRODUCT_NAME AS 'PRODUK', RD.PRODUCT_BASEPRICE AS 'HARGA', RD.PRODUCT_QTY AS 'QTY', RD.RP_DESCRIPTION AS 'DESKRIPSI', RD.RP_SUBTOTAL AS 'SUBTOTAL' " +
-                                    "FROM RETURN_PURCHASE_HEADER RH, MASTER_SUPPLIER MS, RETURN_PURCHASE_DETAIL RD, MASTER_PRODUCT MP " +
-                                    "WHERE RH.SUPPLIER_ID = MS.SUPPLIER_ID AND RH.RP_ID = RD.RP_ID AND RD.PRODUCT_ID = MP.PRODUCT_ID " + produk + supplier + 
-                                    "AND DATE_FORMAT(RH.RP_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(RH.RP_DATE, '%Y%m%d') <= '" + dateTo + "' " +
-                                    "GROUP BY RD.ID";
+                                "MP.PRODUCT_NAME AS 'PRODUK', RD.PRODUCT_BASEPRICE AS 'HARGA', RD.PRODUCT_QTY AS 'QTY', RD.RP_DESCRIPTION AS 'DESKRIPSI', RD.RP_SUBTOTAL AS 'SUBTOTAL' " +
+                                "FROM RETURN_PURCHASE_HEADER RH, MASTER_SUPPLIER MS, RETURN_PURCHASE_DETAIL RD, MASTER_PRODUCT MP " +
+                                "WHERE RH.SUPPLIER_ID = MS.SUPPLIER_ID AND RH.RP_ID = RD.RP_ID AND RD.PRODUCT_ID = MP.PRODUCT_ID " + produk + supplier +
+                                "AND DATE_FORMAT(RH.RP_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(RH.RP_DATE, '%Y%m%d') <= '" + dateTo + "' " +
+                                "GROUP BY RD.ID";
+
                     DS.writeXML(sqlCommandx, globalConstants.PurchaseReturnXML);
                     ReportPurchaseReturnForm displayedForm1 = new ReportPurchaseReturnForm();
                     displayedForm1.ShowDialog(this);
@@ -374,16 +380,17 @@ namespace AlphaSoft
                                     "RH.RS_TOTAL AS 'TOTAL', MP.PRODUCT_NAME AS 'PRODUK', RD.PRODUCT_SALES_PRICE AS 'HARGAJUAL', RD.PRODUCT_SALES_QTY AS 'JMLJUAL', " +
                                     "RD.PRODUCT_RETURN_QTY AS 'JMLRETUR', RD.RS_DESCRIPTION AS 'DESKRIPSI', RD.RS_SUBTOTAL AS 'SUBTOTAL' " +
                                     "FROM RETURN_SALES_HEADER RH, MASTER_CUSTOMER MC, RETURN_SALES_DETAIL RD, MASTER_PRODUCT MP " +
-                                    "WHERE RH.CUSTOMER_ID = MC.CUSTOMER_ID AND RH.RS_INVOICE = RD.RS_INVOICE AND RD.PRODUCT_ID = MP.PRODUCT_ID " + produk + customer +
+                                    "WHERE RH.CUSTOMER_ID = MC.CUSTOMER_ID AND RH.RS_INVOICE = RD.RS_INVOICE AND RD.PRODUCT_ID = MP.PRODUCT_ID " + produk + " " + customer +
                                     "AND DATE_FORMAT(RH.RS_DATETIME, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(RH.RS_DATETIME, '%Y%m%d') <= '" + dateTo + "' " +
-                                    "GROUP BY RD.ID UNION " +
+                                    //"GROUP BY RD.ID " + 
+                                    "UNION " +
                                     "SELECT RH.RS_INVOICE AS 'INVOICE', RH.SALES_INVOICE AS 'NOTAJUAL', 'P-UMUM' AS 'CUSTOMER', RH.RS_DATETIME AS 'TANGGAL', " +
                                     "RH.RS_TOTAL AS 'TOTAL', MP.PRODUCT_NAME AS 'PRODUK', RD.PRODUCT_SALES_PRICE AS 'HARGAJUAL', RD.PRODUCT_SALES_QTY AS 'JMLJUAL', " +
                                     "RD.PRODUCT_RETURN_QTY AS 'JMLRETUR', RD.RS_DESCRIPTION AS 'DESKRIPSI', RD.RS_SUBTOTAL AS 'SUBTOTAL' " +
                                     "FROM RETURN_SALES_HEADER RH, RETURN_SALES_DETAIL RD, MASTER_PRODUCT MP " +
-                                    "WHERE RH.CUSTOMER_ID = 0 AND RH.RS_INVOICE = RD.RS_INVOICE AND RD.PRODUCT_ID = MP.PRODUCT_ID " + produk + 
-                                    "AND DATE_FORMAT(RH.RS_DATETIME, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(RH.RS_DATETIME, '%Y%m%d') <= '" + dateTo + "' " +
-                                    "GROUP BY RD.ID";
+                                    "WHERE RH.CUSTOMER_ID = 0 AND RH.RS_INVOICE = RD.RS_INVOICE AND RD.PRODUCT_ID = MP.PRODUCT_ID " + produk + " " +
+                                    "AND DATE_FORMAT(RH.RS_DATETIME, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(RH.RS_DATETIME, '%Y%m%d') <= '" + dateTo + "' ";
+                    //"GROUP BY RD.ID";
                     DS.writeXML(sqlCommandx, globalConstants.SalesReturnXML);
                     ReportSalesReturnForm displayedForm2 = new ReportSalesReturnForm();
                     displayedForm2.ShowDialog(this);
@@ -394,19 +401,19 @@ namespace AlphaSoft
                                     "FROM RETURN_PURCHASE_HEADER RH, RETURN_PURCHASE_DETAIL RD, MASTER_PRODUCT MP " +
                                     "WHERE RH.SUPPLIER_ID = 0 AND RH.RP_ID = RD.RP_ID AND RD.PRODUCT_ID = MP.PRODUCT_ID " + produk +
                                     "AND DATE_FORMAT(RH.RP_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(RH.RP_DATE, '%Y%m%d') <= '" + dateTo + "' " +
-                                    "GROUP BY RD.ID";
+                                    "GROUP BY ID";
                     DS.writeXML(sqlCommandx, globalConstants.RequestReturnXML);
                     ReportRequestReturnForm displayedForm3 = new ReportRequestReturnForm();
                     displayedForm3.ShowDialog(this);
                     break;
                 case globalConstants.REPORT_PRODUCT_MUTATION:
                     sqlCommandx = "SELECT MH.PM_INVOICE AS 'INVOICE', MH.PM_DATETIME AS 'TANGGAL', 'PUSAT' AS 'DARI', MB.BRANCH_NAME AS 'KE', MH.PM_TOTAL AS 'TOTAL', " +
-                                    "IF(MH.PM_RECEIVED = 1, 'DITERIMA', 'BELUM DITERIMA') AS 'STATUS', MP.PRODUCT_NAME AS 'PRODUK', MD.PRODUCT_BASE_PRICE AS 'HPP', " +
-                                    "MD.PRODUCT_QTY AS 'QTY', MD.PM_SUBTOTAL AS 'SUBTOTAL' " +
-                                    "FROM PRODUCTS_MUTATION_HEADER MH, MASTER_BRANCH MB, PRODUCTS_MUTATION_DETAIL MD, MASTER_PRODUCT MP " +
-                                    "WHERE MH.BRANCH_ID_TO = MB.BRANCH_ID AND MH.PM_INVOICE = MD.PM_INVOICE AND MD.PRODUCT_ID = MP.PRODUCT_ID " + produk +
-                                    "AND DATE_FORMAT(MH.PM_DATETIME, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(MH.PM_DATETIME, '%Y%m%d') <= '" + dateTo + "' " +
-                                    "GROUP BY MD.ID";
+                                "IF(MH.PM_RECEIVED = 1, 'DITERIMA', 'BELUM DITERIMA') AS 'STATUS', MP.PRODUCT_NAME AS 'PRODUK', MD.PRODUCT_BASE_PRICE AS 'HPP', " +
+                                "MD.PRODUCT_QTY AS 'QTY', MD.PM_SUBTOTAL AS 'SUBTOTAL' " +
+                                "FROM PRODUCTS_MUTATION_HEADER MH, MASTER_BRANCH MB, PRODUCTS_MUTATION_DETAIL MD, MASTER_PRODUCT MP " +
+                                "WHERE MH.BRANCH_ID_TO = MB.BRANCH_ID AND MH.PM_INVOICE = MD.PM_INVOICE AND MD.PRODUCT_ID = MP.PRODUCT_ID " + produk +
+                                "AND DATE_FORMAT(MH.PM_DATETIME, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(MH.PM_DATETIME, '%Y%m%d') <= '" + dateTo + "' " +
+                                "GROUP BY MD.ID";
                     DS.writeXML(sqlCommandx, globalConstants.ProductMutationXML);
                     ReportProductMutationForm displayedForm4 = new ReportProductMutationForm();
                     displayedForm4.ShowDialog(this);
@@ -417,7 +424,7 @@ namespace AlphaSoft
                                     "IF((PA.PRODUCT_NEW_STOCK_QTY - PA.PRODUCT_OLD_STOCK_QTY) > 0, 'POSITIVE', 'NEGATIVE') AS 'DEVIASI' " +
                                     "FROM PRODUCT_ADJUSTMENT PA, MASTER_PRODUCT MP, MASTER_UNIT MU " +
                                     "WHERE PA.PRODUCT_ID = MP.PRODUCT_ID AND MP.UNIT_ID = MU.UNIT_ID " + produk +
-                                    "AND DATE_FORMAT(PA.PRODUCT_ADJUSTMENT_DATE, '%Y%m%d') >= '" + dateFrom +"' AND DATE_FORMAT(PA.PRODUCT_ADJUSTMENT_DATE, '%Y%m%d') <= '" + dateTo+ "' " +
+                                    "AND DATE_FORMAT(PA.PRODUCT_ADJUSTMENT_DATE, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PA.PRODUCT_ADJUSTMENT_DATE, '%Y%m%d') <= '" + dateTo + "' " +
                                     "GROUP BY PA.ID " +
                                     "ORDER BY DEVIASI ASC";
                     DS.writeXML(sqlCommandx, globalConstants.ProductDeviationXML);

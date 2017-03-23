@@ -243,7 +243,7 @@ namespace AlphaSoft
             {
                 if (checkUserExist())
                 {
-                    passwordTextBox.Focus();
+                    passwordTextBox.Select();
                 }
                 else {
                     errorLabel.Text = "USER NOT EXIST." + Environment.NewLine + "Please Contact Adminstrator!";

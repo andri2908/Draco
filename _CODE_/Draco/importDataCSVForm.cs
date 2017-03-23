@@ -183,10 +183,12 @@ namespace AlphaSoft
                                                 "PRODUCT_STOCK_QTY = PRODUCT_STOCK_QTY + " + qtyDiff+ " " +
                                                 "WHERE PRODUCT_ID = '" + productID + "'";
                         else
+                        {
+                            qtyDiff = Math.Abs(qtyDiff);
                             sqlCommand = "UPDATE MASTER_PRODUCT SET " +
                                                 "PRODUCT_STOCK_QTY = PRODUCT_STOCK_QTY - " + qtyDiff + " " +
                                                 "WHERE PRODUCT_ID = '" + productID + "'";
-
+                        }
                         gutil.saveSystemDebugLog(globalConstants.MENU_PENYESUAIAN_STOK, "UPDATE STOCK QTY [" + productID + "]");
                         if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                             throw internalEX;

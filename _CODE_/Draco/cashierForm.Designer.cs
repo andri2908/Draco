@@ -204,7 +204,7 @@
             this.cashierDataGridView.TabIndex = 8;
             this.cashierDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.cashierDataGridView_CellBeginEdit);
             this.cashierDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierDataGridView_CellEndEdit);
-            this.cashierDataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierDataGridView_CellValidated);
+            //this.cashierDataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierDataGridView_CellValidated);
             this.cashierDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierDataGridView_CellValueChanged);
             this.cashierDataGridView.CurrentCellDirtyStateChanged += new System.EventHandler(this.cashierDataGridView_CurrentCellDirtyStateChanged);
             // 
@@ -769,7 +769,7 @@
             this.Deactivate += new System.EventHandler(this.cashierForm_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.cashierForm_FormClosed);
             this.Load += new System.EventHandler(this.cashierForm_Load);
-            this.Shown += new System.EventHandler(this.cashierForm_Shown);
+            //this.Shown += new System.EventHandler(this.cashierForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cashierDataGridView)).EndInit();

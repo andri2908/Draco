@@ -612,13 +612,8 @@ namespace AlphaSoft
                         else
                         {
                             cashierDataGridView.Rows[i].Cells["disc1"].Value = 0;
-                            //disc1[i] = "0";
-
                             cashierDataGridView.Rows[i].Cells["disc2"].Value = 0;
-                            //disc2[i] = "0";
-
                             cashierDataGridView.Rows[i].Cells["discRP"].Value = 0;
-                            //discRP[i] = "0";
                         }
                     }
                     cashierDataGridView.Rows[i].Cells["jumlah"].Value = calculateSubTotal(i, productPrice);
@@ -650,59 +645,56 @@ namespace AlphaSoft
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ADD NEW ROW,  isActive [" + isActive.ToString() + "]");
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ADD NEW ROW,  ROW COUNT [" + cashierDataGridView.Rows.Count + "]");
 
-            for (int i = 0; i < cashierDataGridView.Rows.Count && allowToAdd; i++)
+            if (!isLoading)
             {
-                if (null != cashierDataGridView.Rows[i].Cells["productID"].Value)
+                for (int i = 0; i < cashierDataGridView.Rows.Count && allowToAdd; i++)
                 {
-                    if (!productIDValid(cashierDataGridView.Rows[i].Cells["productID"].Value.ToString()))
+                    if (null != cashierDataGridView.Rows[i].Cells["productID"].Value)
+                    {
+                        if (!productIDValid(cashierDataGridView.Rows[i].Cells["productID"].Value.ToString()))
+                        {
+                            allowToAdd = false;
+                            newRowIndex = i;
+                        }
+                    }
+                    else
                     {
                         allowToAdd = false;
                         newRowIndex = i;
                     }
                 }
+
+                gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ADD NEW ROW,  ALLOW TO ADD [" + allowToAdd.ToString() + "]");
+
+                if (allowToAdd)
+                {
+                    if (cashierDataGridView.Rows.Count > 0)
+                        prevValue = Convert.ToInt32(cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["F8"].Value);
+
+                    cashierDataGridView.Rows.Add();
+
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["F8"].Value = prevValue + 1;
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["hpp"].Value = "0";
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["productPrice"].Value = "0";
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["disc1"].Value = "0";
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["qty"].Value = "0";
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["disc2"].Value = "0";
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["discRP"].Value = "0";
+                    cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["jumlah"].Value = "0";
+                    newRowIndex = cashierDataGridView.Rows.Count - 1;
+                }
                 else
                 {
-                    allowToAdd = false;
-                    newRowIndex = i;
+                    DataGridViewRow selectedRow = cashierDataGridView.Rows[newRowIndex];
+                    clearUpSomeRowContents(selectedRow, newRowIndex);
                 }
-            }
 
-            gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ADD NEW ROW,  ALLOW TO ADD [" + allowToAdd.ToString() + "]");
-
-            if (allowToAdd)
-            {
-                if (cashierDataGridView.Rows.Count > 0)
-                    prevValue = Convert.ToInt32(cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["F8"].Value);
-
-                cashierDataGridView.Rows.Add();
-
-                //salesQty.Add("0");
-                //disc1.Add("0");
-                //disc2.Add("0");
-                //discRP.Add("0");
-                //productPriceList.Add("0");
-                //jumlahList.Add("0");
-
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["F8"].Value = prevValue + 1;
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["hpp"].Value = "0";
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["productPrice"].Value = "0";
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["disc1"].Value = "0";
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["qty"].Value = "0";
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["disc2"].Value = "0";
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["discRP"].Value = "0";
-                cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["jumlah"].Value = "0";
-                newRowIndex = cashierDataGridView.Rows.Count - 1;
-            }
-            else
-            {
-                DataGridViewRow selectedRow = cashierDataGridView.Rows[newRowIndex];
-                clearUpSomeRowContents(selectedRow, newRowIndex);
-            }
-
-            if (isActive)
-            { 
-                cashierDataGridView.Focus();
-                cashierDataGridView.CurrentCell = cashierDataGridView.Rows[newRowIndex].Cells["productName"];
+                // if (isActive)
+                {
+                    cashierDataGridView.CurrentCell = cashierDataGridView.Rows[newRowIndex].Cells["productName"];
+                    cashierDataGridView.Select();
+                    cashierDataGridView.BeginEdit(true);
+                }
             }
         }
 
@@ -760,33 +752,28 @@ namespace AlphaSoft
             }
 
             DataGridViewRow selectedRow = cashierDataGridView.Rows[rowSelectedIndex];
-
-            updateSomeRowContents(selectedRow, rowSelectedIndex, productName);
+            updateSomeRowContents(selectedRow, rowSelectedIndex, productID);
 
             if (!found)
             {
                 if (gutil.stockIsEnough(productID, 1, true))
                 {
                     selectedRow.Cells["qty"].Value = 1;
-                    //salesQty[rowSelectedIndex] = "1";
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : SET QTY TO 1 BECAUSE OF NEW ROW");
                 }
                 else
                 {
                     selectedRow.Cells["qty"].Value = 0;
-                    //salesQty[rowSelectedIndex] = "0";
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : SET QTY TO 0 BECAUSE OF NEW ROW BUT STOCK IS NOT ENOUGH");
                 }
             }
             else
             {
-                //currQty = Convert.ToDouble(salesQty[rowSelectedIndex]) + 1;
                 currQty = Convert.ToDouble(selectedRow.Cells["qty"].Value) + 1;
 
                 if (gutil.stockIsEnough(productID, currQty, true))
                 {
                     selectedRow.Cells["qty"].Value = currQty;
-                    //salesQty[rowSelectedIndex] = currQty.ToString();
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : QTY FOR THE EXISTING ROW [" + currQty.ToString() + "]");
                 }
                 else
@@ -796,21 +783,11 @@ namespace AlphaSoft
             }
 
             selectedRow.Cells["jumlah"].Value = calculateSubTotal(rowSelectedIndex, Convert.ToDouble(selectedRow.Cells["productPrice"].Value));
-            //jumlahList[rowSelectedIndex] = selectedRow.Cells["jumlah"].Value.ToString();
             calculateTotal();
 
-            cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
+            cashierDataGridView.CurrentCell = cashierDataGridView.Rows[rowSelectedIndex].Cells["qty"];
             cashierDataGridView.Select();
             cashierDataGridView.BeginEdit(true);
-
-            //selectedRow.Cells["jumlah"].Value = calculateSubTotal(rowSelectedIndex, Convert.ToDouble(selectedRow.Cells["productPrice"].Value));
-
-            //calculateTotal();
-            //cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
-            ////comboSelectedIndexChangeMethod(rowSelectedIndex, i, selectedRow);
-            ////cashierDataGridView.CurrentCell = cashierDataGridView.Rows[rowSelectedIndex].Cells["qty"];
-
-            //cashierDataGridView.Select();
         }
 
         private bool productIDValid(string productID)
@@ -827,6 +804,17 @@ namespace AlphaSoft
         {
             bool result = false;
             string sqlCommand = "";
+            double maxCredit = 0;
+            double creditTolerance = 0;
+
+            // GET MAX CREDIT TOLERANCE
+            maxCredit = Convert.ToDouble(DS.getDataSingleValue("SELECT MAX_CREDIT FROM MASTER_CUSTOMER WHERE CUSTOMER_ID = " + selectedPelangganID));
+
+            if (maxCredit == 0) // 0 MEANS NO LIMIT
+                return false;
+
+            creditTolerance = Math.Round(maxCredit * globalUtilities.MAX_CREDIT_TOLERANCE_PERCENTAGE / 100, 2);
+            maxCredit = maxCredit + creditTolerance;
 
             // CALCULATE TOTAL UNPAID TRANSACTION MINUS THE CURRENT SALES INVOICE FOR SALES ORDER REVISION
             double totalUnpaidTransaction = 0;
@@ -842,13 +830,8 @@ namespace AlphaSoft
 
             // CALCULATE TOTAL CREDIT AT PRESENT
             double totalOutstandingCredit = 0;
-            double maxCredit = 0;
-            double creditTolerance = 0;
             totalOutstandingCredit = totalUnpaidTransaction - totalPaymentTransaction;
-            maxCredit = Convert.ToDouble(DS.getDataSingleValue("SELECT MAX_CREDIT FROM MASTER_CUSTOMER WHERE CUSTOMER_ID = " + selectedPelangganID));
-            creditTolerance = Math.Round(maxCredit * globalUtilities.MAX_CREDIT_TOLERANCE_PERCENTAGE / 100, 2);
 
-            maxCredit = maxCredit + creditTolerance;
             totalOutstandingCredit = totalOutstandingCredit + newCreditAmount;
 
             if ((totalOutstandingCredit>0) && (maxCredit <= totalOutstandingCredit))
@@ -903,6 +886,13 @@ namespace AlphaSoft
 
             for (int i = 0; i < cashierDataGridView.Rows.Count && validInput; i++)
             {
+                if (null == cashierDataGridView.Rows[i].Cells["productID"].Value || !productIDValid(cashierDataGridView.Rows[i].Cells["productID"].Value.ToString()))
+                {
+                    errorLabel.Text = "PRODUK DI BARIS " + (i + 1) + " TIDAK VALID";
+                    validInput = false;
+                    continue;
+                }
+
                 // CHECK INPUT FOR PRODUCT PRICE
                 if (null != cashierDataGridView.Rows[i].Cells["productPrice"].Value)
                     validInput = gutil.matchRegEx(cashierDataGridView.Rows[i].Cells["productPrice"].Value.ToString(), globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL);
@@ -944,13 +934,6 @@ namespace AlphaSoft
                     ) && null != cashierDataGridView.Rows[i].Cells["productID"].Value)
                 {
                     errorLabel.Text = "PEMBELIAN DI BARIS " + (i + 1) + " TIDAK VALID";
-                    validInput = false;
-                    continue;
-                }
-
-                if (null != cashierDataGridView.Rows[i].Cells["productID"].Value && !productIDValid(cashierDataGridView.Rows[i].Cells["productID"].Value.ToString()))
-                {
-                    errorLabel.Text = "PRODUK DI BARIS " + (i + 1) + " TIDAK VALID";
                     validInput = false;
                     continue;
                 }
@@ -1012,8 +995,16 @@ namespace AlphaSoft
 
             if (selectedPelangganID == 0)
             { 
-                if (DialogResult.No == MessageBox.Show("PELANGGAN KOSONG, LANJUTKAN ?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                if (originModuleID == globalConstants.SALES_QUOTATION)
+                {
+                    errorLabel.Text = "PELANGGAN KOSONG";
                     return false;
+                }
+                else
+                {
+                    if (DialogResult.No == MessageBox.Show("PELANGGAN KOSONG, LANJUTKAN ?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                        return false;
+                }
             }
             else if (creditRadioButton.Checked == true)
             {
@@ -1513,7 +1504,7 @@ namespace AlphaSoft
                             throw internalEX;
                     }
 
-                    if (selectedPaymentMethod == 0)
+                    if (selectedPaymentMethod == 0 && salesTop == 1)
                     {
                         // PAYMENT IN CASH THEREFORE ADDING THE AMOUNT OF CASH IN THE CASH REGISTER
                         // ADD A NEW ENTRY ON THE DAILY JOURNAL TO KEEP TRACK THE ADDITIONAL CASH AMOUNT 
@@ -1802,6 +1793,7 @@ namespace AlphaSoft
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : calculateTotal, totalAfterDisc [" + totalAfterDisc + "]");
 
             totalAfterDiscTextBox.Text = totalAfterDisc.ToString(currencyFormat, culture);
+            totalLabel.Text = totalAfterDisc.ToString(currencyFormat, culture);
 
             calculateChangeValue();
         }
@@ -1825,65 +1817,6 @@ namespace AlphaSoft
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : calculateChangeValue, sisaBayar [" + sisaBayar + "]");
                 uangKembaliTextBox.Text = sisaBayar.ToString(currencyFormat, culture);
             }
-        }
-
-        //private bool stockIsEnough(string productID, double qtyRequested)
-        //{
-        //    bool result = false;
-
-        //    //if (originModuleID == globalConstants.PRE_ORDER_SALES)
-        //    //{
-        //    //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : PRE ORDER SALES, CHECK STOCK QTY ALWAYS TRUE");
-        //    //    return true;
-        //    //}
-
-        //    //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : CHECK STOCK QTY IS ENOUGH [" + productID + "]");
-
-        //    //if (gutil.productIsService(productID))
-        //    //    result = true;
-        //    //else
-        //    //{
-        //    //    if (productID.Length <= 0)
-        //    //       result = true; // NO PRODUCT SELECTED YET
-        //    //    else
-        //    //    {
-        //    //            double stockQty = 0;
-
-        //    //            stockQty = Convert.ToDouble(DS.getDataSingleValue("SELECT (PRODUCT_STOCK_QTY - PRODUCT_LIMIT_STOCK) FROM MASTER_PRODUCT WHERE PRODUCT_ID = '" + productID + "'"));
-
-        //    //            if (stockQty >= qtyRequested)
-        //    //                result = true;
-                
-        //    //            gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : CHECK STOCK QTY IS ENOUGH [" + stockQty + ", " + qtyRequested + "]");
-        //    //    }
-        //    //}
-        //    return result;
-        //}
-
-        private void setTextBoxCustomSource(TextBox textBox)
-        {
-            MySqlDataReader rdr;
-            string sqlCommand = "";
-            string[] arr = null;
-            List<string> arrList = new List<string>();
-
-            sqlCommand = "SELECT PRODUCT_NAME FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1";
-            rdr = DS.getData(sqlCommand);
-
-            if (rdr.HasRows)
-            {
-                while (rdr.Read())
-                {
-                    arrList.Add(rdr.GetString("PRODUCT_NAME"));
-                }
-                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-                arr = arrList.ToArray();
-                collection.AddRange(arr);
-
-                textBox.AutoCompleteCustomSource = collection;
-            }
-
-            rdr.Close();
         }
 
         private void cashierDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -1949,11 +1882,11 @@ namespace AlphaSoft
             string currentProductName = "";
             bool changed = false;
 
-            numRow = Convert.ToInt32(DS.getDataSingleValue("SELECT COUNT(1) FROM MASTER_PRODUCT WHERE PRODUCT_NAME = '" + currentValue + "'"));
+            numRow = Convert.ToInt32(DS.getDataSingleValue("SELECT COUNT(1) FROM MASTER_PRODUCT WHERE PRODUCT_ID = '" + currentValue + "'"));
 
             if (numRow > 0)
             {
-                selectedProductName = currentValue;
+                selectedProductID = currentValue;
 
                 if (null != selectedRow.Cells["productID"].Value)
                     currentProductID = selectedRow.Cells["productID"].Value.ToString();
@@ -1961,7 +1894,7 @@ namespace AlphaSoft
                 if (null != selectedRow.Cells["productName"].Value)
                     currentProductName = selectedRow.Cells["productName"].Value.ToString();
 
-                selectedProductID = DS.getDataSingleValue("SELECT IFNULL(PRODUCT_ID,'') FROM MASTER_PRODUCT WHERE PRODUCT_NAME = '" + currentValue + "'").ToString();
+                selectedProductName = DS.getDataSingleValue("SELECT IFNULL(PRODUCT_NAME,'') FROM MASTER_PRODUCT WHERE PRODUCT_ID = '" + currentValue + "'").ToString();
 
                 selectedRow.Cells["productId"].Value = selectedProductID;
                 selectedRow.Cells["productName"].Value = selectedProductName;
@@ -1996,11 +1929,7 @@ namespace AlphaSoft
                 hpp = getProductPriceValue(selectedProductID, customerComboBox.SelectedIndex);
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ComboBox_SelectedIndexChanged, PRODUCT_SALES_PRICE [" + hpp + "]");
                 selectedRow.Cells["productPrice"].Value = hpp;
-                //productPriceList[rowSelectedIndex] = hpp.ToString();
-
-                //if (null == selectedRow.Cells["qty"].Value)
                 selectedRow.Cells["qty"].Value = 0;
-                //salesQty[rowSelectedIndex] = "0";
 
                 if (selectedPelangganID != 0)
                 {
@@ -2015,13 +1944,8 @@ namespace AlphaSoft
                                 rdr.Read();
 
                                 selectedRow.Cells["disc1"].Value = rdr.GetString("DISC_1");
-                                //disc1[rowSelectedIndex] = rdr.GetString("DISC_1");
-
                                 selectedRow.Cells["disc2"].Value = rdr.GetString("DISC_2");
-                               // disc2[rowSelectedIndex] = rdr.GetString("DISC_2");
-
                                 selectedRow.Cells["discRP"].Value = rdr.GetString("DISC_RP");
-                                //discRP[rowSelectedIndex] = rdr.GetString("DISC_RP");
 
                                 gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ComboBox_SelectedIndexChanged, LOAD DISC [" + rdr.GetString("DISC_1") + ", " + rdr.GetString("DISC_2") + ", " + rdr.GetString("DISC_RP") + "]");
                             }
@@ -2032,21 +1956,12 @@ namespace AlphaSoft
                     else
                     {
                         selectedRow.Cells["disc1"].Value = 0;
-                        //disc1[rowSelectedIndex] = "0";
-
                         selectedRow.Cells["disc2"].Value = 0;
-                        //disc2[rowSelectedIndex] = "0";
-
                         selectedRow.Cells["discRP"].Value = 0;
-                        //discRP[rowSelectedIndex] = "0";
                     }
                 }
 
-                //subTotal = calculateSubTotal(rowSelectedIndex, hpp);
-                //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ComboBox_SelectedIndexChanged, subTotal [" + subTotal + "]");
                 selectedRow.Cells["jumlah"].Value = "0";
-                //jumlahList[rowSelectedIndex] = "0";
-
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : ComboBox_SelectedIndexChanged, attempt to calculate total");
 
                 calculateTotal();
@@ -2087,150 +2002,6 @@ namespace AlphaSoft
             }
         }
 
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            //int rowSelectedIndex = 0;
-            //double subTotal = 0;
-            //double productPrice = 0;
-            //string productID = "";
-            //string previousInput = "";
-            //string tempString = "";
-
-            //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, isLoading [" + isLoading.ToString() + "]");
-
-            //if (isLoading)
-            //    return;
-
-            //DataGridViewTextBoxEditingControl dataGridViewTextBoxEditingControl = sender as DataGridViewTextBoxEditingControl;
-
-            //rowSelectedIndex = cashierDataGridView.SelectedCells[0].RowIndex;
-            //DataGridViewRow selectedRow = cashierDataGridView.Rows[rowSelectedIndex];
-
-            //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, rowSelectedIndex [" + rowSelectedIndex + "]");
-
-            ////if (cashierDataGridView.CurrentCell.ColumnIndex != 3 && cashierDataGridView.CurrentCell.ColumnIndex != 4 && cashierDataGridView.CurrentCell.ColumnIndex != 5 && cashierDataGridView.CurrentCell.ColumnIndex != 6)
-            //if (cashierDataGridView.CurrentCell.OwningColumn.Name != "hpp" && 
-            //    cashierDataGridView.CurrentCell.OwningColumn.Name != "qty" && 
-            //    cashierDataGridView.CurrentCell.OwningColumn.Name != "disc1" && 
-            //    cashierDataGridView.CurrentCell.OwningColumn.Name != "disc2" && 
-            //    cashierDataGridView.CurrentCell.OwningColumn.Name != "discRP")
-
-            //    return;
-
-            //if (dataGridViewTextBoxEditingControl.Text.Length <= 0)
-            //{
-            //    // IF TEXTBOX IS EMPTY, DEFAULT THE VALUE TO 0 AND EXIT THE CHECKING
-            //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, empty texbox, reset ["+ cashierDataGridView.CurrentCell.OwningColumn.Name + "] value to 0");
-            //    isLoading = true;
-            //    // reset subTotal Value and recalculate total
-            //    selectedRow.Cells["jumlah"].Value = 0;
-
-            //    //if (detailRequestQtyApproved.Count >= rowSelectedIndex + 1)
-            //    //    detailRequestQtyApproved[rowSelectedIndex] = "0";
-            //    //switch (cashierDataGridView.CurrentCell.OwningColumn.Name)
-            //    //{
-            //    //    case "qty":
-            //    //        salesQty[rowSelectedIndex] = "0";
-            //    //        break;
-            //    //    case "disc1":
-            //    //        disc1[rowSelectedIndex] = "0";
-            //    //        break;
-            //    //    case "disc2":
-            //    //        disc2[rowSelectedIndex] = "0";
-            //    //        break;
-            //    //    case "discRP":
-            //    //        discRP[rowSelectedIndex] = "0";
-            //    //        break;
-            //    //}
-
-            //    dataGridViewTextBoxEditingControl.Text = "0";
-            //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, recalculate total value");
-            //    calculateTotal();
-
-            //    dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-            //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, set the cursor to end of textbox");
-            //    isLoading = false;
-            //    return;
-            //}
-
-            //if (null != selectedRow.Cells["productID"].Value)
-            //    productID = selectedRow.Cells["productID"].Value.ToString();
-
-            ////switch (cashierDataGridView.CurrentCell.OwningColumn.Name)
-            ////{
-            ////    case "qty":
-            ////        previousInput = salesQty[rowSelectedIndex];
-            ////        break;
-            ////    case "disc1":
-            ////        previousInput = disc1[rowSelectedIndex];
-            ////        break;
-            ////    case "disc2":
-            ////        previousInput = disc2[rowSelectedIndex];
-            ////        break;
-            ////    case "discRP":
-            ////        previousInput = discRP[rowSelectedIndex];
-            ////        break;
-            ////}
-
-            //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, previousInput [" + previousInput + "]");
-
-            //isLoading = true;
-            //if (previousInput == "0")
-            //{
-            //    tempString = dataGridViewTextBoxEditingControl.Text;
-            //    if (tempString.IndexOf('0') == 0 && tempString.Length > 1 && tempString.IndexOf("0.") < 0)
-            //        dataGridViewTextBoxEditingControl.Text = tempString.Remove(tempString.IndexOf('0'), 1);
-
-            //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, dataGridViewTextBoxEditingControl.Text [" + dataGridViewTextBoxEditingControl.Text + "]");
-            //}
-            
-            //if (gutil.matchRegEx(dataGridViewTextBoxEditingControl.Text, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
-            //    && (dataGridViewTextBoxEditingControl.Text.Length > 0 && dataGridViewTextBoxEditingControl.Text != ".")
-            //    )
-            //{
-            //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, dataGridViewTextBoxEditingControl.Text pass REGEX Checking");
-            //    switch (cashierDataGridView.CurrentCell.OwningColumn.Name)
-            //    {
-            //        case "qty":                            
-            //            if (gutil.stockIsEnough(productID, Convert.ToDouble(dataGridViewTextBoxEditingControl.Text)))
-            //                salesQty[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //            else
-            //                dataGridViewTextBoxEditingControl.Text = salesQty[rowSelectedIndex];
-            //            break;
-            //        case "disc1":
-            //            disc1[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //            break;
-            //        case "disc2":
-            //            disc2[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //            break;
-            //        case "discRP":
-            //            discRP[rowSelectedIndex] = dataGridViewTextBoxEditingControl.Text;
-            //            break;
-            //    }
-            //}
-            //else
-            //{
-            //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, dataGridViewTextBoxEditingControl.Text did not pass REGEX Checking");
-            //    dataGridViewTextBoxEditingControl.Text = previousInput;
-            //}
-
-            //productPrice = Convert.ToDouble(selectedRow.Cells["productPrice"].Value);
-
-            //subTotal = calculateSubTotal(rowSelectedIndex, productPrice);
-            //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, subtotal value [" + subTotal + "]");
-            //selectedRow.Cells["jumlah"].Value = subTotal;
-
-            //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, attempt to calculate total value");
-            //calculateTotal();
-            //dataGridViewTextBoxEditingControl.SelectionStart = dataGridViewTextBoxEditingControl.Text.Length;
-
-            //isLoading = false;
-        }
-
-        private void cashierForm_Shown(object sender, EventArgs e)
-        {
-            //registerGlobalHotkey();
-        }
 
         private void cashierForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -2328,7 +2099,7 @@ namespace AlphaSoft
                 case globalConstants.SALES_ORDER_REVISION:
                 case globalConstants.PRE_ORDER_SALES_REVISION:
                     // PULL HEADER DATA
-                    sqlCommand = "SELECT IFNULL(SH.SQ_INVOICE, '') AS SQ_INVOICE, SH.SALES_INVOICE AS NO_INVOICE, IFNULL(M.CUSTOMER_ID, 0) AS PELANGGAN_ID, IFNULL(M.CUSTOMER_FULL_NAME, 'P-UMUM') AS NAMA, IFNULL(M.CUSTOMER_GROUP, 1) AS CUSTOMER_GROUP, SH.SALES_TOTAL AS TOTAL, SH.SALES_DISCOUNT_FINAL AS DISC_FINAL, SH.SALES_TOP AS TOP, DATEDIFF(SH.SALES_TOP_DATE, SH.SALES_DATE) AS TOP_DURATION, SH.SALES_PAYMENT " +
+                    sqlCommand = "SELECT IFNULL(SH.SQ_INVOICE, '') AS SQ_INVOICE, SH.SALES_INVOICE AS NO_INVOICE, IFNULL(M.CUSTOMER_ID, 0) AS PELANGGAN_ID, IFNULL(M.CUSTOMER_FULL_NAME, 'P-UMUM') AS NAMA, IFNULL(M.CUSTOMER_GROUP, 1) AS CUSTOMER_GROUP, SH.SALES_TOTAL AS TOTAL, SH.SALES_DISCOUNT_FINAL AS DISC_FINAL, SH.SALES_TOP AS TOP, DATEDIFF(SH.SALES_TOP_DATE, SH.SALES_DATE) AS TOP_DURATION, SH.SALES_PAYMENT, SH.SALES_PAYMENT_METHOD " +
                                            "FROM SALES_HEADER SH LEFT OUTER JOIN MASTER_CUSTOMER M ON (SH.CUSTOMER_ID = M.CUSTOMER_ID) WHERE SH.SALES_INVOICE = '" + selectedsalesinvoice + "' AND SH.REV_NO = " + selectedsalesinvoiceRevNo;
                     rdr = DS.getData(sqlCommand);
                     if (rdr.HasRows)
@@ -2351,6 +2122,7 @@ namespace AlphaSoft
                             selectedSQInvoice = rdr.GetString("SQ_INVOICE");
                             bayarTextBox.Text = rdr.GetString("SALES_PAYMENT");
 
+                            selectedPaymentMethod = rdr.GetInt32("SALES_PAYMENT_METHOD");
                             if (TOPValue == 1)
                                 cashRadioButton.Checked = true;
                             else
@@ -2373,12 +2145,7 @@ namespace AlphaSoft
                         while (rdr.Read())
                         {
                             addNewRow();
-                        //salesQty.Add("0");
-                        //disc1.Add("0");
-                        //disc2.Add("0");
-                        //discRP.Add("0");
-                        //productPriceList.Add("0");
-                        //jumlahList.Add("0");
+
                             cashierDataGridView.Rows[rowPos].Cells["productID"].Value = rdr.GetString("KODE_PRODUK");
                             cashierDataGridView.Rows[rowPos].Cells["productName"].Value = rdr.GetString("NAMA_PRODUK");
                             cashierDataGridView.Rows[rowPos].Cells["productPrice"].Value = rdr.GetString("HARGA_PRODUK");
@@ -2388,12 +2155,6 @@ namespace AlphaSoft
                             cashierDataGridView.Rows[rowPos].Cells["discRP"].Value = rdr.GetString("PRODUCT_DISC_RP");
                             cashierDataGridView.Rows[rowPos].Cells["hpp"].Value = rdr.GetString("HPP");
 
-                        //    salesQty[rowPos] = rdr.GetString("QTY");
-                        //productPriceList[rowPos] = rdr.GetString("HARGA_PRODUK");
-                        //jumlahList[rowPos] = rdr.GetString("SUBTOTAL");
-                        //disc1[rowPos] = rdr.GetString("PRODUCT_DISC1");
-                        //disc2[rowPos] = rdr.GetString("PRODUCT_DISC2");
-                        //discRP[rowPos] = rdr.GetString("PRODUCT_DISC_RP");
                             cashierDataGridView.Rows[rowPos].Cells["jumlah"].Value = rdr.GetString("SUBTOTAL");
 
                             rowPos += 1;
@@ -2403,6 +2164,10 @@ namespace AlphaSoft
                     break;
             }
             isLoading = false;
+
+            cashierDataGridView.CurrentCell = cashierDataGridView.Rows[cashierDataGridView.Rows.Count - 1].Cells["qty"];
+            cashierDataGridView.Select();
+            cashierDataGridView.BeginEdit(true);
         }
 
         private void cashierForm_Load(object sender, EventArgs e)
@@ -2410,13 +2175,6 @@ namespace AlphaSoft
             int userAccessOption = 0;
 
             registerGlobalHotkey();
-
-            //salesQty.Add("0");
-            //disc1.Add("0");
-            //disc2.Add("0");
-            //discRP.Add("0");
-            //productPriceList.Add("0");
-            //jumlahList.Add("0");
 
             if (originModuleID == globalConstants.SALES_QUOTATION)
             {
@@ -2646,21 +2404,21 @@ namespace AlphaSoft
 
         private void discJualMaskedTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //double totalAfterDisc = 0;
+            ////double totalAfterDisc = 0;
 
-            if (discJualMaskedTextBox.Text.Length > 0)
-            {
-                totalAfterDisc = globalTotalValue - Convert.ToDouble(gutil.allTrim(discJualMaskedTextBox.Text));
-                discValue = Convert.ToDouble(gutil.allTrim(discJualMaskedTextBox.Text));
-            }
-            else
-            { 
-                totalAfterDisc = globalTotalValue;
-                discValue = 0;
-            }
+            //if (discJualMaskedTextBox.Text.Length > 0)
+            //{
+            //    totalAfterDisc = globalTotalValue - Convert.ToDouble(gutil.allTrim(discJualMaskedTextBox.Text));
+            //    discValue = Convert.ToDouble(gutil.allTrim(discJualMaskedTextBox.Text));
+            //}
+            //else
+            //{ 
+            //    totalAfterDisc = globalTotalValue;
+            //    discValue = 0;
+            //}
 
-            gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : discJualMaskedTextBox_Validating, totalAfterDisc [" + totalAfterDisc + "]");
-            totalAfterDiscTextBox.Text = totalAfterDisc.ToString(currencyFormat, culture);
+            //gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : discJualMaskedTextBox_Validating, totalAfterDisc [" + totalAfterDisc + "]");
+            //totalAfterDiscTextBox.Text = totalAfterDisc.ToString(currencyFormat, culture);
         }
 
         private void customerComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -3414,28 +3172,6 @@ namespace AlphaSoft
 
         }
 
-        private void cashierDataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
-        {
-            var cell = cashierDataGridView[e.ColumnIndex, e.RowIndex];
-            DataGridViewRow selectedRow = cashierDataGridView.Rows[e.RowIndex];
-
-            if (cell.OwningColumn.Name == "productName")
-            {
-                if (null != cell.Value)
-                {
-                    if (cell.Value.ToString().Length > 0)
-                    {
-                        updateSomeRowContents(selectedRow, e.RowIndex, cell.Value.ToString());
-                        //cashierDataGridView.CurrentCell = selectedRow.Cells["qty"];
-                    }
-                    else
-                    {
-                        clearUpSomeRowContents(selectedRow, e.RowIndex);
-                    }
-                }
-            }
-        }
-
         private void rejectSQ(string selectedSO)
         {
             string sqInvoice = "";
@@ -3556,20 +3292,7 @@ namespace AlphaSoft
             else
                 cellValue = "";
 
-            if (columnName == "productName")
-            {
-                //if (cellValue.Length > 0)
-                //{
-                //    updateSomeRowContents(selectedRow, rowSelectedIndex, cellValue);
-                //    //int pos = cashierDataGridView.CurrentCell.RowIndex;
-
-                //    //if (pos > 0)
-                //    //    cashierDataGridView.CurrentCell = cashierDataGridView.Rows[pos - 1].Cells["qty"];
-
-                //    //forceUpOneLevel = true;
-                //}
-            }
-            else if (columnName == "productPrice" ||
+            if (columnName == "productPrice" ||
                 columnName == "qty" ||
                 columnName == "disc1" ||
                 columnName == "disc2" ||
@@ -3581,27 +3304,6 @@ namespace AlphaSoft
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : cashierDataGridView_CellValueChanged , empty texbox, reset [" + cashierDataGridView.CurrentCell.OwningColumn.Name + "] value to 0");
                     isLoading = true;
 
-                    //if (detailRequestQtyApproved.Count >= rowSelectedIndex + 1)
-                    //    detailRequestQtyApproved[rowSelectedIndex] = "0";
-                    //switch (columnName)
-                    //{
-                    //    case "qty":
-                    //        salesQty[rowSelectedIndex] = "0";
-                    //        break;
-                    //    case "disc1":
-                    //        disc1[rowSelectedIndex] = "0";
-                    //        break;
-                    //    case "disc2":
-                    //        disc2[rowSelectedIndex] = "0";
-                    //        break;
-                    //    case "discRP":
-                    //        discRP[rowSelectedIndex] = "0";
-                    //        break;
-                    //    case "productPrice":
-                    //        productPriceList[rowSelectedIndex] = "0";
-                    //        break;
-                    //}
-
                     selectedRow.Cells[columnName].Value = "0";
 
                     // reset subTotal Value and recalculate total
@@ -3609,7 +3311,6 @@ namespace AlphaSoft
                     {
                         // reset subTotal Value and recalculate total
                         selectedRow.Cells["jumlah"].Value = 0;
-                        //jumlahList[rowSelectedIndex] = "0";
                     }
                     else
                     {
@@ -3618,7 +3319,6 @@ namespace AlphaSoft
                         subTotal = calculateSubTotal(rowSelectedIndex, productPrice);
                         gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, subtotal value [" + subTotal + "]");
                         selectedRow.Cells["jumlah"].Value = subTotal;
-                       // jumlahList[rowSelectedIndex] = subTotal.ToString();
                     }
 
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, recalculate total value");
@@ -3632,40 +3332,9 @@ namespace AlphaSoft
                 if (null != selectedRow.Cells["productID"].Value)
                     productID = selectedRow.Cells["productID"].Value.ToString();
 
-                //switch (columnName)
-                //{
-                //    case "qty":
-                //        previousInput = salesQty[rowSelectedIndex];
-                //        break;
-                //    case "disc1":
-                //        previousInput = disc1[rowSelectedIndex];
-                //        break;
-                //    case "disc2":
-                //        previousInput = disc2[rowSelectedIndex];
-                //        break;
-                //    case "discRP":
-                //        previousInput = discRP[rowSelectedIndex];
-                //        break;
-                //    case "productPrice":
-                //        previousInput = productPriceList[rowSelectedIndex];
-                //        break;
-                //}
-
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, previousInput [" + previousInput + "]");
 
-                //if (previousInput == cellValue)
-                //    return;
-
                 isLoading = true;
-                //if (previousInput == "0")
-                //{
-                //    tempString = cellValue;
-                //    if (tempString.IndexOf('0') == 0 && tempString.Length > 1 && tempString.IndexOf("0.") < 0)
-                //        selectedRow.Cells[columnName].Value = tempString.Remove(tempString.IndexOf('0'), 1);
-
-                //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, dataGridViewTextBoxEditingControl.Text [" + cellValue + "]");
-                //}
-
                 if (gutil.matchRegEx(cellValue, globalUtilities.REGEX_NUMBER_WITH_2_DECIMAL)
                     && (cellValue.Length > 0 && cellValue != ".")
                     )
@@ -3682,32 +3351,11 @@ namespace AlphaSoft
                             }
                         }
                     }
-                    //switch (columnName)
-                    //{
-                    //    case "qty":
-                    //        if (!gutil.stockIsEnough(productID, Convert.ToDouble(cellValue)))
-                    //        //    salesQty[rowSelectedIndex] = cellValue;
-                    //        //else
-                    //            //selectedRow.Cells["qty"].Value = salesQty[rowSelectedIndex];
-                    //        break;
-                    //    case "disc1":
-                    //        disc1[rowSelectedIndex] = cellValue;
-                    //        break;
-                    //    case "disc2":
-                    //        disc2[rowSelectedIndex] = cellValue;
-                    //        break;
-                    //    case "discRP":
-                    //        discRP[rowSelectedIndex] = cellValue;
-                    //        break;
-                    //    case "productPrice":
-                    //        productPriceList[rowSelectedIndex] = cellValue;
-                    //        break;
-                    //}
                 }
                 else
                 {
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, dataGridViewTextBoxEditingControl.Text did not pass REGEX Checking");
-                    //selectedRow.Cells[columnName].Value = previousInput;
+
                     validInput = false;
                     if (errorLabel.Text.Length <= 0)
                         errorLabel.Text = "INPUT PADA BARIS [" + (rowSelectedIndex + 1) + "] TIDAK VALID";
@@ -3716,13 +3364,11 @@ namespace AlphaSoft
                 if (validInput)
                 {
                     errorLabel.Text = "";
-                    //productPrice = Convert.ToDouble(productPriceList[rowSelectedIndex]);
                     productPrice = Convert.ToDouble(selectedRow.Cells["productPrice"].Value);
 
                     subTotal = calculateSubTotal(rowSelectedIndex, productPrice);
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, subtotal value [" + subTotal + "]");
                     selectedRow.Cells["jumlah"].Value = subTotal;
-                    //jumlahList[rowSelectedIndex] = subTotal.ToString();
 
                     gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : TextBox_TextChanged, attempt to calculate total value");
                     calculateTotal();
@@ -3783,6 +3429,7 @@ namespace AlphaSoft
 
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : discJualMaskedTextBox_Validating, totalAfterDisc [" + totalAfterDisc + "]");
             totalAfterDiscTextBox.Text = totalAfterDisc.ToString(currencyFormat, culture);
+            totalLabel.Text = totalAfterDisc.ToString(currencyFormat, culture);
         }
     }
 }

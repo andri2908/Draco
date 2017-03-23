@@ -31,7 +31,7 @@ namespace AlphaSoft
             MySqlDataReader rdr;
             string sqlCommand = "";
 
-            sqlCommand = "SELECT ID, LOCATION_NAME FROM MASTER_LOCATION WHERE LOCATION_ACTIVE = 1";
+            sqlCommand = "SELECT ID, LOCATION_NAME FROM MASTER_LOCATION WHERE LOCATION_ACTIVE = 1 ORDER BY LOCATION_NAME ASC";
             using (rdr = DS.getData(sqlCommand))
             {
                 if (rdr.HasRows)
@@ -107,6 +107,10 @@ namespace AlphaSoft
         private void asalCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedAsalLocation = asalComboHidden.Items[asalCombo.SelectedIndex].ToString();
+            if (asalCombo.Text != "" && namaProdukTextBox.Text != "")
+            {
+                loadLocationData(namaProdukTextBox.Text, asalDataGrid, selectedAsalLocation);
+            }
         }
 
         private void tujuanCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -231,6 +235,11 @@ namespace AlphaSoft
                 MessageBox.Show("SUCCESS");
                 loadLocationData(namaProdukTextBox.Text, asalDataGrid, selectedAsalLocation);
             }
+        }
+
+        private void stokTransferForm_Activated(object sender, EventArgs e)
+        {
+            asalCombo.Select();
         }
     }
 }

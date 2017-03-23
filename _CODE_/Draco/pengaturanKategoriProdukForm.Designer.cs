@@ -38,10 +38,6 @@
             this.namaKategoriTextbox = new System.Windows.Forms.TextBox();
             this.deskripsiTextbox = new System.Windows.Forms.TextBox();
             this.pengaturanKategoriDataGridView = new System.Windows.Forms.DataGridView();
-            this.changed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.PRODUCT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hakAkses = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.saveButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,6 +47,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.changed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.PRODUCT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hakAkses = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pengaturanKategoriDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.0597F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.9403F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 361F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 362F));
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 1);
@@ -108,7 +108,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(203, 7);
+            this.label6.Location = new System.Drawing.Point(202, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 18);
             this.label6.TabIndex = 12;
@@ -120,7 +120,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(203, 42);
+            this.label7.Location = new System.Drawing.Point(202, 42);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(14, 18);
             this.label7.TabIndex = 13;
@@ -130,7 +130,7 @@
             // 
             this.namaKategoriTextbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.namaKategoriTextbox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namaKategoriTextbox.Location = new System.Drawing.Point(230, 3);
+            this.namaKategoriTextbox.Location = new System.Drawing.Point(229, 3);
             this.namaKategoriTextbox.Name = "namaKategoriTextbox";
             this.namaKategoriTextbox.ReadOnly = true;
             this.namaKategoriTextbox.Size = new System.Drawing.Size(340, 27);
@@ -140,7 +140,7 @@
             // 
             this.deskripsiTextbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.deskripsiTextbox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deskripsiTextbox.Location = new System.Drawing.Point(230, 38);
+            this.deskripsiTextbox.Location = new System.Drawing.Point(229, 38);
             this.deskripsiTextbox.Name = "deskripsiTextbox";
             this.deskripsiTextbox.ReadOnly = true;
             this.deskripsiTextbox.Size = new System.Drawing.Size(210, 27);
@@ -173,46 +173,19 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.pengaturanKategoriDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.pengaturanKategoriDataGridView.Location = new System.Drawing.Point(1, 219);
+            this.pengaturanKategoriDataGridView.Location = new System.Drawing.Point(2, 172);
             this.pengaturanKategoriDataGridView.Name = "pengaturanKategoriDataGridView";
             this.pengaturanKategoriDataGridView.RowHeadersVisible = false;
-            this.pengaturanKategoriDataGridView.Size = new System.Drawing.Size(655, 442);
+            this.pengaturanKategoriDataGridView.Size = new System.Drawing.Size(655, 489);
             this.pengaturanKategoriDataGridView.TabIndex = 34;
             this.pengaturanKategoriDataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.pengaturanKategoriDataGridView_CellValidated);
             this.pengaturanKategoriDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.pengaturanKategoriDataGridView_CellValueChanged);
-            // 
-            // changed
-            // 
-            this.changed.HeaderText = "changed";
-            this.changed.Name = "changed";
-            this.changed.Visible = false;
-            // 
-            // PRODUCT_ID
-            // 
-            this.PRODUCT_ID.HeaderText = "KODE PRODUK";
-            this.PRODUCT_ID.Name = "PRODUCT_ID";
-            this.PRODUCT_ID.Width = 150;
-            // 
-            // moduleID
-            // 
-            this.moduleID.HeaderText = "NAMA PRODUK";
-            this.moduleID.Name = "moduleID";
-            this.moduleID.ReadOnly = true;
-            this.moduleID.Width = 350;
-            // 
-            // hakAkses
-            // 
-            this.hakAkses.HeaderText = "";
-            this.hakAkses.Name = "hakAkses";
-            this.hakAkses.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.hakAkses.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hakAkses.Width = 150;
             // 
             // saveButton
             // 
             this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.saveButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(489, 141);
+            this.saveButton.Location = new System.Drawing.Point(484, 129);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(95, 37);
             this.saveButton.TabIndex = 33;
@@ -235,7 +208,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(11, 167);
+            this.label5.Location = new System.Drawing.Point(11, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 18);
             this.label5.TabIndex = 35;
@@ -246,7 +219,7 @@
             this.namaProdukTextbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.namaProdukTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.namaProdukTextbox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namaProdukTextbox.Location = new System.Drawing.Point(242, 161);
+            this.namaProdukTextbox.Location = new System.Drawing.Point(242, 129);
             this.namaProdukTextbox.Name = "namaProdukTextbox";
             this.namaProdukTextbox.Size = new System.Drawing.Size(210, 27);
             this.namaProdukTextbox.TabIndex = 36;
@@ -258,7 +231,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(219, 164);
+            this.label8.Location = new System.Drawing.Point(219, 132);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(14, 18);
             this.label8.TabIndex = 37;
@@ -284,16 +257,18 @@
             this.label2.Size = new System.Drawing.Size(14, 18);
             this.label2.TabIndex = 40;
             this.label2.Text = ":";
+            this.label2.Visible = false;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(242, 129);
+            this.textBox1.Location = new System.Drawing.Point(242, 162);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(210, 27);
             this.textBox1.TabIndex = 39;
+            this.textBox1.Visible = false;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
@@ -302,11 +277,40 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(11, 135);
+            this.label4.Location = new System.Drawing.Point(7, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 18);
             this.label4.TabIndex = 38;
             this.label4.Text = "KODE PRODUK";
+            this.label4.Visible = false;
+            // 
+            // changed
+            // 
+            this.changed.HeaderText = "changed";
+            this.changed.Name = "changed";
+            this.changed.Visible = false;
+            // 
+            // PRODUCT_ID
+            // 
+            this.PRODUCT_ID.HeaderText = "KODE PRODUK";
+            this.PRODUCT_ID.Name = "PRODUCT_ID";
+            this.PRODUCT_ID.Visible = false;
+            this.PRODUCT_ID.Width = 150;
+            // 
+            // moduleID
+            // 
+            this.moduleID.HeaderText = "NAMA PRODUK";
+            this.moduleID.Name = "moduleID";
+            this.moduleID.ReadOnly = true;
+            this.moduleID.Width = 350;
+            // 
+            // hakAkses
+            // 
+            this.hakAkses.HeaderText = "";
+            this.hakAkses.Name = "hakAkses";
+            this.hakAkses.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hakAkses.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hakAkses.Width = 150;
             // 
             // pengaturanKategoriProdukForm
             // 

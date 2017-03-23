@@ -330,6 +330,7 @@ namespace AlphaSoft
             //if need something
             if (dataRequestOrderGridView.Rows.Count > 0)
                 displayButton.PerformClick();
+            noROInvoiceTextBox.Select();
         }
 
         private void dataRequestOrderGridView_KeyDown(object sender, KeyEventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace RoyalPetz_ADMIN
+﻿namespace AlphaSoft
 {
     partial class ReportFinanceInForm
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ReportFinanceIn1 = new RoyalPetz_ADMIN.ReportFinanceIn();
+            this.ReportFinanceIn1 = new AlphaSoft.ReportFinanceIn();
             this.SuspendLayout();
             // 
             // crystalReportViewer1

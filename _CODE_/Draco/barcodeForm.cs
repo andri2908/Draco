@@ -146,7 +146,12 @@ namespace AlphaSoft
 
         private void productNameTextBox_Enter(object sender, EventArgs e)
         {
-            barcodeTextBox.Focus();
+            barcodeTextBox.Select();
+        }
+
+        private void barcodeForm_Activated(object sender, EventArgs e)
+        {
+            barcodeTextBox.Select();
         }
     }
 }

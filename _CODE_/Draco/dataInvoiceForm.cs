@@ -69,7 +69,7 @@ namespace AlphaSoft
             MySqlDataReader rdr;
             string sqlCommand = "";
 
-            sqlCommand = "SELECT * FROM MASTER_CUSTOMER WHERE CUSTOMER_ACTIVE = 1";
+            sqlCommand = "SELECT * FROM MASTER_CUSTOMER WHERE CUSTOMER_ACTIVE = 1 ORDER BY CUSTOMER_FULL_NAME ASC";
             using (rdr = DS.getData(sqlCommand))
             {
                 if (rdr.HasRows)
@@ -199,8 +199,8 @@ namespace AlphaSoft
         {
             if (dataInvoiceDataGridView.Rows.Count <= 0)
                 return;
-
             loadData();
+            noInvoiceTextBox.Select();
         }
 
     }

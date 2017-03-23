@@ -275,6 +275,7 @@ namespace AlphaSoft
                     loadUserDataInformation();
                     break;
             }
+            userNameTextBox.Select();
         }
 
         private void dataUserDetailForm_Load(object sender, EventArgs e)
@@ -306,7 +307,6 @@ namespace AlphaSoft
                     gutil.setReadOnlyAllControls(this);
                 }
             }
-            userNameTextBox.Select();
         }
 
         private void resetbutton_Click(object sender, EventArgs e)

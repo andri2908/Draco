@@ -80,7 +80,7 @@ namespace AlphaSoft
             nameCombo.Items.Add("ALL");
             nameComboHidden.Items.Add("0");
 
-            sqlCommand = "SELECT MU.ID, MU.USER_FULL_NAME FROM USER_ACCESS_MANAGEMENT UAM, MASTER_USER MU WHERE UAM.MODULE_ID = 52 AND UAM.USER_ACCESS_OPTION = 1 AND MU.GROUP_ID = UAM.GROUP_ID AND MU.USER_ACTIVE = 1";
+            sqlCommand = "SELECT MU.ID, MU.USER_FULL_NAME FROM USER_ACCESS_MANAGEMENT UAM, MASTER_USER MU WHERE UAM.MODULE_ID = 52 AND UAM.USER_ACCESS_OPTION = 1 AND MU.GROUP_ID = UAM.GROUP_ID AND MU.USER_ACTIVE = 1 ORDER BY MU.USER_FULL_NAME ASC";
             using (rdr = DS.getData(sqlCommand))
             {
                 if (rdr.HasRows)

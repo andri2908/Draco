@@ -20,6 +20,7 @@ namespace AlphaSoft
         private globalUtilities gUtil = new globalUtilities();
         private CultureInfo culture = new CultureInfo("id-ID");
         private int supplierID = 0;
+        private bool allowViewHPP = false;
 
         public dataPenerimaanBarangForm()
         {
@@ -37,7 +38,7 @@ namespace AlphaSoft
             MySqlDataReader rdr;
             string sqlCommand;
 
-            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1";
+            sqlCommand = "SELECT SUPPLIER_ID, SUPPLIER_FULL_NAME FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1 ORDER BY SUPPLIER_FULL_NAME ASC";
 
             supplierCombo.Items.Clear();
             supplierHiddenCombo.Items.Clear();
@@ -75,13 +76,19 @@ namespace AlphaSoft
             else
                 newButton.Visible = false;
 
+            userAccessOption = DS.getUserAccessRight(globalConstants.MENU_VIEW_HPP_PRODUCT, gUtil.getUserGroupID());
+            if (userAccessOption == 1)
+                allowViewHPP = true;
+            else
+                allowViewHPP = false;
+            
             //arrButton[0] = displayButton;
             //arrButton[1] = newButton;
             //gUtil.reArrangeButtonPosition(arrButton, arrButton[0].Top, this.Width);
 
             gUtil.reArrangeTabOrder(this);
 
-            noPOInvoiceTextBox.Select();
+            //noPOInvoiceTextBox.Select();
         }
 
         private void dataPenerimaanBarang_DoubleClick(object sender, EventArgs e)
@@ -99,16 +106,19 @@ namespace AlphaSoft
             selectedPOInvoice = selectedRow.Cells["PURCHASE_INVOICE"].Value.ToString();
             selectedPMInvoice = selectedRow.Cells["PM_INVOICE"].Value.ToString();
 
-            if (DialogResult.Yes == MessageBox.Show("PRINT RECEIPT ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (allowViewHPP)
             {
-                smallPleaseWait pleaseWait = new smallPleaseWait();
-                pleaseWait.Show();
+                if (DialogResult.Yes == MessageBox.Show("PRINT RECEIPT ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    smallPleaseWait pleaseWait = new smallPleaseWait();
+                    pleaseWait.Show();
 
-                //  ALlow main UI thread to properly display please wait form.
-                Application.DoEvents();
-                printReport(selectedPRInvoice, selectedPMInvoice, selectedPOInvoice);
+                    //  ALlow main UI thread to properly display please wait form.
+                    Application.DoEvents();
+                    printReport(selectedPRInvoice, selectedPMInvoice, selectedPOInvoice);
 
-                pleaseWait.Close();
+                    pleaseWait.Close();
+                }
             }
         }
 
@@ -159,16 +169,19 @@ namespace AlphaSoft
                 selectedPOInvoice = selectedRow.Cells["PURCHASE_INVOICE"].Value.ToString();
                 selectedPMInvoice = selectedRow.Cells["PM_INVOICE"].Value.ToString();
 
-                if (DialogResult.Yes == MessageBox.Show("PRINT RECEIPT ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    smallPleaseWait pleaseWait = new smallPleaseWait();
-                    pleaseWait.Show();
+                if (allowViewHPP)
+                { 
+                    if (DialogResult.Yes == MessageBox.Show("PRINT RECEIPT ? ", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        smallPleaseWait pleaseWait = new smallPleaseWait();
+                        pleaseWait.Show();
 
-                    //  ALlow main UI thread to properly display please wait form.
-                    Application.DoEvents();
-                    printReport(selectedPRInvoice, selectedPMInvoice, selectedPOInvoice);
+                        //  ALlow main UI thread to properly display please wait form.
+                        Application.DoEvents();
+                        printReport(selectedPRInvoice, selectedPMInvoice, selectedPOInvoice);
 
-                    pleaseWait.Close();
+                        pleaseWait.Close();
+                    }
                 }
             }
         }
@@ -243,14 +256,16 @@ namespace AlphaSoft
                     dataPenerimaanBarang.Columns["TOTAL"].Width = 200;
 
                     dataPenerimaanBarang.Columns["TOTAL"].DefaultCellStyle.FormatProvider = culture;
-                    dataPenerimaanBarang.Columns["TOTAL"].DefaultCellStyle.Format = "C2"; 
+                    dataPenerimaanBarang.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
+
+                    if (!allowViewHPP)
+                        dataPenerimaanBarang.Columns["TOTAL"].Visible = false;
                 }
 
                 rdr.Close();
             }
         }
     
-
         private void displayButton_Click(object sender, EventArgs e)
         {
             loadPRData();
@@ -259,6 +274,11 @@ namespace AlphaSoft
         private void supplierCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             supplierID = Convert.ToInt32(supplierHiddenCombo.Items[supplierCombo.SelectedIndex].ToString());
+        }
+
+        private void dataPenerimaanBarangForm_Activated(object sender, EventArgs e)
+        {
+            noPOInvoiceTextBox.Select();
         }
     }
 }

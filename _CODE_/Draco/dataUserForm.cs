@@ -153,6 +153,7 @@ namespace AlphaSoft
             groupcombobox.Text = "ALL";
             if (!namaUserTextbox.Text.Equals(""))
                 loadUserData(namaUserTextbox.Text);
+            namaUserTextbox.Select();
         }
 
         private void namaUserTextbox_TextChanged(object sender, EventArgs e)
@@ -199,8 +200,6 @@ namespace AlphaSoft
                 newButton.Visible = true;
             else
                 newButton.Visible = false;
-
-            namaUserTextbox.Select();
         }
 
         private void CetakButton_Click(object sender, EventArgs e)
