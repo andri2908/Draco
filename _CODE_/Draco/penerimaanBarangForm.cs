@@ -98,9 +98,11 @@ namespace AlphaSoft
 
                 case Keys.F11:
                     if (detailGridView.ReadOnly == false)
-                    { 
-                        dataProdukForm displayProdukForm = new dataProdukForm(globalConstants.PENERIMAAN_BARANG, this);
-                        displayProdukForm.ShowDialog(this);
+                    {
+                        //dataProdukForm displayProdukForm = new dataProdukForm(globalConstants.PENERIMAAN_BARANG, this);
+                        //displayProdukForm.ShowDialog(this);
+                        POSSearchProductForm browseProduk = new POSSearchProductForm(globalConstants.PENERIMAAN_BARANG, this);
+                        browseProduk.ShowDialog(this);
                     }
                     break;
             }

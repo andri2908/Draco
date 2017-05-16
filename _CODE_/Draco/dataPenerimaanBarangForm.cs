@@ -44,8 +44,8 @@ namespace AlphaSoft
             supplierHiddenCombo.Items.Clear();
 
             // ADD ENTRY FOR GUDANG PUSAT
-            supplierCombo.Items.Add("GUDANG PUSAT");
-            supplierHiddenCombo.Items.Add("0");
+            //supplierCombo.Items.Add("GUDANG PUSAT");
+            //supplierHiddenCombo.Items.Add("0");
 
             using (rdr = DS.getData(sqlCommand))
             {
@@ -238,6 +238,8 @@ namespace AlphaSoft
             //{
             //    //sqlCommand = selectClause1 + " UNION " + selectClause2 + " WHERE P.PR_FROM = 0";                
             //}
+
+            sqlCommand = sqlCommand + " ORDER BY M.SUPPLIER_FULL_NAME ASC";
 
 
             using (rdr = DS.getData(sqlCommand))

@@ -102,8 +102,10 @@ namespace AlphaSoft
                 case Keys.F11:
                     if (detailPODataGridView.ReadOnly == false)
                     {
-                        dataProdukForm displayProdukForm = new dataProdukForm(globalConstants.NEW_PURCHASE_ORDER, this);
-                        displayProdukForm.ShowDialog(this);
+                        //dataProdukForm displayProdukForm = new dataProdukForm(globalConstants.NEW_PURCHASE_ORDER, this);
+                        //displayProdukForm.ShowDialog(this);
+                        POSSearchProductForm browseProduk = new POSSearchProductForm(globalConstants.PURCHASE_ORDER_DARI_RO, this);
+                        browseProduk.ShowDialog(this);
                     }
                     break;
             }

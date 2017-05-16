@@ -128,6 +128,8 @@ namespace AlphaSoft
                 }
             }
 
+            sqlCommand = sqlCommand + " ORDER BY M.SUPPLIER_FULL_NAME ASC";
+
             using (rdr = DS.getData(sqlCommand))
             {
                 dataPurchaseOrder.DataSource = null;

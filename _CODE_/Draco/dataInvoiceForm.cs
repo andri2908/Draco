@@ -115,7 +115,7 @@ namespace AlphaSoft
                 //sqlCommand = sqlCommand + "AND SALES_PAID = 0";
             }
 
-            sqlCommand = sqlCommand + "GROUP BY H.SALES_INVOICE";
+            sqlCommand = sqlCommand + "GROUP BY H.SALES_INVOICE ORDER BY CUSTOMER_FULL_NAME ASC";
 
             using (rdr = DS.getData(sqlCommand))
             {

@@ -63,36 +63,47 @@ namespace AlphaSoft
         private void LoadBranchInfo()
         {
             branchCombobox.DataSource = null;
-            string namaCabang = "";
             MySqlDataReader rdr;
             DataTable dt = new DataTable();
+            string sqlCommand = "";
 
             DS.mySqlConnect();
 
-            using (rdr = DS.getData("SELECT BRANCH_ID AS 'ID', BRANCH_NAME AS 'NAME' FROM MASTER_BRANCH WHERE BRANCH_ACTIVE=1"))
+            sqlCommand = "SELECT '0' AS ID, 'PUSAT' AS NAME UNION SELECT BRANCH_ID AS 'ID', BRANCH_NAME AS 'NAME' FROM MASTER_BRANCH WHERE BRANCH_ACTIVE=1";
+
+            using (rdr = DS.getData(sqlCommand))
             {
                 if (rdr.HasRows)
                 {
                     dt.Load(rdr);
-                    DataRow workRow = dt.NewRow();
-                    workRow["ID"] = "0";
-                    workRow["NAME"] = "PUSAT";
-                    dt.Rows.Add(workRow);
                     branchCombobox.DataSource = dt;
                     branchCombobox.ValueMember = "ID";
                     branchCombobox.DisplayMember = "NAME";
                 }
-                else
-                {
-                    DataRow workRow = dt.NewRow();
-                    workRow["ID"] = "0";
-                    workRow["NAME"] = "PUSAT";
-                    dt.Rows.Add(workRow);
-                }
             }
-
-            branchCombobox.SelectedValue = gutil.loadbranchID(2, out namaCabang);//branchCombobox.Items.Count;
-            branchCombobox.Text = namaCabang;
+            //using (rdr = DS.getData("SELECT BRANCH_ID AS 'ID', BRANCH_NAME AS 'NAME' FROM MASTER_BRANCH WHERE BRANCH_ACTIVE=1"))
+            //{
+            //    if (rdr.HasRows)
+            //    {
+            //        dt.Load(rdr);
+            //        DataRow workRow = dt.NewRow();
+            //        workRow["ID"] = "0";
+            //        workRow["NAME"] = "PUSAT";
+            //        dt.Rows.Add(workRow);
+            //        branchCombobox.DataSource = dt;
+            //        branchCombobox.ValueMember = "ID";
+            //        branchCombobox.DisplayMember = "NAME";
+            //    }
+            //    else
+            //    {
+            //        DataRow workRow = dt.NewRow();
+            //        workRow["ID"] = "0";
+            //        workRow["NAME"] = "PUSAT";
+            //        dt.Rows.Add(workRow);
+            //    }
+            //}
+            //branchCombobox.Items.Add(new { Text = "PUSAT", Value = "0" });
+            branchCombobox.SelectedValue = branchCombobox.Items.Count;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
