@@ -1400,6 +1400,9 @@ namespace AlphaSoft
         private void printReport(string invoiceNo)
         {
             string sqlCommandx = "";
+
+            gUtil.setPaper(comboBox1.SelectedIndex + 1);
+
             if (originModuleId == globalConstants.PENERIMAAN_BARANG_DARI_MUTASI)
             {
                 sqlCommandx = "SELECT '1' AS TYPE, '"+noMutasiTextBox.Text+"' AS ORIGIN_INVOICE, DATE(PH.PR_DATE) AS 'TGL', PH.PR_INVOICE AS 'INVOICE', MP.PRODUCT_NAME AS 'PRODUK', PD.PRODUCT_BASE_PRICE AS 'HARGA', PD.PRODUCT_ACTUAL_QTY AS 'QTY', PD.PR_SUBTOTAL AS 'SUBTOTAL' " +

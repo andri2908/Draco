@@ -2523,9 +2523,11 @@ namespace AlphaSoft
             //Font font = new Font("Courier New", 15);
 
             //cek paper mode
-            int papermode = gutil.getPaper();
-            int paperLength = 0;
+           // int paperLength = 0;
 
+            int papermode = comboBox1.SelectedIndex + 1; //gutil.getPaper();
+            gutil.setPaper(papermode);
+          
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : PrintReceipt");
 
 
@@ -3430,6 +3432,26 @@ namespace AlphaSoft
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : discJualMaskedTextBox_Validating, totalAfterDisc [" + totalAfterDisc + "]");
             totalAfterDiscTextBox.Text = totalAfterDisc.ToString(currencyFormat, culture);
             totalLabel.Text = totalAfterDisc.ToString(currencyFormat, culture);
+        }
+
+        private void cashierDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            bool tempIsLoading = isLoading;
+            int rowIndex = e.RowIndex + 1;
+
+            if ((cashierDataGridView.Columns[e.ColumnIndex].Name == "productPrice" || cashierDataGridView.Columns[e.ColumnIndex].Name == "qty" || cashierDataGridView.Columns[e.ColumnIndex].Name == "discRP" || cashierDataGridView.Columns[e.ColumnIndex].Name == "jumlah")
+                && e.RowIndex != this.cashierDataGridView.NewRowIndex && null != e.Value)
+            {
+                isLoading = true;
+                double d;
+                if (double.TryParse(e.Value.ToString(), out d))
+                    e.Value = d.ToString(globalUtilities.CELL_FORMATTING_NUMERIC_FORMAT);
+                else
+                    errorLabel.Text = "INPUT PADA BARIS [" + rowIndex + "] TIDAK VALID";
+                isLoading = false;
+            }
+
+            isLoading = tempIsLoading;
         }
     }
 }

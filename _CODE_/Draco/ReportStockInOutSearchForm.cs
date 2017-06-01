@@ -435,7 +435,7 @@ namespace AlphaSoft
                         sqlCommandx = "SELECT MP.PRODUCT_NAME, MP.PRODUCT_STOCK_QTY, MU.UNIT_NAME, MC.CATEGORY_NAME " +
                                         "FROM MASTER_PRODUCT MP, PRODUCT_CATEGORY PC, MASTER_CATEGORY MC, MASTER_UNIT MU " +
                                         "WHERE MP.PRODUCT_IS_SERVICE = 0 AND MP.PRODUCT_ACTIVE = 1 AND MP.UNIT_ID = MU.UNIT_ID " +
-                                        "AND MP.PRODUCT_ID = PC.PRODUCT_ID AND PC.CATEGORY_ID = MC.CATEGORY_ID" + tags;
+                                        "AND MP.PRODUCT_ID = PC.PRODUCT_ID AND PC.CATEGORY_ID = MC.CATEGORY_ID " + tags;
                         DS.writeXML(sqlCommandx, globalConstants.StockXML);
                         ReportStockForm displayedForm6 = new ReportStockForm();
                         displayedForm6.ShowDialog(this);

@@ -62,7 +62,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(685, 146);
+            this.groupBox1.Size = new System.Drawing.Size(685, 168);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kriteria Pencarian Data Pembayaran";
@@ -82,9 +82,9 @@
             this.BranchcomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.BranchcomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.BranchcomboBox.FormattingEnabled = true;
-            this.BranchcomboBox.Location = new System.Drawing.Point(230, 58);
+            this.BranchcomboBox.Location = new System.Drawing.Point(231, 58);
             this.BranchcomboBox.Name = "BranchcomboBox";
-            this.BranchcomboBox.Size = new System.Drawing.Size(200, 26);
+            this.BranchcomboBox.Size = new System.Drawing.Size(440, 26);
             this.BranchcomboBox.TabIndex = 8;
             this.BranchcomboBox.Text = "SEMUA";
             this.BranchcomboBox.Visible = false;
@@ -105,9 +105,9 @@
             this.CustomercomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CustomercomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CustomercomboBox.FormattingEnabled = true;
-            this.CustomercomboBox.Location = new System.Drawing.Point(230, 58);
+            this.CustomercomboBox.Location = new System.Drawing.Point(231, 58);
             this.CustomercomboBox.Name = "CustomercomboBox";
-            this.CustomercomboBox.Size = new System.Drawing.Size(200, 26);
+            this.CustomercomboBox.Size = new System.Drawing.Size(440, 26);
             this.CustomercomboBox.TabIndex = 6;
             this.CustomercomboBox.Text = "SEMUA";
             this.CustomercomboBox.Visible = false;
@@ -115,7 +115,7 @@
             // nonactivecheckbox
             // 
             this.nonactivecheckbox.AutoSize = true;
-            this.nonactivecheckbox.Location = new System.Drawing.Point(443, 62);
+            this.nonactivecheckbox.Location = new System.Drawing.Point(230, 90);
             this.nonactivecheckbox.Name = "nonactivecheckbox";
             this.nonactivecheckbox.Size = new System.Drawing.Size(138, 22);
             this.nonactivecheckbox.TabIndex = 5;
@@ -124,7 +124,7 @@
             // 
             // CariButton
             // 
-            this.CariButton.Location = new System.Drawing.Point(294, 99);
+            this.CariButton.Location = new System.Drawing.Point(294, 128);
             this.CariButton.Name = "CariButton";
             this.CariButton.Size = new System.Drawing.Size(75, 34);
             this.CariButton.TabIndex = 4;
@@ -139,7 +139,7 @@
             this.SupplierNameCombobox.FormattingEnabled = true;
             this.SupplierNameCombobox.Location = new System.Drawing.Point(231, 58);
             this.SupplierNameCombobox.Name = "SupplierNameCombobox";
-            this.SupplierNameCombobox.Size = new System.Drawing.Size(200, 26);
+            this.SupplierNameCombobox.Size = new System.Drawing.Size(439, 26);
             this.SupplierNameCombobox.TabIndex = 1;
             this.SupplierNameCombobox.Text = "P-UMUM";
             this.SupplierNameCombobox.Visible = false;
@@ -200,7 +200,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(709, 192);
+            this.ClientSize = new System.Drawing.Size(709, 215);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ReportPaymentSearchForm";

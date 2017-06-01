@@ -84,7 +84,7 @@
             this.TagsComboBox.FormattingEnabled = true;
             this.TagsComboBox.Location = new System.Drawing.Point(204, 60);
             this.TagsComboBox.Name = "TagsComboBox";
-            this.TagsComboBox.Size = new System.Drawing.Size(200, 26);
+            this.TagsComboBox.Size = new System.Drawing.Size(309, 26);
             this.TagsComboBox.TabIndex = 14;
             this.TagsComboBox.Visible = false;
             // 
@@ -134,7 +134,7 @@
             // nonactivecheckbox2
             // 
             this.nonactivecheckbox2.AutoSize = true;
-            this.nonactivecheckbox2.Location = new System.Drawing.Point(417, 62);
+            this.nonactivecheckbox2.Location = new System.Drawing.Point(519, 60);
             this.nonactivecheckbox2.Name = "nonactivecheckbox2";
             this.nonactivecheckbox2.Size = new System.Drawing.Size(138, 22);
             this.nonactivecheckbox2.TabIndex = 8;
@@ -160,13 +160,13 @@
             this.ProductcomboBox.FormattingEnabled = true;
             this.ProductcomboBox.Location = new System.Drawing.Point(204, 60);
             this.ProductcomboBox.Name = "ProductcomboBox";
-            this.ProductcomboBox.Size = new System.Drawing.Size(200, 26);
+            this.ProductcomboBox.Size = new System.Drawing.Size(309, 26);
             this.ProductcomboBox.TabIndex = 6;
             // 
             // nonactivecheckbox1
             // 
             this.nonactivecheckbox1.AutoSize = true;
-            this.nonactivecheckbox1.Location = new System.Drawing.Point(417, 95);
+            this.nonactivecheckbox1.Location = new System.Drawing.Point(519, 93);
             this.nonactivecheckbox1.Name = "nonactivecheckbox1";
             this.nonactivecheckbox1.Size = new System.Drawing.Size(138, 22);
             this.nonactivecheckbox1.TabIndex = 5;
@@ -234,7 +234,7 @@
             this.CustomercomboBox.FormattingEnabled = true;
             this.CustomercomboBox.Location = new System.Drawing.Point(204, 91);
             this.CustomercomboBox.Name = "CustomercomboBox";
-            this.CustomercomboBox.Size = new System.Drawing.Size(200, 26);
+            this.CustomercomboBox.Size = new System.Drawing.Size(309, 26);
             this.CustomercomboBox.TabIndex = 13;
             this.CustomercomboBox.Text = "Customer";
             this.CustomercomboBox.Visible = false;
@@ -246,7 +246,7 @@
             this.SupplierNameCombobox.FormattingEnabled = true;
             this.SupplierNameCombobox.Location = new System.Drawing.Point(204, 91);
             this.SupplierNameCombobox.Name = "SupplierNameCombobox";
-            this.SupplierNameCombobox.Size = new System.Drawing.Size(200, 26);
+            this.SupplierNameCombobox.Size = new System.Drawing.Size(309, 26);
             this.SupplierNameCombobox.TabIndex = 1;
             this.SupplierNameCombobox.Text = "Supplier";
             this.SupplierNameCombobox.Visible = false;

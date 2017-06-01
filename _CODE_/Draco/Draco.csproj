@@ -374,6 +374,7 @@
       <DependentUpon>crReportContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="globalCryptographyMethod.cs" />
+    <Compile Include="globalPrinterUtility.cs" />
     <Compile Include="membershipPointForm.cs">
       <SubType>Form</SubType>
     </Compile>

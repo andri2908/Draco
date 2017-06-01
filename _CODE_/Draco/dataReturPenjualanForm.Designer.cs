@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dataReturPenjualanForm));
             this.label4 = new System.Windows.Forms.Label();
             this.invoiceInfoLabel = new System.Windows.Forms.Label();
@@ -56,9 +56,12 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ChangePrinterButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ChangePrinterButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailReturDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -138,8 +141,6 @@
             this.rsDateTimePicker.Size = new System.Drawing.Size(178, 27);
             this.rsDateTimePicker.TabIndex = 55;
             // 
-            // tableLayoutPanel2
-            // 
             // invoiceInfoTextBox
             // 
             this.invoiceInfoTextBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,23 +208,23 @@
             this.detailReturDataGridView.AllowUserToAddRows = false;
             this.detailReturDataGridView.AllowUserToDeleteRows = false;
             this.detailReturDataGridView.BackgroundColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detailReturDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detailReturDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.detailReturDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.detailReturDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detailReturDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.detailReturDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.detailReturDataGridView.Location = new System.Drawing.Point(2, 208);
             this.detailReturDataGridView.MultiSelect = false;
@@ -238,8 +239,6 @@
             this.detailReturDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.detailReturDataGridView_CellValueChanged);
             this.detailReturDataGridView.CurrentCellDirtyStateChanged += new System.EventHandler(this.detailReturDataGridView_CurrentCellDirtyStateChanged);
             this.detailReturDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.detailReturDataGridView_RowsAdded);
-            // 
-            // tableLayoutPanel1
             // 
             // invoiceTotalLabel
             // 
@@ -323,8 +322,23 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(407, 616);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 37);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "PRINT LAST RECEIPT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.ChangePrinterButton);
             this.groupBox1.Controls.Add(this.totalLabel);
             this.groupBox1.Controls.Add(this.label8);
@@ -350,6 +364,19 @@
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             // 
+            // ChangePrinterButton
+            // 
+            this.ChangePrinterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePrinterButton.ForeColor = System.Drawing.Color.Black;
+            this.ChangePrinterButton.Location = new System.Drawing.Point(494, 115);
+            this.ChangePrinterButton.Name = "ChangePrinterButton";
+            this.ChangePrinterButton.Size = new System.Drawing.Size(158, 34);
+            this.ChangePrinterButton.TabIndex = 54;
+            this.ChangePrinterButton.Text = "SET PRINTER";
+            this.ChangePrinterButton.UseVisualStyleBackColor = true;
+            this.ChangePrinterButton.Visible = false;
+            this.ChangePrinterButton.Click += new System.EventHandler(this.ChangePrinterButton_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -372,29 +399,40 @@
             this.label1.TabIndex = 30;
             this.label1.Text = ":";
             // 
-            // ChangePrinterButton
+            // label5
             // 
-            this.ChangePrinterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePrinterButton.ForeColor = System.Drawing.Color.Black;
-            this.ChangePrinterButton.Location = new System.Drawing.Point(494, 115);
-            this.ChangePrinterButton.Name = "ChangePrinterButton";
-            this.ChangePrinterButton.Size = new System.Drawing.Size(158, 34);
-            this.ChangePrinterButton.TabIndex = 54;
-            this.ChangePrinterButton.Text = "SET PRINTER";
-            this.ChangePrinterButton.UseVisualStyleBackColor = true;
-            this.ChangePrinterButton.Click += new System.EventHandler(this.ChangePrinterButton_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(676, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(14, 18);
+            this.label5.TabIndex = 64;
+            this.label5.Text = ":";
             // 
-            // button1
+            // label3
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(407, 616);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 37);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "PRINT LAST RECEIPT";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(495, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 18);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "UKURAN KERTAS";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1/2 KUARTO",
+            "KUARTO"});
+            this.comboBox1.Location = new System.Drawing.Point(696, 93);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(183, 26);
+            this.comboBox1.TabIndex = 62;
+            this.comboBox1.Text = "1/2 KUARTO";
             // 
             // dataReturPenjualanForm
             // 
@@ -458,5 +496,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ChangePrinterButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

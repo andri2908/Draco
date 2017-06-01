@@ -41,6 +41,8 @@
             this.noFakturLabel = new System.Windows.Forms.Label();
             this.cashierDataGridView = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.rejectButton = new System.Windows.Forms.Button();
             this.approvalButton = new System.Windows.Forms.Button();
             this.ChangePrinterButton = new System.Windows.Forms.Button();
@@ -204,12 +206,15 @@
             this.cashierDataGridView.TabIndex = 8;
             this.cashierDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.cashierDataGridView_CellBeginEdit);
             this.cashierDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierDataGridView_CellEndEdit);
+            this.cashierDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.cashierDataGridView_CellFormatting);
             this.cashierDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierDataGridView_CellValueChanged);
             this.cashierDataGridView.CurrentCellDirtyStateChanged += new System.EventHandler(this.cashierDataGridView_CurrentCellDirtyStateChanged);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.comboBox1);
             this.panel5.Controls.Add(this.rejectButton);
             this.panel5.Controls.Add(this.approvalButton);
             this.panel5.Controls.Add(this.ChangePrinterButton);
@@ -231,6 +236,29 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(982, 162);
             this.panel5.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FloralWhite;
+            this.label5.Location = new System.Drawing.Point(339, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 18);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Ukuran Kertas";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1/2 KUARTO",
+            "KUARTO"});
+            this.comboBox1.Location = new System.Drawing.Point(342, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(183, 26);
+            this.comboBox1.TabIndex = 44;
+            this.comboBox1.Text = "1/2 KUARTO";
             // 
             // rejectButton
             // 
@@ -267,6 +295,7 @@
             this.ChangePrinterButton.TabIndex = 37;
             this.ChangePrinterButton.Text = "SET PRINTER";
             this.ChangePrinterButton.UseVisualStyleBackColor = true;
+            this.ChangePrinterButton.Visible = false;
             this.ChangePrinterButton.Click += new System.EventHandler(this.ChangePrinterButton_Click);
             // 
             // errorLabel
@@ -837,6 +866,8 @@
         private System.Windows.Forms.Button rejectButton;
         private System.Windows.Forms.TextBox cashbackValue;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

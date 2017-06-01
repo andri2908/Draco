@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ReportAccount1 = new AlphaSoft.ReportAccount();
             this.SalesReceipt1 = new AlphaSoft.SalesReceipt();
+            this.ReportAccount1 = new AlphaSoft.ReportAccount();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -45,8 +45,9 @@
             this.crystalReportViewer1.ShowCloseButton = false;
             this.crystalReportViewer1.ShowCopyButton = false;
             this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowLogo = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1516, 654);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(984, 654);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -54,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1516, 654);
+            this.ClientSize = new System.Drawing.Size(984, 654);
             this.Controls.Add(this.crystalReportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SalesReceiptForm";

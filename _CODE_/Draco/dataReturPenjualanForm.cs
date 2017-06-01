@@ -1459,6 +1459,8 @@ namespace AlphaSoft
         private void printReceipt()
         {
             string sqlCommandx;
+            int papermode = comboBox1.SelectedIndex + 1;//gutil.getPaper();
+            gutil.setPaper(papermode);
             //sqlCommandx = "SELECT SH.SALES_INVOICE, SH.SALES_TOTAL, SH.SALES_DISCOUNT_FINAL, SH.SALES_TOP, SH.SALES_TOP_DATE, PC.PAYMENT_DATE, PC.PAYMENT_CONFIRMED, PC.PAYMENT_CONFIRMED_DATE, PC.PAYMENT_NOMINAL, IF(PC.PAYMENT_CONFIRMED = 1, PC.PAYMENT_NOMINAL, 0) AS ACTUAL_PAYMENT " +
             //                                  "FROM SALES_HEADER SH, CREDIT C, PAYMENT_CREDIT PC " +
             //                                  "WHERE C.SALES_INVOICE = SH.SALES_INVOICE AND PC.CREDIT_ID = C.CREDIT_ID AND SH.SALES_INVOICE = '" + invoiceNoTextBox.Text + "'";

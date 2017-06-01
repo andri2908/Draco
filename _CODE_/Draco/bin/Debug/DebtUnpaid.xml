@@ -7,6 +7,7 @@
           <xs:element name="Table">
             <xs:complexType>
               <xs:sequence>
+                <xs:element name="BRANCH_NAME" type="xs:string" minOccurs="0" />
                 <xs:element name="INVOICE" type="xs:string" minOccurs="0" />
                 <xs:element name="TOTAL" type="xs:double" minOccurs="0" />
                 <xs:element name="JATUHTEMPO" type="xs:dateTime" minOccurs="0" />
@@ -18,4 +19,18 @@
       </xs:complexType>
     </xs:element>
   </xs:schema>
+  <Table>
+    <BRANCH_NAME />
+    <INVOICE>1111</INVOICE>
+    <TOTAL>31000000</TOTAL>
+    <JATUHTEMPO>2017-03-25T00:00:00+07:00</JATUHTEMPO>
+    <TERLAMBAT>68</TERLAMBAT>
+  </Table>
+  <Table>
+    <BRANCH_NAME />
+    <INVOICE>PO-1</INVOICE>
+    <TOTAL>70000000</TOTAL>
+    <JATUHTEMPO>2017-04-14T00:00:00+07:00</JATUHTEMPO>
+    <TERLAMBAT>48</TERLAMBAT>
+  </Table>
 </NewDataSet>

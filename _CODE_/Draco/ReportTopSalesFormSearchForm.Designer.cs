@@ -88,14 +88,14 @@
             this.TagscomboBox.FormattingEnabled = true;
             this.TagscomboBox.Location = new System.Drawing.Point(204, 58);
             this.TagscomboBox.Name = "TagscomboBox";
-            this.TagscomboBox.Size = new System.Drawing.Size(200, 26);
+            this.TagscomboBox.Size = new System.Drawing.Size(336, 26);
             this.TagscomboBox.TabIndex = 6;
             this.TagscomboBox.Text = "SEMUA";
             // 
             // nonactivecheckbox
             // 
             this.nonactivecheckbox.AutoSize = true;
-            this.nonactivecheckbox.Location = new System.Drawing.Point(417, 62);
+            this.nonactivecheckbox.Location = new System.Drawing.Point(546, 60);
             this.nonactivecheckbox.Name = "nonactivecheckbox";
             this.nonactivecheckbox.Size = new System.Drawing.Size(98, 22);
             this.nonactivecheckbox.TabIndex = 5;

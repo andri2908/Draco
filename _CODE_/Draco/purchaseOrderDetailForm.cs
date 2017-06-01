@@ -1372,6 +1372,8 @@ namespace AlphaSoft
 
         private void printOutPurchaseOrder()
         {
+            gUtil.setPaper(comboBox1.SelectedIndex + 1);
+
             string PONo = POinvoiceTextBox.Text;
 
             //string sqlCommandx = "SELECT PH.PURCHASE_INVOICE, MS.SUPPLIER_FULL_NAME, PURCHASE_DATETIME, IF(PURCHASE_TERM_OF_PAYMENT = 0, 'TUNAI', 'KREDIT') AS TOP, PURCHASE_TERM_OF_PAYMENT_DURATION, " +

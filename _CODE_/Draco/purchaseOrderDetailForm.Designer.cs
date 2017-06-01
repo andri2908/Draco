@@ -56,6 +56,8 @@
             this.errorLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.detailPODataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -355,6 +357,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.termOfPaymentCombo);
             this.groupBox1.Controls.Add(this.durationTextBox);
@@ -379,6 +383,30 @@
             this.groupBox1.Size = new System.Drawing.Size(897, 201);
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(702, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 18);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "UKURAN KERTAS";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1/2 KUARTO",
+            "KUARTO"});
+            this.comboBox1.Location = new System.Drawing.Point(704, 159);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(183, 26);
+            this.comboBox1.TabIndex = 68;
+            this.comboBox1.Text = "1/2 KUARTO";
             // 
             // purchaseOrderDetailForm
             // 
@@ -436,5 +464,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox termOfPaymentCombo;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

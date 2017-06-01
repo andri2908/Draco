@@ -884,7 +884,7 @@ CREATE TABLE `payment_method` (
 
 LOCK TABLES `payment_method` WRITE;
 /*!40000 ALTER TABLE `payment_method` DISABLE KEYS */;
-INSERT INTO `payment_method` VALUES (1,'TUNAI','TUNAI'),(2,'KARTU KREDIT','KARTU KREDIT'),(3,'KARTU DEBIT','KARTU DEBIT'),(4,'TRANSFER','TRANSFER BANK'),(5,'BG','BILYET GIRO'),(6,'CEK','CEK');
+INSERT INTO `payment_method` VALUES (0,'TUNAI','TUNAI'),(1,'KARTU KREDIT','KARTU KREDIT'),(2,'KARTU DEBIT','KARTU DEBIT'),(3,'TRANSFER','TRANSFER BANK'),(4,'BG','BILYET GIRO'),(5,'CEK','CEK');
 /*!40000 ALTER TABLE `payment_method` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1643,6 +1643,8 @@ CREATE TABLE `sys_config` (
   `store_address` varchar(100) DEFAULT NULL,
   `store_phone` varchar(20) DEFAULT NULL,
   `store_email` varchar(50) DEFAULT NULL,
+  `POS_RECEIPT_PRINTER` varchar(100) DEFAULT NULL,
+  `KUARTO_PRINTER` varchar(100) DEFAULT NULL,  
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

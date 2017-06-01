@@ -44,8 +44,9 @@
             this.crystalReportViewer1.ShowCloseButton = false;
             this.crystalReportViewer1.ShowCopyButton = false;
             this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowLogo = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1075, 547);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1075, 647);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -53,7 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 547);
+            this.ClientSize = new System.Drawing.Size(1075, 647);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "ReportPurchaseSummaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
