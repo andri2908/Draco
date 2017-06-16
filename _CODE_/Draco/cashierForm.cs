@@ -868,6 +868,47 @@ namespace AlphaSoft
             }
         }
 
+        private bool qtyisEnough(ref string productName)
+        {
+            string productIDValue = "";
+            double productQtyValue = 0;
+            List<string> productID = new List<string>();
+            List<double> productQty = new List<double>();
+            bool dataValid = true;
+
+            for (int i = 0; i < cashierDataGridView.Rows.Count - 1; i++)
+            {
+                if (null != cashierDataGridView.Rows[i].Cells["productID"].Value &&
+                   (gutil.isProductIDExist(cashierDataGridView.Rows[i].Cells["productID"].Value.ToString())))
+                {
+                    productIDValue = cashierDataGridView.Rows[i].Cells["productID"].Value.ToString();
+                    productQtyValue = Convert.ToDouble(cashierDataGridView.Rows[i].Cells["qty"].Value);
+
+                    if (!productID.Contains(productIDValue))
+                    {
+                        productID.Add(productIDValue);
+                        productQty.Add(productQtyValue);
+                    }
+                    else
+                    {
+                        int listIndex = productID.IndexOf(productIDValue);
+                        productQty[listIndex] = productQty[listIndex] + productQtyValue;
+                    }
+                }
+            }
+
+            for (int j = 0; j < productID.Count && dataValid; j++)
+            {
+                if (!gutil.stockIsEnough(productID[j], productQty[j], true))
+                {
+                    dataValid = false;
+                    productName = DS.getDataSingleValue("SELECT PRODUCT_NAME FROM MASTER_PRODUCT WHERE PRODUCT_ID = '" + productID[j] + "'").ToString();
+                }
+            }
+
+            return dataValid;
+        }
+
         private bool dataValidated()
         {
             bool validInput = true;
@@ -1063,6 +1104,16 @@ namespace AlphaSoft
                         errorLabel.Text = "LAMA TEMPO TIDAK BOLEH NOL";
                         return false;
                     }
+                }
+            }
+
+            if (originModuleID == 0 || originModuleID == globalConstants.SALES_ORDER_REVISION)
+            { 
+                string productFullName = "";
+                if (!qtyisEnough(ref productFullName))
+                {
+                    errorLabel.Text = "QTY UNTUK [" + productFullName + "] TIDAK CUKUP";
+                    return false;
                 }
             }
 
@@ -1597,7 +1648,8 @@ namespace AlphaSoft
 
                     validateUserCreditStatus();
 
-                    gutil.showSuccess(gutil.INS);
+                    //gutil.showSuccess(gutil.INS);
+                    MessageBox.Show("Saving data to table success! \n No Invoice [" + selectedsalesinvoice + "]", "POS Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //clearUpScreen();
                 }

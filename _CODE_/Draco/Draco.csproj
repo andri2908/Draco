@@ -93,6 +93,11 @@
     <Compile Include="barcodeForm.Designer.cs">
       <DependentUpon>barcodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Barcodes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Barcodes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="cashierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -555,6 +560,24 @@
     <Compile Include="PrintBarcodeForm.designer.cs">
       <DependentUpon>PrintBarcodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductBarcodePrintTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductBarcodePrintTemplate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProductBarcodePrintTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductBarcodePrintTemplateForm.designer.cs">
+      <DependentUpon>ProductBarcodePrintTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBarcodeSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductBarcodeSelectorForm.designer.cs">
+      <DependentUpon>ProductBarcodeSelectorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="dataProdukDetailForm.cs">
@@ -815,6 +838,18 @@
     <Compile Include="ReportProductForm.Designer.cs">
       <DependentUpon>ReportProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportProductInformation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportProductInformation.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportProductInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportProductInformationForm.designer.cs">
+      <DependentUpon>ReportProductInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportProductMutation1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1018,6 +1053,18 @@
     </Compile>
     <Compile Include="ReportStockInOutSearchForm.Designer.cs">
       <DependentUpon>ReportStockInOutSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStockValue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportStockValue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportStockValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportStockValueForm.designer.cs">
+      <DependentUpon>ReportStockValueForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportSupplier.cs">
       <AutoGen>True</AutoGen>
@@ -1449,6 +1496,16 @@
     <EmbeddedResource Include="PrintBarcodeForm.resx">
       <DependentUpon>PrintBarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductBarcodePrintTemplate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductBarcodePrintTemplate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductBarcodePrintTemplateForm.resx">
+      <DependentUpon>ProductBarcodePrintTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductBarcodeSelectorForm.resx">
+      <DependentUpon>ProductBarcodeSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1607,6 +1664,13 @@
     <EmbeddedResource Include="ReportProductForm.resx">
       <DependentUpon>ReportProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportProductInformation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportProductInformation.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProductInformationForm.resx">
+      <DependentUpon>ReportProductInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportProductMutation.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportProductMutation1.cs</LastGenOutput>
@@ -1724,6 +1788,13 @@
     <EmbeddedResource Include="ReportStockInOutSearchForm.resx">
       <DependentUpon>ReportStockInOutSearchForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportStockValue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportStockValue.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportStockValueForm.resx">
+      <DependentUpon>ReportStockValueForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportSupplier.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportSupplier.cs</LastGenOutput>
@@ -1824,6 +1895,17 @@
     <EmbeddedResource Include="XMLGeneratorForm.resx">
       <DependentUpon>XMLGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Barcodes.xsc">
+      <DependentUpon>Barcodes.xsd</DependentUpon>
+    </None>
+    <None Include="Barcodes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Barcodes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Barcodes.xss">
+      <DependentUpon>Barcodes.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

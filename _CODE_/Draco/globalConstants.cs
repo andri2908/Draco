@@ -54,6 +54,7 @@ namespace AlphaSoft
         public const int SALES_ORDER_REVISION = 123;
         public const int DELIVERY_ORDER = 124;
         public const int COPY_DELIVERY_ORDER = 125;
+        public const int PRODUCT_BC = 126;
 
         public const int NEW_GROUP_USER = 201;
         public const int EDIT_GROUP_USER = 202;
@@ -306,5 +307,9 @@ namespace AlphaSoft
         public const string allMembershipPointXML = "MembershipPoint_ALL.xml";
         public const string membershipPointXML = "MembershipPoint.xml";
 
+        public const string StockValueXML = "StockValue.xml";
+        public const string ProductInformationXML = "ProductInformation.xml";
+        public const string ProductBarcodeXML = "ProductBarcode.xml";
+        // public const string PrintBarcodeXML = "PrintBarcode.xml";
     }
 }

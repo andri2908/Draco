@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PRODUCT_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="PRODUCT_STOCK_QTY" type="xs:double" minOccurs="0" />
+                <xs:element name="UNIT_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="PRODUCT_BASE_PRICE" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <PRODUCT_NAME>HPL VIOLAM VS 0101 S</PRODUCT_NAME>
+    <PRODUCT_STOCK_QTY>316</PRODUCT_STOCK_QTY>
+    <UNIT_NAME>LBR</UNIT_NAME>
+    <PRODUCT_BASE_PRICE>155000</PRODUCT_BASE_PRICE>
+  </Table>
+  <Table>
+    <PRODUCT_NAME>HPL VIOLAM VT 0075 FP</PRODUCT_NAME>
+    <PRODUCT_STOCK_QTY>350</PRODUCT_STOCK_QTY>
+    <UNIT_NAME>LBR</UNIT_NAME>
+    <PRODUCT_BASE_PRICE>350000</PRODUCT_BASE_PRICE>
+  </Table>
+  <Table>
+    <PRODUCT_NAME>HPL VIOLAM VD 0018 S</PRODUCT_NAME>
+    <PRODUCT_STOCK_QTY>25</PRODUCT_STOCK_QTY>
+    <UNIT_NAME>LBR</UNIT_NAME>
+    <PRODUCT_BASE_PRICE>155000</PRODUCT_BASE_PRICE>
+  </Table>
+  <Table>
+    <PRODUCT_NAME>HPL VIOLAM VS 0151 S</PRODUCT_NAME>
+    <PRODUCT_STOCK_QTY>2</PRODUCT_STOCK_QTY>
+    <UNIT_NAME>LBR</UNIT_NAME>
+    <PRODUCT_BASE_PRICE>155000</PRODUCT_BASE_PRICE>
+  </Table>
+  <Table>
+    <PRODUCT_NAME>TRIPLEK 3MM SM</PRODUCT_NAME>
+    <PRODUCT_STOCK_QTY>100</PRODUCT_STOCK_QTY>
+    <UNIT_NAME>LBR</UNIT_NAME>
+    <PRODUCT_BASE_PRICE>55000</PRODUCT_BASE_PRICE>
+  </Table>
+</NewDataSet>

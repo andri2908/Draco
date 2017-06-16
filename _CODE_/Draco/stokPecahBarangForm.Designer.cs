@@ -501,14 +501,14 @@
             this.newProductIDTextBox.Location = new System.Drawing.Point(281, 310);
             this.newProductIDTextBox.Name = "newProductIDTextBox";
             this.newProductIDTextBox.ReadOnly = true;
-            this.newProductIDTextBox.Size = new System.Drawing.Size(170, 27);
+            this.newProductIDTextBox.Size = new System.Drawing.Size(406, 27);
             this.newProductIDTextBox.TabIndex = 49;
             // 
             // browseProdukButton
             // 
             this.browseProdukButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browseProdukButton.BackgroundImage")));
             this.browseProdukButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.browseProdukButton.Location = new System.Drawing.Point(457, 310);
+            this.browseProdukButton.Location = new System.Drawing.Point(693, 310);
             this.browseProdukButton.Name = "browseProdukButton";
             this.browseProdukButton.Size = new System.Drawing.Size(28, 27);
             this.browseProdukButton.TabIndex = 50;
@@ -518,7 +518,7 @@
             // newProdukButton
             // 
             this.newProdukButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newProdukButton.Location = new System.Drawing.Point(491, 310);
+            this.newProdukButton.Location = new System.Drawing.Point(727, 310);
             this.newProdukButton.Name = "newProdukButton";
             this.newProdukButton.Size = new System.Drawing.Size(195, 28);
             this.newProdukButton.TabIndex = 51;

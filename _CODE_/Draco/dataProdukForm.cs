@@ -23,6 +23,7 @@ namespace AlphaSoft
 
         private stokPecahBarangForm parentForm;
         private cashierForm parentCashierForm;
+        private ProductBarcodeSelectorForm parentBarcodeForm;
         private penerimaanBarangForm parentPenerimaanBarangForm;
         private purchaseOrderDetailForm parentPOForm;
         private dataMutasiBarangDetailForm parentMutasiForm;
@@ -44,6 +45,18 @@ namespace AlphaSoft
             InitializeComponent();
 
             originModuleID = moduleID;
+
+            // accessed from other form other than Master -> Data Produk
+            // it means that this form is only displayed for browsing / searching purpose only
+            newButton.Visible = false;
+        }
+
+        public dataProdukForm(int moduleID, ProductBarcodeSelectorForm thisParentForm)
+        {
+            InitializeComponent();
+
+            originModuleID = moduleID;
+            parentBarcodeForm = thisParentForm;
 
             // accessed from other form other than Master -> Data Produk
             // it means that this form is only displayed for browsing / searching purpose only
@@ -137,6 +150,22 @@ namespace AlphaSoft
             newButton.Visible = false;
         }
 
+        public dataProdukForm(int moduleID, ProductBarcodeSelectorForm thisParentForm, string productID = "", string productName = "", int rowIndex = -1)
+        {
+            InitializeComponent();
+
+            originModuleID = moduleID;
+            parentBarcodeForm = thisParentForm;
+
+            // accessed from other form other than Master -> Data Produk
+            // it means that this form is only displayed for browsing / searching purpose only
+            newButton.Visible = false;
+
+            namaProdukTextBox.Text = productName;
+            //kodeProductTextBox.Text = productID;
+            selectedRowIndex = rowIndex;
+        }
+
         public dataProdukForm(int moduleID, dataReturPenjualanForm thisParentForm, string searchParam = "")
         {
             InitializeComponent();
@@ -213,6 +242,11 @@ namespace AlphaSoft
                 case globalConstants.RETUR_PEMBELIAN_KE_PUSAT:
                 case globalConstants.RETUR_PEMBELIAN_KE_SUPPLIER:
                     parentReturBeliForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName);
+                    this.Close();
+                    break;
+
+                case globalConstants.PRODUCT_BC:
+                    parentBarcodeForm.addNewRowFromBarcode(selectedkodeProduct, selectedProductName, selectedRowIndex);
                     this.Close();
                     break;
 

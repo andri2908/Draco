@@ -1,0 +1,6854 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:string" minOccurs="0" />
+                <xs:element name="NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="RETAIL" type="xs:double" minOccurs="0" />
+                <xs:element name="GROSIR" type="xs:double" minOccurs="0" />
+                <xs:element name="PARTAI" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <ID>499</ID>
+    <NAME>"BRACKET O 1 1/4"" TENGAH"</NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>498</ID>
+    <NAME>"BRACKET O 1 1/4"" UJUNG"</NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>500</ID>
+    <NAME>"BRACKET TOPI 1 1/4"""</NAME>
+    <RETAIL>12500</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>546</ID>
+    <NAME>"RODA LAHER ULIH 1"""</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>547</ID>
+    <NAME>"RODA LAHER ULIH 3/4"""</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>3500</GROSIR>
+    <PARTAI>3500</PARTAI>
+  </Table>
+  <Table>
+    <ID>509</ID>
+    <NAME>"SKRUP KC SOLA 1 1/2"""</NAME>
+    <RETAIL>1600</RETAIL>
+    <GROSIR>1550</GROSIR>
+    <PARTAI>1550</PARTAI>
+  </Table>
+  <Table>
+    <ID>510</ID>
+    <NAME>"SKRUP KC SOLA 1 1/4"""</NAME>
+    <RETAIL>1500</RETAIL>
+    <GROSIR>1450</GROSIR>
+    <PARTAI>1450</PARTAI>
+  </Table>
+  <Table>
+    <ID>511</ID>
+    <NAME>"SKRUP KC SOLA 1"""</NAME>
+    <RETAIL>1450</RETAIL>
+    <GROSIR>1350</GROSIR>
+    <PARTAI>1350</PARTAI>
+  </Table>
+  <Table>
+    <ID>508</ID>
+    <NAME>"SKRUP KC SOLA 2"""</NAME>
+    <RETAIL>2000</RETAIL>
+    <GROSIR>1950</GROSIR>
+    <PARTAI>1950</PARTAI>
+  </Table>
+  <Table>
+    <ID>512</ID>
+    <NAME>"SKRUP KC SOLA 3/4"""</NAME>
+    <RETAIL>1400</RETAIL>
+    <GROSIR>1350</GROSIR>
+    <PARTAI>1350</PARTAI>
+  </Table>
+  <Table>
+    <ID>207</ID>
+    <NAME>168 KLM 10KG</NAME>
+    <RETAIL>370000</RETAIL>
+    <GROSIR>367000</GROSIR>
+    <PARTAI>368000</PARTAI>
+  </Table>
+  <Table>
+    <ID>202</ID>
+    <NAME>168 KLM YUNIOR</NAME>
+    <RETAIL>280000</RETAIL>
+    <GROSIR>277000</GROSIR>
+    <PARTAI>278000</PARTAI>
+  </Table>
+  <Table>
+    <ID>483</ID>
+    <NAME>AB 5</NAME>
+    <RETAIL>500</RETAIL>
+    <GROSIR>500</GROSIR>
+    <PARTAI>500</PARTAI>
+  </Table>
+  <Table>
+    <ID>119</ID>
+    <NAME>ACP MCBOND MC 801 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>120</ID>
+    <NAME>ACP MCBOND MC 810 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>121</ID>
+    <NAME>ACP MCBOND MC 901 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>122</ID>
+    <NAME>ACP MCBOND MC 902 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>123</ID>
+    <NAME>ACP MCBOND MC 904 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>124</ID>
+    <NAME>ACP MCBOND MC 905 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>110</ID>
+    <NAME>ACP SEVEN QS 3101 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>109</ID>
+    <NAME>ACP SEVEN QS 3103 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>111</ID>
+    <NAME>ACP SEVEN QS 3112 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>112</ID>
+    <NAME>ACP SEVEN QS 3126 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>113</ID>
+    <NAME>ACP SEVEN QS 3130 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>114</ID>
+    <NAME>ACP SEVEN QS 3135 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>115</ID>
+    <NAME>ACP SEVEN QS 3176 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>116</ID>
+    <NAME>ACP SEVEN QS 3177 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>117</ID>
+    <NAME>ACP SEVEN QS 3235 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>118</ID>
+    <NAME>ACP SEVEN QS 4218 PE</NAME>
+    <RETAIL>520000</RETAIL>
+    <GROSIR>512500</GROSIR>
+    <PARTAI>515000</PARTAI>
+  </Table>
+  <Table>
+    <ID>474</ID>
+    <NAME>AJ 7 AMB JPT SKRUP</NAME>
+    <RETAIL>2000</RETAIL>
+    <GROSIR>2000</GROSIR>
+    <PARTAI>2000</PARTAI>
+  </Table>
+  <Table>
+    <ID>475</ID>
+    <NAME>AJ 9 AMB JPT PIN</NAME>
+    <RETAIL>2000</RETAIL>
+    <GROSIR>2000</GROSIR>
+    <PARTAI>2000</PARTAI>
+  </Table>
+  <Table>
+    <ID>479</ID>
+    <NAME>AK 06</NAME>
+    <RETAIL>1400</RETAIL>
+    <GROSIR>1400</GROSIR>
+    <PARTAI>1400</PARTAI>
+  </Table>
+  <Table>
+    <ID>476</ID>
+    <NAME>AKP 10</NAME>
+    <RETAIL>750</RETAIL>
+    <GROSIR>750</GROSIR>
+    <PARTAI>750</PARTAI>
+  </Table>
+  <Table>
+    <ID>477</ID>
+    <NAME>AKP 15</NAME>
+    <RETAIL>800</RETAIL>
+    <GROSIR>800</GROSIR>
+    <PARTAI>800</PARTAI>
+  </Table>
+  <Table>
+    <ID>478</ID>
+    <NAME>AKZ 14</NAME>
+    <RETAIL>1750</RETAIL>
+    <GROSIR>1750</GROSIR>
+    <PARTAI>1750</PARTAI>
+  </Table>
+  <Table>
+    <ID>262</ID>
+    <NAME>ALM L 3M</NAME>
+    <RETAIL>37500</RETAIL>
+    <GROSIR>34500</GROSIR>
+    <PARTAI>35500</PARTAI>
+  </Table>
+  <Table>
+    <ID>264</ID>
+    <NAME>ALM L 6M</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>72000</GROSIR>
+    <PARTAI>73000</PARTAI>
+  </Table>
+  <Table>
+    <ID>263</ID>
+    <NAME>ALM M 3M</NAME>
+    <RETAIL>42500</RETAIL>
+    <GROSIR>39500</GROSIR>
+    <PARTAI>40500</PARTAI>
+  </Table>
+  <Table>
+    <ID>265</ID>
+    <NAME>ALM M 6M</NAME>
+    <RETAIL>85000</RETAIL>
+    <GROSIR>82000</GROSIR>
+    <PARTAI>83000</PARTAI>
+  </Table>
+  <Table>
+    <ID>470</ID>
+    <NAME>AMB BENING + KOP KC</NAME>
+    <RETAIL>750</RETAIL>
+    <GROSIR>725</GROSIR>
+    <PARTAI>725</PARTAI>
+  </Table>
+  <Table>
+    <ID>471</ID>
+    <NAME>AMB BESI + KOP KC</NAME>
+    <RETAIL>700</RETAIL>
+    <GROSIR>675</GROSIR>
+    <PARTAI>675</PARTAI>
+  </Table>
+  <Table>
+    <ID>473</ID>
+    <NAME>AMB JEP 1/2 BULAT NIKEL</NAME>
+    <RETAIL>2000</RETAIL>
+    <GROSIR>1900</GROSIR>
+    <PARTAI>1900</PARTAI>
+  </Table>
+  <Table>
+    <ID>472</ID>
+    <NAME>AMB JEP KC CHK KUKU</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>4800</GROSIR>
+    <PARTAI>4800</PARTAI>
+  </Table>
+  <Table>
+    <ID>691</ID>
+    <NAME>AMPLAS 100</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>692</ID>
+    <NAME>AMPLAS 120</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>702</ID>
+    <NAME>AMPLAS 1200</NAME>
+    <RETAIL>4500</RETAIL>
+    <GROSIR>4500</GROSIR>
+    <PARTAI>4500</PARTAI>
+  </Table>
+  <Table>
+    <ID>693</ID>
+    <NAME>AMPLAS 150</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>694</ID>
+    <NAME>AMPLAS 180</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>695</ID>
+    <NAME>AMPLAS 220</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>696</ID>
+    <NAME>AMPLAS 240</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>697</ID>
+    <NAME>AMPLAS 280</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>698</ID>
+    <NAME>AMPLAS 320</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>699</ID>
+    <NAME>AMPLAS 360</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>700</ID>
+    <NAME>AMPLAS 400</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>701</ID>
+    <NAME>AMPLAS 600</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>621</ID>
+    <NAME>AP 0</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>20000</GROSIR>
+    <PARTAI>20000</PARTAI>
+  </Table>
+  <Table>
+    <ID>623</ID>
+    <NAME>AP 16</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>20000</GROSIR>
+    <PARTAI>20000</PARTAI>
+  </Table>
+  <Table>
+    <ID>622</ID>
+    <NAME>AP 8</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>20000</GROSIR>
+    <PARTAI>20000</PARTAI>
+  </Table>
+  <Table>
+    <ID>751</ID>
+    <NAME>AS 380 </NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>34000</GROSIR>
+    <PARTAI>34000</PARTAI>
+  </Table>
+  <Table>
+    <ID>750</ID>
+    <NAME>AS 75</NAME>
+    <RETAIL>26000</RETAIL>
+    <GROSIR>26000</GROSIR>
+    <PARTAI>26000</PARTAI>
+  </Table>
+  <Table>
+    <ID>794</ID>
+    <NAME>BAUT AH-45</NAME>
+    <RETAIL>450</RETAIL>
+    <GROSIR>450</GROSIR>
+    <PARTAI>450</PARTAI>
+  </Table>
+  <Table>
+    <ID>562</ID>
+    <NAME>BAUT KY PANJANG</NAME>
+    <RETAIL>1</RETAIL>
+    <GROSIR>1</GROSIR>
+    <PARTAI>1</PARTAI>
+  </Table>
+  <Table>
+    <ID>205</ID>
+    <NAME>BB 15MM S</NAME>
+    <RETAIL>185000</RETAIL>
+    <GROSIR>182000</GROSIR>
+    <PARTAI>183000</PARTAI>
+  </Table>
+  <Table>
+    <ID>203</ID>
+    <NAME>BB 15MM TATA S</NAME>
+    <RETAIL>240000</RETAIL>
+    <GROSIR>237000</GROSIR>
+    <PARTAI>238000</PARTAI>
+  </Table>
+  <Table>
+    <ID>206</ID>
+    <NAME>BB 18MM S</NAME>
+    <RETAIL>195000</RETAIL>
+    <GROSIR>192000</GROSIR>
+    <PARTAI>193000</PARTAI>
+  </Table>
+  <Table>
+    <ID>204</ID>
+    <NAME>BB 18MM TATA S</NAME>
+    <RETAIL>260000</RETAIL>
+    <GROSIR>257000</GROSIR>
+    <PARTAI>258000</PARTAI>
+  </Table>
+  <Table>
+    <ID>916</ID>
+    <NAME>BBPT - 30</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>75000</GROSIR>
+    <PARTAI>75000</PARTAI>
+  </Table>
+  <Table>
+    <ID>917</ID>
+    <NAME>BBPT - 35</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>918</ID>
+    <NAME>BBPT - 40</NAME>
+    <RETAIL>110000</RETAIL>
+    <GROSIR>110000</GROSIR>
+    <PARTAI>110000</PARTAI>
+  </Table>
+  <Table>
+    <ID>919</ID>
+    <NAME>BBPT - 45</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>920</ID>
+    <NAME>BBPT - 50</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>921</ID>
+    <NAME>BBPT - 55</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>898</ID>
+    <NAME>BBSC - 30</NAME>
+    <RETAIL>80000</RETAIL>
+    <GROSIR>80000</GROSIR>
+    <PARTAI>80000</PARTAI>
+  </Table>
+  <Table>
+    <ID>899</ID>
+    <NAME>BBSC - 35</NAME>
+    <RETAIL>100000</RETAIL>
+    <GROSIR>100000</GROSIR>
+    <PARTAI>100000</PARTAI>
+  </Table>
+  <Table>
+    <ID>900</ID>
+    <NAME>BBSC - 40</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>901</ID>
+    <NAME>BBSC - 45</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>125000</GROSIR>
+    <PARTAI>125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>902</ID>
+    <NAME>BBSC - 50</NAME>
+    <RETAIL>140000</RETAIL>
+    <GROSIR>140000</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>903</ID>
+    <NAME>BBSC - 55</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>155000</GROSIR>
+    <PARTAI>155000</PARTAI>
+  </Table>
+  <Table>
+    <ID>181</ID>
+    <NAME>BLOCKMIN 15MM SF</NAME>
+    <RETAIL>270000</RETAIL>
+    <GROSIR>267000</GROSIR>
+    <PARTAI>268000</PARTAI>
+  </Table>
+  <Table>
+    <ID>182</ID>
+    <NAME>BLOCKMIN 18MM SF</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>272000</GROSIR>
+    <PARTAI>273000</PARTAI>
+  </Table>
+  <Table>
+    <ID>501</ID>
+    <NAME>BP 16 OVAL</NAME>
+    <RETAIL>10000</RETAIL>
+    <GROSIR>10000</GROSIR>
+    <PARTAI>10000</PARTAI>
+  </Table>
+  <Table>
+    <ID>502</ID>
+    <NAME>BP 19 TOPI</NAME>
+    <RETAIL>12500</RETAIL>
+    <GROSIR>12500</GROSIR>
+    <PARTAI>12500</PARTAI>
+  </Table>
+  <Table>
+    <ID>503</ID>
+    <NAME>BP 25 TOPI</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>533</ID>
+    <NAME>BRACKET H-5</NAME>
+    <RETAIL>12500</RETAIL>
+    <GROSIR>11000</GROSIR>
+    <PARTAI>11000</PARTAI>
+  </Table>
+  <Table>
+    <ID>534</ID>
+    <NAME>BRACKET H-5 UJUNG</NAME>
+    <RETAIL>23000</RETAIL>
+    <GROSIR>21500</GROSIR>
+    <PARTAI>21500</PARTAI>
+  </Table>
+  <Table>
+    <ID>535</ID>
+    <NAME>BRACKET PIPA KOTAK</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>806</ID>
+    <NAME>BRC - 040</NAME>
+    <RETAIL>16000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>972</ID>
+    <NAME>COM - 04</NAME>
+    <RETAIL>84000</RETAIL>
+    <GROSIR>84000</GROSIR>
+    <PARTAI>84000</PARTAI>
+  </Table>
+  <Table>
+    <ID>739</ID>
+    <NAME>CUM CUM</NAME>
+    <RETAIL>7500</RETAIL>
+    <GROSIR>7500</GROSIR>
+    <PARTAI>7500</PARTAI>
+  </Table>
+  <Table>
+    <ID>531</ID>
+    <NAME>CUTTER AKRILIK</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>18000</GROSIR>
+    <PARTAI>18000</PARTAI>
+  </Table>
+  <Table>
+    <ID>529</ID>
+    <NAME>CUTTER JOYKO</NAME>
+    <RETAIL>18000</RETAIL>
+    <GROSIR>18000</GROSIR>
+    <PARTAI>18000</PARTAI>
+  </Table>
+  <Table>
+    <ID>528</ID>
+    <NAME>CUTTER KENKO </NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>946</ID>
+    <NAME>DBF 03</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27000</PARTAI>
+  </Table>
+  <Table>
+    <ID>801</ID>
+    <NAME>DECO - 100</NAME>
+    <RETAIL>302500</RETAIL>
+    <GROSIR>302500</GROSIR>
+    <PARTAI>302500</PARTAI>
+  </Table>
+  <Table>
+    <ID>803</ID>
+    <NAME>DECO - 20</NAME>
+    <RETAIL>147500</RETAIL>
+    <GROSIR>147500</GROSIR>
+    <PARTAI>147500</PARTAI>
+  </Table>
+  <Table>
+    <ID>804</ID>
+    <NAME>DECO - 30</NAME>
+    <RETAIL>250000</RETAIL>
+    <GROSIR>250000</GROSIR>
+    <PARTAI>250000</PARTAI>
+  </Table>
+  <Table>
+    <ID>805</ID>
+    <NAME>DECO - 40</NAME>
+    <RETAIL>366500</RETAIL>
+    <GROSIR>366500</GROSIR>
+    <PARTAI>366500</PARTAI>
+  </Table>
+  <Table>
+    <ID>800</ID>
+    <NAME>DECO - 80</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>275000</GROSIR>
+    <PARTAI>275000</PARTAI>
+  </Table>
+  <Table>
+    <ID>802</ID>
+    <NAME>DECO - 80 MIX</NAME>
+    <RETAIL>2125000</RETAIL>
+    <GROSIR>2125000</GROSIR>
+    <PARTAI>2125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>945</ID>
+    <NAME>DEV 02</NAME>
+    <RETAIL>88000</RETAIL>
+    <GROSIR>88000</GROSIR>
+    <PARTAI>88000</PARTAI>
+  </Table>
+  <Table>
+    <ID>809</ID>
+    <NAME>DM - 100HW</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>537</ID>
+    <NAME>DUDUKAN T.BRACKET </NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>797</ID>
+    <NAME>DUMPER HIDROLIS</NAME>
+    <RETAIL>7500</RETAIL>
+    <GROSIR>7500</GROSIR>
+    <PARTAI>7500</PARTAI>
+  </Table>
+  <Table>
+    <ID>575</ID>
+    <NAME>DWS 6 x 1</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>576</ID>
+    <NAME>DWS 6 x 1 - PLASTIK</NAME>
+    <RETAIL>43000</RETAIL>
+    <GROSIR>43000</GROSIR>
+    <PARTAI>43000</PARTAI>
+  </Table>
+  <Table>
+    <ID>577</ID>
+    <NAME>DWS 6 x 1 1/4</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>578</ID>
+    <NAME>DWS 6 x 1 1/4 - PLASTIK</NAME>
+    <RETAIL>52000</RETAIL>
+    <GROSIR>52000</GROSIR>
+    <PARTAI>52000</PARTAI>
+  </Table>
+  <Table>
+    <ID>404</ID>
+    <NAME>EA-17 ANODIZE</NAME>
+    <RETAIL>32000</RETAIL>
+    <GROSIR>32000</GROSIR>
+    <PARTAI>32000</PARTAI>
+  </Table>
+  <Table>
+    <ID>406</ID>
+    <NAME>EA-17 BRUSH</NAME>
+    <RETAIL>37000</RETAIL>
+    <GROSIR>37000</GROSIR>
+    <PARTAI>37000</PARTAI>
+  </Table>
+  <Table>
+    <ID>408</ID>
+    <NAME>EA-17 MIRROR</NAME>
+    <RETAIL>37000</RETAIL>
+    <GROSIR>37000</GROSIR>
+    <PARTAI>37000</PARTAI>
+  </Table>
+  <Table>
+    <ID>405</ID>
+    <NAME>EA-17 PASIR</NAME>
+    <RETAIL>37000</RETAIL>
+    <GROSIR>37000</GROSIR>
+    <PARTAI>37000</PARTAI>
+  </Table>
+  <Table>
+    <ID>407</ID>
+    <NAME>EA-17 SS</NAME>
+    <RETAIL>32000</RETAIL>
+    <GROSIR>32000</GROSIR>
+    <PARTAI>32000</PARTAI>
+  </Table>
+  <Table>
+    <ID>409</ID>
+    <NAME>EA-19 ANODIZE</NAME>
+    <RETAIL>37000</RETAIL>
+    <GROSIR>37000</GROSIR>
+    <PARTAI>37000</PARTAI>
+  </Table>
+  <Table>
+    <ID>411</ID>
+    <NAME>EA-19 BRUSH</NAME>
+    <RETAIL>42000</RETAIL>
+    <GROSIR>42000</GROSIR>
+    <PARTAI>42000</PARTAI>
+  </Table>
+  <Table>
+    <ID>413</ID>
+    <NAME>EA-19 MIRROR</NAME>
+    <RETAIL>42000</RETAIL>
+    <GROSIR>42000</GROSIR>
+    <PARTAI>42000</PARTAI>
+  </Table>
+  <Table>
+    <ID>410</ID>
+    <NAME>EA-19 PASIR</NAME>
+    <RETAIL>42000</RETAIL>
+    <GROSIR>42000</GROSIR>
+    <PARTAI>42000</PARTAI>
+  </Table>
+  <Table>
+    <ID>412</ID>
+    <NAME>EA-19 SS</NAME>
+    <RETAIL>37000</RETAIL>
+    <GROSIR>37000</GROSIR>
+    <PARTAI>37000</PARTAI>
+  </Table>
+  <Table>
+    <ID>414</ID>
+    <NAME>EA-92 ANODIZE</NAME>
+    <RETAIL>37000</RETAIL>
+    <GROSIR>37000</GROSIR>
+    <PARTAI>37000</PARTAI>
+  </Table>
+  <Table>
+    <ID>416</ID>
+    <NAME>EA-92 BRUSH</NAME>
+    <RETAIL>42000</RETAIL>
+    <GROSIR>42000</GROSIR>
+    <PARTAI>42000</PARTAI>
+  </Table>
+  <Table>
+    <ID>415</ID>
+    <NAME>EA-92 PASIR</NAME>
+    <RETAIL>42000</RETAIL>
+    <GROSIR>42000</GROSIR>
+    <PARTAI>42000</PARTAI>
+  </Table>
+  <Table>
+    <ID>417</ID>
+    <NAME>EA-92 SS</NAME>
+    <RETAIL>37000</RETAIL>
+    <GROSIR>37000</GROSIR>
+    <PARTAI>37000</PARTAI>
+  </Table>
+  <Table>
+    <ID>939</ID>
+    <NAME>EM - 01</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>940</ID>
+    <NAME>EM - 02</NAME>
+    <RETAIL>16000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>941</ID>
+    <NAME>EM - 03</NAME>
+    <RETAIL>17000</RETAIL>
+    <GROSIR>17000</GROSIR>
+    <PARTAI>17000</PARTAI>
+  </Table>
+  <Table>
+    <ID>786</ID>
+    <NAME>ENGSEL T-86</NAME>
+    <RETAIL>8500</RETAIL>
+    <GROSIR>8500</GROSIR>
+    <PARTAI>8500</PARTAI>
+  </Table>
+  <Table>
+    <ID>922</ID>
+    <NAME>ES - 30</NAME>
+    <RETAIL>18000</RETAIL>
+    <GROSIR>18000</GROSIR>
+    <PARTAI>18000</PARTAI>
+  </Table>
+  <Table>
+    <ID>923</ID>
+    <NAME>ES - 35</NAME>
+    <RETAIL>18500</RETAIL>
+    <GROSIR>18500</GROSIR>
+    <PARTAI>18500</PARTAI>
+  </Table>
+  <Table>
+    <ID>924</ID>
+    <NAME>ES - 40</NAME>
+    <RETAIL>20500</RETAIL>
+    <GROSIR>20500</GROSIR>
+    <PARTAI>20500</PARTAI>
+  </Table>
+  <Table>
+    <ID>925</ID>
+    <NAME>ES - 45</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>926</ID>
+    <NAME>ES - 50</NAME>
+    <RETAIL>23000</RETAIL>
+    <GROSIR>23000</GROSIR>
+    <PARTAI>23000</PARTAI>
+  </Table>
+  <Table>
+    <ID>927</ID>
+    <NAME>ES - 55</NAME>
+    <RETAIL>26500</RETAIL>
+    <GROSIR>26500</GROSIR>
+    <PARTAI>26500</PARTAI>
+  </Table>
+  <Table>
+    <ID>480</ID>
+    <NAME>F 004</NAME>
+    <RETAIL>4800</RETAIL>
+    <GROSIR>4800</GROSIR>
+    <PARTAI>4800</PARTAI>
+  </Table>
+  <Table>
+    <ID>306</ID>
+    <NAME>FA-128 ANODIZE</NAME>
+    <RETAIL>140000</RETAIL>
+    <GROSIR>140000</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>308</ID>
+    <NAME>FA-128 BRUSH</NAME>
+    <RETAIL>160000</RETAIL>
+    <GROSIR>160000</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>311</ID>
+    <NAME>FA-128 MIRROR</NAME>
+    <RETAIL>160000</RETAIL>
+    <GROSIR>160000</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>307</ID>
+    <NAME>FA-128 PASIR</NAME>
+    <RETAIL>160000</RETAIL>
+    <GROSIR>160000</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>309</ID>
+    <NAME>FA-128 SS</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>310</ID>
+    <NAME>FA-128 WEP</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>346</ID>
+    <NAME>FA-19 ANODIZE</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>348</ID>
+    <NAME>FA-19 BRUSH</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>347</ID>
+    <NAME>FA-19 PASIR</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>349</ID>
+    <NAME>FA-19 WEP</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>333</ID>
+    <NAME>FA-45 ANODIZE</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>335</ID>
+    <NAME>FA-45 BRUSH</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>334</ID>
+    <NAME>FA-45 PASIR</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>336</ID>
+    <NAME>FA-45 SS</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>350</ID>
+    <NAME>FA-48 ANODIZE</NAME>
+    <RETAIL>110000</RETAIL>
+    <GROSIR>110000</GROSIR>
+    <PARTAI>110000</PARTAI>
+  </Table>
+  <Table>
+    <ID>352</ID>
+    <NAME>FA-48 BRUSH</NAME>
+    <RETAIL>130000</RETAIL>
+    <GROSIR>130000</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>351</ID>
+    <NAME>FA-48 PASIR</NAME>
+    <RETAIL>130000</RETAIL>
+    <GROSIR>130000</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>353</ID>
+    <NAME>FA-48 WEP</NAME>
+    <RETAIL>110000</RETAIL>
+    <GROSIR>110000</GROSIR>
+    <PARTAI>110000</PARTAI>
+  </Table>
+  <Table>
+    <ID>567</ID>
+    <NAME>FAB 6 x 1</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>45000</GROSIR>
+    <PARTAI>45000</PARTAI>
+  </Table>
+  <Table>
+    <ID>568</ID>
+    <NAME>FAB 6 x 1 - PLASTIK</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>571</ID>
+    <NAME>FAB 6 x 11/2</NAME>
+    <RETAIL>65000</RETAIL>
+    <GROSIR>65000</GROSIR>
+    <PARTAI>65000</PARTAI>
+  </Table>
+  <Table>
+    <ID>572</ID>
+    <NAME>FAB 6 x 11/2 - PLASTIK</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>569</ID>
+    <NAME>FAB 6 x 11/4</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>55000</GROSIR>
+    <PARTAI>55000</PARTAI>
+  </Table>
+  <Table>
+    <ID>570</ID>
+    <NAME>FAB 6 x 11/4 - PLASTIK</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>565</ID>
+    <NAME>FAB 6 x 3/4</NAME>
+    <RETAIL>70000</RETAIL>
+    <GROSIR>70000</GROSIR>
+    <PARTAI>70000</PARTAI>
+  </Table>
+  <Table>
+    <ID>566</ID>
+    <NAME>FAB 6 x 3/4 - PLASTIK</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>563</ID>
+    <NAME>FAB 6 x 5/8</NAME>
+    <RETAIL>60000</RETAIL>
+    <GROSIR>60000</GROSIR>
+    <PARTAI>60000</PARTAI>
+  </Table>
+  <Table>
+    <ID>564</ID>
+    <NAME>FAB 6 x 5/8 - PLASTIK</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>573</ID>
+    <NAME>FAB 8 x 2</NAME>
+    <RETAIL>112000</RETAIL>
+    <GROSIR>112000</GROSIR>
+    <PARTAI>112000</PARTAI>
+  </Table>
+  <Table>
+    <ID>574</ID>
+    <NAME>FAB 8 x 2 - PLASTIK</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>341</ID>
+    <NAME>FB-46 ANODIZE</NAME>
+    <RETAIL>105000</RETAIL>
+    <GROSIR>105000</GROSIR>
+    <PARTAI>105000</PARTAI>
+  </Table>
+  <Table>
+    <ID>342</ID>
+    <NAME>FB-46 PASIR</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>601</ID>
+    <NAME>FE 37 - 30 CM</NAME>
+    <RETAIL>16000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>602</ID>
+    <NAME>FE 37 - 35 CM</NAME>
+    <RETAIL>18500</RETAIL>
+    <GROSIR>18500</GROSIR>
+    <PARTAI>18500</PARTAI>
+  </Table>
+  <Table>
+    <ID>603</ID>
+    <NAME>FE 37 - 40 CM</NAME>
+    <RETAIL>21000</RETAIL>
+    <GROSIR>21000</GROSIR>
+    <PARTAI>21000</PARTAI>
+  </Table>
+  <Table>
+    <ID>604</ID>
+    <NAME>FE 37 - 45 CM</NAME>
+    <RETAIL>23500</RETAIL>
+    <GROSIR>23500</GROSIR>
+    <PARTAI>23500</PARTAI>
+  </Table>
+  <Table>
+    <ID>605</ID>
+    <NAME>FE 37 - 50 CM</NAME>
+    <RETAIL>26000</RETAIL>
+    <GROSIR>26000</GROSIR>
+    <PARTAI>26000</PARTAI>
+  </Table>
+  <Table>
+    <ID>606</ID>
+    <NAME>FE 37 - 55 CM</NAME>
+    <RETAIL>28500</RETAIL>
+    <GROSIR>28500</GROSIR>
+    <PARTAI>28500</PARTAI>
+  </Table>
+  <Table>
+    <ID>607</ID>
+    <NAME>FE 37 - 60 CM</NAME>
+    <RETAIL>31000</RETAIL>
+    <GROSIR>31000</GROSIR>
+    <PARTAI>31000</PARTAI>
+  </Table>
+  <Table>
+    <ID>608</ID>
+    <NAME>FE 45 - 30 CM</NAME>
+    <RETAIL>23000</RETAIL>
+    <GROSIR>23000</GROSIR>
+    <PARTAI>23000</PARTAI>
+  </Table>
+  <Table>
+    <ID>609</ID>
+    <NAME>FE 45 - 35 CM</NAME>
+    <RETAIL>26000</RETAIL>
+    <GROSIR>26000</GROSIR>
+    <PARTAI>26000</PARTAI>
+  </Table>
+  <Table>
+    <ID>610</ID>
+    <NAME>FE 45 - 40 CM</NAME>
+    <RETAIL>29000</RETAIL>
+    <GROSIR>29000</GROSIR>
+    <PARTAI>29000</PARTAI>
+  </Table>
+  <Table>
+    <ID>611</ID>
+    <NAME>FE 45 - 45 CM</NAME>
+    <RETAIL>32000</RETAIL>
+    <GROSIR>32000</GROSIR>
+    <PARTAI>32000</PARTAI>
+  </Table>
+  <Table>
+    <ID>612</ID>
+    <NAME>FE 45 - 50 CM</NAME>
+    <RETAIL>35000</RETAIL>
+    <GROSIR>35000</GROSIR>
+    <PARTAI>35000</PARTAI>
+  </Table>
+  <Table>
+    <ID>613</ID>
+    <NAME>FE 45 - 55 CM</NAME>
+    <RETAIL>38000</RETAIL>
+    <GROSIR>38000</GROSIR>
+    <PARTAI>38000</PARTAI>
+  </Table>
+  <Table>
+    <ID>614</ID>
+    <NAME>FE 45 - 60 CM</NAME>
+    <RETAIL>41000</RETAIL>
+    <GROSIR>41000</GROSIR>
+    <PARTAI>41000</PARTAI>
+  </Table>
+  <Table>
+    <ID>312</ID>
+    <NAME>FHD-127 ANODIZE</NAME>
+    <RETAIL>180000</RETAIL>
+    <GROSIR>180000</GROSIR>
+    <PARTAI>180000</PARTAI>
+  </Table>
+  <Table>
+    <ID>314</ID>
+    <NAME>FHD-127 BRUSH</NAME>
+    <RETAIL>210000</RETAIL>
+    <GROSIR>210000</GROSIR>
+    <PARTAI>210000</PARTAI>
+  </Table>
+  <Table>
+    <ID>317</ID>
+    <NAME>FHD-127 MIRROR</NAME>
+    <RETAIL>210000</RETAIL>
+    <GROSIR>210000</GROSIR>
+    <PARTAI>210000</PARTAI>
+  </Table>
+  <Table>
+    <ID>313</ID>
+    <NAME>FHD-127 PASIR</NAME>
+    <RETAIL>210000</RETAIL>
+    <GROSIR>210000</GROSIR>
+    <PARTAI>210000</PARTAI>
+  </Table>
+  <Table>
+    <ID>315</ID>
+    <NAME>FHD-127 SS</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>190000</GROSIR>
+    <PARTAI>190000</PARTAI>
+  </Table>
+  <Table>
+    <ID>316</ID>
+    <NAME>FHD-127 WEP</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>190000</GROSIR>
+    <PARTAI>190000</PARTAI>
+  </Table>
+  <Table>
+    <ID>318</ID>
+    <NAME>FHD-128 ANODIZE</NAME>
+    <RETAIL>160000</RETAIL>
+    <GROSIR>160000</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>320</ID>
+    <NAME>FHD-128 BRUSH</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>190000</GROSIR>
+    <PARTAI>190000</PARTAI>
+  </Table>
+  <Table>
+    <ID>323</ID>
+    <NAME>FHD-128 MIRROR</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>190000</GROSIR>
+    <PARTAI>190000</PARTAI>
+  </Table>
+  <Table>
+    <ID>319</ID>
+    <NAME>FHD-128 PASIR</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>190000</GROSIR>
+    <PARTAI>190000</PARTAI>
+  </Table>
+  <Table>
+    <ID>321</ID>
+    <NAME>FHD-128 SS</NAME>
+    <RETAIL>170000</RETAIL>
+    <GROSIR>170000</GROSIR>
+    <PARTAI>170000</PARTAI>
+  </Table>
+  <Table>
+    <ID>322</ID>
+    <NAME>FHD-128 WEP</NAME>
+    <RETAIL>170000</RETAIL>
+    <GROSIR>170000</GROSIR>
+    <PARTAI>170000</PARTAI>
+  </Table>
+  <Table>
+    <ID>330</ID>
+    <NAME>FHD-129 ANODIZE</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>332</ID>
+    <NAME>FHD-129 BRUSH</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>165000</GROSIR>
+    <PARTAI>165000</PARTAI>
+  </Table>
+  <Table>
+    <ID>331</ID>
+    <NAME>FHD-129 PASIR</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>165000</GROSIR>
+    <PARTAI>165000</PARTAI>
+  </Table>
+  <Table>
+    <ID>324</ID>
+    <NAME>FHD-130 ANODIZE</NAME>
+    <RETAIL>195000</RETAIL>
+    <GROSIR>195000</GROSIR>
+    <PARTAI>195000</PARTAI>
+  </Table>
+  <Table>
+    <ID>326</ID>
+    <NAME>FHD-130 BRUSH</NAME>
+    <RETAIL>230000</RETAIL>
+    <GROSIR>230000</GROSIR>
+    <PARTAI>230000</PARTAI>
+  </Table>
+  <Table>
+    <ID>329</ID>
+    <NAME>FHD-130 MIRROR</NAME>
+    <RETAIL>230000</RETAIL>
+    <GROSIR>230000</GROSIR>
+    <PARTAI>230000</PARTAI>
+  </Table>
+  <Table>
+    <ID>325</ID>
+    <NAME>FHD-130 PASIR</NAME>
+    <RETAIL>230000</RETAIL>
+    <GROSIR>230000</GROSIR>
+    <PARTAI>230000</PARTAI>
+  </Table>
+  <Table>
+    <ID>327</ID>
+    <NAME>FHD-130 SS</NAME>
+    <RETAIL>200000</RETAIL>
+    <GROSIR>200000</GROSIR>
+    <PARTAI>200000</PARTAI>
+  </Table>
+  <Table>
+    <ID>328</ID>
+    <NAME>FHD-130 WEP</NAME>
+    <RETAIL>200000</RETAIL>
+    <GROSIR>200000</GROSIR>
+    <PARTAI>200000</PARTAI>
+  </Table>
+  <Table>
+    <ID>337</ID>
+    <NAME>FHD-45 ANODIZE</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>339</ID>
+    <NAME>FHD-45 BRUSH</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>155000</GROSIR>
+    <PARTAI>155000</PARTAI>
+  </Table>
+  <Table>
+    <ID>338</ID>
+    <NAME>FHD-45 PASIR</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>155000</GROSIR>
+    <PARTAI>155000</PARTAI>
+  </Table>
+  <Table>
+    <ID>340</ID>
+    <NAME>FHD-45 SS</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>343</ID>
+    <NAME>FHD-46 ANODIZE</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>345</ID>
+    <NAME>FHD-46 BRUSH</NAME>
+    <RETAIL>140000</RETAIL>
+    <GROSIR>140000</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>344</ID>
+    <NAME>FHD-46 PASIR</NAME>
+    <RETAIL>140000</RETAIL>
+    <GROSIR>140000</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>798</ID>
+    <NAME>FISHER 5 x 11</NAME>
+    <RETAIL>200</RETAIL>
+    <GROSIR>200</GROSIR>
+    <PARTAI>200</PARTAI>
+  </Table>
+  <Table>
+    <ID>799</ID>
+    <NAME>FISHER 5 x 9</NAME>
+    <RETAIL>200</RETAIL>
+    <GROSIR>200</GROSIR>
+    <PARTAI>200</PARTAI>
+  </Table>
+  <Table>
+    <ID>560</ID>
+    <NAME>FISHER S6</NAME>
+    <RETAIL>11000</RETAIL>
+    <GROSIR>11000</GROSIR>
+    <PARTAI>11000</PARTAI>
+  </Table>
+  <Table>
+    <ID>561</ID>
+    <NAME>FISHER S8</NAME>
+    <RETAIL>12500</RETAIL>
+    <GROSIR>12500</GROSIR>
+    <PARTAI>12500</PARTAI>
+  </Table>
+  <Table>
+    <ID>189</ID>
+    <NAME>FOX MERAH 14 KG</NAME>
+    <RETAIL>630000</RETAIL>
+    <GROSIR>628000</GROSIR>
+    <PARTAI>629000</PARTAI>
+  </Table>
+  <Table>
+    <ID>188</ID>
+    <NAME>FOX MERAH 2,5 KG</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>143000</GROSIR>
+    <PARTAI>144000</PARTAI>
+  </Table>
+  <Table>
+    <ID>187</ID>
+    <NAME>FOX MERAH 600 GR</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>48000</GROSIR>
+    <PARTAI>49000</PARTAI>
+  </Table>
+  <Table>
+    <ID>354</ID>
+    <NAME>FT-45 ANODIZE</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>356</ID>
+    <NAME>FT-45 BRUSH</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>355</ID>
+    <NAME>FT-45 PASIR</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>357</ID>
+    <NAME>FT-45 SS</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>796</ID>
+    <NAME>GAS SPRING</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>950</ID>
+    <NAME>GDH - 01</NAME>
+    <RETAIL>52000</RETAIL>
+    <GROSIR>52000</GROSIR>
+    <PARTAI>52000</PARTAI>
+  </Table>
+  <Table>
+    <ID>951</ID>
+    <NAME>GDH - 02</NAME>
+    <RETAIL>53000</RETAIL>
+    <GROSIR>53000</GROSIR>
+    <PARTAI>53000</PARTAI>
+  </Table>
+  <Table>
+    <ID>952</ID>
+    <NAME>GDH - 03</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>55000</GROSIR>
+    <PARTAI>55000</PARTAI>
+  </Table>
+  <Table>
+    <ID>630</ID>
+    <NAME>GH 0</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>632</ID>
+    <NAME>GH 16</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>631</ID>
+    <NAME>GH 8</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>789</ID>
+    <NAME>GP-27 GRENDEL</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>358</ID>
+    <NAME>GP-30 ANODIZE</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>125000</GROSIR>
+    <PARTAI>125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>360</ID>
+    <NAME>GP-30 BRUSH</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>362</ID>
+    <NAME>GP-30 MIRROR</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>359</ID>
+    <NAME>GP-30 PASIR</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>361</ID>
+    <NAME>GP-30 SS</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>125000</GROSIR>
+    <PARTAI>125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>363</ID>
+    <NAME>GP-32 ANODIZE</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>125000</GROSIR>
+    <PARTAI>125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>365</ID>
+    <NAME>GP-32 BRUSH</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>367</ID>
+    <NAME>GP-32 MIRROR</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>364</ID>
+    <NAME>GP-32 PASIR</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>366</ID>
+    <NAME>GP-32 SS</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>125000</GROSIR>
+    <PARTAI>125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>368</ID>
+    <NAME>GP-35 ANODIZE</NAME>
+    <RETAIL>15500</RETAIL>
+    <GROSIR>15500</GROSIR>
+    <PARTAI>15500</PARTAI>
+  </Table>
+  <Table>
+    <ID>370</ID>
+    <NAME>GP-35 BRUSH</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>372</ID>
+    <NAME>GP-35 MIRROR</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>369</ID>
+    <NAME>GP-35 PASIR</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>371</ID>
+    <NAME>GP-35 SS</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>155000</GROSIR>
+    <PARTAI>155000</PARTAI>
+  </Table>
+  <Table>
+    <ID>373</ID>
+    <NAME>GP-36 ANODIZE</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>155000</GROSIR>
+    <PARTAI>155000</PARTAI>
+  </Table>
+  <Table>
+    <ID>375</ID>
+    <NAME>GP-36 BRUSH</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>377</ID>
+    <NAME>GP-36 MIRROR</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>374</ID>
+    <NAME>GP-36 PASIR</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>376</ID>
+    <NAME>GP-36 SS</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>155000</GROSIR>
+    <PARTAI>155000</PARTAI>
+  </Table>
+  <Table>
+    <ID>378</ID>
+    <NAME>GP-37 ANODIZE</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>380</ID>
+    <NAME>GP-37 BRUSH</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>382</ID>
+    <NAME>GP-37 MIRROR</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>379</ID>
+    <NAME>GP-37 PASIR</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>381</ID>
+    <NAME>GP-37 SS</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>383</ID>
+    <NAME>GP-38 ANODIZE</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>385</ID>
+    <NAME>GP-38 BRUSH</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>387</ID>
+    <NAME>GP-38 MIRROR</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>384</ID>
+    <NAME>GP-38 PASIR</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>386</ID>
+    <NAME>GP-38 SS</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>974</ID>
+    <NAME>GS 100</NAME>
+    <RETAIL>24500</RETAIL>
+    <GROSIR>24500</GROSIR>
+    <PARTAI>24500</PARTAI>
+  </Table>
+  <Table>
+    <ID>975</ID>
+    <NAME>GS 120</NAME>
+    <RETAIL>26500</RETAIL>
+    <GROSIR>26500</GROSIR>
+    <PARTAI>26500</PARTAI>
+  </Table>
+  <Table>
+    <ID>976</ID>
+    <NAME>GS 150</NAME>
+    <RETAIL>28500</RETAIL>
+    <GROSIR>28500</GROSIR>
+    <PARTAI>28500</PARTAI>
+  </Table>
+  <Table>
+    <ID>973</ID>
+    <NAME>GS 80</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>633</ID>
+    <NAME>HA 0</NAME>
+    <RETAIL>12000</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>635</ID>
+    <NAME>HA 16</NAME>
+    <RETAIL>12000</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>634</ID>
+    <NAME>HA 8</NAME>
+    <RETAIL>12000</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>618</ID>
+    <NAME>HB 0</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>620</ID>
+    <NAME>HB 16</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>619</ID>
+    <NAME>HB 8</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>215</ID>
+    <NAME>HERIN</NAME>
+    <RETAIL>25000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>23000</PARTAI>
+  </Table>
+  <Table>
+    <ID>641</ID>
+    <NAME>HL 103-20</NAME>
+    <RETAIL>7500</RETAIL>
+    <GROSIR>7500</GROSIR>
+    <PARTAI>7500</PARTAI>
+  </Table>
+  <Table>
+    <ID>642</ID>
+    <NAME>HL 103-25</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>643</ID>
+    <NAME>HL 103-30</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>644</ID>
+    <NAME>HL 105</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>638</ID>
+    <NAME>HL 138-22</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>639</ID>
+    <NAME>HL 138-32</NAME>
+    <RETAIL>9500</RETAIL>
+    <GROSIR>9500</GROSIR>
+    <PARTAI>9500</PARTAI>
+  </Table>
+  <Table>
+    <ID>637</ID>
+    <NAME>HL 181 M2</NAME>
+    <RETAIL>6500</RETAIL>
+    <GROSIR>6500</GROSIR>
+    <PARTAI>6500</PARTAI>
+  </Table>
+  <Table>
+    <ID>636</ID>
+    <NAME>HL 181-22</NAME>
+    <RETAIL>7500</RETAIL>
+    <GROSIR>7500</GROSIR>
+    <PARTAI>7500</PARTAI>
+  </Table>
+  <Table>
+    <ID>640</ID>
+    <NAME>HL 202</NAME>
+    <RETAIL>10500</RETAIL>
+    <GROSIR>10500</GROSIR>
+    <PARTAI>10500</PARTAI>
+  </Table>
+  <Table>
+    <ID>645</ID>
+    <NAME>HL 505 M2</NAME>
+    <RETAIL>8500</RETAIL>
+    <GROSIR>8500</GROSIR>
+    <PARTAI>8500</PARTAI>
+  </Table>
+  <Table>
+    <ID>556</ID>
+    <NAME>HOOK BAJU DOUBLE</NAME>
+    <RETAIL>12500</RETAIL>
+    <GROSIR>12500</GROSIR>
+    <PARTAI>12500</PARTAI>
+  </Table>
+  <Table>
+    <ID>555</ID>
+    <NAME>HOOK BAJU SINGLE</NAME>
+    <RETAIL>10000</RETAIL>
+    <GROSIR>10000</GROSIR>
+    <PARTAI>10000</PARTAI>
+  </Table>
+  <Table>
+    <ID>125</ID>
+    <NAME>HPL ELEGANT ES 003</NAME>
+    <RETAIL>97000</RETAIL>
+    <GROSIR>89500</GROSIR>
+    <PARTAI>92000</PARTAI>
+  </Table>
+  <Table>
+    <ID>126</ID>
+    <NAME>HPL ELEGANT ES 004</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>127</ID>
+    <NAME>HPL ELEGANT ES 005</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>128</ID>
+    <NAME>HPL ELEGANT ES 006</NAME>
+    <RETAIL>170000</RETAIL>
+    <GROSIR>162500</GROSIR>
+    <PARTAI>165000</PARTAI>
+  </Table>
+  <Table>
+    <ID>129</ID>
+    <NAME>HPL ELEGANT ES 007</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>130</ID>
+    <NAME>HPL ELEGANT ES 008</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>131</ID>
+    <NAME>HPL ELEGANT ES 009</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>132</ID>
+    <NAME>HPL ELEGANT ES 013</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>133</ID>
+    <NAME>HPL ELEGANT ES 015</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>134</ID>
+    <NAME>HPL ELEGANT ES 016</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>135</ID>
+    <NAME>HPL ELEGANT ES 017</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>136</ID>
+    <NAME>HPL ELEGANT ES 018</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>137</ID>
+    <NAME>HPL ELEGANT ES 019</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>138</ID>
+    <NAME>HPL ELEGANT ES 020</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>139</ID>
+    <NAME>HPL ELEGANT ES 022</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>140</ID>
+    <NAME>HPL ELEGANT ES 023</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>141</ID>
+    <NAME>HPL ELEGANT ES 024</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>142</ID>
+    <NAME>HPL ELEGANT ES 025</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>143</ID>
+    <NAME>HPL ELEGANT ES 026</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>144</ID>
+    <NAME>HPL ELEGANT ES 027</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>145</ID>
+    <NAME>HPL ELEGANT ES 028</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>146</ID>
+    <NAME>HPL ELEGANT ES 029</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>147</ID>
+    <NAME>HPL ELEGANT ES 030</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>148</ID>
+    <NAME>HPL ELEGANT ES 031</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>149</ID>
+    <NAME>HPL ELEGANT ES 033</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>150</ID>
+    <NAME>HPL ELEGANT ES 035</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>151</ID>
+    <NAME>HPL ELEGANT ES 036</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>152</ID>
+    <NAME>HPL ELEGANT ES 037</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>153</ID>
+    <NAME>HPL ELEGANT ES 038</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>147500</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>155</ID>
+    <NAME>HPL ELEGANT ES 039</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>156</ID>
+    <NAME>HPL ELEGANT ES 040</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>157</ID>
+    <NAME>HPL ELEGANT ES 047</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>158</ID>
+    <NAME>HPL ELEGANT ES 048</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>159</ID>
+    <NAME>HPL ELEGANT ES 049</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>160</ID>
+    <NAME>HPL ELEGANT ES 050</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>161</ID>
+    <NAME>HPL ELEGANT ES 051</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>162</ID>
+    <NAME>HPL ELEGANT ES 052</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>127500</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>163</ID>
+    <NAME>HPL ELEGANT ES 053</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>117500</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>154</ID>
+    <NAME>HPL ELEGANT ES 058</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>164</ID>
+    <NAME>HPL ELEGANT EW 001</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>165</ID>
+    <NAME>HPL ELEGANT EW 003</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>166</ID>
+    <NAME>HPL ELEGANT EW 006</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>167</ID>
+    <NAME>HPL ELEGANT EW 009</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>168</ID>
+    <NAME>HPL ELEGANT EW 018</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>169</ID>
+    <NAME>HPL ELEGANT EW 023</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>170</ID>
+    <NAME>HPL ELEGANT EW 026</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>171</ID>
+    <NAME>HPL ELEGANT EW 029</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>172</ID>
+    <NAME>HPL ELEGANT EW 030</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>173</ID>
+    <NAME>HPL ELEGANT EW 040</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>177</ID>
+    <NAME>HPL ELEGANT EW 040</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>174</ID>
+    <NAME>HPL ELEGANT EW 052</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>175</ID>
+    <NAME>HPL ELEGANT EW 083</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>176</ID>
+    <NAME>HPL ELEGANT EW 107</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>137500</GROSIR>
+    <PARTAI>140000</PARTAI>
+  </Table>
+  <Table>
+    <ID>178</ID>
+    <NAME>HPL ELEGANT EW 113</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>147500</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>13</ID>
+    <NAME>HPL VIOLAM VD 0018 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>3</ID>
+    <NAME>HPL VIOLAM VD 0018 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>11</ID>
+    <NAME>HPL VIOLAM VD 0019 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>30</ID>
+    <NAME>HPL VIOLAM VD 0027 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>66</ID>
+    <NAME>HPL VIOLAM VD 0201 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>15</ID>
+    <NAME>HPL VIOLAM VD 0210 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>34</ID>
+    <NAME>HPL VIOLAM VD 0326 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>35</ID>
+    <NAME>HPL VIOLAM VD 0327 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>36</ID>
+    <NAME>HPL VIOLAM VD 0349 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>40</ID>
+    <NAME>HPL VIOLAM VD 0350 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>49</ID>
+    <NAME>HPL VIOLAM VD 0351 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>50</ID>
+    <NAME>HPL VIOLAM VD 0352 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>63</ID>
+    <NAME>HPL VIOLAM VD 0376 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>64</ID>
+    <NAME>HPL VIOLAM VD 0378 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>48</ID>
+    <NAME>HPL VIOLAM VD 0391 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>47</ID>
+    <NAME>HPL VIOLAM VD 0395 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>14</ID>
+    <NAME>HPL VIOLAM VD 0407 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>22</ID>
+    <NAME>HPL VIOLAM VD 0507 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>21</ID>
+    <NAME>HPL VIOLAM VD 0508 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>4</ID>
+    <NAME>HPL VIOLAM VD 0603 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>45</ID>
+    <NAME>HPL VIOLAM VD 0612 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>28</ID>
+    <NAME>HPL VIOLAM VD 0662 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>51</ID>
+    <NAME>HPL VIOLAM VD 0747 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>52</ID>
+    <NAME>HPL VIOLAM VD 0748 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>38</ID>
+    <NAME>HPL VIOLAM VD 0775 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>53</ID>
+    <NAME>HPL VIOLAM VD 0779 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>54</ID>
+    <NAME>HPL VIOLAM VD 0780 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>5</ID>
+    <NAME>HPL VIOLAM VD 2022 S</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>182500</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>108</ID>
+    <NAME>HPL VIOLAM VS 0001 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>41</ID>
+    <NAME>HPL VIOLAM VS 0005 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>23</ID>
+    <NAME>HPL VIOLAM VS 0010 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>31</ID>
+    <NAME>HPL VIOLAM VS 0021 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>24</ID>
+    <NAME>HPL VIOLAM VS 0023 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>39</ID>
+    <NAME>HPL VIOLAM VS 0028 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>65</ID>
+    <NAME>HPL VIOLAM VS 0035 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>6</ID>
+    <NAME>HPL VIOLAM VS 0048 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>17</ID>
+    <NAME>HPL VIOLAM VS 0071 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>58</ID>
+    <NAME>HPL VIOLAM VS 0075 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>42</ID>
+    <NAME>HPL VIOLAM VS 0082 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>1</ID>
+    <NAME>HPL VIOLAM VS 0101 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>55</ID>
+    <NAME>HPL VIOLAM VS 0108 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>32</ID>
+    <NAME>HPL VIOLAM VS 0120 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>33</ID>
+    <NAME>HPL VIOLAM VS 0128 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>95</ID>
+    <NAME>HPL VIOLAM VS 0142 G</NAME>
+    <RETAIL>180000</RETAIL>
+    <GROSIR>172500</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>99</ID>
+    <NAME>HPL VIOLAM VS 0142 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>102</ID>
+    <NAME>HPL VIOLAM VS 0146 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>7</ID>
+    <NAME>HPL VIOLAM VS 0151 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>25</ID>
+    <NAME>HPL VIOLAM VS 0217 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>20</ID>
+    <NAME>HPL VIOLAM VS 0223 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>29</ID>
+    <NAME>HPL VIOLAM VS 0225 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>8</ID>
+    <NAME>HPL VIOLAM VS 0303 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>9</ID>
+    <NAME>HPL VIOLAM VS 0304 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>26</ID>
+    <NAME>HPL VIOLAM VS 0305 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>56</ID>
+    <NAME>HPL VIOLAM VS 0308 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>59</ID>
+    <NAME>HPL VIOLAM VS 0323 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>37</ID>
+    <NAME>HPL VIOLAM VS 0333 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>43</ID>
+    <NAME>HPL VIOLAM VS 0337 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>46</ID>
+    <NAME>HPL VIOLAM VS 0345 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>101</ID>
+    <NAME>HPL VIOLAM VS 0348 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>96</ID>
+    <NAME>HPL VIOLAM VS 0356 G</NAME>
+    <RETAIL>180000</RETAIL>
+    <GROSIR>172500</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>100</ID>
+    <NAME>HPL VIOLAM VS 0356 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>103</ID>
+    <NAME>HPL VIOLAM VS 0357 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>104</ID>
+    <NAME>HPL VIOLAM VS 0370 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>16</ID>
+    <NAME>HPL VIOLAM VS 0383 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>18</ID>
+    <NAME>HPL VIOLAM VS 0385 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>57</ID>
+    <NAME>HPL VIOLAM VS 0390 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>60</ID>
+    <NAME>HPL VIOLAM VS 0408 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>61</ID>
+    <NAME>HPL VIOLAM VS 0410 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>107</ID>
+    <NAME>HPL VIOLAM VS 0427 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>97</ID>
+    <NAME>HPL VIOLAM VS 0520 G</NAME>
+    <RETAIL>180000</RETAIL>
+    <GROSIR>172500</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>105</ID>
+    <NAME>HPL VIOLAM VS 0520 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>67</ID>
+    <NAME>HPL VIOLAM VS 0541 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>69</ID>
+    <NAME>HPL VIOLAM VS 0656 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>19</ID>
+    <NAME>HPL VIOLAM VS 0664 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>70</ID>
+    <NAME>HPL VIOLAM VS 0672 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>10</ID>
+    <NAME>HPL VIOLAM VS 0695 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>12</ID>
+    <NAME>HPL VIOLAM VS 0696 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>44</ID>
+    <NAME>HPL VIOLAM VS 0770 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>71</ID>
+    <NAME>HPL VIOLAM VS 0792 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>68</ID>
+    <NAME>HPL VIOLAM VS 0796 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>27</ID>
+    <NAME>HPL VIOLAM VS 0807 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>62</ID>
+    <NAME>HPL VIOLAM VS 0932 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>98</ID>
+    <NAME>HPL VIOLAM VS 1003 G</NAME>
+    <RETAIL>180000</RETAIL>
+    <GROSIR>172500</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>106</ID>
+    <NAME>HPL VIOLAM VS 1003 S</NAME>
+    <RETAIL>165000</RETAIL>
+    <GROSIR>157500</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>85</ID>
+    <NAME>HPL VIOLAM VT 0005 FP</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>91</ID>
+    <NAME>HPL VIOLAM VT 0010 GL</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>88</ID>
+    <NAME>HPL VIOLAM VT 0071 GL</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>2</ID>
+    <NAME>HPL VIOLAM VT 0075 FP</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>75</ID>
+    <NAME>HPL VIOLAM VT 0142 E11</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>72</ID>
+    <NAME>HPL VIOLAM VT 0142 E3</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>73</ID>
+    <NAME>HPL VIOLAM VT 0142 E5</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>74</ID>
+    <NAME>HPL VIOLAM VT 0142 E9</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>87</ID>
+    <NAME>HPL VIOLAM VT 0383 FP</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>90</ID>
+    <NAME>HPL VIOLAM VT 0407 GL</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>84</ID>
+    <NAME>HPL VIOLAM VT 0541 FP</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>83</ID>
+    <NAME>HPL VIOLAM VT 0572 E11</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>80</ID>
+    <NAME>HPL VIOLAM VT 0572 E3</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>81</ID>
+    <NAME>HPL VIOLAM VT 0572 E5</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>82</ID>
+    <NAME>HPL VIOLAM VT 0572 E9</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>86</ID>
+    <NAME>HPL VIOLAM VT 0664 FP</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>79</ID>
+    <NAME>HPL VIOLAM VT 1020 E11</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>76</ID>
+    <NAME>HPL VIOLAM VT 1020 E3</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>77</ID>
+    <NAME>HPL VIOLAM VT 1020 E5</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>78</ID>
+    <NAME>HPL VIOLAM VT 1020 E9</NAME>
+    <RETAIL>405000</RETAIL>
+    <GROSIR>397500</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>92</ID>
+    <NAME>HPL VIOLAM VT 6416 SL</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>94</ID>
+    <NAME>HPL VIOLAM VT 6420 SL</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>93</ID>
+    <NAME>HPL VIOLAM VT 6722 SL</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>89</ID>
+    <NAME>HPL VIOLAM VT 6725 GL</NAME>
+    <RETAIL>360000</RETAIL>
+    <GROSIR>352500</GROSIR>
+    <PARTAI>355000</PARTAI>
+  </Table>
+  <Table>
+    <ID>810</ID>
+    <NAME>HW - 80</NAME>
+    <RETAIL>440000</RETAIL>
+    <GROSIR>440000</GROSIR>
+    <PARTAI>440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>530</ID>
+    <NAME>ISI CUTTER</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>532</ID>
+    <NAME>ISI CUTTER AKRILIK</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>18000</GROSIR>
+    <PARTAI>18000</PARTAI>
+  </Table>
+  <Table>
+    <ID>790</ID>
+    <NAME>JUNIOR LIFT</NAME>
+    <RETAIL>400000</RETAIL>
+    <GROSIR>400000</GROSIR>
+    <PARTAI>400000</PARTAI>
+  </Table>
+  <Table>
+    <ID>873</ID>
+    <NAME>K - 70</NAME>
+    <RETAIL>1320000</RETAIL>
+    <GROSIR>1320000</GROSIR>
+    <PARTAI>1320000</PARTAI>
+  </Table>
+  <Table>
+    <ID>874</ID>
+    <NAME>K - 73</NAME>
+    <RETAIL>2125000</RETAIL>
+    <GROSIR>2125000</GROSIR>
+    <PARTAI>2125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>467</ID>
+    <NAME>KC ALBION 103-20 MM</NAME>
+    <RETAIL>12500</RETAIL>
+    <GROSIR>11000</GROSIR>
+    <PARTAI>11000</PARTAI>
+  </Table>
+  <Table>
+    <ID>468</ID>
+    <NAME>KC ALBION 103-30 MM</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>462</ID>
+    <NAME>KC HAFELE 138-2 CM</NAME>
+    <RETAIL>40000</RETAIL>
+    <GROSIR>37500</GROSIR>
+    <PARTAI>37500</PARTAI>
+  </Table>
+  <Table>
+    <ID>465</ID>
+    <NAME>KC KAFELE 103-25 MM</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>18500</GROSIR>
+    <PARTAI>18500</PARTAI>
+  </Table>
+  <Table>
+    <ID>466</ID>
+    <NAME>KC KAFELE 103-30 MM</NAME>
+    <RETAIL>21000</RETAIL>
+    <GROSIR>19500</GROSIR>
+    <PARTAI>19500</PARTAI>
+  </Table>
+  <Table>
+    <ID>463</ID>
+    <NAME>KC KAFELE 138-2 CM</NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>464</ID>
+    <NAME>KC KAFELE 138-3 CM</NAME>
+    <RETAIL>27500</RETAIL>
+    <GROSIR>26000</GROSIR>
+    <PARTAI>26000</PARTAI>
+  </Table>
+  <Table>
+    <ID>469</ID>
+    <NAME>KC KAFELE TUSUK 105</NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>971</ID>
+    <NAME>KCD - 1200</NAME>
+    <RETAIL>67500</RETAIL>
+    <GROSIR>67500</GROSIR>
+    <PARTAI>67500</PARTAI>
+  </Table>
+  <Table>
+    <ID>970</ID>
+    <NAME>KCD - 600</NAME>
+    <RETAIL>57500</RETAIL>
+    <GROSIR>57500</GROSIR>
+    <PARTAI>57500</PARTAI>
+  </Table>
+  <Table>
+    <ID>967</ID>
+    <NAME>KCL - 22</NAME>
+    <RETAIL>39000</RETAIL>
+    <GROSIR>39000</GROSIR>
+    <PARTAI>39000</PARTAI>
+  </Table>
+  <Table>
+    <ID>969</ID>
+    <NAME>KCS - 1200</NAME>
+    <RETAIL>65000</RETAIL>
+    <GROSIR>65000</GROSIR>
+    <PARTAI>65000</PARTAI>
+  </Table>
+  <Table>
+    <ID>968</ID>
+    <NAME>KCS - 600</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>55000</GROSIR>
+    <PARTAI>55000</PARTAI>
+  </Table>
+  <Table>
+    <ID>962</ID>
+    <NAME>KEK - 22</NAME>
+    <RETAIL>93500</RETAIL>
+    <GROSIR>93500</GROSIR>
+    <PARTAI>93500</PARTAI>
+  </Table>
+  <Table>
+    <ID>963</ID>
+    <NAME>KEK - 26</NAME>
+    <RETAIL>99000</RETAIL>
+    <GROSIR>99000</GROSIR>
+    <PARTAI>99000</PARTAI>
+  </Table>
+  <Table>
+    <ID>964</ID>
+    <NAME>KEK - 32</NAME>
+    <RETAIL>105000</RETAIL>
+    <GROSIR>105000</GROSIR>
+    <PARTAI>105000</PARTAI>
+  </Table>
+  <Table>
+    <ID>446</ID>
+    <NAME>KK SOFA O A096 10 CM</NAME>
+    <RETAIL>29000</RETAIL>
+    <GROSIR>28000</GROSIR>
+    <PARTAI>28500</PARTAI>
+  </Table>
+  <Table>
+    <ID>447</ID>
+    <NAME>KK SOFA O A096 12 CM</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>29000</GROSIR>
+    <PARTAI>29500</PARTAI>
+  </Table>
+  <Table>
+    <ID>448</ID>
+    <NAME>KK SOFA O A096 15 CM</NAME>
+    <RETAIL>32000</RETAIL>
+    <GROSIR>31000</GROSIR>
+    <PARTAI>31500</PARTAI>
+  </Table>
+  <Table>
+    <ID>449</ID>
+    <NAME>KK SOFA O A096 20 CM</NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>33000</GROSIR>
+    <PARTAI>33500</PARTAI>
+  </Table>
+  <Table>
+    <ID>444</ID>
+    <NAME>KK SOFA O A096 6 CM</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>26000</GROSIR>
+    <PARTAI>26500</PARTAI>
+  </Table>
+  <Table>
+    <ID>445</ID>
+    <NAME>KK SOFA O A096 8 CM</NAME>
+    <RETAIL>28000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27500</PARTAI>
+  </Table>
+  <Table>
+    <ID>434</ID>
+    <NAME>KK SOFA [] A111 10 CM</NAME>
+    <RETAIL>29000</RETAIL>
+    <GROSIR>28000</GROSIR>
+    <PARTAI>28500</PARTAI>
+  </Table>
+  <Table>
+    <ID>435</ID>
+    <NAME>KK SOFA [] A111 12CM</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>29000</GROSIR>
+    <PARTAI>29500</PARTAI>
+  </Table>
+  <Table>
+    <ID>436</ID>
+    <NAME>KK SOFA [] A111 15 CM</NAME>
+    <RETAIL>32000</RETAIL>
+    <GROSIR>31000</GROSIR>
+    <PARTAI>31500</PARTAI>
+  </Table>
+  <Table>
+    <ID>437</ID>
+    <NAME>KK SOFA [] A111 20 CM</NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>33000</GROSIR>
+    <PARTAI>33500</PARTAI>
+  </Table>
+  <Table>
+    <ID>432</ID>
+    <NAME>KK SOFA [] A111 6 CM</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>26000</GROSIR>
+    <PARTAI>26500</PARTAI>
+  </Table>
+  <Table>
+    <ID>433</ID>
+    <NAME>KK SOFA [] A111 8 CM</NAME>
+    <RETAIL>28000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27500</PARTAI>
+  </Table>
+  <Table>
+    <ID>440</ID>
+    <NAME>KK SOFA [] A112 10 CM</NAME>
+    <RETAIL>28000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27500</PARTAI>
+  </Table>
+  <Table>
+    <ID>441</ID>
+    <NAME>KK SOFA [] A112 12CM</NAME>
+    <RETAIL>29000</RETAIL>
+    <GROSIR>28000</GROSIR>
+    <PARTAI>28500</PARTAI>
+  </Table>
+  <Table>
+    <ID>442</ID>
+    <NAME>KK SOFA [] A112 15 CM</NAME>
+    <RETAIL>31000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30500</PARTAI>
+  </Table>
+  <Table>
+    <ID>443</ID>
+    <NAME>KK SOFA [] A112 20 CM</NAME>
+    <RETAIL>33000</RETAIL>
+    <GROSIR>32000</GROSIR>
+    <PARTAI>32500</PARTAI>
+  </Table>
+  <Table>
+    <ID>438</ID>
+    <NAME>KK SOFA [] A112 6 CM</NAME>
+    <RETAIL>26000</RETAIL>
+    <GROSIR>25000</GROSIR>
+    <PARTAI>25500</PARTAI>
+  </Table>
+  <Table>
+    <ID>439</ID>
+    <NAME>KK SOFA [] A112 8 CM</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>26000</GROSIR>
+    <PARTAI>26500</PARTAI>
+  </Table>
+  <Table>
+    <ID>956</ID>
+    <NAME>KLE - 22</NAME>
+    <RETAIL>11000</RETAIL>
+    <GROSIR>11000</GROSIR>
+    <PARTAI>11000</PARTAI>
+  </Table>
+  <Table>
+    <ID>957</ID>
+    <NAME>KLK - 22</NAME>
+    <RETAIL>35500</RETAIL>
+    <GROSIR>35500</GROSIR>
+    <PARTAI>35500</PARTAI>
+  </Table>
+  <Table>
+    <ID>958</ID>
+    <NAME>KLK - 26</NAME>
+    <RETAIL>37500</RETAIL>
+    <GROSIR>37500</GROSIR>
+    <PARTAI>37500</PARTAI>
+  </Table>
+  <Table>
+    <ID>959</ID>
+    <NAME>KLK - 32</NAME>
+    <RETAIL>44000</RETAIL>
+    <GROSIR>44000</GROSIR>
+    <PARTAI>44000</PARTAI>
+  </Table>
+  <Table>
+    <ID>777</ID>
+    <NAME>KM 20</NAME>
+    <RETAIL>70000</RETAIL>
+    <GROSIR>70000</GROSIR>
+    <PARTAI>70000</PARTAI>
+  </Table>
+  <Table>
+    <ID>778</ID>
+    <NAME>KM 30</NAME>
+    <RETAIL>85000</RETAIL>
+    <GROSIR>85000</GROSIR>
+    <PARTAI>85000</PARTAI>
+  </Table>
+  <Table>
+    <ID>779</ID>
+    <NAME>KM 40</NAME>
+    <RETAIL>100000</RETAIL>
+    <GROSIR>100000</GROSIR>
+    <PARTAI>100000</PARTAI>
+  </Table>
+  <Table>
+    <ID>780</ID>
+    <NAME>KM 50</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>960</ID>
+    <NAME>KMK</NAME>
+    <RETAIL>16500</RETAIL>
+    <GROSIR>16500</GROSIR>
+    <PARTAI>16500</PARTAI>
+  </Table>
+  <Table>
+    <ID>966</ID>
+    <NAME>KPL - 22</NAME>
+    <RETAIL>39000</RETAIL>
+    <GROSIR>39000</GROSIR>
+    <PARTAI>39000</PARTAI>
+  </Table>
+  <Table>
+    <ID>961</ID>
+    <NAME>KRK</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>965</ID>
+    <NAME>KRS - 22</NAME>
+    <RETAIL>40000</RETAIL>
+    <GROSIR>40000</GROSIR>
+    <PARTAI>40000</PARTAI>
+  </Table>
+  <Table>
+    <ID>392</ID>
+    <NAME>L JAMUR-06 ANODIZE</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>395</ID>
+    <NAME>L JAMUR-06 MIRROR</NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>34000</GROSIR>
+    <PARTAI>34000</PARTAI>
+  </Table>
+  <Table>
+    <ID>393</ID>
+    <NAME>L JAMUR-06 PASIR</NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>34000</GROSIR>
+    <PARTAI>34000</PARTAI>
+  </Table>
+  <Table>
+    <ID>394</ID>
+    <NAME>L JAMUR-06 SS</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>776</ID>
+    <NAME>LEM TL 100ML/BTL</NAME>
+    <RETAIL>280000</RETAIL>
+    <GROSIR>280000</GROSIR>
+    <PARTAI>280000</PARTAI>
+  </Table>
+  <Table>
+    <ID>775</ID>
+    <NAME>LEM TL 10ML/BTL</NAME>
+    <RETAIL>38000</RETAIL>
+    <GROSIR>38000</GROSIR>
+    <PARTAI>38000</PARTAI>
+  </Table>
+  <Table>
+    <ID>388</ID>
+    <NAME>LT-06 ANODIZE</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27000</PARTAI>
+  </Table>
+  <Table>
+    <ID>391</ID>
+    <NAME>LT-06 MIRROR</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>389</ID>
+    <NAME>LT-06 PASIR</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>390</ID>
+    <NAME>LT-06 SS</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27000</PARTAI>
+  </Table>
+  <Table>
+    <ID>396</ID>
+    <NAME>LT-08 ANODIZE</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>399</ID>
+    <NAME>LT-08 MIRROR</NAME>
+    <RETAIL>340000</RETAIL>
+    <GROSIR>340000</GROSIR>
+    <PARTAI>340000</PARTAI>
+  </Table>
+  <Table>
+    <ID>397</ID>
+    <NAME>LT-08 PASIR</NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>34000</GROSIR>
+    <PARTAI>34000</PARTAI>
+  </Table>
+  <Table>
+    <ID>398</ID>
+    <NAME>LT-08 SS</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>400</ID>
+    <NAME>LT-12 ANODIZE</NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>34000</GROSIR>
+    <PARTAI>34000</PARTAI>
+  </Table>
+  <Table>
+    <ID>403</ID>
+    <NAME>LT-12 MIRROR</NAME>
+    <RETAIL>39000</RETAIL>
+    <GROSIR>39000</GROSIR>
+    <PARTAI>39000</PARTAI>
+  </Table>
+  <Table>
+    <ID>401</ID>
+    <NAME>LT-12 PASIR</NAME>
+    <RETAIL>39000</RETAIL>
+    <GROSIR>39000</GROSIR>
+    <PARTAI>39000</PARTAI>
+  </Table>
+  <Table>
+    <ID>402</ID>
+    <NAME>LT-12 SS</NAME>
+    <RETAIL>34000</RETAIL>
+    <GROSIR>34000</GROSIR>
+    <PARTAI>34000</PARTAI>
+  </Table>
+  <Table>
+    <ID>782</ID>
+    <NAME>MAGNIT DOUBLE</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>783</ID>
+    <NAME>MAGNIT MP-33</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>781</ID>
+    <NAME>MAGNIT SINGLE</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>431</ID>
+    <NAME>MARKS ALM GREY</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>43500</GROSIR>
+    <PARTAI>44000</PARTAI>
+  </Table>
+  <Table>
+    <ID>429</ID>
+    <NAME>MARKS BLACK</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>43500</GROSIR>
+    <PARTAI>44000</PARTAI>
+  </Table>
+  <Table>
+    <ID>427</ID>
+    <NAME>MARKS CLEAR</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>43500</GROSIR>
+    <PARTAI>44000</PARTAI>
+  </Table>
+  <Table>
+    <ID>430</ID>
+    <NAME>MARKS LIGHT GREY</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>43500</GROSIR>
+    <PARTAI>44000</PARTAI>
+  </Table>
+  <Table>
+    <ID>428</ID>
+    <NAME>MARKS WHITE</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>43500</GROSIR>
+    <PARTAI>44000</PARTAI>
+  </Table>
+  <Table>
+    <ID>180</ID>
+    <NAME>MELAMIN 3MM DOFF KUNCI</NAME>
+    <RETAIL>105000</RETAIL>
+    <GROSIR>102000</GROSIR>
+    <PARTAI>104000</PARTAI>
+  </Table>
+  <Table>
+    <ID>179</ID>
+    <NAME>MELAMIN 3MM GLOSSY KUNCI</NAME>
+    <RETAIL>105000</RETAIL>
+    <GROSIR>102000</GROSIR>
+    <PARTAI>104000</PARTAI>
+  </Table>
+  <Table>
+    <ID>627</ID>
+    <NAME>MH 0</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>629</ID>
+    <NAME>MH 16</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>628</ID>
+    <NAME>MH 8</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>615</ID>
+    <NAME>MT 0</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>617</ID>
+    <NAME>MT 16</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>616</ID>
+    <NAME>MT 8</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>538</ID>
+    <NAME>MT BOR KAYU TCT 20MM</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>45000</GROSIR>
+    <PARTAI>45000</PARTAI>
+  </Table>
+  <Table>
+    <ID>539</ID>
+    <NAME>MT BOR KAYU TCT 22MM</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>45000</GROSIR>
+    <PARTAI>45000</PARTAI>
+  </Table>
+  <Table>
+    <ID>540</ID>
+    <NAME>MT BOR KAYU TCT 25MM</NAME>
+    <RETAIL>47000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>47000</PARTAI>
+  </Table>
+  <Table>
+    <ID>541</ID>
+    <NAME>MT BOR KAYU TCT 35MM</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>50000</GROSIR>
+    <PARTAI>50000</PARTAI>
+  </Table>
+  <Table>
+    <ID>542</ID>
+    <NAME>MT BOR KY KTK MERAH 20MM</NAME>
+    <RETAIL>23000</RETAIL>
+    <GROSIR>23000</GROSIR>
+    <PARTAI>23000</PARTAI>
+  </Table>
+  <Table>
+    <ID>543</ID>
+    <NAME>MT BOR KY KTK MERAH 22MM</NAME>
+    <RETAIL>23000</RETAIL>
+    <GROSIR>23000</GROSIR>
+    <PARTAI>23000</PARTAI>
+  </Table>
+  <Table>
+    <ID>544</ID>
+    <NAME>MT BOR KY KTK MERAH 25MM</NAME>
+    <RETAIL>24000</RETAIL>
+    <GROSIR>24000</GROSIR>
+    <PARTAI>24000</PARTAI>
+  </Table>
+  <Table>
+    <ID>545</ID>
+    <NAME>MT BOR KY KTK MERAH 35MM</NAME>
+    <RETAIL>25000</RETAIL>
+    <GROSIR>25000</GROSIR>
+    <PARTAI>25000</PARTAI>
+  </Table>
+  <Table>
+    <ID>877</ID>
+    <NAME>MU - 02</NAME>
+    <RETAIL>1512500</RETAIL>
+    <GROSIR>1512500</GROSIR>
+    <PARTAI>1512500</PARTAI>
+  </Table>
+  <Table>
+    <ID>878</ID>
+    <NAME>MU - 03</NAME>
+    <RETAIL>2178000</RETAIL>
+    <GROSIR>2178000</GROSIR>
+    <PARTAI>2178000</PARTAI>
+  </Table>
+  <Table>
+    <ID>454</ID>
+    <NAME>NEPLA F 10</NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>15500</GROSIR>
+    <PARTAI>15500</PARTAI>
+  </Table>
+  <Table>
+    <ID>455</ID>
+    <NAME>NEPLA F 15</NAME>
+    <RETAIL>18000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>456</ID>
+    <NAME>NEPLA F 20</NAME>
+    <RETAIL>21000</RETAIL>
+    <GROSIR>19000</GROSIR>
+    <PARTAI>19000</PARTAI>
+  </Table>
+  <Table>
+    <ID>457</ID>
+    <NAME>NEPLA F 25</NAME>
+    <RETAIL>24000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>458</ID>
+    <NAME>NEPLA F 30</NAME>
+    <RETAIL>28500</RETAIL>
+    <GROSIR>26500</GROSIR>
+    <PARTAI>26500</PARTAI>
+  </Table>
+  <Table>
+    <ID>787</ID>
+    <NAME>NYLON SOCKET 10</NAME>
+    <RETAIL>450</RETAIL>
+    <GROSIR>450</GROSIR>
+    <PARTAI>450</PARTAI>
+  </Table>
+  <Table>
+    <ID>788</ID>
+    <NAME>NYLON SOCKET 8</NAME>
+    <RETAIL>450</RETAIL>
+    <GROSIR>450</GROSIR>
+    <PARTAI>450</PARTAI>
+  </Table>
+  <Table>
+    <ID>890</ID>
+    <NAME>P - 15 GL</NAME>
+    <RETAIL>495000</RETAIL>
+    <GROSIR>495000</GROSIR>
+    <PARTAI>495000</PARTAI>
+  </Table>
+  <Table>
+    <ID>889</ID>
+    <NAME>P - 15 WD</NAME>
+    <RETAIL>440000</RETAIL>
+    <GROSIR>440000</GROSIR>
+    <PARTAI>440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>895</ID>
+    <NAME>P - 30 GL</NAME>
+    <RETAIL>693000</RETAIL>
+    <GROSIR>693000</GROSIR>
+    <PARTAI>693000</PARTAI>
+  </Table>
+  <Table>
+    <ID>894</ID>
+    <NAME>P - 30 WD</NAME>
+    <RETAIL>624000</RETAIL>
+    <GROSIR>624000</GROSIR>
+    <PARTAI>624000</PARTAI>
+  </Table>
+  <Table>
+    <ID>823</ID>
+    <NAME>P1 - 50E</NAME>
+    <RETAIL>9000000</RETAIL>
+    <GROSIR>9000000</GROSIR>
+    <PARTAI>9000000</PARTAI>
+  </Table>
+  <Table>
+    <ID>854</ID>
+    <NAME>P100 GL</NAME>
+    <RETAIL>1935000</RETAIL>
+    <GROSIR>1935000</GROSIR>
+    <PARTAI>1935000</PARTAI>
+  </Table>
+  <Table>
+    <ID>853</ID>
+    <NAME>P100 WD</NAME>
+    <RETAIL>1770000</RETAIL>
+    <GROSIR>1770000</GROSIR>
+    <PARTAI>1770000</PARTAI>
+  </Table>
+  <Table>
+    <ID>824</ID>
+    <NAME>P2 - 50E</NAME>
+    <RETAIL>22000000</RETAIL>
+    <GROSIR>22000000</GROSIR>
+    <PARTAI>22000000</PARTAI>
+  </Table>
+  <Table>
+    <ID>842</ID>
+    <NAME>P200 GL</NAME>
+    <RETAIL>2530000</RETAIL>
+    <GROSIR>2530000</GROSIR>
+    <PARTAI>2530000</PARTAI>
+  </Table>
+  <Table>
+    <ID>841</ID>
+    <NAME>P200 WD</NAME>
+    <RETAIL>2310000</RETAIL>
+    <GROSIR>2310000</GROSIR>
+    <PARTAI>2310000</PARTAI>
+  </Table>
+  <Table>
+    <ID>825</ID>
+    <NAME>P2SYN - 50E</NAME>
+    <RETAIL>11000000</RETAIL>
+    <GROSIR>11000000</GROSIR>
+    <PARTAI>11000000</PARTAI>
+  </Table>
+  <Table>
+    <ID>860</ID>
+    <NAME>P350 GL</NAME>
+    <RETAIL>3520000</RETAIL>
+    <GROSIR>3520000</GROSIR>
+    <PARTAI>3520000</PARTAI>
+  </Table>
+  <Table>
+    <ID>859</ID>
+    <NAME>P350 WD</NAME>
+    <RETAIL>3025000</RETAIL>
+    <GROSIR>3025000</GROSIR>
+    <PARTAI>3025000</PARTAI>
+  </Table>
+  <Table>
+    <ID>826</ID>
+    <NAME>P4SYN - 50E</NAME>
+    <RETAIL>22000000</RETAIL>
+    <GROSIR>22000000</GROSIR>
+    <PARTAI>22000000</PARTAI>
+  </Table>
+  <Table>
+    <ID>848</ID>
+    <NAME>P60 GL</NAME>
+    <RETAIL>825000</RETAIL>
+    <GROSIR>825000</GROSIR>
+    <PARTAI>825000</PARTAI>
+  </Table>
+  <Table>
+    <ID>847</ID>
+    <NAME>P60 WD</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>836</ID>
+    <NAME>P80 GL</NAME>
+    <RETAIL>990000</RETAIL>
+    <GROSIR>990000</GROSIR>
+    <PARTAI>990000</PARTAI>
+  </Table>
+  <Table>
+    <ID>835</ID>
+    <NAME>P80 WD</NAME>
+    <RETAIL>880000</RETAIL>
+    <GROSIR>880000</GROSIR>
+    <PARTAI>880000</PARTAI>
+  </Table>
+  <Table>
+    <ID>828</ID>
+    <NAME>P80E GL /SA</NAME>
+    <RETAIL>8525000</RETAIL>
+    <GROSIR>8525000</GROSIR>
+    <PARTAI>8525000</PARTAI>
+  </Table>
+  <Table>
+    <ID>827</ID>
+    <NAME>P80E WD /SA</NAME>
+    <RETAIL>7700000</RETAIL>
+    <GROSIR>7700000</GROSIR>
+    <PARTAI>7700000</PARTAI>
+  </Table>
+  <Table>
+    <ID>655</ID>
+    <NAME>PEN 16 x 100mm</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>646</ID>
+    <NAME>PEN 16 x 20mm</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>647</ID>
+    <NAME>PEN 16 x 25mm</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>648</ID>
+    <NAME>PEN 16 x 30mm</NAME>
+    <RETAIL>5500</RETAIL>
+    <GROSIR>5500</GROSIR>
+    <PARTAI>5500</PARTAI>
+  </Table>
+  <Table>
+    <ID>649</ID>
+    <NAME>PEN 16 x 40mm</NAME>
+    <RETAIL>5750</RETAIL>
+    <GROSIR>5750</GROSIR>
+    <PARTAI>5750</PARTAI>
+  </Table>
+  <Table>
+    <ID>650</ID>
+    <NAME>PEN 16 x 50mm</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>651</ID>
+    <NAME>PEN 16 x 60mm</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>652</ID>
+    <NAME>PEN 16 x 70mm</NAME>
+    <RETAIL>6250</RETAIL>
+    <GROSIR>6250</GROSIR>
+    <PARTAI>6250</PARTAI>
+  </Table>
+  <Table>
+    <ID>653</ID>
+    <NAME>PEN 16 x 80mm</NAME>
+    <RETAIL>6500</RETAIL>
+    <GROSIR>6500</GROSIR>
+    <PARTAI>6500</PARTAI>
+  </Table>
+  <Table>
+    <ID>654</ID>
+    <NAME>PEN 16 x 90mm</NAME>
+    <RETAIL>6750</RETAIL>
+    <GROSIR>6750</GROSIR>
+    <PARTAI>6750</PARTAI>
+  </Table>
+  <Table>
+    <ID>665</ID>
+    <NAME>PEN 19 x 100mm</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>656</ID>
+    <NAME>PEN 19 x 20mm</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>657</ID>
+    <NAME>PEN 19 x 25mm</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>658</ID>
+    <NAME>PEN 19 x 30mm</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>659</ID>
+    <NAME>PEN 19 x 40mm</NAME>
+    <RETAIL>6250</RETAIL>
+    <GROSIR>6250</GROSIR>
+    <PARTAI>6250</PARTAI>
+  </Table>
+  <Table>
+    <ID>660</ID>
+    <NAME>PEN 19 x 50mm</NAME>
+    <RETAIL>6250</RETAIL>
+    <GROSIR>6250</GROSIR>
+    <PARTAI>6250</PARTAI>
+  </Table>
+  <Table>
+    <ID>661</ID>
+    <NAME>PEN 19 x 60mm</NAME>
+    <RETAIL>6500</RETAIL>
+    <GROSIR>6500</GROSIR>
+    <PARTAI>6500</PARTAI>
+  </Table>
+  <Table>
+    <ID>662</ID>
+    <NAME>PEN 19 x 70mm</NAME>
+    <RETAIL>6750</RETAIL>
+    <GROSIR>6750</GROSIR>
+    <PARTAI>6750</PARTAI>
+  </Table>
+  <Table>
+    <ID>663</ID>
+    <NAME>PEN 19 x 80mm</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>664</ID>
+    <NAME>PEN 19 x 90mm</NAME>
+    <RETAIL>7250</RETAIL>
+    <GROSIR>7250</GROSIR>
+    <PARTAI>7250</PARTAI>
+  </Table>
+  <Table>
+    <ID>675</ID>
+    <NAME>PEN 22 x 100mm</NAME>
+    <RETAIL>8500</RETAIL>
+    <GROSIR>8500</GROSIR>
+    <PARTAI>8500</PARTAI>
+  </Table>
+  <Table>
+    <ID>666</ID>
+    <NAME>PEN 22 x 20mm</NAME>
+    <RETAIL>6500</RETAIL>
+    <GROSIR>6500</GROSIR>
+    <PARTAI>6500</PARTAI>
+  </Table>
+  <Table>
+    <ID>667</ID>
+    <NAME>PEN 22 x 25mm</NAME>
+    <RETAIL>6500</RETAIL>
+    <GROSIR>6500</GROSIR>
+    <PARTAI>6500</PARTAI>
+  </Table>
+  <Table>
+    <ID>668</ID>
+    <NAME>PEN 22 x 30mm</NAME>
+    <RETAIL>6500</RETAIL>
+    <GROSIR>6500</GROSIR>
+    <PARTAI>6500</PARTAI>
+  </Table>
+  <Table>
+    <ID>669</ID>
+    <NAME>PEN 22 x 40mm</NAME>
+    <RETAIL>6750</RETAIL>
+    <GROSIR>6750</GROSIR>
+    <PARTAI>6750</PARTAI>
+  </Table>
+  <Table>
+    <ID>670</ID>
+    <NAME>PEN 22 x 50mm</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>671</ID>
+    <NAME>PEN 22 x 60mm</NAME>
+    <RETAIL>7250</RETAIL>
+    <GROSIR>7250</GROSIR>
+    <PARTAI>7250</PARTAI>
+  </Table>
+  <Table>
+    <ID>672</ID>
+    <NAME>PEN 22 x 70mm</NAME>
+    <RETAIL>7500</RETAIL>
+    <GROSIR>7500</GROSIR>
+    <PARTAI>7500</PARTAI>
+  </Table>
+  <Table>
+    <ID>673</ID>
+    <NAME>PEN 22 x 80mm</NAME>
+    <RETAIL>7750</RETAIL>
+    <GROSIR>7750</GROSIR>
+    <PARTAI>7750</PARTAI>
+  </Table>
+  <Table>
+    <ID>674</ID>
+    <NAME>PEN 22 x 90mm</NAME>
+    <RETAIL>8250</RETAIL>
+    <GROSIR>8250</GROSIR>
+    <PARTAI>8250</PARTAI>
+  </Table>
+  <Table>
+    <ID>685</ID>
+    <NAME>PEN 25 x 100mm</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>676</ID>
+    <NAME>PEN 25 x 20mm</NAME>
+    <RETAIL>6750</RETAIL>
+    <GROSIR>6750</GROSIR>
+    <PARTAI>6750</PARTAI>
+  </Table>
+  <Table>
+    <ID>677</ID>
+    <NAME>PEN 25 x 25mm</NAME>
+    <RETAIL>6750</RETAIL>
+    <GROSIR>6750</GROSIR>
+    <PARTAI>6750</PARTAI>
+  </Table>
+  <Table>
+    <ID>678</ID>
+    <NAME>PEN 25 x 30mm</NAME>
+    <RETAIL>6750</RETAIL>
+    <GROSIR>6750</GROSIR>
+    <PARTAI>6750</PARTAI>
+  </Table>
+  <Table>
+    <ID>679</ID>
+    <NAME>PEN 25 x 40mm</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>680</ID>
+    <NAME>PEN 25 x 50mm</NAME>
+    <RETAIL>7250</RETAIL>
+    <GROSIR>7250</GROSIR>
+    <PARTAI>7250</PARTAI>
+  </Table>
+  <Table>
+    <ID>681</ID>
+    <NAME>PEN 25 x 60mm</NAME>
+    <RETAIL>7500</RETAIL>
+    <GROSIR>7500</GROSIR>
+    <PARTAI>7500</PARTAI>
+  </Table>
+  <Table>
+    <ID>682</ID>
+    <NAME>PEN 25 x 70mm</NAME>
+    <RETAIL>7750</RETAIL>
+    <GROSIR>7750</GROSIR>
+    <PARTAI>7750</PARTAI>
+  </Table>
+  <Table>
+    <ID>683</ID>
+    <NAME>PEN 25 x 80mm</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>684</ID>
+    <NAME>PEN 25 x 90mm</NAME>
+    <RETAIL>8500</RETAIL>
+    <GROSIR>8500</GROSIR>
+    <PARTAI>8500</PARTAI>
+  </Table>
+  <Table>
+    <ID>934</ID>
+    <NAME>PH - 001</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>558</ID>
+    <NAME>PIL KB 10MM</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>20000</GROSIR>
+    <PARTAI>20000</PARTAI>
+  </Table>
+  <Table>
+    <ID>559</ID>
+    <NAME>PIL KB 12MM</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>20000</GROSIR>
+    <PARTAI>20000</PARTAI>
+  </Table>
+  <Table>
+    <ID>557</ID>
+    <NAME>PIL KB 8MM</NAME>
+    <RETAIL>20000</RETAIL>
+    <GROSIR>20000</GROSIR>
+    <PARTAI>20000</PARTAI>
+  </Table>
+  <Table>
+    <ID>290</ID>
+    <NAME>PLAT STRIP 10 MM DOFF</NAME>
+    <RETAIL>37500</RETAIL>
+    <GROSIR>37500</GROSIR>
+    <PARTAI>37500</PARTAI>
+  </Table>
+  <Table>
+    <ID>291</ID>
+    <NAME>PLAT STRIP 10 MM KILAP</NAME>
+    <RETAIL>37500</RETAIL>
+    <GROSIR>37500</GROSIR>
+    <PARTAI>37500</PARTAI>
+  </Table>
+  <Table>
+    <ID>304</ID>
+    <NAME>PLAT STRIP 100 MM DOFF</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>305</ID>
+    <NAME>PLAT STRIP 100 MM KILAP</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>292</ID>
+    <NAME>PLAT STRIP 12 MM DOFF</NAME>
+    <RETAIL>40000</RETAIL>
+    <GROSIR>40000</GROSIR>
+    <PARTAI>40000</PARTAI>
+  </Table>
+  <Table>
+    <ID>293</ID>
+    <NAME>PLAT STRIP 12 MM KILAP</NAME>
+    <RETAIL>40000</RETAIL>
+    <GROSIR>40000</GROSIR>
+    <PARTAI>40000</PARTAI>
+  </Table>
+  <Table>
+    <ID>294</ID>
+    <NAME>PLAT STRIP 15 MM DOFF</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>45000</GROSIR>
+    <PARTAI>45000</PARTAI>
+  </Table>
+  <Table>
+    <ID>295</ID>
+    <NAME>PLAT STRIP 15 MM KILAP</NAME>
+    <RETAIL>45000</RETAIL>
+    <GROSIR>45000</GROSIR>
+    <PARTAI>45000</PARTAI>
+  </Table>
+  <Table>
+    <ID>296</ID>
+    <NAME>PLAT STRIP 20 MM DOFF</NAME>
+    <RETAIL>47500</RETAIL>
+    <GROSIR>47500</GROSIR>
+    <PARTAI>47500</PARTAI>
+  </Table>
+  <Table>
+    <ID>297</ID>
+    <NAME>PLAT STRIP 20 MM KILAP</NAME>
+    <RETAIL>47500</RETAIL>
+    <GROSIR>47500</GROSIR>
+    <PARTAI>47500</PARTAI>
+  </Table>
+  <Table>
+    <ID>298</ID>
+    <NAME>PLAT STRIP 25 MM DOFF</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>50000</GROSIR>
+    <PARTAI>50000</PARTAI>
+  </Table>
+  <Table>
+    <ID>299</ID>
+    <NAME>PLAT STRIP 25 MM KILAP</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>50000</GROSIR>
+    <PARTAI>50000</PARTAI>
+  </Table>
+  <Table>
+    <ID>300</ID>
+    <NAME>PLAT STRIP 30 MM DOFF</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>55000</GROSIR>
+    <PARTAI>55000</PARTAI>
+  </Table>
+  <Table>
+    <ID>301</ID>
+    <NAME>PLAT STRIP 30 MM KILAP</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>55000</GROSIR>
+    <PARTAI>55000</PARTAI>
+  </Table>
+  <Table>
+    <ID>302</ID>
+    <NAME>PLAT STRIP 50 MM DOFF</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>75000</GROSIR>
+    <PARTAI>75000</PARTAI>
+  </Table>
+  <Table>
+    <ID>303</ID>
+    <NAME>PLAT STRIP 50 MM KILAP</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>75000</GROSIR>
+    <PARTAI>75000</PARTAI>
+  </Table>
+  <Table>
+    <ID>288</ID>
+    <NAME>PLAT STRIP 8 MM DOFF</NAME>
+    <RETAIL>33500</RETAIL>
+    <GROSIR>33500</GROSIR>
+    <PARTAI>33500</PARTAI>
+  </Table>
+  <Table>
+    <ID>289</ID>
+    <NAME>PLAT STRIP 8 MM KILAP</NAME>
+    <RETAIL>33500</RETAIL>
+    <GROSIR>33500</GROSIR>
+    <PARTAI>33500</PARTAI>
+  </Table>
+  <Table>
+    <ID>936</ID>
+    <NAME>PRH - 01</NAME>
+    <RETAIL>49000</RETAIL>
+    <GROSIR>49000</GROSIR>
+    <PARTAI>49000</PARTAI>
+  </Table>
+  <Table>
+    <ID>937</ID>
+    <NAME>PRH - 02</NAME>
+    <RETAIL>51000</RETAIL>
+    <GROSIR>51000</GROSIR>
+    <PARTAI>51000</PARTAI>
+  </Table>
+  <Table>
+    <ID>938</ID>
+    <NAME>PRH - 03</NAME>
+    <RETAIL>53000</RETAIL>
+    <GROSIR>53000</GROSIR>
+    <PARTAI>53000</PARTAI>
+  </Table>
+  <Table>
+    <ID>185</ID>
+    <NAME>PRIMA D 14 KG</NAME>
+    <RETAIL>660000</RETAIL>
+    <GROSIR>658000</GROSIR>
+    <PARTAI>659000</PARTAI>
+  </Table>
+  <Table>
+    <ID>184</ID>
+    <NAME>PRIMA D 2,5 KG</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>148000</GROSIR>
+    <PARTAI>149000</PARTAI>
+  </Table>
+  <Table>
+    <ID>183</ID>
+    <NAME>PRIMA D 600 GR</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>48000</GROSIR>
+    <PARTAI>49000</PARTAI>
+  </Table>
+  <Table>
+    <ID>186</ID>
+    <NAME>PRIMA SPRAY</NAME>
+    <RETAIL>540000</RETAIL>
+    <GROSIR>538000</GROSIR>
+    <PARTAI>539000</PARTAI>
+  </Table>
+  <Table>
+    <ID>504</ID>
+    <NAME>PT 19 TIANG</NAME>
+    <RETAIL>18000</RETAIL>
+    <GROSIR>18000</GROSIR>
+    <PARTAI>18000</PARTAI>
+  </Table>
+  <Table>
+    <ID>505</ID>
+    <NAME>PT 25 TIANG</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>931</ID>
+    <NAME>PTO - 01</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27000</PARTAI>
+  </Table>
+  <Table>
+    <ID>932</ID>
+    <NAME>PTO - 02</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>933</ID>
+    <NAME>PTO - 03</NAME>
+    <RETAIL>31000</RETAIL>
+    <GROSIR>31000</GROSIR>
+    <PARTAI>31000</PARTAI>
+  </Table>
+  <Table>
+    <ID>506</ID>
+    <NAME>PU 19 TIANG</NAME>
+    <RETAIL>18000</RETAIL>
+    <GROSIR>18000</GROSIR>
+    <PARTAI>18000</PARTAI>
+  </Table>
+  <Table>
+    <ID>507</ID>
+    <NAME>PU 25 TIANG</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>785</ID>
+    <NAME>PUSH DOUBLE</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>784</ID>
+    <NAME>PUSH SINGLE</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>579</ID>
+    <NAME>RAK BTL 2 SSN</NAME>
+    <RETAIL>70000</RETAIL>
+    <GROSIR>70000</GROSIR>
+    <PARTAI>70000</PARTAI>
+  </Table>
+  <Table>
+    <ID>580</ID>
+    <NAME>RAK BTL 3 SSN</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>690</ID>
+    <NAME>RAK PR 1000 MM</NAME>
+    <RETAIL>250000</RETAIL>
+    <GROSIR>250000</GROSIR>
+    <PARTAI>250000</PARTAI>
+  </Table>
+  <Table>
+    <ID>581</ID>
+    <NAME>RAK PR 2 SSN</NAME>
+    <RETAIL>70000</RETAIL>
+    <GROSIR>70000</GROSIR>
+    <PARTAI>70000</PARTAI>
+  </Table>
+  <Table>
+    <ID>582</ID>
+    <NAME>RAK PR 2 SSN + TATAKAN</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>583</ID>
+    <NAME>RAK PR 3 SSN</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>584</ID>
+    <NAME>RAK PR 3 SSN + TATAKAN</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>686</ID>
+    <NAME>RAK PR 600 MM</NAME>
+    <RETAIL>170000</RETAIL>
+    <GROSIR>170000</GROSIR>
+    <PARTAI>170000</PARTAI>
+  </Table>
+  <Table>
+    <ID>687</ID>
+    <NAME>RAK PR 700 MM</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>190000</GROSIR>
+    <PARTAI>190000</PARTAI>
+  </Table>
+  <Table>
+    <ID>688</ID>
+    <NAME>RAK PR 800 MM</NAME>
+    <RETAIL>210000</RETAIL>
+    <GROSIR>210000</GROSIR>
+    <PARTAI>210000</PARTAI>
+  </Table>
+  <Table>
+    <ID>689</ID>
+    <NAME>RAK PR 900 MM</NAME>
+    <RETAIL>230000</RETAIL>
+    <GROSIR>230000</GROSIR>
+    <PARTAI>230000</PARTAI>
+  </Table>
+  <Table>
+    <ID>585</ID>
+    <NAME>RAK PR P60L</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>55000</GROSIR>
+    <PARTAI>55000</PARTAI>
+  </Table>
+  <Table>
+    <ID>586</ID>
+    <NAME>RAK PR P60L + TATAKAN</NAME>
+    <RETAIL>70000</RETAIL>
+    <GROSIR>70000</GROSIR>
+    <PARTAI>70000</PARTAI>
+  </Table>
+  <Table>
+    <ID>587</ID>
+    <NAME>RAK PR P90L</NAME>
+    <RETAIL>80000</RETAIL>
+    <GROSIR>80000</GROSIR>
+    <PARTAI>80000</PARTAI>
+  </Table>
+  <Table>
+    <ID>588</ID>
+    <NAME>RAK PR P90L + TATAKAN</NAME>
+    <RETAIL>130000</RETAIL>
+    <GROSIR>130000</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>935</ID>
+    <NAME>RBD - 01</NAME>
+    <RETAIL>44000</RETAIL>
+    <GROSIR>44000</GROSIR>
+    <PARTAI>44000</PARTAI>
+  </Table>
+  <Table>
+    <ID>755</ID>
+    <NAME>REL M COKLAT</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>753</ID>
+    <NAME>REL M SILVER</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>551</ID>
+    <NAME>REL PT SLID 777 - A3</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>125000</GROSIR>
+    <PARTAI>125000</PARTAI>
+  </Table>
+  <Table>
+    <ID>552</ID>
+    <NAME>REL PT SLID 777 - A4</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>553</ID>
+    <NAME>REL PT SLID 777 - A5</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>548</ID>
+    <NAME>REL PT SLID MULLER J3</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>550</ID>
+    <NAME>REL PT SLID MULLER J4</NAME>
+    <RETAIL>205000</RETAIL>
+    <GROSIR>205000</GROSIR>
+    <PARTAI>205000</PARTAI>
+  </Table>
+  <Table>
+    <ID>549</ID>
+    <NAME>REL PT SLID MULLER J4</NAME>
+    <RETAIL>195000</RETAIL>
+    <GROSIR>195000</GROSIR>
+    <PARTAI>195000</PARTAI>
+  </Table>
+  <Table>
+    <ID>746</ID>
+    <NAME>REL SD AS999 AB 2MTR</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>275000</GROSIR>
+    <PARTAI>275000</PARTAI>
+  </Table>
+  <Table>
+    <ID>747</ID>
+    <NAME>REL SD AS999 AB 3MTR</NAME>
+    <RETAIL>325000</RETAIL>
+    <GROSIR>325000</GROSIR>
+    <PARTAI>325000</PARTAI>
+  </Table>
+  <Table>
+    <ID>754</ID>
+    <NAME>REL U COKLAT</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>757</ID>
+    <NAME>REL U M COKLAT</NAME>
+    <RETAIL>42000</RETAIL>
+    <GROSIR>42000</GROSIR>
+    <PARTAI>42000</PARTAI>
+  </Table>
+  <Table>
+    <ID>756</ID>
+    <NAME>REL U M SILVER</NAME>
+    <RETAIL>42000</RETAIL>
+    <GROSIR>42000</GROSIR>
+    <PARTAI>42000</PARTAI>
+  </Table>
+  <Table>
+    <ID>752</ID>
+    <NAME>REL U SILVER</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>749</ID>
+    <NAME>RG 77 (PINTU KE 3)</NAME>
+    <RETAIL>85000</RETAIL>
+    <GROSIR>85000</GROSIR>
+    <PARTAI>85000</PARTAI>
+  </Table>
+  <Table>
+    <ID>748</ID>
+    <NAME>RG 99 (2 PINTU)</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>481</ID>
+    <NAME>RH 13</NAME>
+    <RETAIL>1200</RETAIL>
+    <GROSIR>1200</GROSIR>
+    <PARTAI>1200</PARTAI>
+  </Table>
+  <Table>
+    <ID>482</ID>
+    <NAME>RH 21</NAME>
+    <RETAIL>1000</RETAIL>
+    <GROSIR>1000</GROSIR>
+    <PARTAI>1000</PARTAI>
+  </Table>
+  <Table>
+    <ID>554</ID>
+    <NAME>RODA 280 CHR</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>75000</GROSIR>
+    <PARTAI>75000</PARTAI>
+  </Table>
+  <Table>
+    <ID>497</ID>
+    <NAME>SARINGAN 0 NYLON CREAM</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>496</ID>
+    <NAME>SARINGAN O COKLAT</NAME>
+    <RETAIL>1500</RETAIL>
+    <GROSIR>1500</GROSIR>
+    <PARTAI>1500</PARTAI>
+  </Table>
+  <Table>
+    <ID>495</ID>
+    <NAME>SARINGAN O PUTIH</NAME>
+    <RETAIL>1500</RETAIL>
+    <GROSIR>1500</GROSIR>
+    <PARTAI>1500</PARTAI>
+  </Table>
+  <Table>
+    <ID>490</ID>
+    <NAME>SARINGAN []  L SILVER</NAME>
+    <RETAIL>13000</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>492</ID>
+    <NAME>SARINGAN []  PLS COKLAT</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>4500</GROSIR>
+    <PARTAI>4500</PARTAI>
+  </Table>
+  <Table>
+    <ID>494</ID>
+    <NAME>SARINGAN []  PLS CREAM</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>4500</GROSIR>
+    <PARTAI>4500</PARTAI>
+  </Table>
+  <Table>
+    <ID>493</ID>
+    <NAME>SARINGAN []  PLS PUTIH</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>4500</GROSIR>
+    <PARTAI>4500</PARTAI>
+  </Table>
+  <Table>
+    <ID>491</ID>
+    <NAME>SARINGAN [] L STANLESS</NAME>
+    <RETAIL>17000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>808</ID>
+    <NAME>SCD - 040</NAME>
+    <RETAIL>97000</RETAIL>
+    <GROSIR>97000</GROSIR>
+    <PARTAI>97000</PARTAI>
+  </Table>
+  <Table>
+    <ID>928</ID>
+    <NAME>SCH - 01 LURUS</NAME>
+    <RETAIL>38000</RETAIL>
+    <GROSIR>38000</GROSIR>
+    <PARTAI>38000</PARTAI>
+  </Table>
+  <Table>
+    <ID>929</ID>
+    <NAME>SCH - 02  1/2 TEKUK</NAME>
+    <RETAIL>39000</RETAIL>
+    <GROSIR>39000</GROSIR>
+    <PARTAI>39000</PARTAI>
+  </Table>
+  <Table>
+    <ID>930</ID>
+    <NAME>SCH - 03 FULL TEKUK</NAME>
+    <RETAIL>40000</RETAIL>
+    <GROSIR>40000</GROSIR>
+    <PARTAI>40000</PARTAI>
+  </Table>
+  <Table>
+    <ID>942</ID>
+    <NAME>SCHB - 01</NAME>
+    <RETAIL>52000</RETAIL>
+    <GROSIR>52000</GROSIR>
+    <PARTAI>52000</PARTAI>
+  </Table>
+  <Table>
+    <ID>943</ID>
+    <NAME>SCHB - 02</NAME>
+    <RETAIL>54000</RETAIL>
+    <GROSIR>54000</GROSIR>
+    <PARTAI>54000</PARTAI>
+  </Table>
+  <Table>
+    <ID>944</ID>
+    <NAME>SCHB - 03</NAME>
+    <RETAIL>56000</RETAIL>
+    <GROSIR>56000</GROSIR>
+    <PARTAI>56000</PARTAI>
+  </Table>
+  <Table>
+    <ID>947</ID>
+    <NAME>SCHE 01</NAME>
+    <RETAIL>28000</RETAIL>
+    <GROSIR>28000</GROSIR>
+    <PARTAI>28000</PARTAI>
+  </Table>
+  <Table>
+    <ID>948</ID>
+    <NAME>SCHE 02</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>949</ID>
+    <NAME>SCHE 03</NAME>
+    <RETAIL>32000</RETAIL>
+    <GROSIR>32000</GROSIR>
+    <PARTAI>32000</PARTAI>
+  </Table>
+  <Table>
+    <ID>869</ID>
+    <NAME>SD - 001</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>870</ID>
+    <NAME>SD - 003</NAME>
+    <RETAIL>825000</RETAIL>
+    <GROSIR>825000</GROSIR>
+    <PARTAI>825000</PARTAI>
+  </Table>
+  <Table>
+    <ID>885</ID>
+    <NAME>SD - 022</NAME>
+    <RETAIL>517000</RETAIL>
+    <GROSIR>517000</GROSIR>
+    <PARTAI>517000</PARTAI>
+  </Table>
+  <Table>
+    <ID>886</ID>
+    <NAME>SD - 023</NAME>
+    <RETAIL>770000</RETAIL>
+    <GROSIR>770000</GROSIR>
+    <PARTAI>770000</PARTAI>
+  </Table>
+  <Table>
+    <ID>865</ID>
+    <NAME>SD - 032A</NAME>
+    <RETAIL>368500</RETAIL>
+    <GROSIR>368500</GROSIR>
+    <PARTAI>368500</PARTAI>
+  </Table>
+  <Table>
+    <ID>866</ID>
+    <NAME>SD - 033A</NAME>
+    <RETAIL>588500</RETAIL>
+    <GROSIR>588500</GROSIR>
+    <PARTAI>588500</PARTAI>
+  </Table>
+  <Table>
+    <ID>881</ID>
+    <NAME>SD - 050</NAME>
+    <RETAIL>1171500</RETAIL>
+    <GROSIR>1171500</GROSIR>
+    <PARTAI>1171500</PARTAI>
+  </Table>
+  <Table>
+    <ID>882</ID>
+    <NAME>SD - 053</NAME>
+    <RETAIL>1760000</RETAIL>
+    <GROSIR>1760000</GROSIR>
+    <PARTAI>1760000</PARTAI>
+  </Table>
+  <Table>
+    <ID>742</ID>
+    <NAME>SD 12</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>745</ID>
+    <NAME>SD 3141</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>743</ID>
+    <NAME>SD 338</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>741</ID>
+    <NAME>SD 380</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>744</ID>
+    <NAME>SD 388 KTK MERAH</NAME>
+    <RETAIL>23000</RETAIL>
+    <GROSIR>23000</GROSIR>
+    <PARTAI>23000</PARTAI>
+  </Table>
+  <Table>
+    <ID>740</ID>
+    <NAME>SD 75 </NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>829</ID>
+    <NAME>SE - 40</NAME>
+    <RETAIL>440000</RETAIL>
+    <GROSIR>440000</GROSIR>
+    <PARTAI>440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>830</ID>
+    <NAME>SE - 40GL</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>590</ID>
+    <NAME>SEKAT LACI BESAR</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>75000</GROSIR>
+    <PARTAI>75000</PARTAI>
+  </Table>
+  <Table>
+    <ID>589</ID>
+    <NAME>SEKAT LACI KECIL</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>55000</GROSIR>
+    <PARTAI>55000</PARTAI>
+  </Table>
+  <Table>
+    <ID>261</ID>
+    <NAME>SHEET 1028 Z</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>259</ID>
+    <NAME>SHEET 1878 </NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>258</ID>
+    <NAME>SHEET 2221 B</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>260</ID>
+    <NAME>SHEET 351 L</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>257</ID>
+    <NAME>SHEET 593 B</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>227</ID>
+    <NAME>SHEET BARK WOOD</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>220</ID>
+    <NAME>SHEET BLACK OAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>229</ID>
+    <NAME>SHEET BROWN PINE</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>222</ID>
+    <NAME>SHEET BROWN WOODCUT</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>217</ID>
+    <NAME>SHEET BUSAN CHEERY</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>231</ID>
+    <NAME>SHEET CAPITAL</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>211</ID>
+    <NAME>SHEET CENTURY OAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>228</ID>
+    <NAME>SHEET COOL TEAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>224</ID>
+    <NAME>SHEET DAEGU CANE</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>208</ID>
+    <NAME>SHEET DARK BROWN</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>212</ID>
+    <NAME>SHEET DARK OAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>223</ID>
+    <NAME>SHEET DARK WENGE</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>225</ID>
+    <NAME>SHEET ENTERNAL CANE</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>219</ID>
+    <NAME>SHEET ESPRESSO OAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>210</ID>
+    <NAME>SHEET FANCY PINE</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>235</ID>
+    <NAME>SHEET JEJU WALNUT</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>214</ID>
+    <NAME>SHEET NATURAL TEAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>236</ID>
+    <NAME>SHEET PY 001 PT</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>237</ID>
+    <NAME>SHEET PY 003 PT</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>238</ID>
+    <NAME>SHEET PY 004 PT</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>239</ID>
+    <NAME>SHEET PY 008 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>240</ID>
+    <NAME>SHEET PY 009 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>241</ID>
+    <NAME>SHEET PY 010 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>242</ID>
+    <NAME>SHEET PY 011 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>243</ID>
+    <NAME>SHEET PY 012 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>244</ID>
+    <NAME>SHEET PY 013 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>245</ID>
+    <NAME>SHEET PY 014 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>246</ID>
+    <NAME>SHEET PY 015 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>247</ID>
+    <NAME>SHEET PY 017 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>248</ID>
+    <NAME>SHEET PY 018 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>249</ID>
+    <NAME>SHEET PY 022 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>250</ID>
+    <NAME>SHEET PY 023 T</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>251</ID>
+    <NAME>SHEET PY 026 G </NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>252</ID>
+    <NAME>SHEET PY 027 G</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>253</ID>
+    <NAME>SHEET PY 030 G</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>254</ID>
+    <NAME>SHEET PY 031 G</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>255</ID>
+    <NAME>SHEET PY 032 G</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>256</ID>
+    <NAME>SHEET PY 033 G</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>233</ID>
+    <NAME>SHEET ROYAL OAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>218</ID>
+    <NAME>SHEET ROYAL WALNUT</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>232</ID>
+    <NAME>SHEET RUSTIC TEAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>234</ID>
+    <NAME>SHEET SILVER </NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>226</ID>
+    <NAME>SHEET SILVER CANE</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>213</ID>
+    <NAME>SHEET SILVER TEAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>221</ID>
+    <NAME>SHEET URBAN TEAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>230</ID>
+    <NAME>SHEET WHITE NANO GLOSSY</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>216</ID>
+    <NAME>SHEET WHITE OAK</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>209</ID>
+    <NAME>SHEET YOKO PINE</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>513</ID>
+    <NAME>SIKU  L TAJAMAN VERSENG</NAME>
+    <RETAIL>1000</RETAIL>
+    <GROSIR>750</GROSIR>
+    <PARTAI>750</PARTAI>
+  </Table>
+  <Table>
+    <ID>792</ID>
+    <NAME>SIKU FRAME AH-21</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>791</ID>
+    <NAME>SIKU FRAME AH-45</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>266</ID>
+    <NAME>SIKU L  8 MM DOFF</NAME>
+    <RETAIL>35000</RETAIL>
+    <GROSIR>35000</GROSIR>
+    <PARTAI>35000</PARTAI>
+  </Table>
+  <Table>
+    <ID>268</ID>
+    <NAME>SIKU L 10MM DOFF</NAME>
+    <RETAIL>37500</RETAIL>
+    <GROSIR>37500</GROSIR>
+    <PARTAI>37500</PARTAI>
+  </Table>
+  <Table>
+    <ID>269</ID>
+    <NAME>SIKU L 10MM KILAP</NAME>
+    <RETAIL>37500</RETAIL>
+    <GROSIR>37500</GROSIR>
+    <PARTAI>37500</PARTAI>
+  </Table>
+  <Table>
+    <ID>270</ID>
+    <NAME>SIKU L 12MM DOFF</NAME>
+    <RETAIL>42500</RETAIL>
+    <GROSIR>42500</GROSIR>
+    <PARTAI>42500</PARTAI>
+  </Table>
+  <Table>
+    <ID>271</ID>
+    <NAME>SIKU L 12MM KILAP</NAME>
+    <RETAIL>42500</RETAIL>
+    <GROSIR>42500</GROSIR>
+    <PARTAI>42500</PARTAI>
+  </Table>
+  <Table>
+    <ID>272</ID>
+    <NAME>SIKU L 15MM DOFF</NAME>
+    <RETAIL>52500</RETAIL>
+    <GROSIR>52500</GROSIR>
+    <PARTAI>52500</PARTAI>
+  </Table>
+  <Table>
+    <ID>273</ID>
+    <NAME>SIKU L 15MM KILAP</NAME>
+    <RETAIL>52500</RETAIL>
+    <GROSIR>52500</GROSIR>
+    <PARTAI>52500</PARTAI>
+  </Table>
+  <Table>
+    <ID>516</ID>
+    <NAME>SIKU L 2 1/2 X 2 1/2 X 5 CM</NAME>
+    <RETAIL>3000</RETAIL>
+    <GROSIR>2500</GROSIR>
+    <PARTAI>2500</PARTAI>
+  </Table>
+  <Table>
+    <ID>517</ID>
+    <NAME>SIKU L 2 1/2 X 2 1/2 X 6 CM</NAME>
+    <RETAIL>3000</RETAIL>
+    <GROSIR>2500</GROSIR>
+    <PARTAI>2500</PARTAI>
+  </Table>
+  <Table>
+    <ID>515</ID>
+    <NAME>SIKU L 2 X 3 VERSENG</NAME>
+    <RETAIL>2500</RETAIL>
+    <GROSIR>2000</GROSIR>
+    <PARTAI>2000</PARTAI>
+  </Table>
+  <Table>
+    <ID>274</ID>
+    <NAME>SIKU L 20MM DOFF</NAME>
+    <RETAIL>72500</RETAIL>
+    <GROSIR>72500</GROSIR>
+    <PARTAI>72500</PARTAI>
+  </Table>
+  <Table>
+    <ID>275</ID>
+    <NAME>SIKU L 20MM KILAP</NAME>
+    <RETAIL>72500</RETAIL>
+    <GROSIR>72500</GROSIR>
+    <PARTAI>72500</PARTAI>
+  </Table>
+  <Table>
+    <ID>276</ID>
+    <NAME>SIKU L 25MM DOFF</NAME>
+    <RETAIL>87500</RETAIL>
+    <GROSIR>87500</GROSIR>
+    <PARTAI>87500</PARTAI>
+  </Table>
+  <Table>
+    <ID>277</ID>
+    <NAME>SIKU L 25MM KILAP</NAME>
+    <RETAIL>87500</RETAIL>
+    <GROSIR>87500</GROSIR>
+    <PARTAI>87500</PARTAI>
+  </Table>
+  <Table>
+    <ID>267</ID>
+    <NAME>SIKU L 8 MM KILAP</NAME>
+    <RETAIL>35000</RETAIL>
+    <GROSIR>35000</GROSIR>
+    <PARTAI>35000</PARTAI>
+  </Table>
+  <Table>
+    <ID>514</ID>
+    <NAME>SIKU L HAFELE CHROME</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>13000</GROSIR>
+    <PARTAI>13000</PARTAI>
+  </Table>
+  <Table>
+    <ID>522</ID>
+    <NAME>SIKU L VERSENG POLOS 10CM</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>518</ID>
+    <NAME>SIKU L VERSENG POLOS 4CM</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>519</ID>
+    <NAME>SIKU L VERSENG POLOS 5CM</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>520</ID>
+    <NAME>SIKU L VERSENG POLOS 6CM</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>521</ID>
+    <NAME>SIKU L VERSENG POLOS 8CM</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>793</ID>
+    <NAME>SIKU SA-19</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>758</ID>
+    <NAME>SK 10MM CHR</NAME>
+    <RETAIL>3500</RETAIL>
+    <GROSIR>3500</GROSIR>
+    <PARTAI>3500</PARTAI>
+  </Table>
+  <Table>
+    <ID>759</ID>
+    <NAME>SK 12MM CHR</NAME>
+    <RETAIL>3750</RETAIL>
+    <GROSIR>3750</GROSIR>
+    <PARTAI>3750</PARTAI>
+  </Table>
+  <Table>
+    <ID>760</ID>
+    <NAME>SK 14MM CHR</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>761</ID>
+    <NAME>SK 16MM CHR</NAME>
+    <RETAIL>4250</RETAIL>
+    <GROSIR>4250</GROSIR>
+    <PARTAI>4250</PARTAI>
+  </Table>
+  <Table>
+    <ID>763</ID>
+    <NAME>SK 16MM SS</NAME>
+    <RETAIL>3500</RETAIL>
+    <GROSIR>3500</GROSIR>
+    <PARTAI>3500</PARTAI>
+  </Table>
+  <Table>
+    <ID>762</ID>
+    <NAME>SK 18MM CHR</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>764</ID>
+    <NAME>SK 19MM SS</NAME>
+    <RETAIL>3750</RETAIL>
+    <GROSIR>3750</GROSIR>
+    <PARTAI>3750</PARTAI>
+  </Table>
+  <Table>
+    <ID>765</ID>
+    <NAME>SK 22MM SS</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>766</ID>
+    <NAME>SK 25MM SS</NAME>
+    <RETAIL>4250</RETAIL>
+    <GROSIR>4250</GROSIR>
+    <PARTAI>4250</PARTAI>
+  </Table>
+  <Table>
+    <ID>767</ID>
+    <NAME>SK 30MM SS</NAME>
+    <RETAIL>4500</RETAIL>
+    <GROSIR>4500</GROSIR>
+    <PARTAI>4500</PARTAI>
+  </Table>
+  <Table>
+    <ID>768</ID>
+    <NAME>SK 40MM SS</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>5000</GROSIR>
+    <PARTAI>5000</PARTAI>
+  </Table>
+  <Table>
+    <ID>769</ID>
+    <NAME>SK 50MM SS</NAME>
+    <RETAIL>5750</RETAIL>
+    <GROSIR>5750</GROSIR>
+    <PARTAI>5750</PARTAI>
+  </Table>
+  <Table>
+    <ID>624</ID>
+    <NAME>SM-M2 0</NAME>
+    <RETAIL>16000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>626</ID>
+    <NAME>SM-M2 16</NAME>
+    <RETAIL>16000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>625</ID>
+    <NAME>SM-M2 8</NAME>
+    <RETAIL>16000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>527</ID>
+    <NAME>SOLASI KERTAS</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>425</ID>
+    <NAME>ST BAMBU</NAME>
+    <RETAIL>80000</RETAIL>
+    <GROSIR>77000</GROSIR>
+    <PARTAI>78000</PARTAI>
+  </Table>
+  <Table>
+    <ID>424</ID>
+    <NAME>ST BUNGA 100</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>52000</GROSIR>
+    <PARTAI>53000</PARTAI>
+  </Table>
+  <Table>
+    <ID>426</ID>
+    <NAME>ST KOTAK GLITTER</NAME>
+    <RETAIL>80000</RETAIL>
+    <GROSIR>77000</GROSIR>
+    <PARTAI>78000</PARTAI>
+  </Table>
+  <Table>
+    <ID>421</ID>
+    <NAME>ST ONE WAY</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>117000</GROSIR>
+    <PARTAI>118000</PARTAI>
+  </Table>
+  <Table>
+    <ID>422</ID>
+    <NAME>ST PUTIH SUSU 110</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>52000</GROSIR>
+    <PARTAI>53000</PARTAI>
+  </Table>
+  <Table>
+    <ID>423</ID>
+    <NAME>ST PUTIH SUSU 155</NAME>
+    <RETAIL>100000</RETAIL>
+    <GROSIR>97000</GROSIR>
+    <PARTAI>98000</PARTAI>
+  </Table>
+  <Table>
+    <ID>459</ID>
+    <NAME>STAPLES 1008 J</NAME>
+    <RETAIL>18000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16500</PARTAI>
+  </Table>
+  <Table>
+    <ID>460</ID>
+    <NAME>STAPLES 1013 J</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>21000</GROSIR>
+    <PARTAI>21500</PARTAI>
+  </Table>
+  <Table>
+    <ID>461</ID>
+    <NAME>STAPLES 1016 J</NAME>
+    <RETAIL>24000</RETAIL>
+    <GROSIR>23000</GROSIR>
+    <PARTAI>23500</PARTAI>
+  </Table>
+  <Table>
+    <ID>450</ID>
+    <NAME>STRONGMAN F 15</NAME>
+    <RETAIL>23500</RETAIL>
+    <GROSIR>21500</GROSIR>
+    <PARTAI>21500</PARTAI>
+  </Table>
+  <Table>
+    <ID>451</ID>
+    <NAME>STRONGMAN F 20</NAME>
+    <RETAIL>26000</RETAIL>
+    <GROSIR>24000</GROSIR>
+    <PARTAI>24000</PARTAI>
+  </Table>
+  <Table>
+    <ID>452</ID>
+    <NAME>STRONGMAN F 25</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>28000</GROSIR>
+    <PARTAI>28000</PARTAI>
+  </Table>
+  <Table>
+    <ID>453</ID>
+    <NAME>STRONGMAN F 30</NAME>
+    <RETAIL>33500</RETAIL>
+    <GROSIR>31500</GROSIR>
+    <PARTAI>31500</PARTAI>
+  </Table>
+  <Table>
+    <ID>813</ID>
+    <NAME>SYN - 02</NAME>
+    <RETAIL>2585000</RETAIL>
+    <GROSIR>2585000</GROSIR>
+    <PARTAI>2585000</PARTAI>
+  </Table>
+  <Table>
+    <ID>814</ID>
+    <NAME>SYN - 03</NAME>
+    <RETAIL>2940000</RETAIL>
+    <GROSIR>2940000</GROSIR>
+    <PARTAI>2940000</PARTAI>
+  </Table>
+  <Table>
+    <ID>871</ID>
+    <NAME>TA - 2.5 mtr</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>887</ID>
+    <NAME>TA - 225</NAME>
+    <RETAIL>517000</RETAIL>
+    <GROSIR>517000</GROSIR>
+    <PARTAI>517000</PARTAI>
+  </Table>
+  <Table>
+    <ID>888</ID>
+    <NAME>TA - 235</NAME>
+    <RETAIL>720500</RETAIL>
+    <GROSIR>720500</GROSIR>
+    <PARTAI>720500</PARTAI>
+  </Table>
+  <Table>
+    <ID>872</ID>
+    <NAME>TA - 3.5 mtr</NAME>
+    <RETAIL>770000</RETAIL>
+    <GROSIR>770000</GROSIR>
+    <PARTAI>770000</PARTAI>
+  </Table>
+  <Table>
+    <ID>867</ID>
+    <NAME>TA - 325</NAME>
+    <RETAIL>429000</RETAIL>
+    <GROSIR>429000</GROSIR>
+    <PARTAI>429000</PARTAI>
+  </Table>
+  <Table>
+    <ID>868</ID>
+    <NAME>TA - 335</NAME>
+    <RETAIL>596500</RETAIL>
+    <GROSIR>596500</GROSIR>
+    <PARTAI>596500</PARTAI>
+  </Table>
+  <Table>
+    <ID>883</ID>
+    <NAME>TA - 525</NAME>
+    <RETAIL>660000</RETAIL>
+    <GROSIR>660000</GROSIR>
+    <PARTAI>660000</PARTAI>
+  </Table>
+  <Table>
+    <ID>884</ID>
+    <NAME>TA - 535</NAME>
+    <RETAIL>935000</RETAIL>
+    <GROSIR>935000</GROSIR>
+    <PARTAI>935000</PARTAI>
+  </Table>
+  <Table>
+    <ID>875</ID>
+    <NAME>TA - 725</NAME>
+    <RETAIL>733000</RETAIL>
+    <GROSIR>733000</GROSIR>
+    <PARTAI>733000</PARTAI>
+  </Table>
+  <Table>
+    <ID>876</ID>
+    <NAME>TA - 735</NAME>
+    <RETAIL>1030000</RETAIL>
+    <GROSIR>1030000</GROSIR>
+    <PARTAI>1030000</PARTAI>
+  </Table>
+  <Table>
+    <ID>705</ID>
+    <NAME>TA 09 - 128</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>706</ID>
+    <NAME>TA 09 - 160</NAME>
+    <RETAIL>10500</RETAIL>
+    <GROSIR>10500</GROSIR>
+    <PARTAI>10500</PARTAI>
+  </Table>
+  <Table>
+    <ID>707</ID>
+    <NAME>TA 09 - 192</NAME>
+    <RETAIL>11500</RETAIL>
+    <GROSIR>11500</GROSIR>
+    <PARTAI>11500</PARTAI>
+  </Table>
+  <Table>
+    <ID>703</ID>
+    <NAME>TA 09 - 64</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>704</ID>
+    <NAME>TA 09 - 96</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>719</ID>
+    <NAME>TA 16 - 128</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>13500</GROSIR>
+    <PARTAI>13500</PARTAI>
+  </Table>
+  <Table>
+    <ID>720</ID>
+    <NAME>TA 16 - 160</NAME>
+    <RETAIL>14000</RETAIL>
+    <GROSIR>14000</GROSIR>
+    <PARTAI>14000</PARTAI>
+  </Table>
+  <Table>
+    <ID>721</ID>
+    <NAME>TA 16 - 192</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>718</ID>
+    <NAME>TA 16 - 96</NAME>
+    <RETAIL>13000</RETAIL>
+    <GROSIR>13000</GROSIR>
+    <PARTAI>13000</PARTAI>
+  </Table>
+  <Table>
+    <ID>731</ID>
+    <NAME>TA 19 - 128</NAME>
+    <RETAIL>15500</RETAIL>
+    <GROSIR>15500</GROSIR>
+    <PARTAI>15500</PARTAI>
+  </Table>
+  <Table>
+    <ID>732</ID>
+    <NAME>TA 19 - 160</NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>17500</GROSIR>
+    <PARTAI>17500</PARTAI>
+  </Table>
+  <Table>
+    <ID>730</ID>
+    <NAME>TA 19 - 96</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>13500</GROSIR>
+    <PARTAI>13500</PARTAI>
+  </Table>
+  <Table>
+    <ID>710</ID>
+    <NAME>TA 20 - 128</NAME>
+    <RETAIL>10500</RETAIL>
+    <GROSIR>10500</GROSIR>
+    <PARTAI>10500</PARTAI>
+  </Table>
+  <Table>
+    <ID>711</ID>
+    <NAME>TA 20 - 160</NAME>
+    <RETAIL>12000</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>712</ID>
+    <NAME>TA 20 - 192</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>13500</GROSIR>
+    <PARTAI>13500</PARTAI>
+  </Table>
+  <Table>
+    <ID>708</ID>
+    <NAME>TA 20 - 64</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>709</ID>
+    <NAME>TA 20 - 96</NAME>
+    <RETAIL>9000</RETAIL>
+    <GROSIR>9000</GROSIR>
+    <PARTAI>9000</PARTAI>
+  </Table>
+  <Table>
+    <ID>737</ID>
+    <NAME>TA 41 - 128</NAME>
+    <RETAIL>17500</RETAIL>
+    <GROSIR>17500</GROSIR>
+    <PARTAI>17500</PARTAI>
+  </Table>
+  <Table>
+    <ID>738</ID>
+    <NAME>TA 41 - 160</NAME>
+    <RETAIL>21000</RETAIL>
+    <GROSIR>21000</GROSIR>
+    <PARTAI>21000</PARTAI>
+  </Table>
+  <Table>
+    <ID>736</ID>
+    <NAME>TA 41 - 64</NAME>
+    <RETAIL>16000</RETAIL>
+    <GROSIR>16000</GROSIR>
+    <PARTAI>16000</PARTAI>
+  </Table>
+  <Table>
+    <ID>714</ID>
+    <NAME>TA 43 - 128</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>715</ID>
+    <NAME>TA 43 - 160</NAME>
+    <RETAIL>18500</RETAIL>
+    <GROSIR>18500</GROSIR>
+    <PARTAI>18500</PARTAI>
+  </Table>
+  <Table>
+    <ID>716</ID>
+    <NAME>TA 43 - 192</NAME>
+    <RETAIL>22000</RETAIL>
+    <GROSIR>22000</GROSIR>
+    <PARTAI>22000</PARTAI>
+  </Table>
+  <Table>
+    <ID>717</ID>
+    <NAME>TA 43 - 256</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27000</PARTAI>
+  </Table>
+  <Table>
+    <ID>713</ID>
+    <NAME>TA 43 - 96</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>13500</GROSIR>
+    <PARTAI>13500</PARTAI>
+  </Table>
+  <Table>
+    <ID>420</ID>
+    <NAME>TAKI KOTAK BS</NAME>
+    <RETAIL>57500</RETAIL>
+    <GROSIR>54500</GROSIR>
+    <PARTAI>55500</PARTAI>
+  </Table>
+  <Table>
+    <ID>419</ID>
+    <NAME>TAKI KOTAK KC</NAME>
+    <RETAIL>55000</RETAIL>
+    <GROSIR>52000</GROSIR>
+    <PARTAI>53000</PARTAI>
+  </Table>
+  <Table>
+    <ID>418</ID>
+    <NAME>TAKI POLOS</NAME>
+    <RETAIL>50000</RETAIL>
+    <GROSIR>47000</GROSIR>
+    <PARTAI>48000</PARTAI>
+  </Table>
+  <Table>
+    <ID>591</ID>
+    <NAME>TD 26 SM - 30 CM</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>75000</GROSIR>
+    <PARTAI>75000</PARTAI>
+  </Table>
+  <Table>
+    <ID>592</ID>
+    <NAME>TD 26 SM - 35 CM</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>593</ID>
+    <NAME>TD 26 SM - 40 CM</NAME>
+    <RETAIL>85000</RETAIL>
+    <GROSIR>85000</GROSIR>
+    <PARTAI>85000</PARTAI>
+  </Table>
+  <Table>
+    <ID>594</ID>
+    <NAME>TD 26 SM - 45 CM</NAME>
+    <RETAIL>90000</RETAIL>
+    <GROSIR>90000</GROSIR>
+    <PARTAI>90000</PARTAI>
+  </Table>
+  <Table>
+    <ID>595</ID>
+    <NAME>TD 26 SM - 50 CM</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>596</ID>
+    <NAME>TD 28 PO - 30 CM</NAME>
+    <RETAIL>75000</RETAIL>
+    <GROSIR>75000</GROSIR>
+    <PARTAI>75000</PARTAI>
+  </Table>
+  <Table>
+    <ID>597</ID>
+    <NAME>TD 28 PO - 35 CM</NAME>
+    <RETAIL>8000</RETAIL>
+    <GROSIR>8000</GROSIR>
+    <PARTAI>8000</PARTAI>
+  </Table>
+  <Table>
+    <ID>598</ID>
+    <NAME>TD 28 PO - 40 CM</NAME>
+    <RETAIL>85000</RETAIL>
+    <GROSIR>85000</GROSIR>
+    <PARTAI>85000</PARTAI>
+  </Table>
+  <Table>
+    <ID>599</ID>
+    <NAME>TD 28 PO - 45 CM</NAME>
+    <RETAIL>90000</RETAIL>
+    <GROSIR>90000</GROSIR>
+    <PARTAI>90000</PARTAI>
+  </Table>
+  <Table>
+    <ID>600</ID>
+    <NAME>TD 28 PO - 50 CM</NAME>
+    <RETAIL>95000</RETAIL>
+    <GROSIR>95000</GROSIR>
+    <PARTAI>95000</PARTAI>
+  </Table>
+  <Table>
+    <ID>811</ID>
+    <NAME>THW - 025</NAME>
+    <RETAIL>440000</RETAIL>
+    <GROSIR>440000</GROSIR>
+    <PARTAI>440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>812</ID>
+    <NAME>THW - 035</NAME>
+    <RETAIL>590000</RETAIL>
+    <GROSIR>590000</GROSIR>
+    <PARTAI>590000</PARTAI>
+  </Table>
+  <Table>
+    <ID>770</ID>
+    <NAME>TL 30 x 10mm</NAME>
+    <RETAIL>6000</RETAIL>
+    <GROSIR>6000</GROSIR>
+    <PARTAI>6000</PARTAI>
+  </Table>
+  <Table>
+    <ID>771</ID>
+    <NAME>TL 40 x 10mm</NAME>
+    <RETAIL>7000</RETAIL>
+    <GROSIR>7000</GROSIR>
+    <PARTAI>7000</PARTAI>
+  </Table>
+  <Table>
+    <ID>772</ID>
+    <NAME>TL 50 x 10mm</NAME>
+    <RETAIL>8500</RETAIL>
+    <GROSIR>8500</GROSIR>
+    <PARTAI>8500</PARTAI>
+  </Table>
+  <Table>
+    <ID>773</ID>
+    <NAME>TL 60 x 10mm</NAME>
+    <RETAIL>10500</RETAIL>
+    <GROSIR>10500</GROSIR>
+    <PARTAI>10500</PARTAI>
+  </Table>
+  <Table>
+    <ID>774</ID>
+    <NAME>TL 70 x 10mm</NAME>
+    <RETAIL>13500</RETAIL>
+    <GROSIR>13500</GROSIR>
+    <PARTAI>13500</PARTAI>
+  </Table>
+  <Table>
+    <ID>817</ID>
+    <NAME>TLS - 02GL</NAME>
+    <RETAIL>3025000</RETAIL>
+    <GROSIR>3025000</GROSIR>
+    <PARTAI>3025000</PARTAI>
+  </Table>
+  <Table>
+    <ID>815</ID>
+    <NAME>TLS - 02W</NAME>
+    <RETAIL>2585000</RETAIL>
+    <GROSIR>2585000</GROSIR>
+    <PARTAI>2585000</PARTAI>
+  </Table>
+  <Table>
+    <ID>818</ID>
+    <NAME>TLS - 03GL</NAME>
+    <RETAIL>4015000</RETAIL>
+    <GROSIR>4015000</GROSIR>
+    <PARTAI>4015000</PARTAI>
+  </Table>
+  <Table>
+    <ID>816</ID>
+    <NAME>TLS - 03W</NAME>
+    <RETAIL>3475000</RETAIL>
+    <GROSIR>3475000</GROSIR>
+    <PARTAI>3475000</PARTAI>
+  </Table>
+  <Table>
+    <ID>819</ID>
+    <NAME>TLS - A2500</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>849</ID>
+    <NAME>TLS - A2500</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>820</ID>
+    <NAME>TLS - A3500</NAME>
+    <RETAIL>770000</RETAIL>
+    <GROSIR>770000</GROSIR>
+    <PARTAI>770000</PARTAI>
+  </Table>
+  <Table>
+    <ID>850</ID>
+    <NAME>TLS - A3500</NAME>
+    <RETAIL>770000</RETAIL>
+    <GROSIR>770000</GROSIR>
+    <PARTAI>770000</PARTAI>
+  </Table>
+  <Table>
+    <ID>821</ID>
+    <NAME>TLS - B2500</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>275000</GROSIR>
+    <PARTAI>275000</PARTAI>
+  </Table>
+  <Table>
+    <ID>851</ID>
+    <NAME>TLS - B2500</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>275000</GROSIR>
+    <PARTAI>275000</PARTAI>
+  </Table>
+  <Table>
+    <ID>822</ID>
+    <NAME>TLS - B3500</NAME>
+    <RETAIL>385000</RETAIL>
+    <GROSIR>385000</GROSIR>
+    <PARTAI>385000</PARTAI>
+  </Table>
+  <Table>
+    <ID>852</ID>
+    <NAME>TLS - B3500</NAME>
+    <RETAIL>385000</RETAIL>
+    <GROSIR>385000</GROSIR>
+    <PARTAI>385000</PARTAI>
+  </Table>
+  <Table>
+    <ID>879</ID>
+    <NAME>TMU - 025</NAME>
+    <RETAIL>660000</RETAIL>
+    <GROSIR>660000</GROSIR>
+    <PARTAI>660000</PARTAI>
+  </Table>
+  <Table>
+    <ID>880</ID>
+    <NAME>TMU - 035</NAME>
+    <RETAIL>935000</RETAIL>
+    <GROSIR>935000</GROSIR>
+    <PARTAI>935000</PARTAI>
+  </Table>
+  <Table>
+    <ID>807</ID>
+    <NAME>TP - 025</NAME>
+    <RETAIL>37500</RETAIL>
+    <GROSIR>37500</GROSIR>
+    <PARTAI>37500</PARTAI>
+  </Table>
+  <Table>
+    <ID>893</ID>
+    <NAME>TP 15 - 020B</NAME>
+    <RETAIL>27000</RETAIL>
+    <GROSIR>27000</GROSIR>
+    <PARTAI>27000</PARTAI>
+  </Table>
+  <Table>
+    <ID>855</ID>
+    <NAME>TP100 - A2500</NAME>
+    <RETAIL>1440000</RETAIL>
+    <GROSIR>1440000</GROSIR>
+    <PARTAI>1440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>856</ID>
+    <NAME>TP100 - A3500</NAME>
+    <RETAIL>1588500</RETAIL>
+    <GROSIR>1588500</GROSIR>
+    <PARTAI>1588500</PARTAI>
+  </Table>
+  <Table>
+    <ID>857</ID>
+    <NAME>TP100 - B2500</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>275000</GROSIR>
+    <PARTAI>275000</PARTAI>
+  </Table>
+  <Table>
+    <ID>858</ID>
+    <NAME>TP100 - B3500</NAME>
+    <RETAIL>385000</RETAIL>
+    <GROSIR>385000</GROSIR>
+    <PARTAI>385000</PARTAI>
+  </Table>
+  <Table>
+    <ID>843</ID>
+    <NAME>TP200 - A2500</NAME>
+    <RETAIL>2475000</RETAIL>
+    <GROSIR>2475000</GROSIR>
+    <PARTAI>2475000</PARTAI>
+  </Table>
+  <Table>
+    <ID>844</ID>
+    <NAME>TP200 - A3500</NAME>
+    <RETAIL>3850000</RETAIL>
+    <GROSIR>3850000</GROSIR>
+    <PARTAI>3850000</PARTAI>
+  </Table>
+  <Table>
+    <ID>845</ID>
+    <NAME>TP200 - B2500</NAME>
+    <RETAIL>440000</RETAIL>
+    <GROSIR>440000</GROSIR>
+    <PARTAI>440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>846</ID>
+    <NAME>TP200 - B3500</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>861</ID>
+    <NAME>TP350 - A2500</NAME>
+    <RETAIL>2475000</RETAIL>
+    <GROSIR>2475000</GROSIR>
+    <PARTAI>2475000</PARTAI>
+  </Table>
+  <Table>
+    <ID>862</ID>
+    <NAME>TP350 - A3500</NAME>
+    <RETAIL>3850000</RETAIL>
+    <GROSIR>3850000</GROSIR>
+    <PARTAI>3850000</PARTAI>
+  </Table>
+  <Table>
+    <ID>863</ID>
+    <NAME>TP350 - B2500</NAME>
+    <RETAIL>440000</RETAIL>
+    <GROSIR>440000</GROSIR>
+    <PARTAI>440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>864</ID>
+    <NAME>TP350 - B3500</NAME>
+    <RETAIL>595000</RETAIL>
+    <GROSIR>595000</GROSIR>
+    <PARTAI>595000</PARTAI>
+  </Table>
+  <Table>
+    <ID>723</ID>
+    <NAME>TPA 10 - 128</NAME>
+    <RETAIL>12000</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>724</ID>
+    <NAME>TPA 10 - 160</NAME>
+    <RETAIL>13000</RETAIL>
+    <GROSIR>13000</GROSIR>
+    <PARTAI>13000</PARTAI>
+  </Table>
+  <Table>
+    <ID>725</ID>
+    <NAME>TPA 10 - 192</NAME>
+    <RETAIL>14000</RETAIL>
+    <GROSIR>14000</GROSIR>
+    <PARTAI>14000</PARTAI>
+  </Table>
+  <Table>
+    <ID>722</ID>
+    <NAME>TPA 10 - 96</NAME>
+    <RETAIL>11000</RETAIL>
+    <GROSIR>11000</GROSIR>
+    <PARTAI>11000</PARTAI>
+  </Table>
+  <Table>
+    <ID>727</ID>
+    <NAME>TPA 12 - 128</NAME>
+    <RETAIL>13000</RETAIL>
+    <GROSIR>13000</GROSIR>
+    <PARTAI>13000</PARTAI>
+  </Table>
+  <Table>
+    <ID>728</ID>
+    <NAME>TPA 12 - 160</NAME>
+    <RETAIL>14000</RETAIL>
+    <GROSIR>14000</GROSIR>
+    <PARTAI>14000</PARTAI>
+  </Table>
+  <Table>
+    <ID>729</ID>
+    <NAME>TPA 12 - 192</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>726</ID>
+    <NAME>TPA 12 - 96</NAME>
+    <RETAIL>12000</RETAIL>
+    <GROSIR>12000</GROSIR>
+    <PARTAI>12000</PARTAI>
+  </Table>
+  <Table>
+    <ID>735</ID>
+    <NAME>TPA 39 - 128</NAME>
+    <RETAIL>15000</RETAIL>
+    <GROSIR>15000</GROSIR>
+    <PARTAI>15000</PARTAI>
+  </Table>
+  <Table>
+    <ID>733</ID>
+    <NAME>TPA 39 - 64</NAME>
+    <RETAIL>11000</RETAIL>
+    <GROSIR>11000</GROSIR>
+    <PARTAI>11000</PARTAI>
+  </Table>
+  <Table>
+    <ID>734</ID>
+    <NAME>TPA 39 - 96</NAME>
+    <RETAIL>13000</RETAIL>
+    <GROSIR>13000</GROSIR>
+    <PARTAI>13000</PARTAI>
+  </Table>
+  <Table>
+    <ID>892</ID>
+    <NAME>TPD 15 - 020A</NAME>
+    <RETAIL>132000</RETAIL>
+    <GROSIR>132000</GROSIR>
+    <PARTAI>132000</PARTAI>
+  </Table>
+  <Table>
+    <ID>837</ID>
+    <NAME>TPS - A2500</NAME>
+    <RETAIL>1440000</RETAIL>
+    <GROSIR>1440000</GROSIR>
+    <PARTAI>1440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>838</ID>
+    <NAME>TPS - A3500</NAME>
+    <RETAIL>1588500</RETAIL>
+    <GROSIR>1588500</GROSIR>
+    <PARTAI>1588500</PARTAI>
+  </Table>
+  <Table>
+    <ID>839</ID>
+    <NAME>TPS - B2500</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>275000</GROSIR>
+    <PARTAI>275000</PARTAI>
+  </Table>
+  <Table>
+    <ID>840</ID>
+    <NAME>TPS - B3500</NAME>
+    <RETAIL>385000</RETAIL>
+    <GROSIR>385000</GROSIR>
+    <PARTAI>385000</PARTAI>
+  </Table>
+  <Table>
+    <ID>891</ID>
+    <NAME>TPS 15 - 020A</NAME>
+    <RETAIL>104500</RETAIL>
+    <GROSIR>104500</GROSIR>
+    <PARTAI>104500</PARTAI>
+  </Table>
+  <Table>
+    <ID>896</ID>
+    <NAME>TPS 30 - 020AB</NAME>
+    <RETAIL>126500</RETAIL>
+    <GROSIR>126500</GROSIR>
+    <PARTAI>126500</PARTAI>
+  </Table>
+  <Table>
+    <ID>897</ID>
+    <NAME>TPS 30 - 025AB</NAME>
+    <RETAIL>154000</RETAIL>
+    <GROSIR>154000</GROSIR>
+    <PARTAI>154000</PARTAI>
+  </Table>
+  <Table>
+    <ID>795</ID>
+    <NAME>TRAPES</NAME>
+    <RETAIL>2500</RETAIL>
+    <GROSIR>2500</GROSIR>
+    <PARTAI>2500</PARTAI>
+  </Table>
+  <Table>
+    <ID>197</ID>
+    <NAME>TRIPLEK 12MM M</NAME>
+    <RETAIL>190000</RETAIL>
+    <GROSIR>187000</GROSIR>
+    <PARTAI>188000</PARTAI>
+  </Table>
+  <Table>
+    <ID>196</ID>
+    <NAME>TRIPLEK 12MM SM</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>152000</GROSIR>
+    <PARTAI>153000</PARTAI>
+  </Table>
+  <Table>
+    <ID>199</ID>
+    <NAME>TRIPLEK 15MM M</NAME>
+    <RETAIL>230000</RETAIL>
+    <GROSIR>227000</GROSIR>
+    <PARTAI>228000</PARTAI>
+  </Table>
+  <Table>
+    <ID>198</ID>
+    <NAME>TRIPLEK 15MM SM</NAME>
+    <RETAIL>195000</RETAIL>
+    <GROSIR>192000</GROSIR>
+    <PARTAI>193000</PARTAI>
+  </Table>
+  <Table>
+    <ID>201</ID>
+    <NAME>TRIPLEK 18MM M</NAME>
+    <RETAIL>260000</RETAIL>
+    <GROSIR>257000</GROSIR>
+    <PARTAI>258000</PARTAI>
+  </Table>
+  <Table>
+    <ID>200</ID>
+    <NAME>TRIPLEK 18MM SM</NAME>
+    <RETAIL>220000</RETAIL>
+    <GROSIR>217000</GROSIR>
+    <PARTAI>218000</PARTAI>
+  </Table>
+  <Table>
+    <ID>190</ID>
+    <NAME>TRIPLEK 3MM SM</NAME>
+    <RETAIL>60000</RETAIL>
+    <GROSIR>57000</GROSIR>
+    <PARTAI>58000</PARTAI>
+  </Table>
+  <Table>
+    <ID>191</ID>
+    <NAME>TRIPLEK 4MM SM</NAME>
+    <RETAIL>70000</RETAIL>
+    <GROSIR>67000</GROSIR>
+    <PARTAI>68000</PARTAI>
+  </Table>
+  <Table>
+    <ID>192</ID>
+    <NAME>TRIPLEK 6MM SM</NAME>
+    <RETAIL>85000</RETAIL>
+    <GROSIR>82000</GROSIR>
+    <PARTAI>83000</PARTAI>
+  </Table>
+  <Table>
+    <ID>193</ID>
+    <NAME>TRIPLEK 8MM SM</NAME>
+    <RETAIL>100000</RETAIL>
+    <GROSIR>97000</GROSIR>
+    <PARTAI>98000</PARTAI>
+  </Table>
+  <Table>
+    <ID>195</ID>
+    <NAME>TRIPLEK 9MM M</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>152000</GROSIR>
+    <PARTAI>153000</PARTAI>
+  </Table>
+  <Table>
+    <ID>194</ID>
+    <NAME>TRIPLEK 9MM SM</NAME>
+    <RETAIL>125000</RETAIL>
+    <GROSIR>122000</GROSIR>
+    <PARTAI>123000</PARTAI>
+  </Table>
+  <Table>
+    <ID>831</ID>
+    <NAME>TSE - 025</NAME>
+    <RETAIL>440000</RETAIL>
+    <GROSIR>440000</GROSIR>
+    <PARTAI>440000</PARTAI>
+  </Table>
+  <Table>
+    <ID>832</ID>
+    <NAME>TSE - 035</NAME>
+    <RETAIL>550000</RETAIL>
+    <GROSIR>550000</GROSIR>
+    <PARTAI>550000</PARTAI>
+  </Table>
+  <Table>
+    <ID>910</ID>
+    <NAME>TSMF - 30</NAME>
+    <RETAIL>145000</RETAIL>
+    <GROSIR>145000</GROSIR>
+    <PARTAI>145000</PARTAI>
+  </Table>
+  <Table>
+    <ID>911</ID>
+    <NAME>TSMF - 35</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>912</ID>
+    <NAME>TSMF - 40</NAME>
+    <RETAIL>155000</RETAIL>
+    <GROSIR>155000</GROSIR>
+    <PARTAI>155000</PARTAI>
+  </Table>
+  <Table>
+    <ID>913</ID>
+    <NAME>TSMF - 45</NAME>
+    <RETAIL>160000</RETAIL>
+    <GROSIR>160000</GROSIR>
+    <PARTAI>160000</PARTAI>
+  </Table>
+  <Table>
+    <ID>914</ID>
+    <NAME>TSMF - 50</NAME>
+    <RETAIL>170000</RETAIL>
+    <GROSIR>170000</GROSIR>
+    <PARTAI>170000</PARTAI>
+  </Table>
+  <Table>
+    <ID>915</ID>
+    <NAME>TSMF - 55</NAME>
+    <RETAIL>175000</RETAIL>
+    <GROSIR>175000</GROSIR>
+    <PARTAI>175000</PARTAI>
+  </Table>
+  <Table>
+    <ID>904</ID>
+    <NAME>TSMS - 30</NAME>
+    <RETAIL>105000</RETAIL>
+    <GROSIR>105000</GROSIR>
+    <PARTAI>105000</PARTAI>
+  </Table>
+  <Table>
+    <ID>905</ID>
+    <NAME>TSMS - 35</NAME>
+    <RETAIL>110000</RETAIL>
+    <GROSIR>110000</GROSIR>
+    <PARTAI>110000</PARTAI>
+  </Table>
+  <Table>
+    <ID>906</ID>
+    <NAME>TSMS - 40</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>907</ID>
+    <NAME>TSMS - 45</NAME>
+    <RETAIL>120000</RETAIL>
+    <GROSIR>120000</GROSIR>
+    <PARTAI>120000</PARTAI>
+  </Table>
+  <Table>
+    <ID>908</ID>
+    <NAME>TSMS - 50</NAME>
+    <RETAIL>130000</RETAIL>
+    <GROSIR>130000</GROSIR>
+    <PARTAI>130000</PARTAI>
+  </Table>
+  <Table>
+    <ID>909</ID>
+    <NAME>TSMS - 55</NAME>
+    <RETAIL>135000</RETAIL>
+    <GROSIR>135000</GROSIR>
+    <PARTAI>135000</PARTAI>
+  </Table>
+  <Table>
+    <ID>523</ID>
+    <NAME>TUTUP KABEL COKLAT</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>3500</GROSIR>
+    <PARTAI>3500</PARTAI>
+  </Table>
+  <Table>
+    <ID>525</ID>
+    <NAME>TUTUP KABEL CREAM</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>3500</GROSIR>
+    <PARTAI>3500</PARTAI>
+  </Table>
+  <Table>
+    <ID>524</ID>
+    <NAME>TUTUP KABEL HITAM</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>3500</GROSIR>
+    <PARTAI>3500</PARTAI>
+  </Table>
+  <Table>
+    <ID>526</ID>
+    <NAME>TUTUP KABEL PUTIH</NAME>
+    <RETAIL>4000</RETAIL>
+    <GROSIR>3500</GROSIR>
+    <PARTAI>3500</PARTAI>
+  </Table>
+  <Table>
+    <ID>536</ID>
+    <NAME>TUTUP PIPA KOTAK</NAME>
+    <RETAIL>5000</RETAIL>
+    <GROSIR>4000</GROSIR>
+    <PARTAI>4000</PARTAI>
+  </Table>
+  <Table>
+    <ID>280</ID>
+    <NAME>U 10 MM DOFF</NAME>
+    <RETAIL>80000</RETAIL>
+    <GROSIR>80000</GROSIR>
+    <PARTAI>80000</PARTAI>
+  </Table>
+  <Table>
+    <ID>281</ID>
+    <NAME>U 10 MM KILAP</NAME>
+    <RETAIL>80000</RETAIL>
+    <GROSIR>80000</GROSIR>
+    <PARTAI>80000</PARTAI>
+  </Table>
+  <Table>
+    <ID>282</ID>
+    <NAME>U 12 MM DOFF</NAME>
+    <RETAIL>90000</RETAIL>
+    <GROSIR>90000</GROSIR>
+    <PARTAI>90000</PARTAI>
+  </Table>
+  <Table>
+    <ID>283</ID>
+    <NAME>U 12 MM KILAP</NAME>
+    <RETAIL>90000</RETAIL>
+    <GROSIR>90000</GROSIR>
+    <PARTAI>90000</PARTAI>
+  </Table>
+  <Table>
+    <ID>284</ID>
+    <NAME>U 15 MM DOFF</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>285</ID>
+    <NAME>U 15 MM KILAP</NAME>
+    <RETAIL>115000</RETAIL>
+    <GROSIR>115000</GROSIR>
+    <PARTAI>115000</PARTAI>
+  </Table>
+  <Table>
+    <ID>286</ID>
+    <NAME>U 20 MM DOFF</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>287</ID>
+    <NAME>U 20 MM KILAP</NAME>
+    <RETAIL>150000</RETAIL>
+    <GROSIR>150000</GROSIR>
+    <PARTAI>150000</PARTAI>
+  </Table>
+  <Table>
+    <ID>278</ID>
+    <NAME>U 8 MM DOFF</NAME>
+    <RETAIL>65000</RETAIL>
+    <GROSIR>65000</GROSIR>
+    <PARTAI>65000</PARTAI>
+  </Table>
+  <Table>
+    <ID>279</ID>
+    <NAME>U 8 MM KILAP</NAME>
+    <RETAIL>65000</RETAIL>
+    <GROSIR>65000</GROSIR>
+    <PARTAI>65000</PARTAI>
+  </Table>
+  <Table>
+    <ID>833</ID>
+    <NAME>USE - 025</NAME>
+    <RETAIL>275000</RETAIL>
+    <GROSIR>275000</GROSIR>
+    <PARTAI>275000</PARTAI>
+  </Table>
+  <Table>
+    <ID>834</ID>
+    <NAME>USE - 035</NAME>
+    <RETAIL>385000</RETAIL>
+    <GROSIR>385000</GROSIR>
+    <PARTAI>385000</PARTAI>
+  </Table>
+  <Table>
+    <ID>953</ID>
+    <NAME>UT - 01</NAME>
+    <RETAIL>58000</RETAIL>
+    <GROSIR>58000</GROSIR>
+    <PARTAI>58000</PARTAI>
+  </Table>
+  <Table>
+    <ID>954</ID>
+    <NAME>UT - 02</NAME>
+    <RETAIL>60000</RETAIL>
+    <GROSIR>60000</GROSIR>
+    <PARTAI>60000</PARTAI>
+  </Table>
+  <Table>
+    <ID>955</ID>
+    <NAME>UT - 03</NAME>
+    <RETAIL>62000</RETAIL>
+    <GROSIR>62000</GROSIR>
+    <PARTAI>62000</PARTAI>
+  </Table>
+  <Table>
+    <ID>484</ID>
+    <NAME>VINYL 2 CM - 20 MTR</NAME>
+    <RETAIL>10000</RETAIL>
+    <GROSIR>10000</GROSIR>
+    <PARTAI>10000</PARTAI>
+  </Table>
+  <Table>
+    <ID>487</ID>
+    <NAME>VINYL 2 CM - ROLL</NAME>
+    <RETAIL>100000</RETAIL>
+    <GROSIR>100000</GROSIR>
+    <PARTAI>100000</PARTAI>
+  </Table>
+  <Table>
+    <ID>485</ID>
+    <NAME>VINYL 4 CM - 20 MTR</NAME>
+    <RETAIL>23000</RETAIL>
+    <GROSIR>23000</GROSIR>
+    <PARTAI>23000</PARTAI>
+  </Table>
+  <Table>
+    <ID>488</ID>
+    <NAME>VINYL 4 CM - ROLL</NAME>
+    <RETAIL>185000</RETAIL>
+    <GROSIR>185000</GROSIR>
+    <PARTAI>185000</PARTAI>
+  </Table>
+  <Table>
+    <ID>486</ID>
+    <NAME>VINYL 5 CM - 20 MTR</NAME>
+    <RETAIL>30000</RETAIL>
+    <GROSIR>30000</GROSIR>
+    <PARTAI>30000</PARTAI>
+  </Table>
+  <Table>
+    <ID>489</ID>
+    <NAME>VINYL 5 CM - ROLL</NAME>
+    <RETAIL>240000</RETAIL>
+    <GROSIR>240000</GROSIR>
+    <PARTAI>240000</PARTAI>
+  </Table>
+</NewDataSet>
