@@ -42,11 +42,11 @@ namespace AlphaSoft
             string SQLcommand = "";
             if (nonactivecheckbox1.Checked)
             {
-                SQLcommand = "SELECT SUPPLIER_ID AS 'ID', SUPPLIER_FULL_NAME AS 'NAME' FROM MASTER_SUPPLIER";
+                SQLcommand = "SELECT SUPPLIER_ID AS 'ID', SUPPLIER_FULL_NAME AS 'NAME' FROM MASTER_SUPPLIER ORDER BY NAME ASC";
             }
             else
             {
-                SQLcommand = "SELECT SUPPLIER_ID AS 'ID', SUPPLIER_FULL_NAME AS 'NAME' FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1";
+                SQLcommand = "SELECT SUPPLIER_ID AS 'ID', SUPPLIER_FULL_NAME AS 'NAME' FROM MASTER_SUPPLIER WHERE SUPPLIER_ACTIVE = 1 ORDER BY NAME ASC";
             }
 
             using (rdr = DS.getData(SQLcommand))
@@ -82,11 +82,11 @@ namespace AlphaSoft
             string SQLcommand = "";
             if (nonactivecheckbox1.Checked)
             {
-                SQLcommand = "SELECT CUSTOMER_ID AS 'ID', CUSTOMER_FULL_NAME AS 'NAME' FROM MASTER_CUSTOMER";
+                SQLcommand = "SELECT CUSTOMER_ID AS 'ID', CUSTOMER_FULL_NAME AS 'NAME' FROM MASTER_CUSTOMER ORDER BY NAME ASC";
             }
             else
             {
-                SQLcommand = "SELECT CUSTOMER_ID AS 'ID', CUSTOMER_FULL_NAME AS 'NAME' FROM MASTER_CUSTOMER WHERE CUSTOMER_ACTIVE = 1";
+                SQLcommand = "SELECT CUSTOMER_ID AS 'ID', CUSTOMER_FULL_NAME AS 'NAME' FROM MASTER_CUSTOMER WHERE CUSTOMER_ACTIVE = 1 ORDER BY NAME ASC";
             }
 
             using (rdr = DS.getData(SQLcommand))
@@ -114,13 +114,28 @@ namespace AlphaSoft
             DS.mySqlConnect();
 
             string SQLcommand = "";
-            if (nonactivecheckbox2.Checked)
+
+            if (originModuleID == globalConstants.REPORT_STOCK_PECAH_BARANG) // read internal id, instead of kode product
             {
-                SQLcommand = "SELECT PRODUCT_ID AS 'ID', PRODUCT_NAME AS 'NAME' FROM MASTER_PRODUCT";
+                if (nonactivecheckbox2.Checked)
+                {
+                    SQLcommand = "SELECT ID AS 'ID', PRODUCT_NAME AS 'NAME' FROM MASTER_PRODUCT ORDER BY NAME ASC";
+                }
+                else
+                {
+                    SQLcommand = "SELECT ID AS 'ID', PRODUCT_NAME AS 'NAME' FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 ORDER BY NAME ASC";
+                }
             }
             else
-            {
-                SQLcommand = "SELECT PRODUCT_ID AS 'ID', PRODUCT_NAME AS 'NAME' FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1";
+            { 
+                if (nonactivecheckbox2.Checked)
+                {
+                    SQLcommand = "SELECT PRODUCT_ID AS 'ID', PRODUCT_NAME AS 'NAME' FROM MASTER_PRODUCT ORDER BY NAME ASC";
+                }
+                else
+                {
+                    SQLcommand = "SELECT PRODUCT_ID AS 'ID', PRODUCT_NAME AS 'NAME' FROM MASTER_PRODUCT WHERE PRODUCT_ACTIVE = 1 ORDER BY NAME ASC";
+                }
             }
 
             using (rdr = DS.getData(SQLcommand))
@@ -157,11 +172,11 @@ namespace AlphaSoft
             string SQLcommand = "";
             if (nonactivecheckbox2.Checked)
             {
-                SQLcommand = "SELECT CATEGORY_ID AS 'ID', CATEGORY_NAME AS 'NAME' FROM MASTER_CATEGORY";
+                SQLcommand = "SELECT CATEGORY_ID AS 'ID', CATEGORY_NAME AS 'NAME' FROM MASTER_CATEGORY ORDER BY NAME ASC";
             }
             else
             {
-                SQLcommand = "SELECT CATEGORY_ID AS 'ID', CATEGORY_NAME AS 'NAME' FROM MASTER_CATEGORY WHERE CATEGORY_ACTIVE = 1";
+                SQLcommand = "SELECT CATEGORY_ID AS 'ID', CATEGORY_NAME AS 'NAME' FROM MASTER_CATEGORY WHERE CATEGORY_ACTIVE = 1 ORDER BY NAME ASC";
             }
 
             using (rdr = DS.getData(SQLcommand))
@@ -275,7 +290,7 @@ namespace AlphaSoft
                     CustomercomboBox.Visible = false;
                     ProductcomboBox.Visible = false;
                     checkBox2.Visible = true;
-                    ProductcomboBox.Visible = true;
+                    ProductcomboBox.Visible = false;
                     nonactivecheckbox2.Visible = true;
                     LabelOptions2.Text = "Kategori";
                     groupBox1.Text = "Kriteria Pencarian Stock Berdasar Kategori";
@@ -284,6 +299,23 @@ namespace AlphaSoft
                     datetoPicker.Visible = false;
                     datefromPicker.Visible = false;
                     loadTags();
+                    break;
+                case globalConstants.REPORT_STOCK_PECAH_BARANG:
+                    checkBox1.Visible = false;
+                    nonactivecheckbox1.Visible = false;
+                    LabelOptions1.Visible = false;
+                    SupplierNameCombobox.Visible = false;
+                    CustomercomboBox.Visible = false;
+                    ProductcomboBox.Visible = true;
+                    checkBox2.Visible = true;
+                    nonactivecheckbox2.Visible = true;
+                    LabelOptions2.Text = "Produk";
+                    groupBox1.Text = "Kriteria Pencarian Stock Pecah Barang";
+                    label1.Visible = true;
+                    label2.Visible = true;
+                    datetoPicker.Visible = true;
+                    datefromPicker.Visible = true;
+                    loadProduct();
                     break;
             }
          
@@ -312,7 +344,7 @@ namespace AlphaSoft
                     case globalConstants.REPORT_PURCHASE_RETURN:
                         result = int.TryParse(SupplierNameCombobox.SelectedValue.ToString(), out supplier_id);
                         supplier = "AND RH.SUPPLIER_ID";
-                        supplier = " = " + supplier_id + " "; ;
+                        supplier = " = " + supplier_id + " "; 
                         break;
                     case globalConstants.REPORT_SALES_RETURN:
                         result = int.TryParse(CustomercomboBox.SelectedValue.ToString(), out cust_id);
@@ -336,6 +368,10 @@ namespace AlphaSoft
                             tags = "AND PC.CATEGORY_ID";
                             tags += " = " + tags_id + " ";
                         }
+                        break;
+                    case globalConstants.REPORT_STOCK_PECAH_BARANG:
+                        produk = "AND MP.ID";
+                        produk = produk + " = '" + ProductcomboBox.SelectedValue + "' ";
                         break;
                     default :
                         produk = "AND MP.PRODUCT_ID";
@@ -449,6 +485,17 @@ namespace AlphaSoft
                 //    ReportStockForm displayedForm6Expiry = new ReportStockForm(globalConstants.REPORT_STOCK_EXPIRY);
                 //    displayedForm6Expiry.ShowDialog(this);
                 //    break;
+                case globalConstants.REPORT_STOCK_PECAH_BARANG:
+                    sqlCommandx = "SELECT PL.PL_DATETIME AS 'TGL', MP.PRODUCT_NAME AS 'PRODUK ASAL', PL.PRODUCT_QTY AS 'QTY ASAL', MP2.PRODUCT_NAME AS 'PRODUK BARU', " +
+                                            "PL.NEW_PRODUCT_QTY - PL.TOTAL_LOSS AS 'QTY BARU' " +
+                                            "FROM PRODUCT_LOSS PL LEFT OUTER JOIN MASTER_PRODUCT MP ON(PL.PRODUCT_ID = MP.ID) " +
+                                            "LEFT OUTER JOIN MASTER_PRODUCT MP2 ON (PL.NEW_PRODUCT_ID = MP2.ID) " +
+                                            "WHERE PL.PRODUCT_ID <> 0 AND PL.NEW_PRODUCT_ID <> 0 " +
+                                            "AND DATE_FORMAT(PL.PL_DATETIME, '%Y%m%d') >= '" + dateFrom + "' AND DATE_FORMAT(PL.PL_DATETIME, '%Y%m%d') <= '" + dateTo + "' " + produk;
+                    DS.writeXML(sqlCommandx, globalConstants.stockPecahBarangXML);
+                    ReportStockPecahBarangForm displayedForm6PecahBarang = new ReportStockPecahBarangForm();
+                    displayedForm6PecahBarang.ShowDialog(this);
+                    break;
             }
         }
 

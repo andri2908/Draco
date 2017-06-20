@@ -345,7 +345,7 @@ namespace AlphaSoft
                 if (!DS.executeNonQueryCommand(sqlCommand, ref internalEX))
                     throw internalEX;
 
-                if (actualResult < calculatedResult)
+                //if (actualResult < calculatedResult)
                 {
                     // INSERT INTO PRODUCT LOSS TABLE
                     sqlCommand = "INSERT INTO PRODUCT_LOSS (PL_DATETIME, PRODUCT_ID, PRODUCT_QTY, NEW_PRODUCT_ID, NEW_PRODUCT_QTY, TOTAL_LOSS) " +
@@ -415,6 +415,7 @@ namespace AlphaSoft
                 gUtil.showSuccess(gUtil.UPD);
                 stockTextBox.Text = currentStockQty.ToString();
 
+                this.Close();
             }
         }
 

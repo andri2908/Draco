@@ -124,7 +124,11 @@ namespace AlphaSoft
                 DateTime selectedDate = TanggalTransaksi.Value;
                 String pembayaran = carabayarcombobox.GetItemText(carabayarcombobox.SelectedItem);
                 String cabang = "";// branchCombobox.GetItemText(branchCombobox.SelectedItem);
-                int pm_id = Int32.Parse(carabayarcombobox.SelectedValue.ToString());
+                int pm_id = 0;// Int32.Parse(carabayarcombobox.SelectedValue.ToString());
+
+                if (null != carabayarcombobox.SelectedValue)
+                    pm_id = Int32.Parse(carabayarcombobox.SelectedValue.ToString());
+
                 int branch_id = 0;// Int32.Parse(branchCombobox.SelectedValue.ToString());
                 
                 //tryparse
@@ -342,7 +346,7 @@ namespace AlphaSoft
 
                     TglTrans = TransaksiAccountGridView.Rows[rows].Cells["tanggal"].Value.ToString();
                     Account_ID = Int32.Parse(TransaksiAccountGridView.Rows[rows].Cells["kode_akun"].Value.ToString());
-                    pm_id = Int32.Parse(TransaksiAccountGridView.Rows[rows].Cells["PaymentMethodID"].Value.ToString());
+                    pm_id = Int32.Parse(TransaksiAccountGridView.Rows[rows].Cells["PaymentMethodID"].Value.ToString())+1;
                     Double debet, credit;
 
                     if (Double.TryParse(TransaksiAccountGridView.Rows[rows].Cells["debet"].Value.ToString(), out debet))
@@ -494,6 +498,12 @@ namespace AlphaSoft
                             loadDeskripsi(selectedAccountID);
                             nmakun = NamaAkunTextbox.Text;
                             pm_id = rdr.GetInt32("PM_ID");
+                            
+                            // TO HANDLE DISCREPANCY ON PAYMENT METHOD
+                            // TEMPORARY FIX, BECAUSE A LOT OF DATA HAS ALREADY GONE IN
+                            if (pm_id > 0)
+                                pm_id = pm_id - 1;
+
                             carabayarcombobox.SelectedValue = pm_id;
                             carabayarcombobox.Text = carabayarcombobox.GetItemText(carabayarcombobox.SelectedItem);
                             deskripsiakun = rdr.GetString("JOURNAL_DESCRIPTION");
