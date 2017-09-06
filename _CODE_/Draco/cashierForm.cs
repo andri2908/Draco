@@ -40,12 +40,13 @@ namespace AlphaSoft
         private double totalAfterDisc = 0;
         double cashBackValueAmount = 0;
 
-        private string currencyFormat = "C2";
+        private string currencyFormat = "C0";
         private double pointsToExchange = 0;
 
         private Data_Access DS = new Data_Access();
 
         private membershipPointUtil memberUtil = new membershipPointUtil();
+        private globalPrinterUtility gPrinter = new globalPrinterUtility();
         private globalUtilities gutil = new globalUtilities();
         private CultureInfo culture = new CultureInfo("id-ID");
 
@@ -2575,30 +2576,33 @@ namespace AlphaSoft
             //Font font = new Font("Courier New", 15);
 
             //cek paper mode
-           // int paperLength = 0;
+            int paperLength = 0;
 
-            int papermode = comboBox1.SelectedIndex + 1; //gutil.getPaper();
+            int papermode = comboBox1.SelectedIndex; //gutil.getPaper();
             gutil.setPaper(papermode);
           
             gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : PrintReceipt");
 
 
-            //if (papermode == globalUtilities.PAPER_POS_RECEIPT) //kertas POS
-            //{
-            //    gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : PrintReceipt, POS size Paper");
-            //    //width, height
-            //    paperLength = calculatePageLength();
-            //    PaperSize psize = new PaperSize("Custom", 320, paperLength);//820);
-            //    printDocument1.DefaultPageSettings.PaperSize = psize;
-            //    DialogResult result;
-            //    printPreviewDialog1.Width = 512;
-            //    printPreviewDialog1.Height = 768;
-            //    result = printPreviewDialog1.ShowDialog();
-            //    if (result == DialogResult.OK)
-            //    {
-            //        printDocument1.Print();
-            //    }
-            //} else
+            if (papermode == globalUtilities.PAPER_POS_RECEIPT) //kertas POS
+            {
+                gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : PrintReceipt, POS size Paper");
+                //width, height
+                paperLength = calculatePageLength();
+                PaperSize psize = new PaperSize("Custom", 255, paperLength);//820);
+                printDocument1.DefaultPageSettings.PaperSize = psize;
+                DialogResult result;
+                printPreviewDialog1.Width = 512;
+                printPreviewDialog1.Height = 768;
+                result = printPreviewDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    printDocument1.DefaultPageSettings.PaperSize = psize;
+                    printDocument1.PrinterSettings.PrinterName = gPrinter.getConfigPrinterName(1);
+                    printDocument1.Print();
+                }
+            }
+            else
             {
                 gutil.saveSystemDebugLog(globalConstants.MENU_PENJUALAN, "CASHIER FORM : PrintReceipt, papermode [" + papermode + "]");
 
@@ -2971,12 +2975,12 @@ namespace AlphaSoft
             if (originModuleID == 0)
             {
                 // NORMAL TRANSACTION
-                sqlCommand = "SELECT S.ID, S.PRODUCT_ID AS 'P-ID', P.PRODUCT_NAME AS 'NAME', S.PRODUCT_QTY AS 'QTY',ROUND(S.SALES_SUBTOTAL/S.PRODUCT_QTY) AS 'PRICE' FROM sales_detail S, master_product P WHERE S.PRODUCT_ID=P.PRODUCT_ID AND S.SALES_INVOICE='" + selectedsalesinvoice + "'";
+                sqlCommand = "SELECT S.ID, S.PRODUCT_ID AS 'P-ID', P.PRODUCT_NAME AS 'NAME', S.PRODUCT_QTY AS 'QTY',ROUND(S.SALES_SUBTOTAL/S.PRODUCT_QTY) AS 'PRICE', S.SALES_SUBTOTAL FROM sales_detail S, master_product P WHERE S.PRODUCT_ID=P.PRODUCT_ID AND S.SALES_INVOICE='" + selectedsalesinvoice + "'";
             }
             else
             {
                 // GET DUMMY DATA
-                sqlCommand = "SELECT S.ID, S.PRODUCT_ID AS 'P-ID', P.PRODUCT_NAME AS 'NAME', S.PRODUCT_QTY AS 'QTY',ROUND(S.SALES_SUBTOTAL/S.PRODUCT_QTY) AS 'PRICE' FROM sales_detail_tax S, master_product P WHERE S.PRODUCT_ID=P.PRODUCT_ID AND S.SALES_INVOICE='" + selectedsalesinvoiceTax + "'";
+                sqlCommand = "SELECT S.ID, S.PRODUCT_ID AS 'P-ID', P.PRODUCT_NAME AS 'NAME', S.PRODUCT_QTY AS 'QTY',ROUND(S.SALES_SUBTOTAL/S.PRODUCT_QTY) AS 'PRICE', S.SALES_SUBTOTAL FROM sales_detail_tax S, master_product P WHERE S.PRODUCT_ID=P.PRODUCT_ID AND S.SALES_INVOICE='" + selectedsalesinvoiceTax + "'";
             }
 
             using (rdr = DS.getData(sqlCommand))//+ "group by s.product_id") )
@@ -3108,7 +3112,7 @@ namespace AlphaSoft
                 //rectcenter.Width = colxwidth;
                 sf.LineAlignment = StringAlignment.Near;
                 sf.Alignment = StringAlignment.Near;
-                ucapan = "KEMBALI : " + uangKembaliTextBox.Text + ",00";
+                ucapan = "KEMBALI : " + uangKembaliTextBox.Text;// + ",00";
                 //rectcenter.Y = rect.Y;
                 graphics.DrawString(ucapan, new Font("Courier New", fontSize),
                          new SolidBrush(Color.Black), rect, sf);
