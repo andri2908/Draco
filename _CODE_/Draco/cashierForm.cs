@@ -3045,7 +3045,7 @@ namespace AlphaSoft
                         rectright.X = startRightX - 35;
                         rectright.Y = rect.Y;
 
-                        rectright.Width = colxwidth;// - 5;
+                        rectright.Width = colxwidth+10;// - 5;
                         sf.LineAlignment = StringAlignment.Far;
                         sf.Alignment = StringAlignment.Far;
                         ucapan = subtotal.ToString(currencyFormat, culture);//" Rp." + product_price;
